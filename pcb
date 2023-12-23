@@ -1,0 +1,40 @@
+#!/bin/bash
+
+print_help() {
+  echo "Usage: $0 <command>"
+  echo "Available commands:"
+  echo "  build - Build the application"
+  echo "  dev   - Run the application for testing"
+}
+
+create_build() {
+  pushd web || exit
+  npm run build || exit
+  popd || exit
+  mvn install
+}
+
+run_dev() {
+  # This is a script to run the application for testing purposes.
+  # Replace the values below with your own database information.
+  export DB_URL=jdbc:mariadb://localhost:3306/test
+  export DB_USERNAME=my_user
+  export DB_PASSWORD=password
+  mvn compile
+  mvn exec:java -Dexec.mainClass="Application"
+}
+
+generate_protobuf() {
+  local proto_file="models/pc-builder.proto"
+  protoc --java_out="src/main/java" $proto_file || exit 1
+  echo "Finished generating java models"
+  protoc --plugin="web/node_modules/.bin/protoc-gen-ts_proto" --ts_proto_opt=esModuleInterop=true --ts_proto_opt=useOptionals=all --ts_proto_out="web/src/app" $proto_file || exit 1
+  echo "Finished generating typescript models"
+}
+
+case $1 in
+  "build") create_build ;;
+  "dev") run_dev ;;
+  "proto") generate_protobuf ;;
+  *) print_help ;;
+esac

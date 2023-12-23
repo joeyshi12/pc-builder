@@ -1,0 +1,89 @@
+<h1>PC Parts List</h1>
+<p>Pick out your PC parts.</p>
+<div>
+  <div>
+    <h2>PC list name</h2>
+    <label>Created on</label>
+    <br>
+    <label>Lasted updated...</label>
+  </div>
+  <div>
+    <button>Choose list</button>
+    <button>Save list</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Component</th>
+      <th>Name</th>
+      <th>Details</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngIf="cpuList$ | async as cpuList">
+      <tr>
+        <td>CPU</td>
+        <td>
+          <ul *ngFor="let cpu of cpuList">
+            <li>{{cpu.uuid}}</li>
+          </ul>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td>Motherboard</td>
+      <td>
+        <button>Choose a Motherboard component</button>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Memory</td>
+      <td>
+        <button>Choose a Memory component</button>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Storage</td>
+      <td>
+        <button>Choose a Storage component</button>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Video Card</td>
+      <td>
+        <button>Choose a Video Card component</button>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Power Supply</td>
+      <td>
+        <button>Choose a Power Supply component</button>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #cpuSelect>
+  <tr>
+    <td>CPU</td>
+    <td>
+      <button>Choose a CPU component</button>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+</ng-template>

@@ -1,0 +1,63 @@
+<nav>
+  <div class="logo-container">
+    <a href="/"><img src="/assets/logo.svg" width="200em" alt="logo"></a>
+  </div>
+  <ul>
+    <li routerLink="/">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </li>
+    <li routerLink="/component-listing">
+      <i class="fa-solid fa-microchip"></i>
+      <span>Components</span>
+    </li>
+    <li routerLink="/builder">
+      <i class="fa-solid fa-wrench"></i>
+      <span>Build</span>
+    </li>
+    <ng-container *ngIf="userProfile$.getValue()?.username">
+      <li routerLink="/user-profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!userProfile$.getValue()?.username">
+      <li (click)="openFormDialog()">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <span>Log In</span>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<dialog [open]="isLoginFormOpen">
+  <div>
+    <div class="form-header">
+      <h1>Log in</h1>
+      <div class="alert-error" [hidden]="!errorMessage">
+        <div class="close-button" (click)="errorMessage = undefined">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        {{errorMessage}}
+      </div>
+    </div>
+    <div class="form-body">
+      <div class="form-field">
+        <label>Email</label>
+        <input #email type="text" />
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input #password type="password" />
+      </div>
+      <div class="form-buttons-container">
+        <button (click)="isLoginFormOpen = false">Close</button>
+        <button (click)="authenticateUser(email.value, password.value)">Log In</button>
+      </div>
+    </div>
+  </div>
+</dialog>

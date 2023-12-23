@@ -1,0 +1,151 @@
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  border-right: 1px solid;
+  width: 230px;
+  height: 100%;
+  background: white;
+  padding: 1rem;
+  & ul {
+    padding: 0;
+    margin: 2rem 0 0 0;
+    list-style: none;
+    & li {
+      line-height: 2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      & i {
+        font-size: 2rem;
+        width: 4rem;
+      }
+    }
+    & li:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  display: flex;
+  padding: 0 80px 0 0;
+  margin: 0 0 0 320px;
+  height: 100vh;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  & td, & th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    min-width: 12rem;
+  }
+  & tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  & th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #01618a;
+    color: white;
+  }
+}
+
+button {
+  color: white;
+  background: #01618a;
+  border: 2px solid #01618a;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+button:hover {
+  border: 2px solid #01618a;
+  background: #004e6f;
+}
+
+dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0 0 0;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 2;
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 8px 8px white inset;
+    border-radius: 15px;
+    max-width: 20rem;
+    background-color: #faf9f9;
+    margin: auto;
+    padding: 2rem 4rem;
+  }
+}
+
+.alert-error {
+  font-size: 14px;
+  background: #feddd7;
+  color: #991700;
+  border: 1px solid #991700;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  & > .fa-circle-exclamation {
+    padding-right: 0.5rem;
+  }
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-body {
+  width: 100%;
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0.5rem 0;
+    & label {
+      display: block;
+    }
+    & input {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.form-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+  & button {
+    margin: 0 0 0 0.5rem;
+  }
+}
+
+.close-button {
+  position: relative;
+  float: right;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+<ng-container *ngIf="userProfile$ | async as user">
+  <div class="profile-header">
+    <h1>{{user.displayName}}</h1>
+    <h3>@{{user.username}}</h3>
+    <div>
+      <button (click)="isEditProfileFormOpen = true">Edit profile</button>
+    </div>
+  </div>
+  <div>
+      <button>Published builds</button>
+      <button>Private builds</button>
+  </div>
+  <ul>
+    <li>Your builds...</li>
+  </ul>
+  <ng-template #wuh>
+    wuh?
+  </ng-template>
+</ng-container>
+
+<dialog [open]="isEditProfileFormOpen">
+  <div>
+    <div class="form-header">
+      <h1>Edit Profile</h1>
+    </div>
+    <div class="form-body">
+      <div class="form-field">
+        <label>Display name</label>
+        <input #displayName type="text" />
+      </div>
+      <div class="form-field">
+        <label>Email</label>
+        <input #email type="text" />
+      </div>
+      <div class="form-buttons-container">
+        <button (click)="isEditProfileFormOpen = false">Close</button>
+        <button (click)="updateUserProfile(displayName.value, email.value)">Submit</button>
+      </div>
+    </div>
+  </div>
+</dialog>

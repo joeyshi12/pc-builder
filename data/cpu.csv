@@ -1,0 +1,1354 @@
+id,display_name,price,core_count,core_clock,boost_clock,tdp,integrated_graphics,has_smt
+c33c59da-0f18-4fdc-8fe1-9a6248f58858,AMD Ryzen 5 5600X,159.99,6,3.7,4.6,65,,1
+1576ca80-798f-4699-a8a5-3d0228fe9be4,AMD Ryzen 7 7800X3D,369.99,8,4.2,5.0,120,Radeon,1
+59df9129-f7f9-489f-bd5b-804bf5fe76a6,Intel Core i7-13700K,364.99,16,3.4,5.4,125,Intel UHD Graphics 770,1
+51e74515-d38a-4685-9c51-bc2a61188fc3,AMD Ryzen 7 5800X,210.49,8,3.8,4.7,105,,1
+8a7cfa83-2898-4dc0-b44f-ce6e52b07c7e,Intel Core i9-13900K,569.99,24,3.0,5.8,125,Intel UHD Graphics 770,1
+090e6831-be8c-4fec-8763-93a21caf340f,AMD Ryzen 5 7600X,244.0,6,4.7,5.3,105,Radeon,1
+148ea4fa-439b-4687-b8c9-6b943134a550,AMD Ryzen 5 7600,226.99,6,3.8,5.1,65,Radeon,1
+bd4a91be-248f-404e-a5f5-5440f6a86151,Intel Core i5-12400F,149.97,6,2.5,4.4,65,,1
+9c11c209-1e10-4c2c-ac36-9c329c1d4674,AMD Ryzen 5 5600,134.0,6,3.5,4.4,65,,1
+a78eee59-7de1-4c8d-b2b3-3f4e60c59ee2,Intel Core i5-13600K,308.98,14,3.5,5.1,125,Intel UHD Graphics 770,1
+9b526315-e3f5-4c94-8882-d29850b93d27,AMD Ryzen 7 7700X,310.0,8,4.5,5.4,105,Radeon,1
+11580ce7-3825-4dd1-a976-9d0c8cb95e97,AMD Ryzen 5 3600,84.99,6,3.6,4.2,65,,1
+078f9de7-4d53-41fc-988d-561a23a46aa3,AMD Ryzen 5 5500,,6,3.6,4.2,65,,1
+120e331b-cf50-48ba-b5bf-b1e56a5d1cba,Intel Core i5-12600K,218.24,10,3.7,4.9,125,Intel UHD Graphics 770,1
+ffef56b9-f39c-4359-ba18-9ba721964135,AMD Ryzen 7 5700X,174.99,8,3.4,4.6,65,,1
+0e0e2be2-103f-426d-93ab-a169a7d0595c,AMD Ryzen 9 7950X3D,657.0,16,4.2,5.7,120,Radeon,1
+b0127e4b-52c0-4aa4-9a0e-8e780e8b01e9,AMD Ryzen 7 5800X3D,304.38,8,3.4,4.5,105,,1
+ae5ed849-aae4-4f9a-b257-4804aaa54793,Intel Core i7-12700K,289.93,12,3.6,5.0,125,Intel UHD Graphics 770,1
+070f5c3e-e4b5-43fd-a132-4fdc4f2d52b0,AMD Ryzen 5 5600G,124.0,6,3.9,4.4,65,Radeon Vega 7,1
+7558a1e5-b900-478c-afd2-016ad5315e28,Intel Core i3-12100F,94.48,4,3.3,4.3,58,,1
+7364c306-dc0d-4979-a399-901382e8cf7b,Intel Core i5-13600KF,279.99,14,3.5,5.1,125,,1
+d663fef8-ad1f-4554-baa8-650fce3e2b1f,AMD Ryzen 9 5900X,343.99,12,3.7,4.8,105,,1
+f4d346f1-9b6b-4286-8a85-ca4ebf742522,AMD Ryzen 9 7900X,407.11,12,4.7,5.6,170,Radeon,1
+d42dba81-890c-48c0-b781-7672eacbdb88,Intel Core i5-13400F,199.99,10,2.5,4.6,65,,1
+138219eb-4670-4a9f-9745-c399a5daeaeb,Intel Core i9-13900KS,724.0,24,3.0,6.0,150,Intel UHD Graphics 770,1
+d6d060f3-8e59-43cb-9363-b7ebcc614967,Intel Core i9-12900K,379.63,16,3.2,5.2,125,Intel UHD Graphics 770,1
+8e539f90-de5d-4f63-9756-8c75b3ac302d,Intel Core i5-12600KF,196.24,10,3.7,4.9,125,,1
+734749f0-f654-43a7-8d9d-43af8ecfea3a,AMD Ryzen 7 5700G,175.0,8,3.8,4.6,65,Radeon Vega 8,1
+9f60196b-2ba4-48ea-85ce-85bc90044188,Intel Core i7-12700KF,281.89,12,3.6,5.0,125,,1
+15934f30-a7c1-4132-be7a-7053c5497a42,AMD Ryzen 5 4500,79.0,6,3.6,4.1,65,,1
+1e15613c-9ec1-44e9-b6da-7fbdb151ea29,AMD Ryzen 9 7950X,551.51,16,4.5,5.7,170,Radeon,1
+1d86625d-623e-4e7c-9282-140fe008c026,AMD Threadripper 3990X,4155.0,64,2.9,4.3,280,,1
+c3ea3f52-37eb-45ea-a6ed-b8fab78cd645,Intel Core i7-13700KF,379.99,16,3.4,5.4,125,,1
+15b3b77f-d4df-44a1-afbb-fffd1afb0ec3,AMD Ryzen 7 3700X,219.0,8,3.6,4.4,65,,1
+0b10a0c5-638e-4b80-af25-f411b486394e,AMD Ryzen 7 7700,295.0,8,3.6,5.3,65,Radeon,1
+8df2450f-984e-4a2f-ad51-24988b707467,Intel Core i9-13900KF,536.14,24,3.0,5.8,125,,1
+31871329-e18c-4daf-a5ca-068bf339d8cc,Intel Core i5-13500,247.98,14,2.5,4.8,65,Intel UHD Graphics 770,1
+77f293a6-b223-4ed1-b3b8-4e8f1f23d8e4,Intel Core i5-10400F,108.49,6,2.9,4.3,65,,1
+384b3a78-8964-4463-882b-071f5641df36,Intel Core i3-13100F,110.99,4,3.4,4.5,58,,1
+04248918-aae8-4d2d-ace5-e79f34b5f8c4,AMD Ryzen 5 4600G,99.0,6,3.7,4.2,65,Radeon Vega 7,1
+3fadde54-91e9-45c9-a867-1ae525c07c45,AMD Ryzen 9 7900X3D,499.0,12,4.4,5.6,120,Radeon,1
+8e12939e-0203-4513-95d2-1942510647ad,AMD Ryzen 9 5950X,471.5,16,3.4,4.9,105,,1
+e6b9db4f-ab3a-4a3f-b889-560d85503559,AMD Ryzen 3 4100,64.2,4,3.8,4.0,65,,1
+eb753520-3bee-4aeb-9511-6b3263d07ba4,Intel Core i5-12400,167.0,6,2.5,4.4,65,Intel UHD Graphics 730,1
+c03f6273-866e-4538-8d2a-822c79a7f6f3,Intel Core i7-9700K,275.13,8,3.6,4.9,95,Intel UHD Graphics 630,0
+14939f9d-1fe4-4da2-bead-4bf4a71ebb5e,Intel Core i3-10100F,75.75,4,3.6,4.3,65,,1
+d6009831-4f66-48af-a085-078ee29b6e96,Intel Core i5-13400,207.99,10,2.5,4.6,65,Intel UHD Graphics 730,1
+6f59fce7-4d03-4a2c-b717-82c388599541,AMD Ryzen 5 2600,165.0,6,3.4,3.9,65,,1
+8f5cdfc8-16fc-4079-abf7-1e834ce6acab,Intel Core i9-14900K,598.0,24,3.2,6.0,125,Intel UHD Graphics 770,1
+adaec780-90cb-47a3-9ca4-c6b336d57412,AMD Ryzen 3 3200G,83.49,4,3.6,4.0,65,Radeon Vega 8,0
+6b776d90-4d27-46fc-8c3e-e46f5baca676,AMD Ryzen 9 7900,409.0,12,3.6,5.4,65,Radeon,1
+7666bd07-30c8-4467-92ce-3bb236e21a11,Intel Core i7-13700F,359.99,16,2.1,5.2,65,,1
+bb2b9eb6-4740-432e-a91d-2e2a611d53f2,Intel Core i5-11400F,128.38,6,2.6,4.4,65,,1
+38241cfb-1419-4f19-8414-ea646c5bf7b9,Intel Core i7-8700K,222.0,6,3.7,4.7,95,Intel UHD Graphics 630,1
+eeb56ef8-fbd7-4a4a-b167-3f620d826aac,Intel Core i9-9900K,485.0,8,3.6,5.0,95,Intel UHD Graphics 630,1
+efbb22db-66fa-4957-b35e-f5fb73bdfaa1,AMD Ryzen 9 3900X,365.0,12,3.8,4.6,105,,1
+bc3a3e1e-2b22-42b5-8fe5-ff90ecbc1045,Intel Core i7-14700K,418.0,20,3.4,5.6,125,Intel UHD Graphics 770,1
+9ba63c0a-d778-4cf4-ac9d-a9b9d27b9bd6,AMD Ryzen 7 2700X,220.0,8,3.7,4.3,105,,1
+9a546287-cfc5-4867-a576-f58abea2b7ce,AMD Ryzen 5 3600X,210.0,6,3.8,4.4,95,,1
+5c8bac06-66cf-42f8-8231-d258772fe7b6,Intel Core i7-10700K,295.99,8,3.8,5.1,125,Intel UHD Graphics 630,1
+69b45247-4477-4871-9bfc-0b662a4b5dfc,Intel Core i3-12100,118.99,4,3.3,4.3,60,Intel UHD Graphics 730,1
+e9d5e007-4047-47b1-8a10-60d5ab500c00,Intel Core i7-7700K,280.0,4,4.2,4.5,91,Intel HD Graphics 630,1
+52ea1115-0020-44cb-8ae4-5fc2f3f2640f,Intel Celeron E1400,14.0,2,2.0,,65,,0
+16913818-8719-46cf-b8f7-04f4021831bc,Intel Core i5-9400F,135.0,6,2.9,4.1,65,,0
+e7fa2e4f-fb02-485d-8bc3-8a339972d458,Intel Core i7-11700K,283.02,8,3.6,5.0,125,Intel UHD Graphics 750,1
+15516b25-ae41-436c-8975-ad3e1ef2bb70,Intel Core i7-6700K,220.61,4,4.0,4.2,91,Intel HD Graphics 530,1
+6e2ce834-0321-4325-b6a7-3868cafe4fcc,Intel Core i7-12700F,289.98,12,2.1,4.9,65,,1
+b330cb43-5457-4771-9140-b1da2ea70521,Intel Core i9-12900KF,369.99,16,3.2,5.2,125,,1
+6d191652-a517-4be2-b433-dd38721c276b,AMD Ryzen 5 7500F,,6,3.7,5.0,65,,1
+2e53f99d-4d7b-42d7-bc77-b30761d84e33,AMD Ryzen 7 3800X,285.0,8,3.9,4.5,105,,1
+76c8663c-02ec-4b14-ac21-0cb7ef649ad6,AMD Threadripper 3970X,2201.44,32,3.7,4.5,280,,1
+b22918f9-49b5-4d82-9b9c-40bffaf616b8,Intel Core i9-11900K,295.0,8,3.5,5.3,125,Intel UHD Graphics 750,1
+3f159774-7ce4-45b8-a2b2-902d847daa13,Intel Core i5-9600K,219.14,6,3.7,4.6,95,Intel UHD Graphics 630,0
+cf5e698e-a9db-4bb2-a722-1bfc6cde7090,Intel Core i3-13100,134.99,4,3.4,4.5,60,Intel UHD Graphics 730,1
+eeb4c9f2-95cc-4761-b17a-d1427545a757,Intel Core i7-13700,366.99,16,2.1,5.2,65,Intel UHD Graphics 770,1
+7b17e9fd-00d8-4a36-ba4d-659bc5f9574c,Intel Core i5-10600K,162.99,6,4.1,4.8,125,Intel UHD Graphics 630,1
+29319b75-4d2b-4c5b-ad8b-b53ffcea9849,Intel Core i9-10900K,361.4,10,3.7,5.3,125,Intel UHD Graphics 630,1
+c1f7ccad-311e-4bde-b2a8-fd7c00f1f0a0,AMD Ryzen 5 2600X,210.0,6,3.6,4.2,95,,1
+72567868-94ae-460b-8c12-d0313e010db8,Intel Core i5-10400,129.54,6,2.9,4.3,65,Intel UHD Graphics 630,1
+bcfc80b0-750c-443c-991d-796d88359a88,AMD Ryzen 5 5600X3D,,6,3.3,4.4,105,,1
+278ede5d-d988-4fbf-9a89-902272d21b18,Intel Core i3-10105F,79.67,4,3.7,4.4,65,,1
+2c58ad20-2e4c-4d29-83d5-036cd90590e7,Intel Core i5-11600K,219.99,6,3.9,4.9,125,Intel UHD Graphics 750,1
+5f607266-54e6-4143-af56-6b2ab8917797,Intel Core i9-10850K,285.73,10,3.6,5.2,125,Intel UHD Graphics 630,1
+3d2e397b-a818-429d-92e2-a01808085b23,Intel Core i7-4790K,,4,4.0,4.4,88,Intel HD Graphics 4600,1
+586e1f65-90bd-451c-992f-41cdc83ea48b,AMD Ryzen 5 3400G,139.99,4,3.7,4.2,65,Radeon Vega 11,1
+36a3f4b6-d7e6-4251-8bb4-561a5eacd125,AMD Ryzen 3 3100,166.38,4,3.6,3.9,65,,1
+7783211f-ecf7-4dcd-b641-7a6c518e769f,Intel Core i5-8400,160.0,6,2.8,4.0,65,Intel UHD Graphics 630,0
+bf1d9ee9-35fa-4ae6-8f37-a070627d98e3,Intel Core i7-11700F,211.67,8,2.5,4.9,65,,1
+8f5af0d3-54e0-42c9-996a-779a3dd9a1e7,Intel Core i7-10700F,218.5,8,2.9,4.8,65,,1
+a639c8a9-4d1a-41cb-b07e-e3f85b0d6257,AMD Ryzen 9 3950X,525.0,16,3.5,4.7,105,,1
+92f26d9c-ea30-4795-8f99-7c10e7bc8b20,Intel Core i7-8700,270.0,6,3.2,4.6,65,Intel UHD Graphics 630,1
+81afe082-e624-4c65-89af-09ee68b21176,Intel Core i7-4770,75.0,4,3.4,3.9,84,Intel HD Graphics 4600,1
+4a24936b-200a-454f-8256-a2a9b44549e1,Intel Core i9-14900KF,574.0,24,3.2,6.0,125,,1
+51c6aaa6-e7ee-443d-baf4-23879606dd6d,Intel Core i7-7700,197.43,4,3.6,4.2,65,Intel HD Graphics 630,1
+4017b0f3-49d2-47b8-a1d1-f0dd0d45413c,Intel Core i5-6600K,140.0,4,3.5,3.9,91,Intel HD Graphics 530,0
+a78a0778-0b14-4597-90b8-5fafb44ca46d,Intel Core i9-13900,567.99,24,2.0,5.6,65,Intel UHD Graphics 770,1
+911ee7e9-8747-4511-a77b-b7c8118da049,Intel Core i9-12900KS,477.99,16,3.4,5.5,150,Intel UHD Graphics 770,1
+96d82355-966c-46ac-95e4-e26986b14155,Intel Core i7-12700,304.0,12,2.1,4.9,65,Intel UHD Graphics 770,1
+339fdf42-8388-4153-98b9-20cdee9d605c,AMD Ryzen 5 1600 (14nm),155.0,6,3.2,3.6,65,,1
+607fc4c5-4767-46c3-a175-3368b3ad8785,AMD Ryzen 5 3600,174.08,6,3.6,4.2,65,,1
+52912959-30fb-4b82-994a-ce64ca7ef54e,Intel Core i5-6500,116.47,4,3.2,3.6,65,Intel HD Graphics 530,0
+d14ebb24-02fa-440b-a0e7-bb28cdb53130,Intel Core i5-11400,158.98,6,2.6,4.4,65,Intel UHD Graphics 730,1
+9308c5b3-ccfd-43e8-bbeb-61abfa3932a3,Intel Core i7-6700,210.0,4,3.4,4.0,65,Intel HD Graphics 530,1
+1fa3ac0a-ae4f-48c6-ab4a-16bb3dde2b7a,Intel Core i5-14600KF,304.0,14,3.5,5.3,125,,1
+419b3467-d343-4294-8e82-e2458ba61cdb,AMD Ryzen 7 2700,185.19,8,3.2,4.1,65,,1
+7da175e1-ed83-4803-9adf-cec845904c75,Intel Core i9-9900KF,314.99,8,3.6,5.0,95,,1
+937aed5d-26d6-46d2-b105-6628e8a740f1,Intel Core i7-10700KF,238.21,8,3.8,5.1,125,,1
+b92582a7-485b-4cac-b081-f850aee73927,Intel Core i3-4330,21.0,2,3.5,,54,Intel HD Graphics 4600,1
+eb2a64ef-30f2-4df7-9a65-e31e706e16ef,Intel Core i9-11900KF,270.0,8,3.5,5.3,125,,1
+46d94ab4-9aba-4de7-ba82-d360a5ecb74c,AMD Ryzen 5 3600,129.99,6,3.6,4.2,65,,1
+996a13c5-2772-4789-a797-861d75aaee65,Intel Core i5-14600K,328.0,14,3.5,5.3,125,Intel UHD Graphics 770,1
+1660d100-098f-448c-ab13-2783e05b51fd,Intel Core i7-3770,120.0,4,3.4,,77,Intel HD Graphics 4000,1
+84fc617e-f7ab-49dc-aa69-df8eeab90183,AMD Threadripper 3960X,1450.0,24,3.8,4.5,280,,1
+e5e5576c-4820-4f01-ae72-afd2c669ea5f,Intel Core i3-10100,111.1,4,3.6,4.3,65,Intel UHD Graphics 630,1
+0c5d660a-abb4-45bb-9747-9e78f729daab,Intel Core i7-10700,243.73,8,2.9,4.8,65,Intel UHD Graphics 630,1
+c4ce6123-52cd-4468-8333-acfa7d7a2fe4,Intel Core i5-8600K,213.0,6,3.6,4.3,95,Intel UHD Graphics 630,0
+8ad0f592-26f4-4e93-ae77-409e647abe5a,Intel Core i5-4690K,90.0,4,3.5,3.9,88,Intel HD Graphics 4600,0
+a44e4a21-c205-4f56-8cec-68b7c7596288,AMD Athlon 3000G (14nm),69.44,2,3.5,,35,Radeon Vega 3,1
+67489ddd-2f2a-4e05-a5f9-e8e7a0682595,Intel Core i9-13900F,499.0,24,2.0,5.6,65,,1
+86d12f44-8098-40fc-a5d3-0e715df20b1c,AMD Ryzen 5 1600 (12nm),114.99,6,3.2,3.6,65,,1
+8a1a5d4c-525d-4e67-aa06-be2bf1ce1632,Intel Core i5-7400,75.98,4,3.0,3.5,65,Intel HD Graphics 630,0
+9f7b4849-8ceb-4bb9-8e2c-1f0003fb1d41,AMD Ryzen 5 3600,,6,3.6,4.2,65,,1
+240f1b70-a43c-4359-bd52-5a679531c9fd,Intel Core i3-9100F,115.0,4,3.6,4.2,65,,0
+a025bbec-ccad-4a81-a1e4-14b3f8ccdf2f,Intel Core i7-11700,237.99,8,2.5,4.9,65,Intel UHD Graphics 750,1
+73619186-a39b-46f2-bf5c-a28bc42d6698,Intel Core i7-11700KF,269.86,8,3.6,5.0,125,,1
+139c1ba0-47c9-4cf5-93ee-67075ebcdac9,AMD Ryzen 3 2200G,150.0,4,3.5,3.7,65,Radeon Vega 8,0
+6f071f40-73df-48bb-aa7b-962aa7d2342c,Intel Celeron G6900,76.0,2,3.4,,46,Intel UHD Graphics 710,0
+d0f7e88c-11f1-4b4d-9a77-526a50658e97,AMD Ryzen 5 2400G,135.0,4,3.6,3.9,65,Radeon Vega 11,1
+b6241c49-aedb-46dc-a57e-093333f64109,Intel Core i5-7500,125.95,4,3.4,3.8,65,Intel HD Graphics 630,0
+09e2353d-16fb-4d74-8b10-941a840cd9a1,Intel Core i7-9700,290.26,8,3.0,4.7,65,Intel HD Graphics 630,0
+08435f38-01c9-44fb-9cae-6d79165273a5,Intel Pentium G3260,,2,3.3,,53,Intel HD Graphics,0
+c4b239ad-dc8d-4b9f-b344-8f2dbaa962c3,Intel Core i7-3770K,122.0,4,3.5,,77,Intel HD Graphics 4000,1
+10fc84a3-23c2-42fe-b720-ecf0230f51fc,Intel Core i3-8100,110.0,4,3.6,,65,Intel UHD Graphics 630,0
+d80acfd4-ca33-4610-bf9d-3d54243a89b6,Intel Core i5-7600K,164.0,4,3.8,4.2,91,Intel HD Graphics 630,0
+2f393f76-83e5-4ba5-869c-7e96a5692345,Intel Core i7-4770K,145.0,4,3.5,3.9,84,Intel HD Graphics 4600,1
+914e1c7a-8ecf-441e-b11f-18760f28ffcd,Intel Core i9-9980XE,2004.51,18,3.0,4.4,165,,1
+48a8905c-8ce8-424a-97a9-30128a545cf1,Intel Core i7-9700F,305.18,8,3.0,4.7,65,,0
+95d55ea7-8176-414e-b7e9-7371a04550c1,AMD Ryzen 7 1700,215.0,8,3.0,3.7,65,,1
+aa816251-2bc3-4f60-b197-e46f33baaa9f,AMD FX-8350,,8,4.0,,125,,0
+dc962c0e-fb89-44e8-998b-1a34fd0295a4,Intel Core i5-4460,82.46,4,3.2,3.4,84,Intel HD Graphics 4600,0
+98d54c84-3d96-4705-83b6-e92a1b5a555f,Intel Xeon E5-2699 V4,490.0,22,2.2,3.6,145,,1
+5e2c5f08-1d58-41b2-9264-577a72c0df3e,Intel Xeon E5-2687W V4,2429.89,12,3.0,3.5,160,,1
+4555f3cb-e867-4fb7-b98e-1596167f58fc,Intel Core i5-10600KF,175.99,6,4.1,4.8,125,,1
+967f3cd8-580d-4c4d-ad23-2783b1cd7a3b,Intel Core i7-4790,144.5,4,3.6,4.0,84,Intel HD Graphics 4600,1
+83e78627-a74b-4983-843d-7d17028f25ec,Intel Core i9-9900KS,1989.0,8,4.0,5.0,127,Intel UHD Graphics 630,1
+dfb54306-ec02-4961-8f74-b7d0c1705bdb,AMD Ryzen 7 1700X,251.0,8,3.4,3.8,95,,1
+a725e143-16d5-4ed3-a6cb-df50fbd4e0b0,Intel Core i9-10900KF,317.67,10,3.7,5.3,125,,1
+986a080c-3bba-4c5b-b756-ab82052908ac,Intel Core i5-12500,233.99,6,3.0,4.6,65,Intel UHD Graphics 770,1
+21f2e3d1-a64b-447d-b728-4af2ce647452,Intel Celeron G5900,45.28,2,3.4,,58,Intel UHD Graphics 610,0
+ce39e3c2-b084-4483-b3da-a37752b747ba,Intel Core i5-4590,,4,3.3,3.7,84,Intel HD Graphics 4600,0
+b85f7234-eee9-49bb-bc34-dc8b3aa99245,Intel Celeron G4900,48.59,2,3.1,,65,Intel UHD Graphics 610,0
+c620da06-6f71-4d90-b0c5-969d97bd29dc,AMD Ryzen 9 3900XT,450.0,12,3.8,4.7,105,,1
+93e59daf-056e-44de-b340-c75051ad4589,AMD Ryzen 5 1600X,140.0,6,3.6,4.0,95,,1
+fea481f5-3d85-45b8-8e68-4950e6010a75,AMD Ryzen 7 3700X,,8,3.6,4.4,65,,1
+042dbc88-0102-4ed2-89d4-7d440dcc6860,Intel Core i5-3470,156.68,4,3.2,,77,Intel HD Graphics 2500,0
+e394b4ad-39a8-40ce-967f-933afe079fa7,AMD Ryzen 5 3600XT,365.95,6,3.8,4.5,95,,1
+e08590fb-10f1-4111-8181-70e484600515,AMD Ryzen 5 3500X,,6,3.6,4.1,65,,0
+cde20b48-61c6-491e-ab96-0f3e53c28ca7,AMD Ryzen 3 3300X,189.99,4,3.8,4.3,65,,1
+b4d612d8-9bd1-4ff0-a40c-ec94d2525d8f,Intel Core i5-12600,220.82,6,3.3,4.8,65,Intel UHD Graphics 770,1
+466c95e5-08c8-4ca4-a28e-dbbf7907440d,Intel Core i5-9400,179.91,6,2.9,4.1,65,Intel UHD Graphics 630,0
+cd231db3-cb6d-4411-bb1a-e859614de123,Intel Core i5-11600KF,205.0,6,3.9,4.9,125,,1
+6d476c35-3fc5-4713-89ce-b24327c45cae,AMD FX-6300,,6,3.5,,95,,0
+4b5d4208-0a5b-4f34-ac5c-5e318fc46bf4,Intel Pentium Gold G7400,80.99,2,3.7,,46,Intel UHD Graphics 710,1
+dd8b728e-abac-4baf-afa3-c2c4e4854ad4,AMD Ryzen 3 1200 (14nm),91.08,4,3.1,3.4,65,,0
+1089ea6e-cf75-438a-ac0e-8ddfc12f92d4,Intel Core i9-10980XE,1220.0,18,3.0,4.8,165,,1
+03fd8a69-193c-4627-bc66-0483148ecaa4,Intel Core i5-6400,,4,2.7,3.3,65,Intel HD Graphics 530,0
+2a43921e-2c4f-4c87-bff1-e8199d7ae1c1,AMD Threadripper 1900X,99.99,8,3.8,4.0,180,,1
+2c20c4a9-eae7-42b4-94d1-ec3360eb71df,AMD Ryzen 7 3800XT,399.0,8,3.9,4.7,105,,1
+79c66b76-7b9f-4249-a720-9eff02feb251,Intel Core i5-2500K,322.66,4,3.3,,95,Intel HD Graphics 3000,0
+f44108dc-d674-4a77-8bd6-3a9730835e81,Intel Core i7-2600,130.88,4,3.4,,95,Intel HD Graphics 2000,1
+0e708ddb-8ff1-49e9-9390-1ae7970cd148,AMD Ryzen 5 1400,110.0,4,3.2,3.4,65,,1
+492255ee-7bb4-417d-80a6-c1c02d684457,Intel Core i5-8500,184.47,6,3.0,4.1,65,Intel UHD Graphics 630,0
+88c28f1e-a840-4750-9f21-455819b97058,Intel Core i3-10105,99.95,4,3.7,4.4,65,Intel UHD Graphics 630,1
+2dea58bc-ab97-4ca4-b125-94769152c011,Intel Core i5-3570K,97.0,4,3.4,,77,Intel HD Graphics 4000,0
+6a0a75e2-51cb-4332-b56a-969cf0d840d9,Intel Core i7-9700KF,310.0,8,3.6,4.9,95,,0
+09173154-ff83-456f-bba5-b072467b702c,Intel Celeron G4930,76.0,2,3.2,,54,Intel UHD Graphics 610,0
+928ff8ad-5d19-423b-9a29-3b0d6445d3e7,AMD Ryzen 9 3950X,2147.03,16,3.5,4.7,105,,1
+89170137-86eb-4bef-9d04-988c75e77e41,Intel Core i3-7350K,60.0,2,4.2,,60,Intel HD Graphics 630,1
+1f4c738c-34c7-4e32-b1a8-0ed0468b5636,Intel Core i5-4690,87.99,4,3.5,3.9,84,Intel HD Graphics 4600,0
+5ad94fb8-814b-4899-a27b-ed19e6b4b7eb,Intel Core i5-4570,135.94,4,3.2,,84,Intel HD Graphics 4600,0
+359ddf0f-e113-41fb-89c8-698633a835c3,Intel Core i5-9600KF,220.12,6,3.7,4.6,95,,0
+1c0f8c15-8535-4504-b933-ed37c18f931c,AMD Ryzen 5 1500X,225.0,4,3.5,3.7,65,,1
+b7898bca-a0c6-450e-ab42-7489727c2fa8,Intel Xeon E5-2660,21.99,8,2.2,3.0,95,,1
+94c4ee80-1762-49d7-bd88-b4298b5f6db4,Intel Core i3-6100,100.0,2,3.7,,51,Intel HD Graphics 530,1
+a9851c16-2cbe-427a-ac6b-b0c911d6fa11,Intel Core i3-4150,48.0,2,3.5,,54,Intel HD Graphics 4400,1
+230a3e99-d485-468e-a627-1a4ee10fcc39,Intel Core i9-10900X,610.0,10,3.7,4.7,165,,1
+e607f36b-efa3-4860-b308-a360c6fe8592,AMD Ryzen 7 1800X,295.0,8,3.6,4.0,95,,1
+3848f3c2-32a5-40f0-81de-4e68e27b469f,Intel Core i7-4790K,200.0,4,4.0,4.4,88,Intel HD Graphics 4600,1
+0d5e0443-2f06-4192-8fc8-0bbb3e54e36a,Intel Core i5-2400,,4,3.1,,95,Intel HD Graphics 2000,0
+7644a584-6510-477a-8d65-504074e1f166,AMD Ryzen 5 3500,,6,3.6,4.1,65,,0
+43a694f1-d537-4652-88b2-cf9015c9157d,Intel Celeron G5925,36.97,2,3.6,,58,Intel UHD Graphics 610,0
+10bf970b-78a5-4090-8743-fe4c676854b8,Intel Core 2 Duo E8400,27.55,2,3.0,,65,,0
+7ecd6574-1e74-4e2e-b2cd-82020507c03f,Intel Xeon E5-2650 V4,79.0,12,2.2,2.9,105,,1
+e2a98f19-4cb9-4986-9a13-77a874097847,Intel Core i7-6800K,140.0,6,3.4,3.6,140,,1
+42fd875b-a8e3-4d36-a2d5-fde18a8a46a0,Intel Core i5-6600,,4,3.3,3.9,65,Intel HD Graphics 530,0
+504f14d6-a6ec-4256-80af-b730ed4c00d4,AMD Threadripper 1920X,270.0,12,3.5,4.0,180,,1
+aeb4e703-4262-494a-aacc-78102e8acd4c,Intel Core i7-5820K,,6,3.3,3.6,140,,1
+cfcd63a7-9943-4f31-aca7-bfeb659301f1,AMD FX-8320,125.0,8,3.5,,125,,0
+39920a01-392f-48e6-8772-2ecf373bbab5,Intel Core i7-6900K,160.0,8,3.2,3.7,140,,1
+63e14a05-349d-4fa4-beeb-1eda8224d359,Intel Core i7-8700K,375.04,6,3.7,4.7,95,Intel UHD Graphics 630,1
+5718f74b-29c7-4a91-bf2f-ff8dbdc0acc4,AMD Athlon II X2 240,29.48,2,2.8,,65,,0
+a9b7ede3-eab7-4a88-84dc-6da015fc4e06,Intel Core i9-12900,451.0,16,2.4,5.1,65,Intel UHD Graphics 770,1
+1e7e0850-9f00-410b-9fdd-0d4340af9bf2,AMD Threadripper 2950X,1074.97,16,3.5,4.4,180,,1
+1d711e35-7fe8-4549-8d25-23cbae773e3c,Intel Pentium Gold G6400,63.9,2,4.0,,58,Intel UHD Graphics 610,1
+4b2bcf89-9fa9-479a-8de5-5ed248fbc7bb,Intel Xeon E5-2640 V3,38.04,8,2.6,3.4,90,,1
+67259966-593c-497d-8723-950624dc007e,AMD Ryzen 9 PRO 7945,,12,3.7,5.4,65,Radeon,1
+aa11bb00-bc4b-4263-92fb-e9a4aaf88052,Intel Core i9-12900F,429.99,16,2.4,5.1,65,,1
+30225c60-2b14-4d79-bdaf-ed574888042b,Intel Core i7-2600K,115.0,4,3.4,,95,Intel HD Graphics 3000,1
+cde8f83c-610e-47f3-bf1f-d979b8558905,Intel Core i9-10900F,307.48,10,2.8,5.2,65,,1
+868e5b59-b792-409e-a1a8-300ece7e1d32,Intel Core i5-10500,238.99,6,3.1,4.5,65,Intel UHD Graphics 630,1
+96733aec-aea4-43a3-8664-ba37f15beac7,AMD Threadripper 2990WX,2500.0,32,3.0,4.2,250,,1
+80586af2-ca50-4728-b983-52a2dd5302fb,Intel Core i5-4670K,158.9,4,3.4,,84,Intel HD Graphics 4600,0
+9d5e8e74-749b-47da-9489-f22405beecba,AMD Threadripper 2920X,199.95,12,3.5,4.3,180,,1
+095fc450-ee13-4900-bf33-434f7a655288,Intel Core i3-9100,148.0,4,3.6,4.2,65,Intel UHD Graphics 630,0
+55a7262b-4841-4542-a8ed-e279670fcfab,Intel Core i5-7600,125.0,4,3.5,4.1,65,Intel HD Graphics 630,0
+ccf50af1-2bdc-4308-89e2-0f4084241f38,Intel Core i9-9900K,909.99,8,3.6,5.0,95,Intel UHD Graphics 630,1
+5d96be78-2aa2-4449-ba2e-76057f199993,Intel Core i3-7100,85.72,2,3.9,,51,Intel HD Graphics 630,1
+4879d811-356e-4c33-ad46-9cbbd507919a,Intel Core i5-3570,,4,3.4,,77,Intel HD Graphics 2500,0
+547ebfea-f031-47f0-b810-7c5d0a5a3a00,Intel Xeon E5-2690 V4,186.1,14,2.6,3.5,135,,1
+91d2813e-ebcc-41a6-9e6e-7c286fefa044,Intel Core i7-6850K,130.0,6,3.6,3.8,140,,1
+fa42023d-1811-425c-b51b-55bfc4626274,AMD Ryzen 9 3900X,,12,3.8,4.6,105,,1
+7cbda12b-8bc9-42de-b167-c2a0e53063b9,AMD Threadripper 1950X,935.56,16,3.4,4.0,180,,1
+d9403864-8506-486c-878a-b5d1c5ddf48c,Intel Core i7-4790,,4,3.6,4.0,84,Intel HD Graphics 4600,1
+4ded41d0-a369-4546-a1c5-31df55648610,Intel Celeron G440,30.0,1,1.6,,35,Intel HD Graphics,0
+1fc19dee-8c08-49be-88a1-5e7a7da38aa9,Intel Core i5-13600,,14,2.7,5.0,65,Intel UHD Graphics 770,1
+3bbc6b62-0bf7-4d62-bf41-fd55af289fee,Intel Core i9-7900X,416.0,10,3.3,4.5,140,,1
+b489f652-9ba4-421f-8b2e-b94d7a68786a,AMD Athlon X4 845,50.0,4,3.5,3.8,65,,0
+25d1dc63-04bb-4cc9-a4a3-c8cc0c1c04b5,Intel Celeron G4900,40.0,2,3.1,,65,Intel UHD Graphics 610,0
+6a401cc3-4045-40cf-9b40-69d560be2cea,Intel Core i7-8700,345.74,6,3.2,4.6,65,Intel UHD Graphics 630,1
+5e673f09-2783-4177-96ff-e0fae20c8ae7,Intel Core i5-6500,,4,3.2,3.6,65,Intel HD Graphics 530,0
+1fd234b4-1b6a-4000-bd16-d9dcd97ad3b3,Intel Core i7-2700K,94.0,4,3.5,,95,Intel HD Graphics 3000,1
+8c95e612-4611-4afe-92d9-6c2ed8134ff0,Intel Core i9-9900,350.0,8,3.1,5.0,65,Intel UHD Graphics 630,1
+73dd47d7-3408-4e1d-ab63-4c8da0618fad,Intel Core i7-8086K,523.91,6,4.0,5.0,95,Intel UHD Graphics 630,1
+2cf9ca74-205d-4acc-b58f-4d45318a90e3,Intel Core i9-10900,317.0,10,2.8,5.2,65,Intel UHD Graphics 630,1
+47d172a5-68a7-4b08-ad8f-218c6f73ddf7,Intel Core i3-4130,43.0,2,3.4,,54,Intel HD Graphics 4400,1
+2a09901e-dcc5-47af-985a-1e642c696a8f,Intel Core i5-4440,100.0,4,3.1,3.3,84,Intel HD Graphics 4600,0
+b1caff89-3fd6-4166-956d-7717d3212723,Intel Core i9-7960X,338.07,16,2.8,4.4,165,,1
+5ffa5ad3-63e5-4a33-8f61-96e6764ea525,Intel Celeron E3500,14.99,2,2.7,,65,,0
+384d9f1d-1385-480a-9ec1-1c335e7bb359,Intel Core i5-9500,188.0,6,3.0,4.4,65,Intel UHD Graphics 630,0
+7e4aff6d-5809-486a-96a9-ce9d285864c1,Intel Core i9-11900F,289.89,8,2.5,5.2,65,,1
+21c72a83-03ac-446a-8370-2920a2487aaf,Intel Core i7-7700T,489.95,4,2.9,3.8,35,Intel HD Graphics 630,1
+631e9248-742e-4db4-9380-618a28b7b900,AMD Athlon 200GE,132.24,2,3.2,,35,Radeon Vega 3,1
+d7c0f05e-247f-4454-9f61-a91cbf6ad535,AMD Ryzen 5 2600,,6,3.4,3.9,65,,1
+dac47f04-3983-46db-9aa5-511366155da0,Intel Core i5-9400F,,6,2.9,4.1,65,,0
+289732d9-1eb6-4073-8bd1-cc42530442cb,Intel Core i5-8400,298.95,6,2.8,4.0,65,Intel UHD Graphics 630,0
+5e71a74a-c483-419d-bf30-4940933af7db,AMD Ryzen 3 1200 (12nm),91.08,4,3.1,3.4,65,,0
+9135235b-9362-4605-9521-6d2c474c33d7,Intel Core i5-11500,218.99,6,2.7,4.6,65,Intel UHD Graphics 750,1
+a6a969b2-3b9b-4ab0-af28-e5a09b1f4d62,Intel Core i7-7800X,499.99,6,3.5,4.0,140,,1
+cb27ff6a-435b-4187-aef5-7dea4da264a5,Intel Xeon E5-2670 V3,,12,2.3,3.1,120,,1
+1a5d256e-41b7-4a3d-b397-07843472b599,Intel Core i3-2100,49.0,2,3.1,,65,Intel HD Graphics 2000,1
+f2a129dd-a1ae-49b1-8599-7ab19ab30218,Intel Core i5-8600,185.86,6,3.1,4.3,65,Intel UHD Graphics 630,0
+8afcd344-1215-4a80-b634-5cf20e4ffef9,Intel Core i9-11900,324.99,8,2.5,5.2,65,Intel UHD Graphics 750,1
+e5771bbb-ec95-49e7-85f5-980988139add,Intel Core i7-7820X,351.86,8,3.6,4.5,140,,1
+7e8d8018-24fb-4a84-bb23-104178d75e10,Intel Core i9-13900T,,24,1.1,5.3,35,Intel UHD Graphics 770,1
+ac98778b-d6c1-4540-b033-6cc88d6ee8bf,Intel Core i5-13500T,,14,1.6,4.6,35,Intel UHD Graphics 770,1
+6d74ec7b-15b5-4f98-b030-5186bfc92e88,Intel Core i3-2120,125.0,2,3.3,,65,Intel HD Graphics 2000,1
+9b132ec1-4d57-44d9-b5ee-57b93373db23,Intel Core i7-7700,344.0,4,3.6,4.2,65,Intel HD Graphics 630,1
+d50fd722-03d5-4a90-9665-30ef498387d8,Intel Xeon E5-2698 V3,,16,2.3,3.6,135,,1
+f3a19834-7019-4d9f-9d28-24f0fc0adf96,Intel Core i7-6950X,600.0,10,3.0,3.5,140,,1
+0d1979d9-a272-4339-811c-b43ca8b5d3a2,Intel Core i9-9900K (Standard Folding Box),480.0,8,3.6,5.0,95,Intel UHD Graphics 630,1
+a8ed0a7e-b895-4024-acd5-2c1693d75850,Intel Core i7-14700KF,393.0,20,3.4,5.6,125,,1
+834ae238-e073-42d0-90ab-d97838d93a68,Intel Core i7-7700K,,4,4.2,4.5,91,Intel HD Graphics 630,1
+f20f95ed-2d40-424f-a5eb-f81934d7410a,Intel Core i7-4930K,148.0,6,3.4,3.9,130,,1
+21e278fa-6809-444d-b18a-44485154b2ea,AMD Ryzen 3 1300X,,4,3.5,3.7,65,,0
+88ae2585-cbf2-40ad-80c3-076a77442c51,Intel Pentium Gold G5400,73.0,2,3.7,,58,Intel UHD Graphics 610,1
+d16bdfd2-1aa4-497f-9aa1-76758d042618,AMD FX-8370,234.98,8,4.0,4.3,125,,0
+f0de34ba-e1a7-457d-9854-ea5d5b81915c,AMD Ryzen 5 3600X,,6,3.8,4.4,95,,1
+b56384b7-5cc2-4f5e-abb1-12e2c5d2ba92,AMD Ryzen 7 3800X,,8,3.9,4.5,105,,1
+919334fc-a990-4cba-a083-dc143088f9c0,AMD Ryzen 5 2400G,195.45,4,3.6,3.9,65,Radeon Vega 11,1
+e4cbae6a-470a-4e21-bcac-2b784101ae13,Intel Core i3-4170,,2,3.7,,54,Intel HD Graphics 4400,1
+96544a8c-7b09-4860-87f2-0555da8e4f06,Intel Xeon E5-2680 V4,1975.0,14,2.4,3.3,120,,1
+5008925e-468a-44ec-b143-880deed73064,AMD FX-9590,302.58,8,4.7,5.0,220,,0
+0bb338be-7c8f-44f1-af4f-08394c955f80,AMD Threadripper 2970WX,1150.0,24,3.0,4.2,250,,1
+b283454d-7335-42ee-bb93-a3ff7ecadcd6,AMD Ryzen 3 3200G,,4,3.6,4.0,65,Radeon Vega 8,0
+8c251010-8e9c-4da3-8567-e13e0254016d,Intel Core i7-6700,263.57,4,3.4,4.0,65,Intel HD Graphics 530,1
+4e7790b0-4863-465f-9dd5-43726d57377f,Intel Core i9-10920X,779.99,12,3.5,4.8,165,,1
+f823d85f-88bc-4f8a-a527-0d7ed39f6beb,Intel Core i3-3220,,2,3.3,,55,Intel HD Graphics 2500,1
+709ab3e3-64a7-475d-a6a0-93b2ab193f35,Intel Pentium G4400,43.99,2,3.3,,54,Intel HD Graphics 510,0
+efb1563a-3a2d-46d9-890b-d9d2853afc42,AMD FX-8300,120.0,8,3.3,,95,,0
+16c44694-bf55-4446-aead-234b9e68fa26,Intel Core i9-7920X,554.41,12,2.9,4.4,140,,1
+b9f2ec00-9470-4c01-a726-f3593e478fa4,Intel Pentium G4560,,2,3.5,,54,Intel HD Graphics 610,1
+c2913915-2e41-47ce-92c6-ddd69282e882,Intel Core i5-2500,,4,3.3,,95,Intel HD Graphics 2000,0
+d6e0d9ba-b649-42d4-921c-bbc792957457,Intel Core 2 Quad Q9550,52.55,4,2.83,,95,,0
+52f690bf-fbcb-4eb6-8795-1d78e55c75c0,AMD Ryzen 5 2600X,,6,3.6,4.2,95,,1
+52d2422a-7606-4317-993a-e688f4456042,AMD Ryzen 9 3900,,12,3.1,,65,,1
+42d0c33a-58a3-4967-9cc2-10cc11e5de34,AMD FX-6350,100.0,6,3.9,,125,,0
+95eae144-16b6-49d9-b5a1-7d98ea1f3a02,Intel Core i5-4670,146.3,4,3.4,,84,Intel HD Graphics 4600,0
+c47d263b-4fdc-4199-b463-35972cb60c3e,Intel Celeron G3900,39.95,2,2.8,,51,Intel HD Graphics 510,0
+2b9198a7-5b61-4c2e-95b0-1e9225a8e2f0,Intel Core i5-3330,,4,3.0,,77,Intel HD Graphics 2500,0
+5dd5c59c-454e-4099-81e0-5b4e9a873838,Intel Core i3-8100,124.01,4,3.6,,65,Intel UHD Graphics 630,0
+5884c021-6374-4e08-b073-d48229dae3ac,Intel Celeron G5905,46.8,2,3.5,,58,Intel UHD Graphics 610,0
+cf9d9de4-bf43-456a-9053-8fc207fd3e75,Intel Pentium E5700,19.98,2,3.0,,65,,0
+c269f3a6-37e0-407e-b982-5e7216ce0db8,Intel Core i7-9700K,,8,3.6,4.9,95,Intel UHD Graphics 630,0
+d0df26db-2b4e-45c1-be0a-38d008072156,Intel Core i7-5960X,,8,3.0,3.5,140,,1
+b918485f-a944-4570-b018-06d11e30a8dd,Intel Core i5-10600,302.66,6,3.3,4.8,65,Intel UHD Graphics 630,1
+26202a62-0ec2-4f60-a334-d63b07b54259,Intel Core i3-8350K,185.0,4,4.0,,91,Intel UHD Graphics 630,0
+3df08cec-8c9f-4a7f-ae5d-4e0e86312919,Intel Core i7-920,90.0,4,2.66,,130,,1
+a85af43c-d735-4ff0-97e0-353233a2d3ff,Intel Core i7-5930K,,6,3.5,3.7,140,,1
+6eac7625-d349-47a7-9a04-cb941cd89756,AMD Ryzen 5 PRO 7645,,6,3.8,5.1,65,Radeon,1
+828d51dd-e614-49f7-b9e0-8e5714df1860,Intel Core i9-7980XE,1186.0,18,2.6,4.4,165,,1
+87ec8dd7-39a2-4c5d-b383-8fbc73d85c08,AMD Athlon X2 370K,,2,4.2,,65,,0
+e20adbde-8db9-49ba-8b4c-94472a09454c,AMD FX-6120,58.53,6,3.5,4.1,95,,0
+06e4cf8a-e55f-4660-b09b-34e8f9e786cd,Intel Core i7-6700K,,4,4.0,4.2,91,Intel HD Graphics 530,1
+cb2fe7b7-783a-4809-9a61-de9a9fc22c1d,Intel Core i3-10300,109.99,4,3.7,4.4,65,Intel UHD Graphics 630,1
+d5ea8d3f-6e0e-4d78-985a-bf634b5e80d3,Intel Core i7-4820K,120.04,4,3.7,3.9,130,,1
+b2eda6fa-8cdd-4e86-bcc3-0491f139b63f,AMD FX-4300,,4,3.8,,95,,0
+010ca54d-50ee-401a-ae73-6b2f9a2711d3,AMD A4-6300,46.79,2,3.7,3.9,65,Radeon HD 8370D,0
+cab970f5-1b02-45c3-9ab6-6ee1cda3e807,AMD 5350,120.0,4,2.05,,25,Radeon HD 8400,0
+9d4cf79a-60bb-4d87-a9ab-5a576f3a01d1,AMD Ryzen 5 3400G,,4,3.7,4.2,65,Radeon Vega 11,1
+11d86246-2030-4bbc-9796-2ae8bdac5dfd,Intel Celeron G4900T,59.95,2,1.8,,35,Intel UHD Graphics 610,0
+a9ab8a3d-666f-4288-a286-70b892d22ee4,AMD FX-6100,72.8,6,3.3,,95,,0
+5495954f-60ee-4f96-85c4-9e4b76b9d246,Intel Core i7-7740X,385.0,4,4.3,4.5,112,,1
+16eed002-0a15-4fd5-84e2-4f42ed327b94,Intel Core i5-4440S,123.85,4,2.8,3.3,65,Intel HD Graphics 4600,0
+be7a4e05-72c9-40a8-97e3-149073c37f79,Intel Core i7-3930K,291.98,6,3.2,,130,,1
+2c880466-1441-488a-aeab-99896a030c45,Intel Core i7-6950X,439.0,10,3.0,3.5,140,,1
+cc713ece-e5e1-4bd3-8ecf-258d68ddfbe9,Intel Celeron 420,49.95,1,1.6,,35,,0
+63c439f7-b4cf-4266-92e8-969f1b60b31a,Intel Pentium E2220,19.98,2,2.4,,65,,0
+e1f720bc-6c7e-4085-aab9-2a4735ef75b2,Intel Core i3-4160,,2,3.6,,54,Intel HD Graphics 4400,1
+8845eb98-353e-4a9f-b1d1-0cb49a510a6d,Intel Core i7-9700F,375.86,8,3.0,4.7,65,,0
+fcddf952-6fad-4e4c-a867-e482432926f3,AMD Phenom II X6 1090T Black,249.98,6,3.2,,125,,0
+bc825f61-70ee-4567-8469-3ac5fb207fcc,Intel Core i7-3820,,4,3.6,,130,,1
+f95f35fc-9e27-4eba-b4fe-678c6175d628,Intel Xeon E5-2650,52.27,8,2.0,2.8,95,,1
+6c319109-6f70-45ca-af77-4127d82fc783,Intel Core i9-10940X,873.79,14,3.3,4.8,165,,1
+9d695ffe-35dc-4b5b-9bed-e327dbd5dc25,Intel Core i5-2400S,70.0,4,2.5,,65,Intel HD Graphics 2000,0
+7d4e5dc9-b1d3-454d-8e0a-ebb4d792860c,Intel Core i7-4960X Extreme Edition,1000.0,6,3.6,4.0,130,,1
+cd455ff6-3ba8-461b-818a-eddb5d5cce20,Intel Core i7-9800X,399.95,8,3.8,4.5,165,,1
+c59942ea-8d4b-459d-b30d-9b1f6114fd9e,AMD A8-7600,,4,3.1,3.8,65,Radeon R7 (on-die),0
+44088bce-4bc9-44d8-b06d-7a85d598c047,AMD A6-6400K,75.0,2,3.9,,65,Radeon HD 8470D,0
+ae5e932a-b90d-4a56-a5b8-425095f0e869,AMD A8-6600K,92.86,4,3.9,,100,Radeon HD 8570D,0
+24fa477b-0afe-49bf-9b77-0fbd604b3b3c,Intel Core i3-12100T,,4,2.2,4.1,35,Intel UHD Graphics 730,1
+d34a3a3e-79aa-41b4-8820-d58031e943fb,AMD Ryzen 7 PRO 7745,,8,3.8,5.3,65,Radeon,1
+39f7fe92-67e0-4057-8442-0a2492981464,Intel Core i5-6402P,97.0,4,2.8,3.4,65,Intel HD Graphics 510,0
+72b778ad-48db-4659-af4c-b1c120ed4a39,Intel Xeon E5-2697 V2,,12,2.7,3.5,130,,1
+5ffea3fb-ab7b-4cfe-82fe-f85233fd269e,AMD Ryzen 7 1700X,,8,3.4,3.8,95,,1
+7710c769-9e8c-4ef0-aa2e-3e9ff27b1e9a,Intel Core i3-13100T,,4,2.5,4.2,35,Intel UHD Graphics 730,1
+92eeab9c-71b0-47f9-88ad-a58e9207c430,Intel Core i5-8500T,,6,2.1,3.5,35,Intel UHD Graphics 630,0
+5c5a5a05-5cf5-4fd8-9773-768fcd6cd73b,Intel Xeon E5-2683 V4,1969.95,16,2.1,3.0,120,,1
+174622d5-2cb4-4667-adb8-1559d6e1c9ef,Intel Xeon E5-1630 V4,499.95,4,3.7,4.0,140,,1
+99353864-869c-4ab7-b9af-e1cc87ad974d,Intel Core i7-9700,335.33,8,3.0,4.7,65,Intel HD Graphics 630,0
+4d9da0af-a3a9-4507-864d-faa9ab5172ab,Intel Xeon E5-2699 V3,,18,2.3,3.6,145,,1
+41ebaa19-51bc-4ae0-9e8a-579726a3b675,Intel Xeon E5-2680,62.54,8,2.7,3.5,130,,1
+ca303460-1722-4c0e-9311-6dea5adbf1dd,Intel Pentium G4600,54.59,2,3.6,,51,Intel HD Graphics 630,1
+c90864e0-517d-484c-b133-26b3687984ed,AMD A10-9700,120.0,4,3.5,3.8,65,Radeon R7 (on-die),0
+a56f0af8-e35a-4fa3-983a-52996bdb4b60,Intel Xeon E5-1620 V3,66.5,4,3.5,3.6,140,,1
+734e32d1-c45d-4f0b-9415-129729292077,Intel Core i7-4770S,230.61,4,3.1,,65,Intel HD Graphics 4600,1
+bb63a61b-9873-4476-ba7e-e70d60d354fd,Intel Xeon E5-2660 V4,206.63,14,2.0,3.2,105,,1
+c13384e9-e32b-45d5-9681-f8bd87f4663f,Intel Core i3-530,45.0,2,2.93,,73,Intel HD Graphics,1
+b95ee4ef-3fb1-46b2-bfdf-b3080b8164b9,Intel Core i9-9960X,,16,3.1,4.4,165,,1
+0030e4a4-2953-44ed-acd5-d73c19dbce29,Intel Core i3-10305,109.99,4,3.8,4.5,65,Intel UHD Graphics 630,1
+82f1bca4-13f7-4039-bded-5be24e2a400f,Intel Core i7-13700T,,16,1.4,4.9,35,,1
+48640bae-485d-4999-84ec-935cbc86af3f,AMD Opteron 6344,81.67,12,2.6,3.2,115,,0
+49447ff1-197d-428c-9617-eee40dbb03c0,Intel Pentium G640,30.0,2,2.8,,65,Intel HD Graphics,0
+38499475-cea6-47bf-a68b-b3a7d9c888da,Intel Core 2 Quad Q6600,104.97,4,2.4,,100,,0
+ff1aca8a-2e6e-4218-ae6f-2e9f271c0623,Intel Core i5-9600K,,6,3.7,4.6,95,Intel UHD Graphics 630,0
+fb170895-e174-4eff-8d67-537c72a71a89,Intel Core i9-9980XE,1073.0,18,3.0,4.4,165,,1
+4903109e-5bf3-40b7-a9a7-08cafc4adb82,AMD A10-7850K,139.84,4,3.7,4.0,95,Radeon R7 (on-die),0
+e82c2f01-ca05-4fcf-82d7-3b7b3f064d77,Intel Core i5-11600,220.0,6,2.8,4.8,65,Intel UHD Graphics 750,1
+d18ab50d-dc4a-43d6-83e4-fbc3dd4ff33c,AMD A10-6800K,,4,4.1,,100,Radeon HD 8670D,0
+14865fb9-a6d5-41f2-a303-cb09fabf10c7,Intel Core i7-870,100.0,4,2.93,,95,,1
+cf03c681-3846-4104-aa91-db84529cd9cf,Intel Celeron E3400,18.98,2,2.6,,65,,0
+c0d91b90-e05f-4dda-b9d7-7468821126db,Intel Xeon E3-1231 V3,,4,3.4,3.8,80,,1
+521977b2-f6e3-468d-85fc-bb92deaee945,Intel Core i5-7640X,146.0,4,4.0,4.2,112,,0
+f7890894-4724-48a0-9bc2-4f3dff86bb6b,Intel Core 2 Quad Q9300,98.95,4,2.5,,95,,0
+c6c2d55d-358f-43f6-817f-f1414a3003c7,AMD Athlon II X4 640,57.01,4,3.0,,95,,0
+fd9a147a-9880-4301-b433-343860ad8cc8,Intel Pentium Gold G6405,88.19,2,4.1,,58,Intel UHD Graphics 610,1
+69460758-c122-4793-9987-3e83d56a24c8,Intel Core i5-4430,,4,3.0,,84,Intel HD Graphics 4600,0
+ee27a716-00af-45c3-894e-4372474d54bd,AMD Ryzen 7 2700,,8,3.2,4.1,65,,1
+4f9aa23b-de2f-44df-8dd6-2f0cab31ea0b,Intel Xeon E5-1650 V3,138.51,6,3.5,3.8,140,,1
+ca41bb2d-4ebf-462e-a559-888556ab7d2e,Intel Pentium E5400,,2,2.7,,65,,0
+1d103bbf-ad77-4cac-91fc-81c0fd3f9a61,Intel Core i7-10700K Avengers Collector's Edition,269.0,8,3.8,5.1,125,Intel UHD Graphics 630,1
+a6852e24-be91-4bfd-95bc-448614b07c83,Intel Core i5-9600,210.0,6,3.1,4.6,65,Intel UHD Graphics 630,0
+cbadc9d5-79a4-48c6-94b5-7d42a36a0301,Intel Xeon E5-1660 V3,398.95,8,3.0,3.5,140,,1
+45f81e45-8ffb-4bea-80e0-dd489985fdc5,Intel Core i7-860,339.0,4,2.8,,95,,1
+251ab08d-7940-4f59-86aa-89025860999f,Intel Core i3-6300,90.03,2,3.8,,51,Intel HD Graphics 530,1
+fbefb0b1-d1b9-4c4c-aa3d-54c029807b3f,Intel Pentium Gold G5400,99.0,2,3.7,,58,Intel UHD Graphics 610,1
+a48e096a-db32-43c0-aa4f-01e107437ca4,Intel Core i7-5775C,240.0,4,3.3,3.7,65,Iris Pro Graphics 6200,1
+e89b1317-b05e-436b-839b-b10f3f219ae5,Intel Core i7-7800X,289.95,6,3.5,4.0,140,,1
+d2ca8ac9-6a51-4ed8-87b5-2550898ed000,AMD FX-9370,229.97,8,4.4,4.7,220,,0
+570565b3-3ac4-43b6-b441-5bf7cc93ef13,AMD FX-8350,202.57,8,4.0,,125,,0
+ee52e0ed-32e5-4657-9ef3-8be384331bd7,Intel Core i5-6400,,4,2.7,3.3,65,Intel HD Graphics 530,0
+9df14852-eebc-4154-8481-6bd4c51c016b,Intel Xeon E5-2630,37.49,6,2.3,,95,,1
+0bb44a62-cb94-4b87-b82e-4c773c23665d,Intel Xeon E5-2630 V3,169.95,8,2.4,3.2,85,,1
+e20a0735-5407-4d43-a737-5f25dc1ec2ef,Intel Core i7-980X Extreme Edition,153.64,6,3.33,,130,,1
+1485acd8-9494-4981-8aaa-195ef9bd8be3,AMD FX-4350,122.96,4,4.2,,125,,0
+0ceeca37-5e85-4575-bcbf-5cc01f42bccd,AMD A8-9600,,4,3.1,3.4,65,Radeon R7 (on-die),0
+3c92ca59-6cd7-44d2-a76d-c19f5d06e789,Intel Pentium Gold G6600,,2,4.2,,58,Intel UHD Graphics 630,1
+ec4756c0-a1b2-40a0-9140-b36a36afe3eb,Intel Core i5-3450,245.33,4,3.1,,77,Intel HD Graphics 2500,0
+be33dc8b-6bc1-4229-b35e-f5a83eeae32a,Intel Xeon E5-2620 V3,46.19,6,2.4,3.2,85,,1
+6537b254-14fe-4047-863f-f29fd08f6b5c,Intel Core i7-950,100.0,4,3.06,,130,,1
+39c7ffdf-5bb0-45bc-a288-a5e0f1b0858f,Intel Xeon E5-2650 V2,185.0,8,2.6,3.4,95,,1
+85518998-8b94-4c5b-b7e8-71a40d72e553,Intel Core i5-4590S,,4,3.0,3.7,65,Intel HD Graphics 4000,0
+1c8f7106-a485-4bc8-bb31-e94ce8e01e33,Intel Core i7-4790S,,4,3.2,4.0,65,Intel HD Graphics 4000,1
+da74d074-706d-4ab8-b672-61e711181f1a,Intel Core i3-4160,,2,3.6,,54,Intel HD Graphics 4400,1
+a59c64e6-cfb2-4e2a-8485-596da4ec2cb8,AMD Ryzen 3 2200G,,4,3.5,3.7,65,Radeon Vega 8,0
+570bf280-468c-4824-99a1-65eccbee5c7a,AMD FX-6300,78.51,6,3.5,,95,,0
+3d39712d-8500-4d67-8bd8-8d5c4ea6a816,Intel Core i7-4770K,228.9,4,3.5,3.9,84,Intel HD Graphics 4600,1
+9f421eac-cf6a-4784-8349-fe127a839d19,Intel Core i3-3240,113.99,2,3.4,,55,Intel HD Graphics 2500,1
+62d3f244-1d5d-4605-befe-3b5877fecd26,Intel Pentium Gold G6605,47.98,2,4.3,,58,Intel UHD Graphics 630,1
+cd877a26-7725-40f9-bca3-96c88c5baf90,Intel Core 2 Quad Q9650,,4,3.0,,95,,0
+c5c9a773-6a91-4c59-9085-559e2fd93132,Intel Core 2 Extreme QX9770,,4,3.2,,136,,0
+27e89564-de7a-48a8-b60a-6445ffdf3476,AMD Athlon II 160u,,1,1.8,,20,,0
+246aedf1-857d-495a-abbf-10d2e71e31b4,Intel Core i5-8600K,,6,3.6,4.3,95,Intel UHD Graphics 630,0
+87d47dff-37bb-4bb7-8911-a539c694ac16,Intel Core i5-7400T,119.0,4,2.4,3.0,35,Intel HD Graphics 630,0
+61c21376-737b-4f58-b7cb-b7a2d0376ac5,Intel Core i9-7900X,1498.95,10,3.3,4.5,140,,1
+c83488d1-5490-4a7e-9955-52e4fe1e110a,Intel Core i5-2320,,4,3.0,,95,Intel HD Graphics 2000,0
+fa26b598-7401-45b3-9203-019c3898c0c8,Intel Pentium G2020,34.99,2,2.9,,55,Intel HD Graphics,0
+8f7975f1-be35-471e-a756-e9afb33cbf47,Intel Core i7-3770S,206.0,4,3.1,,65,Intel HD Graphics 4000,1
+123e0dbe-8256-4561-952c-ab8d505b468a,AMD A6-9500,89.95,2,3.5,3.8,65,Radeon R5 (on die),0
+348a211c-3ba5-4a0d-95dc-e0f70489b16d,Intel Core i5-750,81.0,4,2.66,,95,,0
+e02905c4-f857-4d3e-82bc-25cccb827955,Intel Pentium G3258,68.0,2,3.2,,53,Intel HD Graphics,0
+5c5d363e-a29e-400d-8d96-0b33f49af8b2,Intel Xeon E5-2690 V2,,10,3.0,3.6,130,,1
+42266c5c-0ab8-4f52-85bf-635389e0aac6,Intel Celeron G4920,69.95,2,3.2,,65,Intel UHD Graphics 610,0
+a3f894b2-19b7-4639-91ec-e7c7ecdcd5fd,Intel Core 2 Extreme QX6800,998.95,4,2.93,,100,,0
+bd5f64e3-283a-4551-9b55-83ace3a8307d,Intel Xeon E3-1275 V3,,4,3.5,3.9,84,Intel HD Graphics P4600,1
+2743bb0c-3210-41ea-8963-f8b5c70cf4cd,Intel Xeon E5-2660,,8,2.2,3.0,95,,1
+859dc712-00e8-4000-99ad-1bd21c77c860,Intel Xeon E3-1230 V5,298.95,4,3.4,3.8,80,,1
+4ef0f5c9-bbcc-4294-aada-16c21f9f2ea4,Intel Core i7-7700T,390.0,4,2.9,3.8,35,Intel HD Graphics 630,1
+65b43a26-ee05-4021-8ee6-e4527cfd47c8,Intel Core i3-4370,60.0,2,3.8,,54,Intel HD Graphics 4600,1
+3b813267-92e2-4ad7-8866-b8defb56c832,Intel Core i7-3970X Extreme Edition,256.19,6,3.5,,150,,1
+b48ed5cc-0aa6-4dc1-a416-b5a3ca205642,Intel Core i7-7740X,210.0,4,4.3,4.5,112,,1
+a3b77b8d-9264-4cfb-87b1-6a63a2525d7c,Intel Xeon E5-2683 V4,865.49,16,2.1,3.0,120,,1
+26acff84-457b-4c9b-9175-4a60b2774b00,Intel Core i7-8700T,335.0,6,2.4,4.0,35,Intel UHD Graphics 630,1
+e719422a-a378-4e09-b542-86c2edfa8dc0,Intel Core i5-7500,,4,3.4,3.8,65,Intel HD Graphics 630,0
+df41af28-8951-4d45-9a0b-6bd5d6010ac6,Intel Xeon E5-2620 V4,259.99,8,2.1,3.0,85,,1
+d68867ff-5c3d-4d4d-9950-e42fa61b90f4,Intel Core i7-4770K,241.42,4,3.5,3.9,84,Intel HD Graphics 4600,1
+76d35c9b-1656-46e7-9cb9-57cd82f25e3a,Intel Xeon E5-1650 V4,,6,3.6,4.0,140,,1
+8d598987-54b2-4889-9bea-0ef49ef76260,Intel Core i9-7980XE,1698.95,18,2.6,4.4,165,,1
+e209e1df-dcfa-4747-a1fb-25b8a0f07cbf,Intel Core i5-9500T,,6,2.2,3.7,35,Intel UHD Graphics 630,0
+e75f62a2-05df-4bed-903b-bc2b9167394a,AMD Athlon X4 950,,4,3.5,3.8,65,,0
+9b137441-a9b9-4efd-bd79-25174811b291,AMD FX-8120,,8,3.1,,125,,0
+3108e84a-d9db-4183-88dd-63d6ebfa737b,Intel Core i9-9900T,,8,2.1,4.4,35,Intel UHD Graphics 630,1
+b750d076-d5ee-43e1-af18-f980ba404366,Intel Xeon E5-4620,52.0,8,2.2,2.6,95,,1
+fef7ca43-406a-4d8d-8479-d0088f943c13,Intel Core i5-9600KF,309.95,6,3.7,4.6,95,,0
+07f8e248-3e09-4b50-ab82-e3b37c3b7942,Intel Core i5-4690K,160.65,4,3.5,3.9,88,Intel HD Graphics 4600,0
+55b43038-0a4d-4b90-a5a9-b427bafc0418,Intel Xeon E5-2667 V3,981.57,8,3.2,3.6,135,,1
+8bfdb845-e638-4713-bc91-37ab6915b0e7,Intel Core i3-4130T,76.0,2,2.9,,35,Intel HD Graphics 4400,1
+9ba5a0ba-4a5e-40f5-81d7-af42301c9ff2,AMD Phenom II X4 965 Black,,4,3.4,,125,,0
+f35974ec-982a-4d37-b2b5-f1cdd238c73e,Intel Xeon E-2176G,424.99,6,3.7,4.7,80,Intel HD Graphics P630,1
+0554b55f-bcde-4aa9-98d1-bf268851f167,Intel Xeon E5-2697 V4,,18,2.3,3.6,145,,1
+071dd17c-8ac3-456c-acff-8d1d0556f9fd,AMD FX-8320E,,8,3.2,4.0,95,,0
+8309c0fc-2a11-4353-aa4e-b4f5b9eef0b5,Intel Xeon E5-2690 V3,,12,2.6,3.5,135,,1
+56db5cc2-1143-4205-bc8f-1cfec77f18d5,Intel Core i5-9500F,,6,3.0,4.4,65,,0
+f9de7afe-7b1f-4fc6-aaf4-936548ee1fad,Intel Pentium Gold G6500,89.99,2,4.1,,58,Intel UHD Graphics 630,1
+4e8137fa-be7d-4096-8376-64e8be10a2f3,Intel Core i3-550,108.21,2,3.2,,73,Intel HD Graphics,1
+66ad49f1-8f8d-4f36-8ac4-1bdeccdbe059,Intel Core i9-9920X,,12,3.5,4.4,165,,1
+b897de53-a653-492d-a3cd-60f27a3ad1bc,AMD A8-7650K,,4,3.3,3.7,95,Radeon R7 (on-die),0
+4df3af4a-c40f-41a9-9c79-5ae439688c17,Intel Core i7-6700T,,4,2.8,3.6,35,Intel HD Graphics 530,1
+04ee2940-76c5-440d-9ed2-688b78d6628a,Intel Xeon E5-1660 V2,504.07,6,3.7,4.0,130,,1
+738ed7c3-e13b-4f30-b4da-0f56408546d5,Intel Core i5-7500T,199.95,4,2.7,3.3,35,Intel HD Graphics 630,0
+d5136db5-e2bf-48d8-b265-08d2dae2b188,Intel Core i5-6600T,294.98,4,2.7,3.5,35,Intel HD Graphics 530,0
+f67e59e5-564e-490c-adba-f5c98be16129,Intel Core i5-650,100.0,2,3.2,,73,Intel HD Graphics,1
+193600ad-8778-4749-ab82-313c73f928cf,Intel Core i7-4790T,179.88,4,2.7,3.9,45,,1
+61f4dbb5-a8ca-4249-9b3b-ce0208f69274,Intel Core i5-7400,130.31,4,3.0,3.5,65,Intel HD Graphics 630,0
+a8ca9919-30d3-4b71-bce3-cab2817f2006,Intel Xeon E5-2670,,8,2.6,3.3,115,,1
+a2e0fc8c-87f9-41df-a365-9757d7cfd585,Intel Core i5-8500,184.47,6,3.0,4.1,65,Intel UHD Graphics 630,0
+14daa6f5-01ca-4739-bb51-36e3c62b0888,AMD Ryzen 7 PRO 7745,,8,3.8,5.3,65,Radeon,1
+9929ad56-7858-44d5-aa91-6b1c1f8beb9e,Intel Core i3-7100,85.72,2,3.9,,51,Intel HD Graphics 630,1
+e6173c3e-fe75-4b22-beb5-232964445a95,AMD A10-7800,,4,3.5,3.9,65,Radeon R7 (on-die),0
+400d1d79-bd94-413f-afd2-8bf54e700f29,AMD Athlon II X4 630,52.6,4,2.8,,95,,0
+5586c8af-e5a5-4527-b7d3-fa93bcf47c3b,Intel Core 2 Duo E8500,,2,3.16,,65,,0
+f55b8477-7f2e-40cc-a30f-dea14bc73544,Intel Core 2 Duo E7300,28.2,2,2.66,,65,,0
+ec501409-f9e8-4009-ab71-f68933eb902b,Intel Core i3-10320,134.0,4,3.8,4.6,65,Intel UHD Graphics 630,1
+91d7df17-a16b-46df-b2e6-7788010eea67,Intel Pentium G2030,,2,3.0,,55,Intel HD Graphics,0
+0efe91cc-ebfc-41e1-aa50-642063de0650,AMD Athlon X4 860K,,4,3.7,4.0,95,,0
+0ae0e9a7-28b4-4388-95d8-6c14763669ab,Intel Core i9-7940X,,14,3.1,4.4,165,,1
+2e89b6de-36b9-4dad-b3bf-87b766440f3d,Intel Core i3-8300,,4,3.7,,62,Intel UHD Graphics 630,0
+2f8a164e-1752-48f0-b846-4c31d6540756,Intel Celeron G5920,39.99,2,3.5,,58,Intel UHD Graphics 610,0
+86c8afdb-7737-4ddb-a5c9-fdc303eb7a56,Intel Xeon E3-1220 V3,100.99,4,3.1,3.5,80,,0
+628ff8d3-c1f7-4995-becd-8938e6069e4d,Intel Core i9-9900X,1229.95,10,3.5,4.4,165,,1
+3fda033a-9618-4460-95d3-889606900395,Intel Core i5-2380P,70.0,4,3.1,,95,,0
+122ee4fd-b591-4731-ac8e-f786ff7ef940,Intel Pentium Gold G6600,152.19,2,4.2,,58,Intel UHD Graphics 630,1
+6769904f-7275-4b64-b8f0-212b5e64bf9b,Intel Core i5-4570S,99.99,4,2.9,,65,Intel HD Graphics 4600,0
+757beb41-1d48-4e6c-97e2-f700bbaafcf3,AMD Ryzen 3 1200 (12nm),,4,3.1,3.4,65,,0
+4561e348-4c3b-4338-87fa-8661abc4220d,Intel Core i5-3350P,,4,3.1,,69,,0
+d3c19f00-5b0f-445e-a3e4-f14fb46695c0,Intel Xeon E5-2660 V3,,10,2.6,3.3,105,,1
+6cc93c29-2a3d-4424-aea5-6a2f8d33ca39,Intel Pentium Gold G5420,,2,3.8,,54,Intel UHD Graphics 610,1
+4bfefced-88c0-4bff-8a9a-16e4b0516462,Intel Xeon E5-2695 V2,189.0,12,2.4,3.2,115,,1
+396edf51-0cd4-4506-b5c3-06ff2ea945fb,Intel Pentium G4500,49.99,2,3.5,,51,Intel HD Graphics 530,0
+9f6ecca5-9d1e-4724-95d0-38c67d83412c,Intel Xeon E3-1270 V3,420.0,4,3.5,3.9,80,,1
+ede3cdaf-1c92-41dd-8f78-ed10c98ed77b,Intel Core i5-6500T,,4,2.5,3.1,35,Intel HD Graphics 530,0
+1b1aee0f-07b1-4dc8-a9d3-597ef5194570,AMD A6-7400K,89.99,2,3.5,3.9,65,Radeon R5 (on die),0
+cbfdf689-b812-4489-9e90-5bceb8f0f0b8,Intel Celeron G3930,55.0,2,2.9,,51,Intel HD Graphics 610,0
+f24fbb4f-e70f-4ef7-b16a-4933f7f6320d,Intel Core i5-3550,335.0,4,3.3,,77,Intel HD Graphics 2500,0
+2bf221fa-e87a-49dd-89c4-d45268041679,AMD Phenom II X6 1100T Black,,6,3.3,,125,,0
+31ad9282-2e21-45b2-86ae-e8ac820f91ac,Intel Core i5-7600K,,4,3.8,4.2,91,Intel HD Graphics 630,0
+12386aa0-1f98-42b1-9673-3de8aaa2bdef,AMD A8-7680,,4,3.5,3.8,65,Radeon R7 (on-die),0
+68390b51-44e5-4591-9e16-2813ec770ad0,Intel Core i9-10850K,,10,3.6,5.2,125,Intel UHD Graphics 630,1
+b19bfba3-1831-4d96-9de4-24a7a638da48,Intel Core i5-3340,278.02,4,3.1,3.3,77,Intel HD Graphics 2500,0
+017d167e-30ad-470d-8ff2-d1f3082130a2,AMD 2650,,2,1.45,,25,Radeon HD 8240,0
+d5175e8d-05e6-4807-b675-1da60ca5f40b,Intel Xeon E5-2698 V4,,20,2.2,3.6,135,,1
+5d091577-493e-41f7-8496-507da1dbbe37,Intel Core i5-4690K,,4,3.5,3.9,88,Intel HD Graphics 4600,0
+de6d93e8-a428-4085-b87f-02b0a0c1c656,AMD Athlon II X4 640,74.79,4,3.0,,95,,0
+62b2a9c2-043c-4f42-8f3d-75a61e72885f,Intel Core i7-2600S,355.29,4,2.8,,65,Intel HD Graphics 2000,1
+4d8033cf-dba9-411c-804b-a9d91e128844,Intel Xeon E-2236,435.0,6,3.4,4.8,80,,1
+de37a779-4018-45b1-82a4-c366d3665cee,Intel Core 2 Duo E7500,99.63,2,2.93,,65,,0
+e21532fe-e562-4b29-b80f-288a264d542f,AMD Phenom II X4 955,,4,3.2,,125,,0
+b4d894f6-6fbe-4035-affd-0bbd24a4d234,Intel Core i7-990X Extreme Edition,,6,3.467,,130,,1
+237c2b28-c86a-42b5-9f46-5d0e7fd255d0,Intel Xeon E5-2667 V2,,8,3.3,4.0,130,,1
+59f03520-8227-493b-9d6a-f1f9076d9a8a,Intel Xeon E5-2640 V4,998.95,10,2.4,3.4,90,,1
+4f04a4ec-f895-413a-a298-21832f1a0f77,Intel Core i3-9300,189.99,4,3.7,4.3,62,Intel UHD Graphics 630,0
+6ffa28ad-71a2-4271-9f00-4f49173cb668,Intel Core i7-960,345.0,4,3.2,,130,,1
+c727d1d3-016b-4260-9634-723c5ccf65b6,Intel Xeon E5-2695 V4,,18,2.1,3.3,120,,1
+189c9ad0-c78a-4ded-a6d4-58281ba84d97,Intel Core i5-10600K,,6,4.1,4.8,125,Intel UHD Graphics 630,1
+869a35f6-8635-4916-a433-2b6c07eca46b,AMD A10-7700K,132.86,4,3.4,3.8,95,Radeon R7 (on-die),0
+3764443e-6946-47d9-90c6-8026db764479,AMD Athlon X4 970,,4,3.8,4.0,65,,0
+82630235-8553-45d4-8b7e-c68e5d4f730f,Intel Xeon E3-1230 V3,327.0,4,3.3,3.7,80,,1
+56c6b1a8-9ecc-4123-b5fb-45b39f99600a,Intel Xeon E3-1230 V2,271.85,4,3.3,,69,,1
+6c2071c8-b552-4ec0-b6f1-c16f3d5c34b7,Intel Celeron G1610,37.0,2,2.6,,55,Intel HD Graphics,0
+8f9edfe1-b333-46bb-b999-50ecb07a722d,Intel Xeon E-2136,395.82,6,3.3,4.5,80,,1
+8137a8ff-aad0-4ecc-aa6c-bfcfcb99e2a5,Intel Xeon E5-1620 V4,148.94,4,3.5,3.8,140,,1
+3c926cf4-0d5a-4eb8-9afe-613808b89211,Intel Core i9-9820X,,10,3.3,4.1,165,,1
+cfd76979-8ebb-4e39-b48c-c5df3a4f1221,AMD A10-5800K,,4,3.8,,100,Radeon HD 7660D,0
+4ebdc976-cecb-4ac9-ab63-2bf11ed5bbc8,AMD A10-7890K,,4,4.1,4.3,95,Radeon R7 (on-die),0
+30173a4a-28d1-4f1f-a3e9-fbf7aebde342,Intel Celeron G3920,489.95,2,2.6,,35,Intel HD Graphics 510,0
+663ec85a-1079-4b42-98f4-a885a117e557,Intel Core i5-760,100.0,4,2.8,,95,,0
+23498022-13e2-4915-a1c3-cdf4f9045f1e,Intel Celeron G3900,93.48,2,2.8,,51,Intel HD Graphics 510,0
+fdec0915-fe6f-4704-b477-163ef6c1da82,AMD Phenom II X4 945,,4,3.0,,125,,0
+c2e32841-44d4-4a7e-b7c7-55dc34c53ac4,AMD FX-4100,,4,3.6,,95,,0
+74e9a04c-723a-4781-8522-35abdd7e81ca,Intel Core i7-4771,,4,3.5,3.9,84,Intel HD Graphics 4600,1
+cf5052b5-35c8-44bd-8e91-8ecbbfca61a8,AMD A12-9800,160.0,4,3.8,4.2,65,Radeon R7 (on-die),0
+f8f866ff-d64b-424e-b422-0b50f7753b4b,Intel Core i7-930,257.27,4,2.8,,130,,1
+34855bce-759d-46f9-9f9f-8f6ce401a915,Intel Xeon E5-2687W V3,,10,3.1,3.5,160,,1
+2a11a530-dabd-41ff-9f30-73bc6b4a9116,Intel Core i5-4670S,534.0,4,3.1,3.8,65,Intel HD Graphics 4600,0
+db15a657-a8f3-44be-8082-c682ac528a06,Intel Core i5-3470S,,4,2.9,,65,Intel HD Graphics 2500,0
+484ef9d7-f46d-47d0-8de3-6624b5d3d650,Intel Core i5-8600T,,6,2.3,3.7,35,Intel UHD Graphics 630,0
+1afce6f2-69ee-4daa-9e8a-70c704a40988,Intel Core i9-10900K,,10,3.7,5.3,125,Intel UHD Graphics 630,1
+32a2e279-f217-442a-83cb-236eb1a70255,AMD Athlon 240GE,,2,3.5,,35,Radeon Vega 3,1
+05a4ad4f-1c8b-47d0-b660-fd45db883f91,Intel Core i3-3250,70.0,2,3.5,,55,Intel HD Graphics 2500,1
+008c0996-888f-4beb-88cc-eb0b34117593,Intel Core i5-9400,,6,2.9,4.1,65,Intel UHD Graphics 630,0
+79127725-4b02-4ecf-b15a-deea2af20726,Intel Core i9-10850KA Avengers Limited Edition,,10,3.6,5.2,125,Intel UHD Graphics 630,1
+78215830-33bd-44cb-9f90-34a3b10a1656,Intel Core i5-2300,,4,2.8,,95,Intel HD Graphics 2000,0
+fe71f31a-72c9-4f8f-893e-fa2636edb82e,AMD Athlon 200GE,,2,3.2,,35,Radeon Vega 3,1
+d501439b-ad97-4139-be3b-6b7bb47a3f4b,Intel Core i3-2130,,2,3.4,,65,Intel HD Graphics 2000,1
+a785ad31-cb24-4ebb-a667-b08774a03db0,AMD FX-9590,,8,4.7,5.0,220,,0
+9ae9fc14-624d-43bb-abe7-d1d7bd6f2d15,AMD A10-7860k,,4,3.6,4.0,65,Radeon R7 (on-die),0
+d7c1390f-bf8b-4f60-8463-674351109c73,AMD Athlon 220GE,,2,3.4,,35,Radeon Vega 3,1
+3cad6c03-7e6b-4edf-ac72-fec2fc7ef77c,Intel Core i3-7320,102.9,2,4.1,,51,Intel HD Graphics 630,1
+36fa3e0f-18b3-4778-af70-117d23d641de,Intel Core i3-2120T,60.0,2,2.6,,35,Intel HD Graphics 2000,1
+28a8bc05-3eee-477d-be30-58867b2a4e9d,Intel Core i5-3450S,95.0,4,2.8,,65,Intel HD Graphics 2500,0
+7f749704-7794-449f-85a8-df1fa93a7a64,AMD A10-6700,112.76,4,3.7,,65,Radeon HD 8670D,0
+3cff1c7d-7c77-4977-aaf2-61969633bdd7,AMD FX-8150,,8,3.6,,125,,0
+373f7d92-39c4-44a9-901e-0834ac415630,Intel Core i5-7600,,4,3.5,4.1,65,Intel HD Graphics 630,0
+73770fb4-1ca4-4b8d-bc58-07b8a8c49b98,Intel Core i9-9900,,8,3.1,5.0,65,Intel UHD Graphics 630,1
+da65a7eb-3bf8-4101-b19f-160922018975,Intel Core 2 Extreme QX9775,1489.95,4,3.2,,150,,0
+5ca63c0a-f669-464b-b284-c318d97c37c8,Intel Core i7-3960X Extreme Edition,274.85,6,3.3,,130,,1
+c1ed00bd-597e-4718-af02-069e6edc054c,Intel Core i9-9960X,1399.99,16,3.1,4.4,165,,1
+12e611dc-0eb6-4cf2-949a-3613f26f0cb6,Intel Xeon E3-1241 V3,298.0,4,3.5,3.9,80,,1
+f8d93be0-418f-4996-ada7-1d06ac9ce0f1,Intel Core i5-4690,147.91,4,3.5,3.9,84,Intel HD Graphics 4600,0
+58b60d8c-9f0a-4a36-896e-2834c2a5be5f,AMD Threadripper 2990WX,,32,3.0,4.2,250,,1
+41005760-e7ae-4e21-b0c0-6c7372d552a9,Intel Core i3-10100T,,4,3.0,3.8,35,Intel UHD Graphics 630,1
+ac7c12d5-7977-47d5-a72d-fbe954a43b97,AMD Phenom II X6 1055T,,6,2.8,,125,,0
+0b4b02f4-13df-454d-97d1-14c6cce94316,Intel Pentium E6600,50.0,2,3.06,,65,,0
+3542fdce-05d1-4888-a5d3-2baa9892ce72,AMD FX-4300,,4,3.8,,95,,0
+47b5eea0-af3b-4345-83f7-adeb948c53f8,Intel Xeon E3-1246 V3,,4,3.5,3.9,84,Intel HD Graphics P4600,1
+35842aaf-e153-4d97-894d-91c4ee6e6d36,Intel Core i5-4460S,,4,2.9,3.4,65,Intel HD Graphics 4000,0
+36b33ab9-cff4-4744-b03d-7a990cb2d8ed,AMD Athlon X4 860K,,4,3.7,4.0,95,,0
+b507b8af-4817-46ed-8916-7d1808a05b86,Intel Core i5-8500,,6,3.0,4.1,65,Intel UHD Graphics 630,0
+6b0ef396-1ba7-496b-b207-724129480777,Intel Core i5-9600K,,6,3.7,4.6,95,Intel UHD Graphics 630,0
+69edfb96-65e1-482b-ae25-73edc6df7551,Intel Core i3-4340,60.0,2,3.6,,54,Intel HD Graphics 4600,1
+edb64454-d4f0-4771-8d42-532502ceee5b,Intel Pentium G3420,53.0,2,3.2,,54,Intel HD Graphics,0
+01afa1ac-5b1a-42ef-8852-780cd65332e0,Intel Pentium E2200,,2,2.2,,65,,0
+835e41b1-27dc-42c3-810d-d4477e5e1e9b,Intel Core 2 Duo E6400,35.0,2,2.13,,65,,0
+c4fbd710-0282-4557-b514-080aeaa16808,Intel Core i5-2310,,4,2.9,,95,Intel HD Graphics 2000,0
+a29fc2f1-94bb-4534-af9d-532202b66125,Intel Xeon E5-2697 V3,,14,2.6,3.6,145,,1
+1d021208-f53c-4030-b9a9-9d547edc6614,AMD Phenom II X4 820,56.64,4,2.8,,95,,0
+9467be4f-9038-4513-80db-4658ba92482e,AMD A10-5700,72.51,4,3.4,,65,Radeon HD 7660D,0
+637f82a8-7b89-467f-8cea-b62498760e2c,Intel Core i3-6098P,70.0,2,3.6,,54,Intel HD Graphics 510,1
+5f7f53ce-4227-4458-b9cf-3c99b55d1fba,Intel Core i3-3210,70.0,2,3.2,,55,Intel HD Graphics 2500,1
+770f2080-5e37-41de-a2d3-be56c6560d19,Intel Core i3-6100T,,2,3.2,,35,Intel HD Graphics 530,1
+cf389e4c-eece-4bec-9b97-c36a7ec4d56e,Intel Xeon E3-1240L V5,,4,2.1,3.2,25,,1
+4f21976a-e183-4cd9-bbf1-5e49808f93a8,Intel Core i7-940,78.67,4,2.93,,130,,1
+eb4d0f77-66d7-4948-b4bc-1031e73c0227,Intel Core i3-9350KF,256.06,4,4.0,4.6,91,,0
+4366b3e8-4b16-4fcb-b0b0-5c0620767510,Intel Xeon E-2278G,,8,3.4,5.0,80,Intel HD Graphics P630,1
+809a5247-1b5b-4bf0-9945-4d509c2c390a,Intel Pentium E2140,79.95,2,1.6,,65,,0
+1454ac2d-5611-4ee4-8007-4867f5dd8c58,Intel Xeon E5-1650 V2,452.66,6,3.5,3.9,130,,1
+164f7765-2878-4b96-9be1-77f459ffb4fe,Intel Xeon E5-1620,,4,3.6,3.8,130,,1
+e3901e6e-8bf0-46dc-a874-bbb3c19d5e7c,Intel Pentium G3250,65.0,2,3.2,,53,Intel HD Graphics,0
+6ba07dbc-5992-44d7-a220-822f7ba9bd31,Intel Core i3-9100T,,4,3.1,3.7,35,Intel UHD Graphics 630,0
+dd081d60-4877-4815-b12d-1a3d3ae2e628,Intel Core i7-980,556.02,6,3.333,,130,,1
+443a62e6-d3b2-4e9b-a5ce-fd8deb1b340f,Intel Pentium G630,37.49,2,2.7,,65,Intel HD Graphics,0
+0def881f-7c6c-4de8-a3be-e98555fdbf0f,AMD FX-8320,106.55,8,3.5,,125,,0
+c1105b02-7d7e-4a12-8729-c339705ac28b,Intel Xeon E5-1650 V3,,6,3.5,3.8,140,,1
+46ce5477-d3e9-4935-b962-f2c7e69b4a7f,Intel Xeon E5-2680 V3,,12,2.5,3.3,120,,1
+f0235bab-2fa0-4ff1-b1b1-cc46a732b0b7,Intel Xeon E5-2643 V4,268.05,6,3.4,3.7,135,,1
+07c3f292-46da-4a6b-a48b-36b23afc7965,Intel Pentium Gold G5400T,98.95,2,3.1,,35,Intel UHD Graphics 610,1
+fc191cc7-5fb0-4b12-9af2-5671b8ae49fd,AMD Sempron 145,,1,2.8,,45,,0
+c5fdf3f9-075b-4563-854c-d04920de8075,Intel Pentium G3220,,2,3.0,,54,Intel HD Graphics,0
+87b1110c-3a33-4d04-aff4-e542c04b2130,Intel Core i3-8100T,,4,3.1,,35,Intel UHD Graphics 630,0
+d188de0e-2108-4a1c-9733-c83bbea89864,Intel Xeon E-2286G,787.99,6,4.0,4.9,95,Intel HD Graphics P630,1
+4fa81b82-8ec3-46c3-abde-9b62b1889dfd,Intel Core 2 Extreme QX9650,152.52,4,3.0,,130,,0
+e4044f1a-6a19-4385-82c5-953c76e10ea4,Intel Core i3-560,60.0,2,3.333,,73,Intel HD Graphics,1
+a866d248-19ec-43be-9ccd-0df12e6d6aa8,AMD A4-3300,89.95,2,2.5,,65,Radeon HD 6410D,0
+8853040a-7058-406a-816b-580825d96d92,AMD A10-7870K,324.6,4,3.9,4.1,95,Radeon R7 (on-die),0
+5ff3457c-734c-4c38-9d02-683dcb753a04,Intel Core i5-6600,,4,3.3,3.9,65,Intel HD Graphics 530,0
+702971bd-fb13-4d37-a92b-a9af36f27a75,Intel Xeon E-2124,180.0,4,3.3,4.3,71,,0
+a85266b6-e47b-4be6-9aec-b7d5e034e623,Intel Core i7-5775C,905.0,4,3.3,3.7,65,Iris Pro Graphics 6200,1
+1a6d1da3-9210-4ab3-9a40-8652f1dab3aa,Intel Core 2 Quad Q6600,361.83,4,2.4,,100,,0
+ee3f09ab-54e1-4999-b428-f2abf85fbd85,Intel Core 2 Quad Q9550,286.27,4,2.83,,95,,0
+b885d5dc-ae3e-49ed-bdc6-619f1f494be1,AMD FX-6350,,6,3.9,,125,,0
+6495af2a-6a26-49fc-9f5b-f0524e47d3d2,Intel Xeon E3-1245 V6,629.95,4,3.7,4.1,73,Intel HD Graphics P630,1
+ef158a67-d1ac-481f-9e77-fd8c04c54e36,Intel Xeon E5-2680 V2,,10,2.8,3.6,115,,1
+82199186-56a1-46f2-939f-d31b46f8dc31,Intel Xeon E5-2630L V3,410.0,8,1.8,2.9,55,,1
+e632ac0c-bfe8-4d19-aafa-11917622fc29,Intel Core 2 Duo E8600,,2,3.33,,65,,0
+1320055e-98ba-46a2-8b8e-19ccaae4aed9,Intel Core i7-4790K,,4,4.0,4.4,88,Intel HD Graphics 4600,1
+39a48c19-b88d-4ac9-9c1c-a71e27d7c509,Intel Xeon E-2288G,,8,3.7,5.0,95,Intel HD Graphics P630,1
+2117b07d-c0cc-4f57-b8cf-f66dfd005be9,AMD A12-9800E,138.02,4,3.1,3.8,35,Radeon R7 (on-die),0
+4c045eed-a920-4621-be39-e60f763d342c,Intel Core i9-9940X,1205.04,14,3.3,4.4,165,,1
+0bcc89c7-a5f8-4fed-990b-f9cf31e9b788,Intel Core i3-6300T,90.03,2,3.3,,35,Intel HD Graphics 530,1
+1d285681-984f-41bf-9400-5c10615dee98,Intel Core i7-920,,4,2.66,,130,,1
+06f9b105-d0e3-4f28-8f8e-e88f42ce6b21,Intel Core i3-3225,,2,3.3,,55,Intel HD Graphics 4000,1
+b2d3a42c-c3a6-4325-b962-ce5b16a0cb98,AMD A8-5600K,,4,3.6,,100,Radeon HD 7560D,0
+92917074-adf2-4f92-955b-98490a4e6c36,AMD A8-5500,,4,3.2,,65,Radeon HD 7560D,0
+25f30983-53fc-4873-a815-459843f04abe,AMD FX-4350,108.02,4,4.2,,125,,0
+33abff83-d42e-4ce8-9e80-4c5c1c0b9fd9,AMD A4-7300,268.64,2,3.8,4.0,65,Radeon HD 8470D,0
+8756550b-ef98-40c0-9355-8a5d75d3f20d,Intel Core i3-6100,209.95,2,3.7,,51,Intel HD Graphics 530,1
+e5e3d475-302f-45e0-9cdb-76a1baab151d,AMD Athlon 5370,,4,2.2,,25,Radeon R3 (on die),0
+2a11c619-d8aa-4d36-8659-0f83355befbb,Intel Core i9-9940X,,14,3.3,4.4,165,,1
+55d51c2f-ca46-4935-adca-510be41b72d0,Intel Core i3-6320,130.0,2,3.9,,51,Intel HD Graphics 530,1
+9fa8f7af-5d5b-4136-9b0c-0311135e30fe,Intel Celeron 440,49.99,1,2.0,,35,,0
+18b5f71d-ce2c-4224-b4e2-dc908e44ef57,AMD Athlon X4 750K,,4,3.4,,100,,0
+d43aec1a-46d9-46aa-8c4c-1c35c4294d79,Intel Core i5-4570T,128.8,2,2.9,,35,Intel HD Graphics 4600,1
+3fab29d3-0154-42a3-ba5e-1078339eb927,Intel Xeon E5-2670,184.91,8,2.6,3.3,115,,1
+4e268529-60c7-4157-a19b-f568e527bfa3,Intel Xeon E3-1220 V2,,4,3.1,,69,,0
+7afd577a-f763-4fc8-90e2-d1287ddf63f9,AMD A8-6500,226.79,4,3.5,,65,Radeon HD 8570D,0
+772adb9b-a20e-4788-af59-8dd7125f3796,Intel Celeron G1840,,2,2.8,,53,Intel HD Graphics,0
+72cae977-f5ff-4a83-87c6-019bb4add83b,Intel Xeon E5-1680 V3,,8,3.2,3.8,140,,1
+4a4eba86-3ab8-4c76-82fb-6c10f9b18281,Intel Core i5-8400T,,6,1.7000000000000002,3.3,35,Intel UHD Graphics 630,0
+522d9ece-c241-439d-aa4c-e77528e07edb,Intel Core i7-9700T,,8,2.0,4.3,35,Intel HD Graphics 630,0
+ac980997-97fa-44ac-9335-6c4b0aa9507a,Intel Core i5-4590T,,4,2.0,,35,Intel HD Graphics 4000,1
+9beb1a60-5ef6-430b-b47a-8694056d8c52,Intel Core i3-10325,,4,3.9,4.7,65,Intel UHD Graphics 630,1
+fd99bf41-7c11-42f5-b675-562f252e977a,Intel Core i5-7400T,78.02,4,2.4,3.0,35,Intel HD Graphics 630,0
+b8c160d4-3908-47f0-bf2b-f3003b7f8107,Intel Xeon E3-1265L V3,398.95,4,2.5,3.7,45,Intel HD Graphics,1
+83fd4d0b-a79f-49d2-af5f-888b4ae0a727,Intel Core i7-6850K,,6,3.6,3.8,140,,1
+1468fc4b-3d7f-4786-8f9a-d7f6d83985f4,Intel Core i3-7100T,109.0,2,3.4,,35,Intel HD Graphics 630,1
+ded505e1-f9d9-4595-86a5-a905abb5d546,Intel Xeon E-2176G,,6,3.7,4.7,80,Intel HD Graphics P630,1
+6966e9fd-37b3-46bf-8d91-0db5a32e53b7,Intel Core i9-9900X,,10,3.5,4.4,165,,1
+3e6f91a7-59c4-4259-98da-ec52c5b97b93,Intel Pentium E2160,49.0,2,1.8,,65,,0
+2c51896f-8650-41ec-9dd1-a08714a53a3d,Intel Core 2 Duo E7400,,2,2.8,,65,,0
+57f08273-9dee-444a-a953-e9d05dde7bc9,Intel Core 2 Quad Q9400,,4,2.66,,95,,0
+126e4665-bccc-4505-bad1-d3e7b2fa3b0a,Intel Xeon E5-2687W,,8,3.1,3.8,150,,1
+098389ae-5b6c-49f1-88a5-bfaf37a1e664,Intel Core i5-5675C,,4,3.1,3.6,65,Iris Pro Graphics 6200,0
+b62fe8ce-f299-4dab-8367-cd48886c4185,AMD Athlon X4 880K,,4,4.0,4.2,95,,0
+d009991f-3c9c-4628-8c80-f5a64c23347d,AMD Ryzen 7 1800X,,8,3.6,4.0,95,,1
+096073ba-5ccc-4c36-a818-513a1086bc5a,Intel Core i5-3330S,229.95,4,2.7,3.2,65,Intel HD Graphics 2500,0
+19ee5cf0-3fc8-4041-b553-1f2845bf1068,Intel Xeon E-2276G,669.6,6,3.8,4.9,80,Intel HD Graphics P630,1
+2c6b4288-0c93-43f6-a3f0-4a353fa6700c,Intel Xeon E5-2650L,149.94,8,1.8,2.3,70,,1
+67ac292e-0d33-4e3d-8efe-89c32b2a020d,AMD A10-9700E,247.98,4,3.0,3.5,35,Radeon R7 (on-die),0
+951fed19-c012-4daa-b898-9b8e7ff2fe83,Intel Core i5-661,80.0,2,3.33,,87,Intel HD Graphics,1
+d0c0d1b9-87b0-46dd-ba73-8db8ef35b983,Intel Xeon E5-2630 V4,409.57,10,2.2,3.1,85,,1
+158e49f8-3097-436c-afad-10634574cd96,Intel Core 2 Duo E8400,76.98,2,3.0,,65,,0
+3afa4462-7d64-4723-92b8-3b29e65a11c3,Intel Xeon E3-1220,115.0,4,3.1,,80,,0
+f630012c-3ef1-4daf-84b8-3ab65a02c03a,AMD Athlon X4 760K,,4,3.8,4.1,100,,0
+8e9dfce0-cebd-4a23-b8cf-8ee307e9beb2,Intel Xeon E3-1225 V3,,4,3.2,3.6,84,Intel HD Graphics P4600,0
+ee8f2e51-1ff1-4e8b-b17e-0e37fa9fe55d,Intel Xeon E3-1271 V3,,4,3.6,4.0,80,,1
+beac2887-4930-4900-a139-16d2eb35d37b,Intel Core i7-5820K,,6,3.3,3.6,140,,1
+b1bbbf36-2b77-41b1-b00a-879d641df692,Intel Core i7-6800K,355.86,6,3.4,3.6,140,,1
+1d7c4f44-dd48-49e5-8cbd-75da506c5168,Intel Core i7-7820X,498.95,8,3.6,4.5,140,,1
+ad0e91cd-3fe0-453d-9ff9-f1f8eca30cd0,Intel Core i5-3570S,,4,3.1,3.8,65,Intel HD Graphics 2500,0
+a4f6728e-fe47-4e79-9c22-4fade52c4f50,Intel Xeon E-2146G,962.69,6,3.5,4.5,80,Intel HD Graphics P630,1
+b1d691a5-5c02-4918-9f9e-9ccb42e56a68,Intel Xeon E3-1240 V6,230.0,4,3.7,4.1,72,,1
+8d2c83d0-0ea3-464a-a983-e2bb792eb712,AMD Athlon II X4 620,59.49,4,2.6,,95,,0
+66d9c512-1789-488e-b9e5-5f305f8a3f5c,Intel Xeon E3-1280 V5,,4,3.7,4.0,80,,1
+7e1f42ef-21d1-4476-9367-cb937648065d,Intel Core i3-540,110.0,2,3.06,,73,Intel HD Graphics,1
+185f66bf-4fc7-4622-ad00-36a11557ba83,AMD A8-3850,,4,2.9,,100,Radeon HD 6550D,0
+e4324133-c3c3-4031-afe3-c21791acdb18,Intel Pentium G630T,75.0,2,2.3,,35,Intel HD Graphics,0
+bd72e3d8-5c8e-47f2-a236-3d89b5ea8acd,Intel Xeon E3-1240 V2,345.0,4,3.4,,69,,1
+7226e6df-4a5c-4998-b679-a1b859cb22e9,Intel Xeon E3-1275 V6,362.84,4,3.8,4.2,73,Intel HD Graphics P630,1
+2950c8d6-6e52-4cbf-9e78-dc1ea46658d6,Intel Core i3-8350K,,4,4.0,,91,Intel UHD Graphics 630,0
+abb2cb54-15c4-4f2c-b1bc-57e907b5b4d3,AMD Threadripper 2950X,,16,3.5,4.4,180,,1
+b2c7a62f-c109-4dd0-bda4-2d4a5456df4e,Intel Core i7-965 Extreme Edition,798.95,4,3.2,,130,,1
+3f57bea0-5ea7-439a-a112-2314772fa034,AMD A10-6700,83.22,4,3.7,,65,Radeon HD 8670D,0
+4956dcaa-5406-4292-bd26-cf5692bda32e,AMD A6-3670K,,4,2.7,,100,Radeon HD 6530D,0
+1ae2d305-9a00-4b33-b829-fcd32ac00de9,Intel Core i5-7600T,147.91,4,2.8,3.7,35,Intel HD Graphics 630,0
+924ab319-bf68-45b2-929f-06020b6d2bc1,Intel Xeon E-2274G,575.0,4,4.0,4.9,83,Intel HD Graphics P630,1
+6ddafa46-6e72-4b38-ad31-9b9d1b92f099,Intel Celeron 420,,1,1.6,,35,,0
+314d888c-6d49-44d2-8676-3689b21315f2,Intel Pentium E2180,,2,2.0,,65,,0
+f29d86e4-fe1f-4124-842e-34d4925f7990,Intel Core 2 Quad Q8400,149.99,4,2.66,,95,,0
+764328b2-d9a3-4bd3-8bde-8c665baf4841,AMD FX-6200,,6,3.8,,125,,0
+e187f51f-1cdd-4828-96f5-18c567f05ef8,Intel Xeon E3-1275 V2,,4,3.5,,77,Intel HD Graphics P4000,1
+84918b7f-eefd-4100-826f-9b9f53253068,AMD 3850,,4,1.3,,25,Radeon HD 8280,0
+f8d9201e-7b49-40ca-85a9-50c33bad95ed,Intel Pentium G3240,,2,3.1,,53,Intel HD Graphics,0
+c8db268b-4511-47f8-8486-67c8a13a47fe,Intel Core i3-6100T,289.95,2,3.2,,35,Intel HD Graphics 530,1
+59e23cbc-0356-47bc-b639-231ffd9bcca1,AMD Athlon 3000G (14nm),,2,3.5,,35,Radeon Vega 3,1
+7416d4e9-59c2-4805-b0bd-2e94333eb6b8,AMD FX-9370,,8,4.4,4.7,220,,0
+95aac312-a4cf-4c0b-92d1-b64d06324c23,AMD FX-8370,283.33,8,4.0,4.3,125,,0
+7ec1ea67-62b3-42be-9cd7-74a7acf2ddb1,Intel Xeon E5-2623 V3,229.95,4,3.0,3.5,105,,1
+42c8ba0b-3285-4858-9305-3684d22d5f1e,Intel Core i5-7500T,250.0,4,2.7,3.3,35,Intel HD Graphics 630,0
+9ef17172-f8e1-4218-afe5-4d503bf3d5de,Intel Pentium E5300,59.49,2,2.6,,65,,0
+392c037e-79f0-4cbe-9603-a1295dc7d8b9,Intel Core i7-880,,4,3.06,,95,,1
+9802cae1-e079-45eb-b7ff-d3ad4dcef1ef,AMD Athlon II X2 250,,2,3.0,,65,,0
+a5995ece-b442-4dc0-93b1-67451aa55f41,AMD Athlon II X2 270,,2,3.4,,65,,0
+76ab359b-e2a8-4705-8762-7f3b96d641f9,Intel Xeon E3-1226 V3,,4,3.3,3.7,84,Intel HD Graphics P4600,0
+58502f0e-f5b3-4bbc-9a6c-af6ead50ffe4,Intel Xeon E5-1630 V3,,4,3.7,3.8,140,,1
+bc19978d-5efc-4ea4-a4f5-d8762462cf0a,AMD Phenom II X2 B59,,2,3.4,,80,,0
+e6380942-346e-4b68-adc9-94b5fa4e5220,Intel Xeon E5-2650 V3,,10,2.3,3.0,105,,1
+6cd43a6c-34d5-4234-82f2-56f372032ad5,Intel Xeon E3-1270 V2,,4,3.5,,69,,1
+d32edc83-eb4b-459a-ac1f-6cda169f385f,Intel Core i7-3770T,,4,2.5,3.7,45,Intel HD Graphics 4000,1
+ab4ba596-495d-4bc5-a822-6dc435e9bfdc,AMD Opteron 6378,,16,2.4,3.3,115,,0
+d92f8ed9-0ef5-40ca-a84f-f258e0d1a708,AMD A6-9500E,,2,3.0,3.4,35,Radeon R5 (on die),0
+135d0076-64af-478b-8434-b7e8a5be40ba,Intel Xeon E5-2650L V4,,14,1.7000000000000002,2.5,65,,1
+eff0c794-d629-4b25-9569-f52d936706af,Intel Core i5-3570,,4,3.4,,77,Intel HD Graphics 2500,0
+8f06f136-827b-4e80-80c8-7597b98808c9,Intel Core i5-8600,256.5,6,3.1,4.3,65,Intel UHD Graphics 630,0
+565f8b1f-3351-435e-ac42-d814bad68137,AMD FX-8350,,8,4.0,,125,,0
+b84e2835-8426-4278-a52d-c449c8794baa,Intel Core i7-860,198.25,4,2.8,,95,,1
+edf3dc06-cf23-4ee1-aa3a-396fe65d5f7b,Intel Xeon E5-4650,,8,2.7,3.3,130,,1
+c51e04d4-0a18-4854-8f89-5fea4c05d1df,Intel Core i5-4690S,,4,3.2,3.9,65,Intel HD Graphics 4600,0
+87a08fe4-281a-4019-869c-13ff615fb8c4,AMD A4-6300B,49.95,2,3.7,3.9,65,Radeon HD 8370D,0
+91826629-bb2c-4e8a-b5b7-765829a10506,Intel Xeon E5-2643 V3,549.95,6,3.4,3.7,135,,1
+118747ac-86f8-4c96-aa5d-dd10fae465ca,AMD Phenom II X4 940 Black,,4,3.0,,125,,0
+02c5b7e7-d285-470d-8265-477063381d21,AMD A8-3870K,,4,3.0,,100,Radeon HD 6550D,0
+52cb741c-f567-46ba-ae77-fe5f9f688bd1,AMD A4-5300,,2,3.4,,65,Radeon HD 7480D,0
+5e0c1067-29f7-4e43-b635-8ea3c07e04b3,AMD FX-4130,,4,3.8,,125,,0
+b80fee38-e30f-4839-b65c-80252b2d09e8,Intel Xeon E3-1240 V3,,4,3.4,3.8,80,,1
+c844d2c2-771d-4e8a-be2a-257ce34582bf,Intel Xeon E5-1650,,6,3.2,3.8,130,,1
+38ad0a77-77d5-4918-9991-6f6184db917b,Intel Core i5-6400T,,4,2.2,2.8,35,Intel HD Graphics 530,0
+3745c060-09b5-4826-9c33-cd3f8805cdf5,Intel Xeon E3-1235L V5,,4,2.0,3.0,25,Intel HD Graphics P530,0
+8b353dcf-5430-43b5-9de0-9083a76ae966,AMD Ryzen 7 1800X,,8,3.6,4.0,95,,1
+0c34dc4e-b46f-4e3d-a072-35a422cb00ec,AMD Athlon 240GE,,2,3.5,,35,Radeon Vega 3,1
+44aa7ddd-7995-41ec-a59c-6b77a1208f2a,Intel Core i5-9400T,,6,1.8,3.4,35,Intel UHD Graphics 630,0
+eae9d4f9-dd6d-4863-985c-8b2fa58ab1df,Intel Core i5-9600T,,6,2.3,3.9,35,Intel UHD Graphics 630,0
+980b1831-6d30-4c1c-af03-7f5ec0f35e50,Intel Xeon E3-1245 V2,367.5,4,3.4,,77,Intel HD Graphics P4000,1
+af62a358-8a33-4ede-9a67-10948fc9123e,Intel Xeon E3-1275,376.99,4,3.4,,95,Intel HD Graphics,1
+cbbf9993-c6e6-4113-92a4-ece972058953,Intel Xeon E5-2687W V2,,8,3.4,4.0,150,,1
+a1d32860-706b-4284-876a-926d06c991b7,Intel Xeon E5-2690,,8,2.9,3.8,135,,1
+e329d4b9-2884-4895-8d59-9e3ef35dd4fc,Intel Xeon E-2124G,210.0,4,3.4,4.5,71,Intel HD Graphics P630,0
+ef7ad69d-cff8-4d0b-8536-3cc4ac9f665d,Intel Core i7-860S,100.0,4,2.5300000000000002,,82,,1
+5ac495af-728a-445c-87b3-d417dae2b2a3,Intel Core 2 Quad Q8300,,4,2.5,,95,,0
+8e63e4b1-ee02-4a8b-8928-078cf7dc1375,Intel Core i7-970,,6,3.2,,130,,1
+ce89e255-6c87-4d55-9078-b91deeb79023,AMD Phenom II X6 1045T,,6,2.7,,95,,0
+1a469b5a-f429-4087-b4fa-429c33949bb4,Intel Xeon E3-1230,417.95,4,3.2,,80,,1
+fedcf13c-69ac-4b29-9c6c-e5fac523a921,AMD A4-4000,,2,3.0,,65,Radeon HD 7480D,0
+858b5853-42c6-4814-af1c-1ed8ca3c7298,Intel Xeon E5-2620 V2,,6,2.1,2.6,80,,1
+0d3c11c2-7673-4f58-b542-a9fa28aec1c8,Intel Xeon E5-2620,,6,2.0,,95,,1
+dd437b0e-ccf7-4e4e-a076-e45f60808827,Intel Xeon E5-1620 V2,,4,3.7,3.9,130,,1
+a193802c-4123-49cf-b301-f8f949c1971d,Intel Xeon E5-2650L V2,,10,1.7000000000000002,2.1,70,,1
+c81e8b84-487a-4147-97ca-99b2f6e14b60,Intel Core i7-5930K,,6,3.5,3.7,140,,1
+16a27603-233b-4b37-ab83-71879ad30f9b,Intel Xeon E3-1225 V5,295.0,4,3.3,3.7,80,Intel HD Graphics P530,0
+6151ea22-368e-40e3-9f36-c9e312e8a249,Intel Xeon E5-2420V2,,6,2.2,2.7,80,,1
+7a0016eb-286f-4391-8e08-6bba38c76e1d,AMD Threadripper 2970WX,,24,3.0,4.2,250,,1
+cc77ee85-a6a0-44fe-a56b-0213bc042c32,AMD Athlon 220GE,,2,3.4,,35,Radeon Vega 3,1
+9996be94-3ac3-4d30-bbda-60a90d3c6d10,Intel Core i5-9500,,6,3.0,4.4,65,Intel UHD Graphics 630,0
+55a56277-726a-404f-9510-b3edeb3dfda7,AMD Athlon II X2 220,,2,2.8,,65,,0
+b6db543c-1575-434a-a0c8-226fb808f0a3,Intel Core 2 Extreme QX6850,449.95,4,3.0,,130,,0
+40ed4095-6caa-4926-993f-1c1201b7752f,Intel Xeon E5-2609,57.99,4,2.4,,80,,0
+0a7da806-2f3f-45f8-b4bd-b3db329f3a7b,AMD Opteron 6328,715.1,8,3.2,3.8,115,,0
+43c8638b-4a73-4a92-a91d-fa4f3ce55e69,Intel Core i5-9400,,6,2.9,4.1,65,Intel UHD Graphics 630,0
+247b180b-f404-4b31-841b-a49fe06622a6,AMD A10-5800K,82.51,4,3.8,,100,Radeon HD 7660D,0
+c99c5ebb-4a7d-47b3-a0b1-749400c09647,Intel Xeon E5-2470V2,529.95,10,2.4,3.2,95,,1
+fa00da4e-742b-4db0-a72e-9298af57f2be,AMD Phenom II X4 955 Black,,4,3.2,,125,,0
+436d1c00-71a0-4674-84b4-5e02b4bcf036,Intel Core i5-680,,2,3.6,,73,Intel HD Graphics,1
+a95f3d95-deeb-4adb-ba81-2eea5398cdf7,Intel Xeon E3-1245 V3,,4,3.4,3.8,84,Intel HD Graphics P4600,1
+c9708583-aeb7-4926-98d7-d14e71c3003b,AMD 5150,,4,1.6,,25,Radeon HD 8400,0
+d6c02747-9b42-4278-a1b0-488926d8f4b8,Intel Pentium G3450,,2,3.4,,53,Intel HD Graphics,0
+30c052fe-404b-4f4c-85f7-b08635f2b412,AMD FX-8370E,,8,3.3,4.3,95,,0
+d4559387-e41d-4e58-9b82-a820e41fdc67,AMD Athlon X4 840,,4,3.1,3.8,65,,0
+3cfba3a4-a4fd-4811-88c9-d44b66b3873e,Intel Xeon E5-2660 V3,198.95,10,2.6,3.3,105,,1
+44650372-70ab-4775-95a5-9c68388927da,Intel Pentium G4560,,2,3.5,,54,Intel HD Graphics 610,1
+1fc71d3b-979c-4b94-aec2-3933daab11ef,Intel Pentium G4560T,79.98,2,2.9,,35,Intel HD Graphics 610,1
+34d95354-19c1-4254-94df-aebaa7dc3bbd,Intel Xeon E3-1230 V6,,4,3.5,3.9,72,,1
+55b0f7b5-2ef2-48d3-a321-e616b90f539a,AMD Threadripper 2920X,,12,3.5,4.3,180,,1
+04ed186d-3ec8-474f-91c6-3151f32984ce,Intel Core i3-9350K,,4,4.0,4.6,91,Intel HD Graphics 630,0
+6c1eceff-86a6-4267-8150-a151821ada4d,AMD Athlon II X4 635,58.02,4,2.9,,95,,0
+547edb00-a0b7-4d03-9b2c-5e3bbfbfd72c,Intel Celeron 430,64.77,1,1.8,,35,,0
+b6387eb4-1e83-4571-9937-4f00d105e36d,Intel Celeron 440,34.99,1,2.0,,35,,0
+0f9b8bb6-e9b2-4b15-b2d8-b2bf1a487003,Intel Celeron G530,68.0,2,2.4,,65,Intel HD Graphics,0
+db00faf5-3846-48af-be2d-03f06e477881,Intel Core i3-3220T,120.0,2,2.8,,35,Intel HD Graphics 2500,1
+6a5dd6a5-84fd-4ab2-ae95-fbad08c10700,Intel Pentium G4600,64.59,2,3.6,,51,Intel HD Graphics 630,1
+8f809fc7-8889-4978-b5ab-2f253806d322,AMD Phenom II X2 555 Black,,2,3.2,,80,,0
+a1d8a226-f431-42b3-9c66-0ba6029f497a,Intel Pentium E2200,54.0,2,2.2,,65,,0
+4bc3eba8-4f9b-4bc9-9d62-8af4056130c6,Intel Core i7-875K,379.98,4,2.93,,95,,1
+fb6d783a-ffb9-4bfe-b354-69ccf9a173cb,AMD Phenom II X6 1075T,,6,3.0,,95,,0
+95462540-c664-4558-a0c3-98513c60f356,Intel Pentium E6800,,2,3.333,,65,,0
+aebea5e7-1db8-4d21-836f-772e150fad0b,Intel Pentium G620,,2,2.6,,65,Intel HD Graphics,0
+44944f07-dc4c-43b5-b0a7-e7370cf3ec7c,Intel Pentium G645,83.0,2,2.9,,65,Intel HD Graphics 2500,0
+0a616f96-ad98-47a3-9f5d-16b8c52726a7,AMD Athlon X2 340,120.0,2,3.2,,65,,0
+bf5d6970-0ba1-4eec-9716-bb67520fadc5,Intel Xeon E5-2670 V2,,10,2.5,3.3,115,,1
+fd71079d-c7dc-4d95-bdfd-d68de1ee09f3,Intel Xeon E5-2687W,,8,3.1,3.8,150,,1
+b1500e48-aaab-4eb0-b999-b7f8ca7f52c1,Intel Xeon E5-1620 V4,186.52,4,3.5,3.8,140,,1
+da2e04fe-d5b8-486c-9270-a6b38aa31547,Intel Core i7-7800X,,6,3.5,4.0,140,,1
+f36ed5a3-dfd3-4b9f-bab1-76b491558250,Intel Core i5-9400,,6,2.9,4.1,65,Intel UHD Graphics 630,0
+a4ea8471-2819-400f-a1b0-c9b57fc93d9f,AMD A6-7480,,2,3.5,3.8,65,Radeon R5 (on die),0
+f9790ef4-2690-49fb-a526-5f4a680125f6,Intel Xeon E3-1275 V2,374.0,4,3.5,,77,Intel HD Graphics P4000,1
+5bcad67c-a623-47fa-b8b1-982fc4786b35,AMD Athlon II X3 435,159.94,3,2.9,,95,,0
+2b085e41-513f-4212-9873-761f687d9347,Intel Core i7-6900K,355.06,8,3.2,3.7,140,,1
+184568dc-c151-48c3-b865-d69259a00cdc,Intel Xeon E5-2683 V3,,14,2.0,3.0,120,,1
+9137f175-2a0c-4fc6-a91d-e72a6d22a853,AMD Phenom II X2 550 Black,,2,3.1,,80,,0
+b3f4496a-3988-4d2c-b636-e18f1069f68c,Intel Core 2 Duo E6550,,2,2.33,,65,,0
+04d111a9-1860-4d5c-a4ad-ede6505a0888,Intel Core i7-975 Extreme Edition,,4,3.33,,130,,1
+4de96432-6ba5-4248-b865-e5ee669bc01e,AMD Athlon II X3 450,,3,3.2,,95,,0
+ac081ef2-4130-42a3-91a5-a83e0c4c7df9,AMD A4-3400,134.09,2,2.7,,65,Radeon HD 6410D,0
+4f08d65d-d7ac-44d5-b5c8-f95a11383711,AMD A6-5400K,,2,3.6,,65,Radeon HD 7540D,0
+762d817c-65ee-44a9-9259-07750dbd0213,Intel Xeon E3-1280,,4,3.5,,95,,1
+22bd9760-3259-42e3-ae53-bbcf5a78f98a,AMD FX-9590,,8,4.7,5.0,220,,0
+68edea0c-2c1d-4629-ac78-3e4dfba393eb,Intel Xeon E3-1245 V3,,4,3.4,3.8,84,Intel HD Graphics P4600,1
+9d17d7bf-85a7-4fec-b362-64b7c20963b1,Intel Core i7-7700T,,4,2.9,3.8,35,Intel HD Graphics 630,1
+16a06020-e49a-4523-9904-b9616aea6aac,Intel Core i9-7960X,,16,2.8,4.4,165,,1
+9d2e2482-bf0a-4702-9ec1-90c1376cae87,Intel Pentium G2130,,2,3.2,,55,Intel HD Graphics,0
+de49a165-bb05-421b-9281-f085e2c09efd,Intel Xeon E5-2660 V2,,10,2.2,3.0,95,,1
+56689ea9-7754-4d57-bbdc-6b29b0b0e889,Intel Xeon E3-1285 V6,949.95,4,4.1,4.5,79,Intel HD Graphics 630,1
+cd819bbc-7826-43ef-b525-2e7866c3048c,Intel Xeon E5-2630 V2,,6,2.6,3.1,80,,1
+bd2e91df-9bb4-4ab9-9278-77e685ad517e,Intel Core 2 Duo E4500,,2,2.2,,65,,0
+cdf5f11f-69d4-43bc-807b-23583260dadf,Intel Core 2 Duo E7200,80.98,2,2.5300000000000002,,65,,0
+bd41fd34-20a7-457e-a4ec-3d427e739d68,Intel Core i7-870,229.95,4,2.93,,95,,1
+78704d65-6fb6-47c9-9bcd-07b4f319d4ff,Intel Core 2 Extreme QX6700,605.64,4,2.66,,100,,0
+0830486a-dae3-4fbd-aebc-1d67849e46be,Intel Celeron G1620,,2,2.7,,55,Intel HD Graphics,0
+1bc7928b-60c2-405d-846e-f8fec9270984,Intel Xeon E5-2640,93.99,6,2.5,3.0,95,,1
+c66df848-e8ec-4b6b-b97a-43b131c7ac7f,Intel Core i3-4360,,2,3.7,,54,Intel HD Graphics 4600,1
+3796711c-b358-4535-b64e-797d220757b1,AMD FX-4100,,4,3.6,,95,,0
+844a8236-c3fd-47c5-95ae-6fe2f9c3699f,Intel Xeon E5-2643 V2,398.95,6,3.5,3.8,130,,1
+f21348a5-aff3-4428-9384-bcff1575e3bc,Intel Core i7-5960X,,8,3.0,3.5,140,,1
+03589a6c-d8d9-49e5-8045-d4f04aab0491,Intel Xeon E5-2697 V3,,14,2.6,3.6,145,,1
+586cf42e-e593-416a-88c8-971459b5657c,Intel Xeon E5-2670 V3,,12,2.3,3.1,120,,1
+99f46eb3-85c1-4d51-baa0-73bff01a5bb9,Intel Core i5-4570S,,4,2.9,,65,Intel HD Graphics 4600,0
+7955393d-540b-47e1-a2c7-2ca223272441,Intel Pentium G3470,94.0,2,3.6,,53,Intel HD Graphics,0
+18dee686-45ff-4359-9205-c532e6f27b93,Intel Xeon E3-1245 V5,,4,3.5,3.9,80,Intel HD Graphics P530,1
+a80f95dd-280e-4369-b9fd-ac0ed85c2759,Intel Xeon E5-2609 V4,304.29,8,1.7000000000000002,,85,,0
+986dafdd-7c6a-4976-bc1b-21c28252e2ed,Intel Core i5-9500F,,6,3.0,4.4,65,,0
+adb3093d-9d22-4daa-8667-f7c148841dd8,Intel Core i3-9350K,,4,4.0,4.6,91,Intel HD Graphics 630,0
+adc753c2-0891-48b7-833d-895a7e10de2a,Intel Core i3-2125,152.0,2,3.3,,65,Intel HD Graphics 3000,1
+bdf2c2b8-4406-42cf-837a-6255d1339579,Intel Xeon E-2104G,327.81,4,3.2,,65,Intel HD Graphics P630,0
+2655af23-a247-46b4-a8a7-1d433de45384,Intel Core i3-3245,80.0,2,3.4,,55,Intel HD Graphics 4000,1
+51e7fff7-e4d5-4c47-90b7-06253a8b059a,Intel Xeon E3-1220 V6,389.95,4,3.0,3.5,72,,0
+6e0a7191-454f-4cbf-b893-bca5d11674fb,Intel Xeon E-2174G,549.95,4,3.8,4.7,71,Intel HD Graphics P630,1
+1639356a-ccfb-4a29-9136-778512994f1d,Intel Celeron 430,,1,1.8,,35,,0
+bd605273-cb35-4442-979e-4d08dd974cbe,Intel Celeron E3400,,2,2.6,,65,,0
+2a64cf88-5ff5-47f1-9f7c-d21a415c229e,Intel Core 2 Quad Q6700,,4,2.66,,100,,0
+a2b91106-d9a1-42bf-901b-30905f5daffd,Intel Core i3-2100T,,2,2.5,,35,Intel HD Graphics 2000,1
+69c0f76f-7ed8-4b1b-baa1-1a2d613e7c8c,AMD Phenom II X4 975,,4,3.6,,125,,0
+70c01cf4-ef30-4069-a42c-b107e4af5961,AMD Phenom II X4 840,,4,3.2,,95,,0
+dea5d055-3c92-41e0-b3dc-fa92e8cbd3bf,Intel Xeon E3-1225 V2,199.99,4,3.2,,77,Intel HD Graphics P4000,0
+cc5f25d1-ea7d-45ca-9962-cd67efadb29a,Intel Xeon E3-1265L V2,,4,2.5,,45,Intel HD Graphics 2500,1
+2d5e155f-b886-4e04-b37f-5465bafc5856,AMD A10-6790K,,4,4.0,4.3,100,Radeon HD 8670D,0
+9c2474ae-9a50-4cea-babc-4982385adc0f,Intel Celeron G1820,,2,2.7,,53,Intel HD Graphics,0
+099b6ecb-81a5-48e8-b5bd-0944ce34c79b,AMD A10-6800K,,4,4.1,,100,Radeon HD 8670D,0
+0afb76e4-1da7-4860-aea7-87ac8515d674,Intel Xeon E5-2650L V3,,12,1.8,2.5,65,,1
+a91067ba-90b1-44bd-953e-d235a31f7126,Intel Core i3-3240,,2,3.4,,55,Intel HD Graphics 2500,1
+57ec6fb7-ac09-4e02-9f7d-bbab6255e375,Intel Core i7-4770T,,4,2.5,,45,Intel HD Graphics 4600,1
+e541ace9-9e1d-44d5-8404-7ef243f4aa01,Intel Core i5-6500T,,4,2.5,3.1,35,Intel HD Graphics 530,0
+526a637d-810c-41e1-a726-773c7278a754,Intel Pentium G4400,,2,3.3,,54,Intel HD Graphics 510,0
+96ae8287-a15f-4a10-b901-586be2d5ac09,Intel Xeon E5-1650 V4,,6,3.6,4.0,140,,1
+e1f8eeec-55bd-44c0-873c-caf2f49b332a,Intel Core i3-7350K,,2,4.2,,60,Intel HD Graphics 630,1
+88791cca-86bb-4145-a600-2ca6c581baf2,Intel Celeron G3950,,2,3.0,,51,Intel HD Graphics 610,0
+39b2bdf0-a665-48fb-87b7-231c447d0753,Intel Pentium Gold G5500,,2,3.8,,54,Intel UHD Graphics 630,1
+830cd0e4-7a8a-4b7f-a53b-9eef2a750668,Intel Pentium Gold G5600,,2,3.9,,54,Intel UHD Graphics 630,1
+7d1a8723-150c-49b1-88fd-befa8a7fb40e,Intel Pentium G3460,54.49,2,3.5,,53,Intel HD Graphics,0
+d1508aec-7c8f-4264-a23a-a10b0224bab4,AMD Phenom II X4 830,59.58,4,2.8,,95,,0
+2d2d4ccc-1adf-4ab4-842a-1fd1d4af9b54,Intel Pentium G3460,64.48,2,3.5,,53,Intel HD Graphics,0
+6b41923d-7925-4fe7-997b-174d568bfed9,Intel Xeon E5-2603 V3,99.26,6,1.6,,85,,0
+fb81f49b-3c2e-41c3-bfec-62a8e167eef0,Intel Xeon E3-1220 V5,354.97,4,3.0,3.5,80,,0
+35a0fe67-f711-4a8e-a09c-90742156c910,AMD A6-7470K,89.0,2,3.7,4.0,65,Radeon R5 (on die),0
+230fd115-4b8e-43cc-8fd7-e00a5a9c68ae,Intel Pentium G4620,249.95,2,3.7,,51,Intel HD Graphics 630,1
+701e2e5e-5337-4ff6-b794-304f2ed2ebf1,Intel Celeron 450,,1,2.2,,35,,0
+efff2716-e28a-4611-98e1-1232b5b3cbb4,Intel Celeron E1200,,2,1.6,,65,,0
+09d260bd-51ba-4d9c-a943-7e09019f06c9,Intel Core 2 Duo E6400,129.94,2,2.13,,65,,0
+8f5a1cdb-e587-44f6-8c1c-5b67b720079c,Intel Core 2 Duo E6750,,2,2.66,,65,,0
+55b41b99-22e7-4ae0-8e05-1ac844bcf05d,Intel Core 2 Duo E6750,129.94,2,2.66,,65,,0
+f25be23e-92c0-47c7-9545-4a39d159406e,Intel Core 2 Quad Q9450,,4,2.66,,95,,0
+14105e9f-cf85-4655-a743-fd74a08a9f03,Intel Core 2 Extreme X6800,499.95,2,2.93,,75,,0
+f7e0213a-4e91-4e3a-a206-b29bd0c370d9,AMD Athlon II X4 645,,4,3.1,,95,,0
+32162932-eff8-4c51-8d00-43c0e49313aa,AMD Phenom II X4 970 Black,,4,3.5,,125,,0
+a04b3495-4741-459d-a640-85d48c20f9f4,AMD Sempron 140,,1,2.7,,45,,0
+e35db3a5-18ff-4310-b0d4-70047b7f798e,AMD Phenom II X4 965,,4,3.4,,125,,0
+8889681e-0a2f-4584-b031-b71dade61bcd,AMD Phenom II X4 980 Black,,4,3.7,,125,,0
+b3799413-0bcd-40e2-9c97-00690ca3c1f9,AMD A6-3500,,3,2.1,,65,Radeon HD 6530D,0
+c7719b9d-1f9a-4d83-98fd-5a9b66f0ea00,Intel Core i5-2550K,,4,3.4,,95,,0
+3b662897-9f6b-4c30-b214-99fbf990c66e,Intel Pentium G640T,84.88,2,2.4,,35,Intel HD Graphics,0
+b8fb4772-6f4e-4e9d-8a50-d9bfa014af43,Intel Pentium G2120,52.0,2,3.1,,55,Intel HD Graphics,0
+6d09795b-9ec7-40d3-b14e-6143f136cc08,Intel Xeon E3-1245,245.0,4,3.3,,95,Intel HD Graphics,1
+94601bb1-bb3f-4cce-94ed-478950af7c8b,AMD Athlon X4 740,,4,3.2,,65,,0
+96852172-f07a-47cd-aa24-294c0be76143,Intel Pentium G2140,45.0,2,3.3,,55,Intel HD Graphics,0
+59bd075c-2c37-4541-824f-b4674ce795e9,Intel Xeon E5-2665,420.71,8,2.4,3.1,115,,1
+c2b8de9a-6abf-4645-8fa8-54b55b5d2ab2,Intel Celeron G1850,,2,2.9,,53,Intel HD Graphics,0
+b00175c3-e32e-4d35-a6f8-059b8cd10cfc,AMD Sempron 150,,1,2.9,,45,,0
+bd811055-7a1d-4c7a-a767-5a540c674ec9,AMD A10-7800,,4,3.5,3.9,65,Radeon R7 (on-die),0
+82588433-f167-4f1b-9cbd-000fe2a02153,AMD A4-3450,,2,2.9,,65,,0
+d4af8691-4341-496b-ac97-bbda1c9677a5,Intel Celeron G470,,1,2.0,,35,Intel HD Graphics,1
+d80d9618-af4d-49b7-8b96-b62a08b58282,Intel Xeon E3-1276 V3,,4,3.6,4.0,84,Intel HD Graphics P4600,1
+a0af6507-4ce3-457a-b872-d88efe513ff2,Intel Xeon E5-2680 V3,,12,2.5,3.3,120,,1
+531e6b63-7e36-4eb8-9db4-bd033861d942,Intel Xeon E3-1240 V5,288.24,4,3.5,3.9,80,,1
+0a4a81a1-bd12-4bfa-adfe-ee3d3a9a5111,Intel Xeon E3-1260L V5,,4,2.9,3.9,45,,1
+c4fef577-fbe4-4f39-8007-9dd373af46bb,Intel Core i7-6950X,,10,3.0,3.5,140,,1
+903c83a0-e37c-460d-bc35-077746d04870,Intel Core i5-7600T,229.95,4,2.8,3.7,35,Intel HD Graphics 630,0
+ddf99e81-96db-4479-b56b-f2c3fb9fe551,AMD A8-7670K,,4,3.6,3.9,95,Radeon R7 (on-die),0
+98ccdb27-e9c4-42eb-ac48-83a4c4f3b7ad,Intel Xeon E5-2450V2,,8,2.5,3.3,95,,1
+27c33de2-eacb-475a-9c07-e1e0c60bcdb3,Intel Core i3-8300,,4,3.7,,62,Intel UHD Graphics 630,0
+c695f5f2-f9bd-466d-b9af-c0aa4e26c88f,Intel Core i9-7940X,,14,3.1,4.4,165,,1
+aebda786-3c93-4277-b5a0-38677b3ac48f,Intel Core i3-9300,,4,3.7,4.3,62,Intel UHD Graphics 630,0
+81d5256b-7fd3-442f-8ce7-94e054485e52,Intel Core 2 Duo E4300,,2,1.8,,65,,0
+8dabce57-c6b1-4261-9dc7-27d544e86a73,AMD Phenom II X6 1035T,,6,2.6,,95,,0
+898ee705-e2a0-4bb3-a750-23dbf80cafa1,Intel Pentium G3430,61.57,2,3.3,,54,Intel HD Graphics,0
+acf027db-9dca-4935-8751-246343f7d2aa,Intel Xeon E5-2620,77.0,6,2.0,,95,,1
+a1e81e9c-10d8-40ca-b256-5b9aa00919f3,Intel Xeon E5-2637 V3,470.62,4,3.5,3.7,135,,1
+7e379a61-bcdf-42b3-9de2-98f3272fa287,Intel Xeon E5-2695 V3,498.95,14,2.3,3.3,120,,1
+38170d9d-1c6e-4b4c-a28b-b8144211cf2d,AMD Opteron 6328,715.11,8,3.2,3.8,115,,0
+73ae01f7-d7f7-4c79-9d5e-3bbe325b64ef,Intel Core i9-7920X,,12,2.9,4.4,140,,1
+6fc099a8-a2c0-44a7-93d6-8d242af3b831,Intel Celeron 420,,1,1.6,,35,,0
+b5f18a12-9334-4389-9a8a-31f1d3f78992,AMD Phenom II X4 920,,4,2.8,,125,,0
+8dfa79bd-cfc8-4acb-ad23-d0a2daee1962,Intel Celeron E1600,,2,2.4,,65,,0
+ef702e85-dfc8-4025-9b98-c1f0e6ce9bf1,Intel Core 2 Duo E4300,70.0,2,1.8,,65,,0
+7a1df0c3-7397-481c-b265-848040858216,Intel Pentium E5500,,2,2.8,,65,,0
+77adfd09-4a58-4652-b591-be323d0aa29f,Intel Core 2 Duo E6320,,2,1.8599999999999999,,65,,0
+addc591a-649c-4a22-8679-95d629219895,Intel Core 2 Duo E6320,198.95,2,1.8599999999999999,,65,,0
+aa95cceb-4e16-43fd-a213-efafb971f904,Intel Core 2 Duo E6420,149.94,2,2.13,,65,,0
+19e23a26-e54e-427f-a2d8-729065c47e5d,Intel Pentium E6500,88.54,2,2.93,,65,,0
+f19d55c7-38ff-45fb-8af5-3581c698e875,Intel Core i5-655K,,2,3.2,,73,Intel HD Graphics,1
+0109b771-f30d-4d59-81d0-827f6aad6ac3,Intel Core i5-670,127.01,2,3.46,,73,Intel HD Graphics,1
+e7e65979-64ee-4024-a2a2-94e24bd2404e,Intel Core 2 Quad Q9550,,4,2.83,,95,,0
+bfece7c7-8ec3-428b-91ce-f6ffd6081cd4,AMD Phenom II X4 840,,4,3.2,,95,,0
+b8ea3aa5-f301-4188-9987-82361192511e,Intel Pentium E5800,,2,3.2,,65,,0
+0f39e4b1-59c9-45fc-9bc3-a9c76088764a,AMD A6-3650,,4,2.6,,100,Radeon HD 6530D,0
+bffee184-3033-453b-bc96-97fb6016d976,Intel Celeron G540,69.98,2,2.5,,65,Intel HD Graphics,0
+d39f0f73-a284-45cc-ac8b-3be3374b5c8f,AMD Phenom II X4 960T Black,,4,3.0,,95,,0
+f439dc82-fd16-4cee-a445-54d834c3d3f6,AMD Athlon II X4 641,,4,2.8,,100,,0
+715bec59-81e4-4444-8444-164870e73fcd,AMD FX-8300,,8,3.3,,95,,0
+0d23652d-577f-4bc4-a4a3-98e5c007d557,Intel Xeon E3-1235,219.0,4,3.2,,95,Intel HD Graphics,1
+3af01774-f5fe-4108-9c29-d811f1bb4e15,Intel Pentium G2010,,2,2.8,,55,Intel HD Graphics,0
+2c3aa4a0-705b-452a-ada8-a1c7cc563d3d,Intel Xeon E5-2690,,8,2.9,3.8,135,,1
+f767a4d7-d01e-4333-84e3-f333abcd47fd,AMD 5150,,4,1.6,,25,Radeon HD 8400,0
+af9521cd-4481-45f5-a97f-c0deea66f175,Intel Xeon E5-2630L V2,,6,2.4,,60,,1
+6124bf5c-f69d-4ab4-80ec-4b9f847322d2,AMD A8-7600,,4,3.1,3.8,65,Radeon R7 (on-die),0
+49722504-9f4c-42f1-bde1-c8269caddb70,AMD Sempron X2 250,,2,3.2,3.6,65,,0
+37f86cae-13e4-4bd7-b41d-21b72069fed3,Intel Xeon E5-2640 V3,426.99,8,2.6,3.4,90,,1
+b2ace66b-2d00-4b43-9db1-4887279b7388,Intel Xeon E5-2695 V3,,14,2.3,3.3,120,,1
+8b476aa6-b235-47a9-8385-a8e4ed90c374,Intel Xeon E3-1270 V3,,4,3.5,3.9,80,,1
+f43cd6a0-8b82-410c-ba64-4cc7d1429c44,AMD FX-8310,,8,3.4,4.3,95,,0
+6e58e091-baf9-4d85-9092-b57f855df1a4,Intel Pentium G4400T,,2,2.9,,35,Intel HD Graphics 510,0
+f200e2cf-55d9-4ffd-991b-90c500ad596f,Intel Xeon E3-1270 V5,,4,3.6,4.0,80,,1
+ce76e861-bc59-4eb2-ad36-32ece088103a,AMD Opteron 6378,,16,2.4,3.3,115,,0
+bfdfefd6-dab5-46fc-97ce-7c68f174476b,Intel Core i7-6800K,,6,3.4,3.6,140,,1
+3c7d661f-820f-4014-a1a7-2aa21ea55af3,AMD Athlon X4 870K,,4,3.9,4.1,95,,0
+f2ed2c88-89cb-4924-a36a-c05a56c5d24c,Intel Core i3-7300T,125.36,2,3.5,,35,Intel HD Graphics 630,1
+5c08a47f-62c0-4cc0-8a5b-18e280fb35d7,Intel Core i9-7900X,,10,3.3,4.5,140,,1
+772f99a4-9887-4896-9fb5-5905e7433524,Intel Xeon E3-1245 V6,589.95,4,3.7,4.1,73,Intel HD Graphics P630,1
+edb931a6-d5b9-4758-87b1-7a82943bd54c,AMD Athlon X4 940,,4,3.2,3.6,65,,0
+d8036862-4962-49c6-a4a3-194cccd895db,Intel Core i3-8300T,,4,3.2,,35,Intel UHD Graphics 630,0
+a5f44a31-ab82-4995-9002-85b82f5ec600,Intel Pentium Gold G5500,,2,3.8,,54,Intel UHD Graphics 630,1
+0235a7bf-0def-444d-8bff-29f62dd4c387,Intel Core i9-9920X,,12,3.5,4.4,165,,1
+23bd09fa-63e9-4044-9dd3-fb3649b59fa2,Intel Xeon E5-2660,,8,2.2,3.0,95,,1
+f788a72b-f34c-4183-a4fc-7eb026e04cfa,Intel Core i5-9500F,,6,3.0,4.4,65,,0
+5eb50666-84a4-478f-9d60-5e496c8cfa52,Intel Xeon E-2244G,,4,3.8,4.8,71,Intel HD Graphics P630,1
+0e29d49d-22c6-41d7-81b2-ba271f574d13,Intel Xeon E-2246G,,6,3.6,4.8,80,Intel HD Graphics P630,1
+7b65e0c2-93e4-466b-96fa-56e08ebbd376,Intel Celeron G5925,,2,3.6,,58,Intel UHD Graphics 610,0
+ab98fce8-030c-45c5-9012-a8339f4133f2,Intel Pentium G6950,47.48,2,2.8,,73,Intel HD Graphics,0
+1321ff31-57f1-4118-92ae-8461495e6d12,Intel Celeron E3300,64.78,2,2.5,,65,,0
+6f610cf6-3d86-4c97-be85-fe133243e53b,Intel Core i5-660,255.29,2,3.33,,73,Intel HD Graphics,1
+83476efa-8215-4687-b25e-253e6d5400e9,Intel Core i3-2105,60.0,2,3.1,,65,Intel HD Graphics 3000,1
+3815884e-91e1-43f0-93d0-2cab49abacc4,Intel Xeon E5-2603,98.95,4,1.8,,80,,0
+f680917f-6c7b-4743-a981-e8b2b6cc4305,AMD Athlon II X2 250u,,2,1.6,,25,,0
+1a7bbfda-c3b2-424f-937d-6c9d3c617dce,AMD Phenom II X3 740 Black,,3,3.0,,95,,0
+33fa78ad-9d39-4b19-99e5-3a4272867f5f,Intel Celeron E1400,,2,2.0,,65,,0
+72c72be8-c689-4250-b04e-6aa6eba1f48b,Intel Core 2 Duo E4400,108.0,2,2.0,,65,,0
+d870e118-2a2a-45a7-9762-1d39bfb9c635,Intel Pentium E5200,,2,2.5,,65,,0
+163fbf34-4782-4fd2-a2fc-5c505bdbd525,Intel Pentium E6300,,2,2.8,,65,,0
+766d1ec5-1b93-43dc-9153-302e3664dbd3,Intel Core 2 Duo E6550,149.94,2,2.33,,65,,0
+a00fd359-6341-4241-8c6c-b7bef96767d6,Intel Core 2 Duo E7500,,2,2.93,,65,,0
+ee158564-95fc-4b38-9642-cec32abc00ea,Intel Core 2 Duo E7600,169.95,2,3.06,,65,,0
+315b97a6-ef38-4ff1-a48a-b6bf66a694c8,Intel Core i5-750,398.0,4,2.66,,95,,0
+8434ddad-455b-412a-80a1-d62f1282eccc,Intel Core 2 Quad Q9300,172.0,4,2.5,,95,,0
+4a00aee1-121b-4b97-bf52-82051949e913,Intel Core 2 Quad Q9505,249.95,4,2.83,,95,,0
+9d26b4ea-ea7b-4426-a857-3219b8b94484,Intel Core 2 Quad Q9550S,,4,2.83,,65,,0
+4f12a72b-c31b-4599-9911-863046a66d68,AMD Athlon II X2 245,,2,2.9,,65,,0
+921cee8f-dee0-4877-8ed8-bca00fb824c4,AMD Athlon II X3 460,,3,3.4,,95,,0
+0dcfd6b8-8e55-4ff4-b10a-d84fc0a5cbcd,AMD Sempron 130,,1,2.6,,45,,0
+75724c29-5d36-4953-bd2e-c5ac173a73a0,AMD A4-3400,,2,2.7,,65,Radeon HD 6410D,0
+eca30c50-a5ff-44e8-914e-c2092929420c,AMD A8-3850,,4,2.9,,100,Radeon HD 6550D,0
+72d3fb04-d0fd-40a0-ba36-a9b5fa7c1969,Intel Pentium G870,77.0,2,3.1,,65,Intel HD Graphics,0
+f4afe85b-cec7-4e0e-b648-02fb85322a3e,Intel Xeon E3-1225,,4,3.1,,95,Intel HD Graphics,0
+60a7526b-ec81-472f-a8eb-bb639415d1fa,Intel Xeon E3-1240,,4,3.3,,80,,1
+759aaca0-12bb-44b3-8cd9-88e7b9fb00f4,AMD Sempron 145,,1,2.8,,45,,0
+3b48948a-57b5-4e29-bb0e-e28bcf34b4e9,AMD A4-4000,,2,3.0,,65,Radeon HD 7480D,0
+e8bbac40-d04c-46d3-adb9-997f6ae22cb8,Intel Core i3-4160T,,2,3.1,,35,Intel HD Graphics 4400,1
+41a55d9b-01a9-4567-9264-9b763c459c97,AMD Athlon X4 860K,,4,3.7,4.0,95,,0
+7217fe74-3ace-4d0f-bdcd-4158575ce971,AMD FX-8370E,,8,3.3,4.3,95,,0
+f6cb6795-d1e4-4642-a46e-e6bee819e7a3,Intel Xeon E5-1620 V3,,4,3.5,3.6,140,,1
+f3101a2a-2386-4355-97f4-a4babb55fbdf,AMD Pro A10-7800B,,4,3.5,3.9,65,Radeon R7 (on-die),0
+10699bdf-73c0-42f6-a9ac-9d4cfe73826d,AMD Phenom II X6 1065T,,6,2.7,,95,,0
+f21612aa-ba32-4bc1-93be-0329029c713f,Intel Xeon E5-2630 V2,,6,2.6,3.1,80,,1
+94059a75-dcf5-45af-96d7-acf955f37326,Intel Core i5-6600T,,4,2.7,3.5,35,Intel HD Graphics 530,0
+32bb2e8f-0ed2-4761-9e47-8cced0037a56,Intel Core i7-6700T,,4,2.8,3.6,35,Intel HD Graphics 530,1
+9b2095d1-238f-4948-aaf6-d5ca771181a5,Intel Xeon E3-1270 V5,,4,3.6,4.0,80,,1
+2ac8bd19-a7b2-471f-a74a-15c35c917592,Intel Xeon E5-2603 V4,449.95,6,1.7000000000000002,,85,,0
+14435b47-3307-4387-9da2-6ccf8906deee,Intel Core i3-7300,,2,4.0,,51,Intel HD Graphics 630,1
+74e08503-33c8-43dd-86ef-f113744e5e7f,Intel Core i3-7300T,125.36,2,3.5,,35,Intel HD Graphics 630,1
+ab354f51-7cd0-4cc3-8dfc-732399d5a628,Intel Core i7-7740X,,4,4.3,4.5,112,,1
+4644e839-092b-4e8c-9a3e-854ff99be98e,Intel Core i5-7640X,225.4,4,4.0,4.2,112,,0
+8dad55b6-34c2-47b3-b86b-2adf7de86320,Intel Xeon E3-1270 V6,719.95,4,3.8,4.2,72,,1
+031b0c31-882d-4122-a06f-c980751fefe4,Intel Core i3-4360,,2,3.7,,54,Intel HD Graphics 4600,1
+d6e93c4c-b794-4b6e-989d-799bd688b937,Intel Core i9-9820X,,10,3.3,4.1,165,,1
+01346f9a-5ed2-4815-9599-068e559da5d8,Intel Core i7-9800X,,8,3.8,4.5,165,,1
+d98a4739-29f8-464f-922d-578e1acb61a2,Intel Xeon E5-2665,,8,2.4,3.1,115,,1
+9bad2241-d9ac-424f-b4c0-0afe9a586d5f,Intel Core i5-9600,,6,3.1,4.6,65,Intel UHD Graphics 630,0
+568b61ab-d277-4697-ad93-7fa580ecb7fb,Intel Xeon E-2146G,,6,3.5,4.5,80,Intel HD Graphics P630,1
+48d280a6-c812-41b2-8102-842bdbb38f07,Intel Pentium E5300,79.4,2,2.6,,65,,0
+38c528ca-d0bc-49c3-a9aa-52b3f3454bb9,Intel Core i5-750S,125.0,4,2.4,,82,,0
+3f90fe12-5f01-4eb6-a08c-c647afd832a4,Intel Xeon E3-1280 V6,562.0,4,3.9,4.2,72,,1
+b67383e2-8696-46b1-9fe1-22880be6e5bc,Intel Core i3-9320,,4,3.7,4.4,62,,0
+13b6ca08-ac7a-41e9-92ac-b786ebe9e34e,AMD Phenom II X6 1055T,,6,2.8,,125,,0
+74ce2507-cf20-4033-bd85-2a2c75ea572f,AMD Athlon II X2 235e,,2,2.7,,45,,0
+b7606e9d-920f-4aca-aabd-235949144a37,AMD Athlon II X2 260u,,2,1.8,,25,,0
+8bfebdbf-28a1-4ccd-94c6-55268d619668,AMD Phenom II X4 955 Black,,4,3.2,,125,,0
+d54d1fb4-565c-4ae6-8c78-aa5c34556043,Intel Pentium E2140,,2,1.6,,65,,0
+7b905795-f028-4df9-b7da-47c0654d586b,Intel Pentium E2140,,2,1.6,,65,,0
+9d0bd125-1487-4820-83e7-b4e33e19c278,Intel Core 2 Duo E4600,,2,2.4,,65,,0
+e2d404d2-2745-4b43-80df-c9f8fdc4c753,Intel Pentium E6500,,2,2.93,,65,,0
+49f1f47c-66b6-4cad-8549-257ee0d14169,Intel Pentium E6600,,2,3.06,,65,,0
+ad11ac77-da1d-4b63-8135-32acd215935f,Intel Core 2 Duo E8600,,2,3.33,,65,,0
+651bb0b7-9579-4c11-bc4e-154957426aaf,Intel Core i7-930,,4,2.8,,130,,1
+bff1f2b9-e1e0-4ed4-948b-a92c1581ad2c,Intel Core 2 Quad Q9400,,4,2.66,,95,,0
+0df00d81-a63d-4217-bab3-812fda58b395,Intel Core 2 Quad Q9400S,,4,2.66,,65,,0
+5f9e8193-a9e3-4db5-b735-721db305db45,Intel Core 2 Quad Q9400S,,4,2.66,,65,,0
+dcd4cfb1-1130-4205-bde4-923fccdbc418,AMD Athlon II X3 455,,3,3.3,,95,,0
+7ba60af9-78d7-47c8-905c-f0064a894673,Intel Core i5-2405S,,4,2.5,,65,Intel HD Graphics 3000,0
+79a20eb3-6a96-41e3-9be6-3fa5e294ce5a,Intel Pentium G860,,2,3.0,,65,Intel HD Graphics,0
+28f6d93c-812a-4ac7-8f8b-46dff22d5aa8,AMD FX-8150,,8,3.6,,125,,0
+bc4fbbe5-c294-4dcb-9b9f-2ff5d32921b6,AMD FX-8100,,8,2.8,,95,,0
+bede09fd-32c2-4bac-bb49-1f05a6d057ed,AMD Phenom II X4 975,172.56,4,3.6,,125,,0
+548c31a8-97e8-466f-9dfc-86d97a66a577,Intel Core i5-2450P,,4,3.2,,95,,0
+4f03fd8b-01b1-4eed-9e60-ee6fd31e7364,AMD FX-4170,,4,4.2,,125,,0
+87f774fc-44cc-4928-beaf-b1f2de5006f6,AMD FX-8150,,8,3.6,,125,,0
+7e5b2297-b44d-4682-a546-f6f82102d237,Intel Pentium G550,,2,2.6,,65,Intel HD Graphics,0
+fff83c80-f690-4c74-a619-e5ec20601538,Intel Celeron G465,,2,1.9,,35,Intel HD Graphics,0
+77fa9419-c306-4b62-9175-b349e72adb1a,AMD A10-5700,,4,3.4,,65,Radeon HD 7660D,0
+7ff929d3-6048-4468-b839-83f62bb899f3,AMD Athlon II X4 651K,,4,3.0,,100,,0
+461c99ce-a7f1-42c9-b095-8f5b6a81e5cf,Intel Xeon E3-1280,,4,3.5,,95,,1
+5651fba1-e1f7-4591-b2f7-00acdb4133cb,Intel Xeon E5-1660,,6,3.3,3.9,130,,1
+60d37be5-5c15-4c25-84f9-8d72c043c188,Intel Core i3-4350,,2,3.6,,54,Intel HD Graphics 4600,1
+f21e5f07-647a-473e-8acd-65d824e7a2cd,AMD A10-7850K,,4,3.7,4.0,95,Radeon R7 (on-die),0
+a95d0e9c-6ddd-4b13-8910-589ffae71c9f,AMD A10-7700K,,4,3.4,3.8,95,Radeon R7 (on-die),0
+dad14ba5-2348-483f-90bc-7c087c152d0f,AMD A4-6300,,2,3.7,3.9,65,Radeon HD 8370D,0
+adfa6849-01d6-48b1-bd6e-f685a9e80cf6,AMD A4-3420,,2,2.8,,65,Radeon HD 6410D,0
+50b75a96-c61b-4ad8-a5a7-dc3f23f7d6e7,AMD FX-4200,,4,3.3,,125,,0
+0955616b-e3c6-4222-be6d-e37b0f829993,AMD Athlon II X4 651,,4,3.0,,100,,0
+13a7539d-19f5-4d8a-a24b-fa7c90fd86f1,Intel Xeon E3-1230 V3,,4,3.3,3.7,80,,1
+2e9723cd-3737-4706-8899-2aa12915dfd1,Intel Pentium G3250,,2,3.2,,53,Intel HD Graphics,0
+491f7b50-052c-435b-bfe3-2abc9773a197,Intel Pentium G3250T,,2,2.8,,35,Intel HD Graphics,0
+91e543c6-fcbe-4a60-87ee-187eb5cb3ac8,Intel Xeon E5-2620 V3,149.94,6,2.4,3.2,85,,1
+e465bde0-cb33-417a-872a-ad475fb45c12,Intel Xeon E5-2630 V3,459.0,8,2.4,3.2,85,,1
+224c9bb8-b6ea-489a-b4f8-f85f9a56c70d,Intel Xeon E5-2685 V3,,12,2.6,3.3,120,,1
+c5820bb2-7293-4224-853e-15bbd656827d,Intel Xeon E3-1230 V2,289.95,4,3.3,,69,,1
+ba692a74-fd12-4aaa-b4c3-44f8b56eeeb3,AMD FX-8310,,8,3.4,4.3,95,,0
+51b3a431-a06b-491d-af4f-a19d34642f3f,Intel Core i5-5675C,,4,3.1,3.6,65,Iris Pro Graphics 6200,0
+96fe90a7-f5d4-40b2-9e3d-a24e63126173,Intel Core i3-6300,,2,3.8,,51,Intel HD Graphics 530,1
+609dc64f-73e3-4fc2-a3ec-5d15dc5457b7,Intel Xeon E3-1220 V5,,4,3.0,3.5,80,,0
+3719ecc6-96f4-4b2e-8816-152b326d6b0d,Intel Xeon E3-1225 V5,,4,3.3,3.7,80,Intel HD Graphics P530,0
+6c7d4623-c44e-46a0-9953-9f6ed8df1edf,Intel Pentium G3260,,2,3.3,,53,Intel HD Graphics,0
+8e0c70ad-256a-4fda-9c16-e115cc1b01e2,AMD A6-7470K,,2,3.7,4.0,65,Radeon R5 (on die),0
+64787c6b-82ce-49ef-99b5-fcb225a785ca,Intel Core i7-6850K,,6,3.6,3.8,140,,1
+5a1d4ed4-46eb-45da-9fe3-5b8c712c056a,Intel Core i7-6900K,,8,3.2,3.7,140,,1
+e1982b36-7ab6-4549-9feb-a53ddbea7de6,Intel Core i3-7300,,2,4.0,,51,Intel HD Graphics 630,1
+482a65f0-b8cb-42cb-aeb0-e0c891dc6639,Intel Core i3-7320,,2,4.1,,51,Intel HD Graphics 630,1
+5f80f054-ea03-486f-a927-5b32754bd22b,Intel Celeron G3930,182.81,2,2.9,,51,Intel HD Graphics 610,0
+b0684ec7-b318-4b0b-8ef3-7dde99d637dc,Intel Pentium G4600T,,2,3.0,,35,Intel HD Graphics 630,1
+f2e678b8-cdfd-4b72-90e1-4b3f32f5b273,Intel Core i3-7101TE,,2,3.4,,35,Intel HD Graphics 610,1
+8b581a1f-7821-4fe2-9cb2-85d744c39d14,Intel Core i5-7400T,,4,2.4,3.0,35,Intel HD Graphics 630,0
+da5e7b59-4e2e-4681-838a-242a5c9e9157,Intel Core i5-7500T,,4,2.7,3.3,35,Intel HD Graphics 630,0
+16ed2bdd-4eb1-4e40-a531-6a85cc4d03d3,Intel Xeon E5-2430V2,,6,2.5,3.0,80,,1
+18c1eb59-4057-4682-9034-4dd08fdeebd6,Intel Xeon E5-2440V2,,8,1.9,2.4,95,,1
+c920dde2-707c-4c4f-a96d-1be4a3f5dcbd,Intel Xeon E3-1240 V6,498.95,4,3.7,4.1,72,,1
+0bfd9e02-c480-4ad1-8540-a597e1671a9b,Intel Xeon E3-1225 V6,535.49,4,3.3,3.7,73,Intel HD Graphics P630,0
+6846e562-efe5-4647-b129-fcc4357bc8a6,Intel Xeon E3-1270 V6,,4,3.8,4.2,72,,1
+9e746d4c-c764-4502-9054-9095bf4fca53,Intel Pentium Gold G5600,,2,3.9,,54,Intel UHD Graphics 630,1
+29ce940d-77e9-46aa-8596-3b8f9ba8771f,Intel Pentium Gold G5500T,,2,3.2,,35,Intel UHD Graphics 630,1
+cd47863e-e82b-4577-a539-6642373fc30c,Intel Xeon E-2134,747.53,4,3.5,4.5,71,,1
+9bba2b24-2e2e-4273-8c22-097ac6b5774f,Intel Core i3-7100T,110.2,2,3.4,,35,Intel HD Graphics 630,1
+84646ef7-b13c-4f8e-9718-3af38b857e96,Intel Pentium G3470,61.57,2,3.6,,53,Intel HD Graphics,0
+be83651b-93a0-4530-b2da-ca57fcb2d85c,Intel Xeon E3-1230 V6,595.49,4,3.5,3.9,72,,1
+056864d3-a233-41e1-8f33-bfbe61414219,AMD Athlon II X2 240,,2,2.8,,65,,0
+e7f32bb6-8b98-4a16-a4e7-62865079031f,AMD Athlon II X2 255,,2,3.1,,65,,0
+2ba11bf3-1293-4726-8469-edb52b4b1265,AMD Athlon II X2 260,,2,3.2,,65,,0
+1b8f4306-6823-43f0-ac76-c1c53032be37,AMD Athlon II X3 445,,3,3.1,,95,,0
+08798eec-df0d-497b-a319-776c816964cb,AMD Phenom II X2 550,,2,3.1,,80,,0
+8a9f66ea-a205-4787-b62c-72edaafe2b46,AMD Phenom II X4 810,,4,2.6,,95,,0
+abd5a916-6ebb-4e79-8f9f-984fbbef0ca8,AMD Phenom II X4 925,,4,2.8,,95,,0
+4fba795b-bee0-4620-a5d7-b3f478497c85,AMD Phenom II X4 945,,4,3.0,,125,,0
+e724f3a2-5073-4d92-a7d0-dcb2c0052b1c,AMD Athlon II X3 405e,,3,2.3,,45,,0
+d89140cb-f001-4484-bea0-3f03e19c805c,AMD Phenom II X4 940 Black,,4,3.0,,125,,0
+514a583d-012e-4cad-87cc-755db4630425,AMD Phenom II X4 965 Black (140W),,4,3.4,,140,,0
+31fe3fb9-de4d-46cd-a123-850c0f211beb,Intel Pentium E2220,,2,2.4,,65,,0
+cf283382-94d2-417d-a3cb-5180e861fbee,Intel Core 2 Duo E4400,,2,2.0,,65,,0
+a98974cc-9eb7-41f0-a0b6-321cc010c9e1,Intel Core 2 Duo E4600,104.04,2,2.4,,65,,0
+908e968e-04e8-4ce2-8538-3a6daa278ecd,Intel Core 2 Duo E6550,,2,2.33,,65,,0
+b000ce05-234e-4edb-9523-5ca4a2bb78cc,Intel Core 2 Duo E6700,,2,2.66,,65,,0
+b43c3c10-e941-48c4-bfb1-af5e2689a49e,Intel Core 2 Duo E6850,,2,3.0,,65,,0
+0f925ae3-fd3a-4f0a-bf48-3d9b9d2cfe75,Intel Core 2 Duo E6850,98.95,2,3.0,,65,,0
+1dd5468f-281f-45ac-ad88-17f77e78f56d,Intel Core 2 Duo E8300,119.95,2,2.83,,65,,0
+56be4e7d-f5a6-4034-8abf-447548acf330,Intel Core 2 Duo E8400,,2,3.0,,65,,0
+64aba33d-8fbc-417a-8be9-c678531f42c5,Intel Core i5-750S,,4,2.4,,82,,0
+b0ce74c1-803f-4a44-9c79-b15e24b9cf6a,Intel Core 2 Quad Q8200,,4,2.33,,95,,0
+ab58d670-a161-4574-b9c2-29fa5d581b09,Intel Core 2 Quad Q8300,,4,2.5,,95,,0
+4d820395-21a9-435d-9f15-789f3cc0638f,Intel Core 2 Quad Q8300,,4,2.5,,95,,0
+39afd60a-21ac-44af-a5dd-92e141368d3d,Intel Core 2 Quad Q8400,,4,2.66,,95,,0
+773ce47f-699d-4974-af87-bc7ca53fcb3a,Intel Core 2 Quad Q9650,,4,3.0,,95,,0
+9f5ccebf-3a91-4324-985a-df61a0acca9d,Intel Core 2 Extreme QX9775,,4,3.2,,150,,0
+7de6f6ba-0b2a-4c74-add9-978693827e34,Intel Core 2 Extreme X6800,,2,2.93,,75,,0
+c4cc9411-021c-41a0-be8d-b9fb7435a234,AMD Athlon II X4 610e,,4,2.4,,45,,0
+2bb62d03-031a-43fc-ac9a-0a08db39fc61,AMD Phenom II X4 960T Black,,4,3.0,,95,,0
+78bd74fe-4651-4b70-8ad7-c59cd710cd99,AMD Athlon II X4 630,,4,2.8,,95,,0
+f248697e-1180-40c4-a7c8-dcf61fae426c,AMD Sempron 130,,1,2.6,,45,,0
+37c27614-a8e1-4f78-90b4-9f796420e8bf,AMD Athlon II X4 645,,4,3.1,,95,,0
+b57aad23-9926-41f7-a2b1-afbbcfdb3d30,AMD Athlon II X2 260,,2,3.2,,65,,0
+9ef28c31-0a0e-482d-8932-5318b6e05f45,Intel Xeon E3-1270,,4,3.4,,80,,1
+969825b7-92f7-4cda-a731-56305857e590,Intel Core i5-3340S,,4,2.8,3.3,65,Intel HD Graphics 2500,0
+b736f8f0-eb64-449f-8f29-a528aff4a6a9,Intel Celeron G1830,,2,2.8,,53,Intel HD Graphics,0
+96ab1db7-19ea-42f3-8668-52e3d36b0c7c,AMD FX-9370,,8,4.4,4.7,220,,0
+2467a81b-72f6-4733-ba3b-4228e193f101,Intel Xeon E5-2609 V2,,4,2.5,,80,,0
+14ab0867-d173-4562-9b06-55997c5296c1,AMD FX-4130,,4,3.8,,125,,0
+36a4e077-592a-43b2-80a7-a405312447f4,Intel Pentium G3440,,2,3.3,,53,Intel HD Graphics,0
+98b694f2-2239-4280-a925-bcac1fe57c9c,Intel Pentium G3258,,2,3.2,,53,Intel HD Graphics,0
+e8ab6ec0-a872-46ee-b18a-248db0772189,AMD A10-6700T,,4,2.5,3.5,45,Radeon HD 8650D,0
+3f57c9ab-f4d3-4192-835e-dc626d138d89,AMD A4-6320,,2,3.8,4.0,65,Radeon HD 8370D,0
+ef1b5201-2948-42f3-97ef-34b89214a262,Intel Celeron G470,,1,2.0,,35,Intel HD Graphics,1
+9224930a-9de1-4e05-9795-c6080bf0e41e,AMD Athlon II X4 638,,4,2.7,,65,,0
+11b61eea-dc76-4ad4-a055-6e2c25dc1139,Intel Core i3-4360T,,2,3.2,,35,Intel HD Graphics 4600,1
+1b0e7d74-63a1-4007-95b2-cc05e0960aa9,Intel Core i3-4370,,2,3.8,,54,Intel HD Graphics 4600,1
+6314818f-e2d8-418d-b90d-6cc0c7c311b3,Intel Xeon E5-1660 V2,,6,3.7,4.0,130,,1
+32bd519b-6309-4d46-8888-42ab0f21bda3,Intel Xeon E5-2637 V2,,4,3.5,3.8,130,,1
+b06709b1-dacb-4224-8bd1-6adefaa0db07,AMD FX-8370,,8,4.0,4.3,125,,0
+dbcb4e46-12b9-414d-93d8-4f874a263690,AMD Athlon X4 530,,4,2.0,,25,,0
+a2614914-fd0e-4768-9a9a-4f8e21f4e826,AMD Pro A8-7600B,,4,3.1,3.8,65,Radeon R7 (on-die),0
+49324b32-5014-475e-9752-dce09b52f32f,AMD Pro A10-7850B,152.77,4,3.7,4.0,95,Radeon R7 (on-die),0
+b415c613-714c-4c9f-a707-4428ed616a60,Intel Pentium G3250,,2,3.2,,53,Intel HD Graphics,0
+d76546c8-decb-4c52-af0f-965ee11155f7,Intel Pentium G3450,,2,3.4,,53,Intel HD Graphics,0
+84fb8b22-ccba-422c-b7ad-7d0c3fb749f7,Intel Xeon E5-2609 V3,,6,1.9,,85,,0
+406cd1ad-ba61-450a-8a3b-1d1f0f53e751,Intel Xeon E5-2650 V3,,10,2.3,3.0,105,,1
+cb037baa-d8c0-4c03-97fc-709b3d765019,Intel Xeon E5-2603 V2,153.0,4,1.8,,80,,0
+45ea9508-a256-4046-8750-2e3cfbb4b24a,Intel Core i5-4570S,,4,2.9,,65,Intel HD Graphics 4600,0
+94d497cd-b8e4-45e0-9fbe-6212bf643cdc,Intel Core i3-6320,,2,3.9,,51,Intel HD Graphics 530,1
+2fd99daf-37c1-4e8c-961a-705c8c20cedf,Intel Core i3-6300T,,2,3.3,,35,Intel HD Graphics 530,1
+c567f369-7a84-437a-b7e2-852e7f0a70c3,Intel Core i5-6400T,,4,2.2,2.8,35,Intel HD Graphics 530,0
+42a8e1e9-b1d1-44f5-babc-6fc1d194be0a,Intel Xeon E3-1230 V5,,4,3.4,3.8,80,,1
+19e0fb4d-811e-4002-b029-e05e1a58533f,Intel Xeon E3-1240 V5,,4,3.5,3.9,80,,1
+95aa99fb-0f69-44c5-804c-09c0cd01d8e9,Intel Xeon E3-1275 V5,,4,3.6,4.0,80,Intel HD Graphics P530,1
+3fb98458-4bca-4350-b092-afa2499da733,Intel Xeon E3-1245 V5,399.0,4,3.5,3.9,80,Intel HD Graphics P530,1
+9b804b8d-bbb0-4bc9-856d-2bf5249a28f9,AMD Opteron 6320,235.6,8,2.8,3.3,115,,0
+1f3a0052-f21a-4a95-852a-d4c1a25f9ce6,AMD A10-7890K,,4,4.1,4.3,95,Radeon R7 (on-die),0
+d126203e-ed19-46e4-a098-be020d65a518,AMD Athlon X4 880K,,4,4.0,4.2,95,,0
+25d30577-87d0-429f-94d8-f5c070837a10,Intel Xeon E5-2658 V3,,12,2.2,2.9,105,,1
+5b8c2dea-f7b3-4279-ba91-2c195b22a4a5,Intel Pentium G4620,,2,3.7,,51,Intel HD Graphics 630,1
+a22fe760-f8f6-4111-8966-2db8a0bbd386,Intel Core i3-7100T,,2,3.4,,35,Intel HD Graphics 630,1
+19f084f4-8306-42a0-b8c1-269f1e2f1761,Intel Core i3-7300T,,2,3.5,,35,Intel HD Graphics 630,1
+4eb72255-7abe-4875-9fa4-4077f6847b30,Intel Core i7-7820X,,8,3.6,4.5,140,,1
+8cb610ab-73b1-4d60-8bf7-dfe67b90d441,AMD A8-7650K,,4,3.3,3.7,95,Radeon R7 (on-die),0
+83a0ee35-f713-41d9-a48f-664ffcfa6a9c,Intel Xeon E3-1220 V6,398.95,4,3.0,3.5,72,,0
+417f32ae-e192-48e3-aadb-631bbfabe064,AMD Athlon X4 970,,4,3.8,4.0,65,,0
+a79d2380-f149-4b5e-8dbe-b50da0a96352,AMD Athlon X4 940,,4,3.2,3.6,65,,0
+b8d71cac-f7c5-4875-9552-6c0ed33bc05a,Intel Core i5-3550S,,4,3.0,3.7,65,Intel HD Graphics 2500,0
+4f681d9b-b715-4ae2-9c2b-6b8482a7756a,Intel Core i7-870S,,4,2.667,,82,,1
+5715bbf4-6b99-40f0-bf0f-ea348ee95920,Intel Core i7-870S,,4,2.667,,82,,1
+9aa1ab90-9ae9-4469-87db-0e075ccb2017,Intel Celeron G4920,,2,3.2,,65,Intel UHD Graphics 610,0
+ec1a95ea-e842-4622-89a5-5a63b039c887,Intel Xeon E5-2660,,8,2.2,3.0,95,,1
+d40a36fa-7962-4b2f-b9d4-177c844fd30d,Intel Xeon E-2236,446.95,6,3.4,4.8,80,,1
+1b382054-c06d-44dc-b8ae-aca20d866a0e,Intel Xeon E-2274G,,4,4.0,4.9,83,Intel HD Graphics P630,1
+fc25ed43-37c6-4c52-9f58-fc9faac39555,Intel Celeron G5905T,,2,3.3,,35,Intel UHD Graphics 610,0
+1c791a43-7b3e-4092-8770-b80e808844e6,Intel Xeon E-2174G,535.27,4,3.8,4.7,71,Intel HD Graphics P630,1
+33bda17a-9f62-476e-9ee7-c09bbb18e6ef,AMD Opteron 6320,249.01,8,2.8,3.3,115,,0
+c3e70758-5f7e-458c-b55a-e41d0b552d87,Intel Xeon E3-1225 V6,395.0,4,3.3,3.7,73,Intel HD Graphics P630,0
+e0bb396c-7108-4f59-922e-99e502581a4a,AMD Athlon II X2 215,,2,2.7,,65,,0
+709b34c5-88f2-4e1f-b82c-c571389e74d9,AMD Athlon II X2 250,,2,3.0,,65,,0
+47e9a0b2-54c5-447f-ae02-10877ff18cca,AMD Athlon II X3 425,,3,2.7,,95,,0
+3bc5071c-b591-4ca0-84e9-9c5faef5571c,Intel Celeron 430,,1,1.8,,35,,0
+27d65bc5-6a12-405d-83c6-ac5abf005afe,AMD Athlon II X3 440,,3,3.0,,95,,0
+12712092-14ca-485d-886e-b529dd07eb4f,AMD Athlon II X4 620,,4,2.6,,95,,0
+9e18e188-844d-4392-be7c-08ff6cdb2440,AMD Athlon II X4 630,,4,2.8,,95,,0
+81695eb1-fa34-4365-8567-fca9e26a018d,AMD Athlon II X4 635,,4,2.9,,95,,0
+242ffb5b-e18a-49e6-ae6c-ce4ca01596dd,AMD Phenom II X4 910,,4,2.6,,95,,0
+c430b074-b383-4b4b-a531-e57a9b7a2a76,AMD Phenom II X4 925,,4,2.8,,95,,0
+9aaf732b-b24d-4e99-b7b5-6522fbb154be,AMD Athlon II X4 600e,,4,2.2,,45,,0
+0842beda-6227-45ed-aa61-fcb1813b8310,AMD Athlon II X4 610e,,4,2.4,,45,,0
+6abab51e-58bc-4d46-8e3e-32e7170a7045,AMD Phenom II X3 705e,,3,2.5,,65,,0
+69d35eba-e6c9-4f49-bf1d-733e6a06a175,AMD Phenom II X4 910e,,4,2.6,,65,,0
+944a62a4-c36c-4170-a420-187b14877616,Intel Celeron E1200,,2,1.6,,65,,0
+4848fd89-6229-4213-9c14-eef2a09f5116,Intel Celeron E1500,,2,2.2,,65,,0
+aeb4cfa6-c7b3-4711-8467-5e9a2378a2bd,Intel Celeron E1500,,2,2.2,,65,,0
+f37015f5-71f4-4ece-bf0d-9f81a5cd171f,Intel Pentium E2160,,2,1.8,,65,,0
+a28f0c5e-4da7-4208-9df9-478700d0912c,Intel Pentium E2180,,2,2.0,,65,,0
+95d5e99f-e635-4c3c-9e58-78fe94643f86,Intel Core 2 Duo E4500,,2,2.2,,65,,0
+f6066802-c09f-40e8-8b32-1df9448b3021,Intel Pentium E5300,79.4,2,2.6,,65,,0
+f075ae2f-8d5c-4e29-904d-2f94dd96ba21,Intel Pentium E5400,,2,2.7,,65,,0
+4ac78b85-b184-4178-9b70-3a603fe4d247,Intel Core 2 Duo E6400,,2,2.13,,65,,0
+bc52baf4-eef5-4b91-887a-7c457617141a,Intel Core 2 Duo E6420,,2,2.13,,65,,0
+905e9c87-e35d-413b-bc2f-071c24592c4c,Intel Core 2 Duo E6700,189.95,2,2.66,,65,,0
+aec0b261-20fe-4845-901e-3a8a91ffc231,Intel Core 2 Duo E7400,,2,2.8,,65,,0
+f0d6d74e-fd8c-44b5-84d3-af72a1be4905,Intel Core 2 Duo E7400,,2,2.8,,65,,0
+f50ac454-9678-4f68-9000-e995a5cbaf01,Intel Core 2 Duo E7500,,2,2.93,,65,,0
+8bf323f9-0368-4c89-850c-739dc2b63e19,Intel Core 2 Duo E7600,,2,3.06,,65,,0
+c45d626f-1a79-48ef-977b-3118bedfbcc6,Intel Core 2 Duo E8200,,2,2.66,,65,,0
+7bb2732b-b265-42c5-b4bf-5c2e285daf43,Intel Core 2 Duo E8400,,2,3.0,,65,,0
+d520e58e-163b-4ba0-a4c5-187b7d1c49b2,Intel Core 2 Duo E8500,,2,3.16,,65,,0
+73526a38-6b1b-410a-b1e1-ae59c69f7d03,Intel Core i7-940,,4,2.93,,130,,1
+9fe827a7-e231-4b32-8e68-6b35b91e50ec,Intel Core i7-965 Extreme Edition,,4,3.2,,130,,1
+5a3a4363-dd1b-4215-b82a-3cd35c2dac9d,Intel Core 2 Quad Q8200S,,4,2.33,,65,,0
+2bd0a391-bf19-4923-a912-dc41598626a4,Intel Core 2 Quad Q8200S,,4,2.33,,65,,0
+8469100a-7ada-4d80-a1b8-4722d208d04a,Intel Core 2 Quad Q9450,,4,2.66,,95,,0
+7c1b6175-a25d-4af8-824e-921306ea4822,Intel Core 2 Quad Q9505,,4,2.83,,95,,0
+139837c8-8c77-4ecb-80d8-b4b420b58ec7,Intel Core 2 Quad Q9550S,,4,2.83,,65,,0
+95111e54-1bdf-41f0-9caa-4822a73b2adb,Intel Core 2 Extreme QX6700,,4,2.66,,100,,0
+450fd8e2-a504-44bb-8f9b-d260da59ebe5,Intel Core 2 Extreme QX6850,,4,3.0,,130,,0
+b4064416-58aa-4c8e-b999-563f1c29d31c,Intel Core 2 Extreme QX9770,,4,3.2,,136,,0
+ad96c47d-796e-4c1f-b2fc-2001356ae87d,AMD Athlon II X2 255,,2,3.1,,65,,0
+2b828f94-98bb-42de-a2ad-9e6863e312b3,AMD Phenom II X3 715 Black,,3,2.8,,95,,0
+827fb2c0-ebbd-48da-842a-4589fbcd9277,AMD Phenom II X2 545,,2,3.0,,80,,0
+16712503-b317-4122-bb78-c57d340f95f3,AMD Phenom II X2 560 Black,,2,3.3,,80,,0
+6e0bdcc6-c2a9-4df4-9ea6-dc7609f7239f,AMD Phenom II X2 565 Black,,2,3.4,,80,,0
+c94f5e9b-50fd-47ea-b030-acf8ecd22061,Intel Pentium E5500,,2,2.8,,65,,0
+ba8bb7ca-0d4c-4f6c-bd22-6e703a7223e3,AMD Phenom II X4 955,,4,3.2,,125,,0
+4e089363-4dac-44ee-a13e-ba2e1bd109b5,AMD Phenom II X4 925,,4,2.8,,95,,0
+dfe18127-a8e3-464c-a44b-bba8f6499fcb,AMD Phenom II X3 720 Black,,3,2.8,,95,,0
+6fa084e7-12eb-4662-999b-fca1c65c3292,Intel Pentium G840,,2,2.8,,65,Intel HD Graphics,0
+5f7638f6-8d7e-4d15-9116-0b2386415145,Intel Pentium G620T,,2,2.2,,35,Intel HD Graphics,0
+58874774-09fd-4975-856b-eed644f9056f,Intel Pentium G850,,2,2.9,,65,Intel HD Graphics,0
+5bab0953-c14f-462c-9648-be081a977cb8,AMD FX-6100,,6,3.3,,95,,0
+687fe753-d041-42bc-9fd3-7f3d8fcda281,AMD Phenom II X4 970,,4,3.5,,125,,0
+b07eff9a-7418-4bc6-982c-4310ab2930de,AMD Phenom II X6 1100T Black,,6,3.3,,125,,0
+d27c9cef-c95c-4c2b-ac0b-b0e53842f330,AMD A6-3650,,4,2.6,,100,Radeon HD 6530D,0
+79cd2b7f-1e04-4f41-930f-27dca1b2217c,AMD Athlon II X2 250,,2,3.0,,65,,0
+ef5bc624-8dcc-4567-9648-114595869eea,Intel Celeron G555,,2,2.7,,65,Intel HD Graphics,0
+1af40617-a80b-43f5-9a26-f60e7d688102,Intel Xeon E5-2603 V2,,4,1.8,,80,,0
+cf8cb6a8-66d1-4f48-a1f0-a53bbb09199f,AMD A6-6420K,,2,4.0,4.2,65,Radeon HD 8000 Series,0
+720ef840-df96-467e-8ddd-fcc846218c93,AMD Sempron X2 198,,2,2.5,,65,,0
+ddc783d3-21c0-4544-a495-db6860ed8e1a,AMD Sempron X2 190,,2,2.5,,45,,0
+e6b9a020-a04c-418a-9ce9-d3047e4c036d,AMD A10-6790K,,4,4.0,4.3,100,Radeon HD 8670D,0
+537a4b6c-09c6-491b-892f-46bd11ad4ac3,AMD A10-6800B,,4,4.1,4.4,100,Radeon HD 8670D,0
+7397a4ac-97ec-4075-a985-184ef51aa832,AMD A4-3300,,2,2.5,,65,Radeon HD 6410D,0
+08daa1e0-1eae-4e4f-a0e2-fccd1fb6c26b,AMD A4-3300,,2,2.5,,65,Radeon HD 6410D,0
+aaa0488e-c7db-416b-9685-849bf0c44545,AMD A4-3400,,2,2.7,,65,Radeon HD 6410D,0
+0e6a386a-711a-40d1-a4f9-dac2764e3d91,AMD A4-5300,,2,3.4,,65,Radeon HD 7480D,0
+afaac944-69bb-43d5-9c73-44483896a619,AMD A4-4020,,2,3.2,3.4,65,Radeon HD 7480D,0
+d71d1755-fcf3-4f04-bb57-c84aecd0b4e7,AMD A6-7400K,,2,3.5,3.9,65,Radeon R5 (on die),0
+0cde0766-0993-4bdc-ad5e-199bc3e05d94,AMD FX-4320,,4,4.0,4.2,95,,0
+0bbbdca9-93df-4274-9ccd-6b4d8a68350a,AMD FX-6130,,6,3.6,3.9,125,,0
+866bc8a7-8756-4a51-9ec1-bd0fbae0ac4f,AMD FX-8120,,8,3.1,,125,,0
+c410598f-0c32-4547-8a8f-c179f8d5ca78,AMD Athlon II X4 651,,4,3.0,,100,,0
+dee7ca49-d628-40f1-ba74-6ade4c44e831,AMD E2-3200,,2,2.4,,65,Radeon HD 6370D,0
+c07b50c6-2ec0-42e1-b5e8-6b543b364ec0,AMD E2-3200,,2,2.4,,65,Radeon HD 6370D,0
+ed48dd6f-6c0f-4184-a895-480973b19d39,Intel Xeon E5-2630,,6,2.3,,95,,1
+2a9fa32c-e1cb-4980-94f7-cef8dab45e85,AMD FX-8320E,,8,3.2,4.0,95,,0
+ce77bb63-9cd9-4a73-b77b-c36e3a90602a,AMD Athlon X4 550,,4,2.2,,25,,0
+7a9311e8-953b-41b6-83e4-62fee4acb4a3,AMD Pro A6-7400B,,2,3.5,3.9,65,Radeon R5 (on die),0
+e51f56ee-7728-4af7-8b0e-97b70387fcdb,AMD Pro A4-7300B,,2,3.8,4.0,65,Radeon HD 8470D,0
+f4651702-6f15-48b1-a232-73dead6f302d,AMD Athlon X2 450,,2,3.5,3.9,65,,0
+4fcf53e4-1075-4ae9-a8d0-76f26aa7da10,AMD Phenom II X4 B99,,4,3.3,,95,,0
+68ec8a1a-f8bf-46ba-8380-08513c706ed5,Intel Xeon E5-2609 V3,,6,1.9,,85,,0
+0276dc04-09df-4b48-ae49-d814443d149c,Intel Xeon E5-2687W V3,,10,3.1,3.5,160,,1
+b7cd5c57-29d9-47c1-808a-bc98672eb20b,AMD Phenom II X6 1065T,,6,2.7,,95,,0
+793a4875-3494-4ace-ba0f-5ea6d938fc11,AMD A10-7870K,,4,3.9,4.1,95,Radeon R7 (on-die),0
+dac7c1e4-4f5e-45a5-9fca-b0fe222a81db,AMD A8-7670K,,4,3.6,3.9,95,Radeon R7 (on-die),0
+da638284-56cd-4a1a-9e62-bc359c1c0bf7,Intel Pentium G4520,,2,3.6,,51,Intel HD Graphics 530,0
+413aeb31-f19f-46a1-97f3-d7a04eb5af09,Intel Pentium G4500,,2,3.5,,51,Intel HD Graphics 530,0
+d6167e65-282e-40c0-aea0-c618d14cd445,Intel Pentium G4520,,2,3.6,,51,Intel HD Graphics 530,0
+52114ec5-2112-4f1c-8216-c3a80f71b94c,Intel Pentium G4500T,,2,3.0,,35,Intel HD Graphics 530,0
+f222d1f3-e0fe-45b8-a374-5705db8597f9,AMD Opteron 6344,,12,2.6,3.2,115,,0
+4e36f809-963e-43cd-ac64-7dd9eddaeaa3,AMD Athlon X4 845,,4,3.5,3.8,65,,0
+c4a2a00d-e8cd-4494-9b6a-0521193a4447,AMD A10-7860k,,4,3.6,4.0,65,Radeon R7 (on-die),0
+c7e2b4a3-fbcf-47ed-9953-c9fce859a509,AMD Athlon 5370,,4,2.2,,25,Radeon R3 (on die),0
+007949fb-4f1c-4973-994a-02a051bd0ece,Intel Celeron G3950,,2,3.0,,51,Intel HD Graphics 610,0
+68b37689-6cfc-4013-aa8c-086a0a743714,Intel Celeron G3930T,,2,2.7,,35,Intel HD Graphics 610,0
+9938a54b-d982-4777-b518-14a075e121d3,Intel Core i5-7600T,,4,2.8,3.7,35,Intel HD Graphics 630,0
+6b33b24c-a7b8-4a63-93ab-c5817b03baf5,Intel Core i5-7640X,,4,4.0,4.2,112,,0
+b5813342-b367-4c21-b3ec-138a602fb372,Intel Xeon E3-1275 V6,,4,3.8,4.2,73,Intel HD Graphics P630,1
+3433a04a-3698-4e5b-9abc-e998bd99a2fc,AMD A6-9550,,2,3.8,4.0,65,Radeon R5 (on die),0
+ce15e113-6a55-462c-9612-f951d32b8747,AMD A6-9550,,2,3.8,4.0,65,Radeon R5 (on die),0
+41c15543-6604-459b-9a02-4b3ba1c0fce6,Intel Core i3-9320,,4,3.7,4.4,62,,0
+2f9d6ed2-dee7-4bf9-ae1c-148de433c62c,Intel Xeon E-2144G,,4,3.6,4.5,71,Intel HD Graphics P630,1
+8e915624-a43a-4123-af55-792da21b8e05,Intel Xeon E-2136,933.0,6,3.3,4.5,80,,1
+a807ef2f-f99f-4eb1-8d06-9533c1dc77a4,Intel Xeon E-2126G,843.0,6,3.3,4.5,80,Intel HD Graphics P630,0
+d7b0a293-dea3-45bb-abb0-45246a75768a,Intel Xeon E-2134,,4,3.5,4.5,71,,1
+56f92ba7-1f69-4f0e-80cc-da99d5dab9ec,Intel Xeon E-2124,,4,3.3,4.3,71,,0
+9a179edd-7405-41dc-8a5a-2f2217a4cea5,Intel Pentium G3240,,2,3.1,,53,Intel HD Graphics,0
+3943967e-7b75-4025-b54d-bf46c8379044,Intel Pentium G3420,,2,3.2,,54,Intel HD Graphics,0
+ad99a228-f3bd-4a14-b132-df7239599896,AMD Athlon II X2 245,,2,2.9,,65,,0
+a5c39fe0-ac5b-4788-9e66-acfc63aeb2a1,AMD Athlon II X3 435,,3,2.9,,95,,0
+a0de5209-57c1-442b-a13c-a194b3ac0a9c,AMD Athlon II X3 440,,3,3.0,,95,,0
+97d4565d-172f-4cc9-a0a0-1f2ad6f3c78a,AMD Phenom II X2 545,,2,3.0,,80,,0
+b0f51ff5-6e12-4003-bd0f-3349ca0fb8f9,AMD Athlon II X4 635,,4,2.9,,95,,0
+b7048c3b-bee8-4c24-b917-e31c4f495a69,AMD Phenom II X3 710,,3,2.6,,95,,0
+e83883e0-08b5-4105-a7ce-361addb3117a,AMD Phenom II X3 720,,3,2.8,,95,,0
+c39e8e11-4725-4aea-9762-5a634151c970,AMD Phenom II X4 805,,4,2.5,,95,,0
+4c59afa9-5809-4f3c-9b9f-74e9abde372d,AMD Phenom II X4 945,,4,3.0,,125,,0
+4358b0fd-dcf6-4c23-a902-ba6e16622041,AMD Athlon II X2 240e,,2,2.8,,45,,0
+417f185f-ef8e-4796-af49-0206c34e6b86,AMD Athlon II X2 245e,,2,2.9,,45,,0
+7418d9e4-a515-48d3-b87b-b5d3fdeb539c,AMD Athlon II X3 400e,,3,2.2,,45,,0
+da114924-4dd9-471c-9d49-6f8e85ffba71,AMD Athlon II X3 405e,,3,2.3,,45,,0
+17f26240-3f77-49f2-9497-5a1f54357093,AMD Athlon II X3 415e,,3,2.5,,45,,0
+ff15ddbd-98d4-4c35-8543-50d7f40f357d,AMD Athlon II X4 605e,,4,2.3,,45,,0
+6c41d06d-6dd8-4bc8-9904-3bd7f68b51e3,AMD Phenom II X3 720 Black,,3,2.8,,95,,0
+baa5e1dc-85f9-42e3-ad8c-7bb16c9e8972,AMD Phenom II X4 905e,,4,2.5,,65,,0
+867b350a-deef-4fbb-b687-92c66672e7eb,Intel Celeron E1600,,2,2.4,,65,,0
+7a3a52fe-e414-409e-9745-7ff4e5576639,Intel Pentium E2160,,2,1.8,,65,,0
+fac9a1e3-8421-4ecb-a5b9-691c56232149,Intel Pentium E2180,,2,2.0,,65,,0
+ab69b067-5c27-4b68-8c41-6982cc2210e6,Intel Celeron E3200,,2,2.4,,65,,0
+d0db3618-1845-4fb6-930a-d61f96240d84,Intel Celeron E3200,,2,2.4,,65,,0
+4c751d84-8dde-4859-a66c-de0eeb3e42e2,Intel Celeron E3300,,2,2.5,,65,,0
+c60b41df-62ee-49a7-9198-ba20e2ddce74,Intel Pentium E5400,,2,2.7,,65,,0
+5b3f9f7a-6243-45e5-8bc5-f74284f38c83,Intel Pentium E6300,,2,2.8,,65,,0
+7ea35292-3c0a-48c5-af8c-350e09390ecc,Intel Core 2 Duo E6540,,2,2.33,,65,,0
+7e1d78e4-6ed0-43ce-b283-9bfd6394222d,Intel Core 2 Duo E6700,,2,2.66,,65,,0
+7d9a40fc-86df-4548-b8f2-1c326562d4a8,Intel Core 2 Duo E7200,,2,2.5300000000000002,,65,,0
+ace5a296-cc94-4c0c-8d92-f5ce6a4cc523,Intel Core 2 Duo E7300,,2,2.66,,65,,0
+8b70031b-2d22-427e-b353-636b7be54230,Intel Core 2 Duo E8190,,2,2.66,,65,,0
+4fcf0064-3803-49b0-a89d-5c714fc541f3,Intel Core 2 Duo E8200,,2,2.66,,65,,0
+3b96960e-6b55-4eae-beea-bef2dac3376a,Intel Core 2 Duo E8200,,2,2.66,,65,,0
+df497d98-e797-44d0-8eb6-99dc636252d0,Intel Core 2 Duo E8500,,2,3.16,,65,,0
+0369a4ea-5f3f-4d36-aac7-3dd2ca965506,Intel Core 2 Duo E8500,,2,3.16,,65,,0
+a3976890-33bb-45f0-ade4-30fdfa2cc092,Intel Core i7-860S,,4,2.5300000000000002,,82,,1
+4dd9464e-da9e-456c-8413-a461e2e3c182,Intel Core 2 Quad Q6700,,4,2.66,,100,,0
+48a39b62-fcb7-4133-986d-5b33254c5e4d,Intel Core 2 Quad Q8200,,4,2.33,,95,,0
+58600168-54df-457a-9e2d-753183746416,Intel Core 2 Quad Q8200,,4,2.33,,95,,0
+84b1851e-b2ff-49a6-a4b4-5aa5b96aae97,Intel Core 2 Quad Q8400S,,4,2.66,,65,,0
+84284171-ee61-4f99-bd5a-b7a58609cf44,Intel Core 2 Quad Q8400S,,4,2.66,,65,,0
+70d9d351-090e-4970-b470-51936ac57165,Intel Core 2 Quad Q9505S,,4,2.83,,65,,0
+9aeb9d3e-1372-499c-8696-2f78f79f054c,Intel Core 2 Extreme QX6800,,4,2.93,,100,,0
+f640f036-1bcc-40d4-b0d6-f1036c74bfc8,Intel Core 2 Extreme QX6800,,4,2.93,,100,,0
+83cd52d0-e8e0-42d3-a731-7dec6f324ae7,Intel Core 2 Extreme QX6800,,4,2.93,,100,,0
+0a66a412-670d-4ae4-b856-d7a8ac46498c,Intel Core 2 Extreme QX9650,,4,3.0,,130,,0
+8885a7fd-bdcc-485b-9261-ef50d012b6f1,Intel Core 2 Extreme QX9775,,4,3.2,,150,,0
+7db7fd18-e23a-4996-bb2d-58fa1fa94b33,Intel Core 2 Extreme QX9775,,4,3.2,,150,,0
+c0cc6379-17d9-41b0-a5f9-fdc89f61a93e,AMD Athlon II X4 630,,4,2.8,,95,,0
+ac8a586d-b99f-4568-b092-9ccbfbe01483,AMD Athlon II X2 265,,2,3.2,,65,,0
+23977323-4634-4434-9250-312ef36c4327,AMD Athlon II X3 425,,3,2.7,,95,,0
+bb30d52d-80af-4284-8d20-22618b9508e4,Intel Pentium E6700,,2,3.2,,65,,0
+9e1f4936-3bf8-450e-9d5f-c8b688c3bbe3,AMD Phenom II X4 955,,4,3.2,,125,,0
+cbec7077-446e-4873-9c1c-d351d99fd75d,AMD Athlon II X2 245,,2,2.9,,65,,0
+bb7d61e7-48cf-44e4-834a-a4955c0b08fa,AMD Athlon II X3 440,,3,3.0,,95,,0
+29769577-72ac-46ee-9bd3-3b72477f59e0,AMD Athlon II X4 631,,4,2.6,,100,,0
+e4b374a6-f6ba-4ff9-9454-f226a5b4bc5c,AMD FX-8120,,8,3.1,,125,,0
+13a4ff33-575d-4a66-9faf-64dabd9e1ec2,AMD Phenom II X4 980 Black,,4,3.7,,125,,0
+0a261991-6fdc-47a5-916a-a2860e76ed59,Intel Xeon E3-1270,,4,3.4,,80,,1
+6d49040d-06db-47cc-8063-a218bda1d859,Intel Celeron G1630,,2,2.8,,55,Intel HD Graphics,0
+8ae9de59-d9af-4bf2-9f4b-45eb251433a6,Intel Xeon E5-2640 V2,,8,2.0,2.5,95,,1
+e699bded-dabc-4332-a08e-c87bcc37adea,AMD A6-6420K,,2,4.0,4.2,65,Radeon HD 8000 Series,0
+80198851-7670-4175-ad94-77ba31b6db61,AMD A4-4020,,2,3.2,3.4,65,Radeon HD 7480D,0
+9342653c-8951-4ff2-a361-cf3e28e6b6c4,AMD 5350,,4,2.05,,25,Radeon HD 8400,0
+702ec660-3cb4-420d-bce1-e4565d6bbb0f,AMD Sempron X2 198,,2,2.5,,65,,0
+5d172282-b9f2-4afc-a4bd-214ca57af9a7,AMD A10-6790B,,4,4.0,,100,Radeon HD 8670D,0
+332b387a-fa8f-4d2e-aca0-1831c42ff8e4,AMD A4-6320,,2,3.8,4.0,65,Radeon HD 8370D,0
+fe63510e-ee31-4690-bb7b-c27b782c110d,AMD A4-3400,,2,2.7,,65,Radeon HD 6410D,0
+e9155889-50a7-42f4-90fb-6c469dd27bba,AMD FX-4150,,4,4.0,4.1,125,,0
+5d20b371-599f-42a6-a678-73825607b2b7,AMD FX-4170,,4,4.2,,125,,0
+40d7941b-d8e4-4a17-a95c-47c6ba34ce4e,AMD FX-6200,,6,3.8,,125,,0
+b6c910ea-0ea5-4861-859d-73332610bc02,AMD FX-6350,,6,3.9,,125,,0
+acde1888-9fd1-465c-a45e-9ac08389d61a,AMD FX-8140,,8,3.2,4.1,95,,0
+111e246c-606d-4f6d-a9fb-9babdde39a1c,AMD Athlon II X2 221,,2,2.8,,65,,0
+810d9bbc-bcb4-4f2c-980f-e3726e465d31,AMD Athlon II X2 221,,2,2.8,,65,,0
+ce8948c3-8eaf-4c08-8fd1-9327238b85f3,AMD Athlon II X4 638,,4,2.7,,65,,0
+68bb88e6-13ae-4a4a-835b-afe190957b28,AMD Athlon X2 370K,,2,4.2,,65,,0
+be645dc5-af1b-45fa-90c4-51a4f80813fc,AMD Athlon X2 350,,2,3.5,3.9,65,,0
+90ca1445-6c71-4ac2-a600-4fa7016b198e,Intel Xeon E5-2603 V3,,6,1.6,,85,,0
+4335c520-a0e9-4577-8fb5-b12123cc6d04,Intel Xeon E5-2622 V3,,8,2.4,,85,,1
+3fe5bd19-b6a9-4a50-92d2-77a6a96ee64a,Intel Xeon E5-2609,,4,2.4,,80,,0
+04319c20-616b-48d6-91e5-496f0ee1e21d,AMD A8-7670K,,4,3.6,3.9,95,Radeon R7 (on-die),0
+ff00d7ae-1256-416a-8ce4-056342193011,Intel Xeon E3-1275 V5,,4,3.6,4.0,80,Intel HD Graphics P530,1
+2b3a3534-c88e-47e9-8bce-5294fe3e102e,Intel Xeon E5-2620,139.94,6,2.0,,95,,1
+d6aef126-294a-4ed9-84b7-8dfce2656e4c,Intel Xeon E-2124G,,4,3.4,4.5,71,Intel HD Graphics P630,0

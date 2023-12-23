@@ -1,0 +1,36 @@
+<h1>Components</h1>
+<p>Browse available components</p>
+<div>
+  <select #componentSelect class="component-selector" (change)="updateComponentSelection(componentSelect.value)">
+    <option value="cpu">CPU</option>
+    <option value="motherboard">Motherboard</option>
+    <option value="memory">Memory</option>
+    <option value="storage">Storage</option>
+    <option value="videoCard">Video Card</option>
+    <option value="powerSupply">Power Supply</option>
+  </select>
+  <input #componentSearch
+         style="margin-right: 1rem;"
+         type="text"
+         placeholder="Search"
+         (keydown)="onUpdateSearchText(componentSearch.value)"
+  />
+  <button (click)="updateBuildList(componentSelect.value, componentGrid)">Add selected to build</button>
+</div>
+<div class="component-grid">
+  <ag-grid-angular
+          #componentGrid
+          class="ag-theme-alpine"
+          [defaultColDef]="defaultColDef"
+          [columnDefs]="columnDefs"
+          [rowData]="components$ | async"
+          [pagination]="true"
+          [suppressCellFocus]="true"
+          [quickFilterText]="searchText"
+          [rowSelection]="'multiple'"
+          [rowMultiSelectWithClick]="true"
+          [suppressRowDeselection]="true"
+          (gridColumnsChanged)="onColumnsChanged($event, componentSelect.value)"
+          (gridSizeChanged)="resizeGrid($event)"
+  ></ag-grid-angular>
+</div>

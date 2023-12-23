@@ -1,0 +1,27 @@
+##############################
+## Java
+##############################
+*.class
+out/
+bin/
+target/
+logs/
+src/main/resources/public/
+
+##############################
+## IDE
+##############################
+
+.idea/
+.idea_modules/
+.settings/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.metadata
+.classpath
+.project
+
+
+.DS_Store
