@@ -140,7 +140,10 @@ public class PcBuilderController {
     public void getAllCpuComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<CpuComponent> components = databaseConnectionHandler.getCpuComponents(idList);
             CpuComponentList cpuList = CpuComponentList.newBuilder()
                     .addAllCpuComponents(components)
@@ -155,7 +158,10 @@ public class PcBuilderController {
     public void getAllMotherboardComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<MotherboardComponent> components = databaseConnectionHandler.getMotherboardComponents(idList);
             MotherboardComponentList motherboardList = MotherboardComponentList.newBuilder()
                     .addAllMotherboardComponents(components)
@@ -170,7 +176,10 @@ public class PcBuilderController {
     public void getAllMemoryComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<MemoryComponent> components = databaseConnectionHandler.getMemoryComponents(idList);
             MemoryComponentList memoryList = MemoryComponentList.newBuilder()
                     .addAllMemoryComponents(components)
@@ -185,7 +194,10 @@ public class PcBuilderController {
     public void getAllStorageComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<StorageComponent> components = databaseConnectionHandler.getStorageComponents(idList);
             StorageComponentList storageList = StorageComponentList.newBuilder()
                     .addAllStorageComponents(components)
@@ -200,7 +212,10 @@ public class PcBuilderController {
     public void getAllVideoCardComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<VideoCardComponent> components = databaseConnectionHandler.getVideoCardComponents(idList);
             VideoCardComponentList videoCardList = VideoCardComponentList.newBuilder()
                     .addAllVideoCardComponents(components)
@@ -215,7 +230,10 @@ public class PcBuilderController {
     public void getAllPowerSupplyComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList =  idsValue.split(",");
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
             List<PowerSupplyComponent> components = databaseConnectionHandler.getPowerSupplyComponents(idList);
             PowerSupplyComponentList powerSupplyList = PowerSupplyComponentList.newBuilder()
                     .addAllPowerSupplyComponents(components)
