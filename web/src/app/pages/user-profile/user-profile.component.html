@@ -1,7 +1,7 @@
 <ng-container *ngIf="userProfile$ | async as user">
   <div class="profile-header">
     <h1>{{user.displayName}}</h1>
-    <h3>@{{user.username}}</h3>
+    <h3>&#64;{{user.username}}</h3>
     <div>
       <button (click)="isEditProfileFormOpen = true">Edit profile</button>
     </div>
