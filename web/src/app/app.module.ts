@@ -10,6 +10,7 @@ import { BuildListingComponent } from './pages/build-listing/build-listing.compo
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { BuilderComponent } from './pages/builder/builder.component';
 import {AgGridModule} from "ag-grid-angular";
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AgGridModule} from "ag-grid-angular";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    AgGridModule
+    AgGridModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     PcBuilderService
