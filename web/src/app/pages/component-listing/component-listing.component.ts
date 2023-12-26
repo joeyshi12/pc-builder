@@ -39,10 +39,6 @@ export class ComponentListingComponent {
     params.api.sizeColumnsToFit();
   }
 
-  public getRowId(row: any) {
-    return row.data.uuid;
-  }
-
   public onUpdateSearchText(searchText: string) {
     this.searchText = searchText;
   }
