@@ -11,6 +11,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { BuilderComponent } from './pages/builder/builder.component';
 import {AgGridModule} from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
+import { buildListReducer } from './pages/component-listing/build-list.reducer';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     AppRoutingModule,
     AgGridModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ buildList: buildListReducer })
   ],
   providers: [
     PcBuilderService

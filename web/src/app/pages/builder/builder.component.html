@@ -1,89 +1,243 @@
 <h1>PC Parts List</h1>
 <p>Pick out your PC parts.</p>
-<div>
+<div *ngIf="draft$ | async as draft">
   <div>
-    <h2>PC list name</h2>
-    <label>Created on</label>
-    <br>
-    <label>Lasted updated...</label>
+    <h2>{{draft.displayName}}</h2>
+    <p>{{draft.description}}</p>
   </div>
   <div>
-    <button>Choose list</button>
-    <button>Save list</button>
+    <button (click)="isEditDraftOpen = true">Edit list</button>
+    <button (click)="saveDraft(draft)">Save list</button>
   </div>
   <table>
     <thead>
     <tr>
       <th>Component</th>
       <th>Name</th>
-      <th>Details</th>
       <th>Price</th>
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngIf="cpuList$ | async as cpuList">
-      <tr>
-        <td>CPU</td>
-        <td>
-          <ul *ngFor="let cpu of cpuList">
-            <li>{{cpu.uuid}}</li>
-          </ul>
-        </td>
-        <td></td>
-        <td></td>
-      </tr>
-    </ng-container>
-    <tr>
-      <td>Motherboard</td>
-      <td>
-        <button>Choose a Motherboard component</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>
-        <button>Choose a Memory component</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Storage</td>
-      <td>
-        <button>Choose a Storage component</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Video Card</td>
-      <td>
-        <button>Choose a Video Card component</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Power Supply</td>
-      <td>
-        <button>Choose a Power Supply component</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
+      <ng-container *ngIf="cpuList$ | async as cpuList">
+        <ng-container *ngIf="cpuList.length > 0; else cpuSelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'cpu'}">CPU</a>
+            </td>
+            <td>
+              <ul *ngFor="let cpu of cpuList">
+                <li>{{formCpuName(cpu)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let cpu of cpuList">
+                <li>{{formPriceString(cpu.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="motherboardList$ | async as motherboardList">
+        <ng-container *ngIf="motherboardList.length > 0; else motherboardSelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'motherboard'}">Motherboard</a>
+            </td>
+            <td>
+              <ul *ngFor="let motherboard of motherboardList">
+                <li>{{formMotherboardName(motherboard)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let motherboard of motherboardList">
+                <li>{{formPriceString(motherboard.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="memoryList$ | async as memoryList">
+        <ng-container *ngIf="memoryList.length > 0; else memorySelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'memory'}">Memory</a>
+            </td>
+            <td>
+              <ul *ngFor="let memory of memoryList">
+                <li>{{formMemoryName(memory)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let memory of memoryList">
+                <li>{{formPriceString(memory.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="storageList$ | async as storageList">
+        <ng-container *ngIf="storageList.length > 0; else storageSelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'storage'}">Storage</a>
+            </td>
+            <td>
+              <ul *ngFor="let storage of storageList">
+                <li>{{formStorageName(storage)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let storage of storageList">
+                <li>{{formPriceString(storage.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="videoCardList$ | async as videoCardList">
+        <ng-container *ngIf="videoCardList.length > 0; else videoCardSelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'videoCard'}">Video Card</a>
+            </td>
+            <td>
+              <ul *ngFor="let videoCard of videoCardList">
+                <li>{{formVideoCardName(videoCard)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let videoCard of videoCardList">
+                <li>{{formPriceString(videoCard.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="powerSupplyList$ | async as powerSupplyList">
+        <ng-container *ngIf="powerSupplyList.length > 0; else powerSupplySelect">
+          <tr>
+            <td>
+              <a routerLink="/component-listing" [queryParams]="{component: 'powerSupply'}">Power Supply</a>
+            </td>
+            <td>
+              <ul *ngFor="let powerSupply of powerSupplyList">
+                <li>{{formPowerSupplyName(powerSupply)}}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let powerSupply of powerSupplyList">
+                <li>{{formPriceString(powerSupply.price)}}</li>
+              </ul>
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
     </tbody>
   </table>
 </div>
 
 <ng-template #cpuSelect>
   <tr>
-    <td>CPU</td>
     <td>
-      <button>Choose a CPU component</button>
+      <a routerLink="/component-listing" [queryParams]="{component: 'cpu'}">CPU</a>
     </td>
-    <td></td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'cpu'}">Choose a CPU component</button>
+    </td>
     <td></td>
   </tr>
 </ng-template>
+
+<ng-template #motherboardSelect>
+  <tr>
+    <td>
+      <a routerLink="/component-listing" [queryParams]="{component: 'motherboard'}">Motherboard</a>
+    </td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'motherboard'}">Choose a Motherboard component</button>
+    </td>
+    <td></td>
+  </tr>
+</ng-template>
+
+<ng-template #memorySelect>
+  <tr>
+    <td>
+      <a routerLink="/component-listing" [queryParams]="{component: 'memory'}">Memory</a>
+    </td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'memory'}">Choose a Memory component</button>
+    </td>
+    <td></td>
+  </tr>
+</ng-template>
+
+<ng-template #storageSelect>
+  <tr>
+    <td>
+      <a routerLink="/component-listing" [queryParams]="{component: 'storage'}">Storage</a>
+    </td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'storage'}">Choose a Storage component</button>
+    </td>
+    <td></td>
+  </tr>
+</ng-template>
+
+<ng-template #videoCardSelect>
+  <tr>
+    <td>
+      <a routerLink="/component-listing" [queryParams]="{component: 'videoCard'}">Video Card</a>
+    </td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'videoCard'}">Choose a Video Card component</button>
+    </td>
+    <td></td>
+  </tr>
+</ng-template>
+
+<ng-template #powerSupplySelect>
+  <tr>
+    <td>
+      <a routerLink="/component-listing" [queryParams]="{component: 'powerSupply'}">Power Supply</a>
+    </td>
+    <td>
+      <button
+        routerLink="/component-listing"
+        [queryParams]="{component: 'powerSupply'}">Choose a Power Supply component</button>
+    </td>
+    <td></td>
+  </tr>
+</ng-template>
+
+<dialog [open]="isEditDraftOpen">
+  <div>
+    <div class="form-header">
+      <h1>Edit Profile</h1>
+    </div>
+    <div class="form-body">
+      <div class="form-field">
+        <label>Display name</label>
+        <input #displayName type="text" />
+      </div>
+      <div class="form-field">
+        <label>Description</label>
+        <input #description type="text" />
+      </div>
+      <div class="form-buttons-container">
+        <button (click)="isEditDraftOpen = false">Close</button>
+        <button (click)="updateDraftInfo(displayName.value, description.value)">Submit</button>
+      </div>
+    </div>
+  </div>
+</dialog>

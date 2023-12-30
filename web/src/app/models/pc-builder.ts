@@ -120,10 +120,25 @@ export interface ComputerBuild {
   lastUpdateDate?: number | undefined;
 }
 
+export interface ComputerBuildList {
+  computerBuilds?: ComputerBuild[] | undefined;
+}
+
 export interface ComputerBuildComment {
   authorName?: string | undefined;
   content?: string | undefined;
   lastUpdatedDate?: string | undefined;
+}
+
+export interface ComputerBuildDraft {
+  displayName?: string | undefined;
+  description?: string | undefined;
+  cpuIds?: string[] | undefined;
+  motherboardIds?: string[] | undefined;
+  storageIds?: string[] | undefined;
+  memoryIds?: string[] | undefined;
+  videoCardIds?: string[] | undefined;
+  powerSupplyIds?: string[] | undefined;
 }
 
 function createBaseUserProfile(): UserProfile {
@@ -1954,6 +1969,69 @@ export const ComputerBuild = {
   },
 };
 
+function createBaseComputerBuildList(): ComputerBuildList {
+  return { computerBuilds: [] };
+}
+
+export const ComputerBuildList = {
+  encode(message: ComputerBuildList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.computerBuilds !== undefined && message.computerBuilds.length !== 0) {
+      for (const v of message.computerBuilds) {
+        ComputerBuild.encode(v!, writer.uint32(10).fork()).ldelim();
+      }
+    }
+    return writer;
+  },
+
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildList {
+    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseComputerBuildList();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 10) {
+            break;
+          }
+
+          message.computerBuilds!.push(ComputerBuild.decode(reader, reader.uint32()));
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ComputerBuildList {
+    return {
+      computerBuilds: globalThis.Array.isArray(object?.computerBuilds)
+        ? object.computerBuilds.map((e: any) => ComputerBuild.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ComputerBuildList): unknown {
+    const obj: any = {};
+    if (message.computerBuilds?.length) {
+      obj.computerBuilds = message.computerBuilds.map((e) => ComputerBuild.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ComputerBuildList>, I>>(base?: I): ComputerBuildList {
+    return ComputerBuildList.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildList>, I>>(object: I): ComputerBuildList {
+    const message = createBaseComputerBuildList();
+    message.computerBuilds = object.computerBuilds?.map((e) => ComputerBuild.fromPartial(e)) || [];
+    return message;
+  },
+};
+
 function createBaseComputerBuildComment(): ComputerBuildComment {
   return { authorName: "", content: "", lastUpdatedDate: "" };
 }
@@ -2039,6 +2117,201 @@ export const ComputerBuildComment = {
     message.authorName = object.authorName ?? "";
     message.content = object.content ?? "";
     message.lastUpdatedDate = object.lastUpdatedDate ?? "";
+    return message;
+  },
+};
+
+function createBaseComputerBuildDraft(): ComputerBuildDraft {
+  return {
+    displayName: "",
+    description: "",
+    cpuIds: [],
+    motherboardIds: [],
+    storageIds: [],
+    memoryIds: [],
+    videoCardIds: [],
+    powerSupplyIds: [],
+  };
+}
+
+export const ComputerBuildDraft = {
+  encode(message: ComputerBuildDraft, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+    if (message.displayName !== undefined && message.displayName !== "") {
+      writer.uint32(10).string(message.displayName);
+    }
+    if (message.description !== undefined && message.description !== "") {
+      writer.uint32(18).string(message.description);
+    }
+    if (message.cpuIds !== undefined && message.cpuIds.length !== 0) {
+      for (const v of message.cpuIds) {
+        writer.uint32(26).string(v!);
+      }
+    }
+    if (message.motherboardIds !== undefined && message.motherboardIds.length !== 0) {
+      for (const v of message.motherboardIds) {
+        writer.uint32(34).string(v!);
+      }
+    }
+    if (message.storageIds !== undefined && message.storageIds.length !== 0) {
+      for (const v of message.storageIds) {
+        writer.uint32(42).string(v!);
+      }
+    }
+    if (message.memoryIds !== undefined && message.memoryIds.length !== 0) {
+      for (const v of message.memoryIds) {
+        writer.uint32(50).string(v!);
+      }
+    }
+    if (message.videoCardIds !== undefined && message.videoCardIds.length !== 0) {
+      for (const v of message.videoCardIds) {
+        writer.uint32(58).string(v!);
+      }
+    }
+    if (message.powerSupplyIds !== undefined && message.powerSupplyIds.length !== 0) {
+      for (const v of message.powerSupplyIds) {
+        writer.uint32(66).string(v!);
+      }
+    }
+    return writer;
+  },
+
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildDraft {
+    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseComputerBuildDraft();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 10) {
+            break;
+          }
+
+          message.displayName = reader.string();
+          continue;
+        case 2:
+          if (tag !== 18) {
+            break;
+          }
+
+          message.description = reader.string();
+          continue;
+        case 3:
+          if (tag !== 26) {
+            break;
+          }
+
+          message.cpuIds!.push(reader.string());
+          continue;
+        case 4:
+          if (tag !== 34) {
+            break;
+          }
+
+          message.motherboardIds!.push(reader.string());
+          continue;
+        case 5:
+          if (tag !== 42) {
+            break;
+          }
+
+          message.storageIds!.push(reader.string());
+          continue;
+        case 6:
+          if (tag !== 50) {
+            break;
+          }
+
+          message.memoryIds!.push(reader.string());
+          continue;
+        case 7:
+          if (tag !== 58) {
+            break;
+          }
+
+          message.videoCardIds!.push(reader.string());
+          continue;
+        case 8:
+          if (tag !== 66) {
+            break;
+          }
+
+          message.powerSupplyIds!.push(reader.string());
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ComputerBuildDraft {
+    return {
+      displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
+      description: isSet(object.description) ? globalThis.String(object.description) : "",
+      cpuIds: globalThis.Array.isArray(object?.cpuIds) ? object.cpuIds.map((e: any) => globalThis.String(e)) : [],
+      motherboardIds: globalThis.Array.isArray(object?.motherboardIds)
+        ? object.motherboardIds.map((e: any) => globalThis.String(e))
+        : [],
+      storageIds: globalThis.Array.isArray(object?.storageIds)
+        ? object.storageIds.map((e: any) => globalThis.String(e))
+        : [],
+      memoryIds: globalThis.Array.isArray(object?.memoryIds)
+        ? object.memoryIds.map((e: any) => globalThis.String(e))
+        : [],
+      videoCardIds: globalThis.Array.isArray(object?.videoCardIds)
+        ? object.videoCardIds.map((e: any) => globalThis.String(e))
+        : [],
+      powerSupplyIds: globalThis.Array.isArray(object?.powerSupplyIds)
+        ? object.powerSupplyIds.map((e: any) => globalThis.String(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ComputerBuildDraft): unknown {
+    const obj: any = {};
+    if (message.displayName !== undefined && message.displayName !== "") {
+      obj.displayName = message.displayName;
+    }
+    if (message.description !== undefined && message.description !== "") {
+      obj.description = message.description;
+    }
+    if (message.cpuIds?.length) {
+      obj.cpuIds = message.cpuIds;
+    }
+    if (message.motherboardIds?.length) {
+      obj.motherboardIds = message.motherboardIds;
+    }
+    if (message.storageIds?.length) {
+      obj.storageIds = message.storageIds;
+    }
+    if (message.memoryIds?.length) {
+      obj.memoryIds = message.memoryIds;
+    }
+    if (message.videoCardIds?.length) {
+      obj.videoCardIds = message.videoCardIds;
+    }
+    if (message.powerSupplyIds?.length) {
+      obj.powerSupplyIds = message.powerSupplyIds;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ComputerBuildDraft>, I>>(base?: I): ComputerBuildDraft {
+    return ComputerBuildDraft.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildDraft>, I>>(object: I): ComputerBuildDraft {
+    const message = createBaseComputerBuildDraft();
+    message.displayName = object.displayName ?? "";
+    message.description = object.description ?? "";
+    message.cpuIds = object.cpuIds?.map((e) => e) || [];
+    message.motherboardIds = object.motherboardIds?.map((e) => e) || [];
+    message.storageIds = object.storageIds?.map((e) => e) || [];
+    message.memoryIds = object.memoryIds?.map((e) => e) || [];
+    message.videoCardIds = object.videoCardIds?.map((e) => e) || [];
+    message.powerSupplyIds = object.powerSupplyIds?.map((e) => e) || [];
     return message;
   },
 };

@@ -1,41 +1,86 @@
-import { createAction, createReducer, on } from '@ngrx/store';
+import { createAction, createReducer, on, props } from '@ngrx/store';
+import { ComputerBuildDraft } from 'src/app/models/pc-builder';
 
 
-export type ComponentType = "cpu" | "motherboard" | "memory" | "storage" | "videoCard" | "powerSupply";
+export const updateDraftInfo = createAction("updateComputerBuildDraftInfo", props<{ displayName: string, description: string }>());
+export const updateDraftComponentIds = createAction("updateComputerBuildDraftComponentIds", props<{ componentType: string, ids: string[] }>());
 
-export interface BuildList {
-  displayName: string;
-  description: string;
-  componentIds: Map<ComponentType, string[]>;
-}
-
-export const updateBuildListName = createAction("updateBuildListName");
-export const updateBuildListDescription = createAction("updateBuildListDescription");
-export const updateBuildListComponentIds = createAction("updateBuildListComponentIds");
-export const resetBuildList = createAction("resetBuildList");
-
-export const initialState: BuildList = {
-  displayName: "",
-  description: "",
-  componentIds: new Map()
+const emptyState: ComputerBuildDraft = {
+  displayName: "Example name",
+  description: "Example description",
+  cpuIds: [],
+  motherboardIds: [],
+  memoryIds: [],
+  storageIds: [],
+  videoCardIds: [],
+  powerSupplyIds: []
 };
 
+function getInitialState(): ComputerBuildDraft {
+  const storedValue = localStorage.getItem("draft");
+  if (!storedValue) {
+    return emptyState;
+  }
+  try {
+    return JSON.parse(storedValue);
+  } catch {
+    return emptyState;
+  }
+}
+
 export const buildListReducer = createReducer(
-  initialState,
-  on(updateBuildListName, (state: BuildList) => {
-    console.log("name");
-    return state;
+  getInitialState(),
+  on(updateDraftInfo, (state: ComputerBuildDraft, { displayName, description }) => {
+    const newState = {
+      ...state,
+      displayName, description
+    };
+    localStorage.setItem("draft", JSON.stringify(newState));
+    return newState;
   }),
-  on(updateBuildListDescription, (state: BuildList) => {
-    console.log("description");
-    return state;
-  }),
-  on(updateBuildListComponentIds, (state: BuildList) => {
-    console.log("componentIds");
-    return state;
-  }),
-  on(resetBuildList, (state: BuildList) => {
-    console.log("reset");
-    return state;
+  on(updateDraftComponentIds, (state: ComputerBuildDraft, { componentType, ids }) => {
+    let newState: ComputerBuildDraft;
+    switch (componentType) {
+      case "cpu":
+        newState = {
+          ...state,
+          cpuIds: ids
+        };
+        break;
+      case "motherboard":
+        newState = {
+          ...state,
+          motherboardIds: ids
+        };
+        break;
+      case "memory":
+        newState = {
+          ...state,
+          memoryIds: ids
+        };
+        break;
+      case "storage":
+        newState = {
+          ...state,
+          storageIds: ids
+        };
+        break;
+      case "videoCard":
+        newState = {
+          ...state,
+          videoCardIds: ids
+        };
+        break;
+      case "powerSupply":
+        newState = {
+          ...state,
+          powerSupplyIds: ids
+        };
+        break;
+      default:
+        throw Error(`Invalid componentType ${componentType}`)
+    }
+    localStorage.setItem("draft", JSON.stringify(newState));
+    return newState;
   })
 )

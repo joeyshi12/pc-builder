@@ -16,6 +16,7 @@ public class PcBuilderController {
     private final DatabaseConnectionHandler databaseConnectionHandler;
 
     private static final String IDS_PARAM_KEY = "ids";
+    private static final String USER_PARAM_KEY = "user";
     private static final String SESSION_USERNAME = "username";
 
     public PcBuilderController(DatabaseConnectionHandler databaseConnectionHandler) {
@@ -63,7 +64,7 @@ public class PcBuilderController {
 
     public void clearSessionUser(Context ctx) {
         try {
-            ctx.sessionAttribute("username", null);
+            ctx.sessionAttribute(PcBuilderController.SESSION_USERNAME, null);
             ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to fetch session user", e);
@@ -86,11 +87,12 @@ public class PcBuilderController {
 
     public void createComputerBuild(Context ctx) {
         try {
-            ComputerBuild.Builder builder = ComputerBuild.newBuilder();
+            String username = ctx.sessionAttribute(PcBuilderController.SESSION_USERNAME);
+            ComputerBuildDraft.Builder builder = ComputerBuildDraft.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            ComputerBuild build = builder.build();
-            databaseConnectionHandler.createComputerBuild(build);
-            ctx.json(build);
+            ComputerBuildDraft draft = builder.build();
+            ComputerBuild build = databaseConnectionHandler.createComputerBuildFromDraft(draft, username);
+            ctx.json(JsonFormat.printer().print(build));
             ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to create computer build", e);
@@ -100,8 +102,16 @@ public class PcBuilderController {
 
     public void getAllComputerBuilds(Context ctx) {
         try {
-            List<ComputerBuild> builds = databaseConnectionHandler.getAllComputerBuilds(null);
-            ctx.json(builds);
+            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
+            String[] idList = null;
+            if (idsValue != null) {
+                idList =  idsValue.split(",");
+            }
+            String username = ctx.queryParam(PcBuilderController.USER_PARAM_KEY);
+            List<ComputerBuild> builds = databaseConnectionHandler.getAllComputerBuilds(idList, username);
+            ComputerBuildList buildList = ComputerBuildList.newBuilder().addAllComputerBuilds(builds).build();
+            ctx.json(JsonFormat.printer().print(buildList));
+            ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);

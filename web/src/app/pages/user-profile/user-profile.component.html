@@ -6,16 +6,11 @@
       <button (click)="isEditProfileFormOpen = true">Edit profile</button>
     </div>
   </div>
-  <div>
-      <button>Published builds</button>
-      <button>Private builds</button>
-  </div>
-  <ul>
-    <li>Your builds...</li>
-  </ul>
-  <ng-template #wuh>
-    wuh?
-  </ng-template>
+  <ng-container *ngIf="buildList$ | async as buildList">
+    <ul *ngFor="let build of buildList">
+      <li>{{build.displayName}}</li>
+    </ul>
+  </ng-container>
 </ng-container>
 
 <dialog [open]="isEditProfileFormOpen">

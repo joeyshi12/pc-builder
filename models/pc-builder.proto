@@ -117,8 +117,23 @@ message ComputerBuild {
   int64 lastUpdateDate = 12;
 }
 
+message ComputerBuildList {
+  repeated ComputerBuild computerBuilds = 1;
+}
+
 message ComputerBuildComment {
   string authorName = 1;
   string content = 2;
   string lastUpdatedDate = 4;
+}
+
+message ComputerBuildDraft {
+  string displayName = 1;
+  string description = 2;
+  repeated string cpuIds = 3;
+  repeated string motherboardIds = 4;
+  repeated string storageIds = 5;
+  repeated string memoryIds = 6;
+  repeated string videoCardIds = 7;
+  repeated string powerSupplyIds = 8;
 }

@@ -16198,6 +16198,788 @@ public final class PcBuilder {
 
   }
 
+  public interface ComputerBuildListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    java.util.List<models.PcBuilder.ComputerBuild> 
+        getComputerBuildsList();
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    models.PcBuilder.ComputerBuild getComputerBuilds(int index);
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    int getComputerBuildsCount();
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+        getComputerBuildsOrBuilderList();
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code models.ComputerBuildList}
+   */
+  public static final class ComputerBuildList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildList)
+      ComputerBuildListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ComputerBuildList.newBuilder() to construct.
+    private ComputerBuildList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ComputerBuildList() {
+      computerBuilds_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ComputerBuildList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return models.PcBuilder.internal_static_models_ComputerBuildList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              models.PcBuilder.ComputerBuildList.class, models.PcBuilder.ComputerBuildList.Builder.class);
+    }
+
+    public static final int COMPUTERBUILDS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<models.PcBuilder.ComputerBuild> computerBuilds_;
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<models.PcBuilder.ComputerBuild> getComputerBuildsList() {
+      return computerBuilds_;
+    }
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+        getComputerBuildsOrBuilderList() {
+      return computerBuilds_;
+    }
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    @java.lang.Override
+    public int getComputerBuildsCount() {
+      return computerBuilds_.size();
+    }
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    @java.lang.Override
+    public models.PcBuilder.ComputerBuild getComputerBuilds(int index) {
+      return computerBuilds_.get(index);
+    }
+    /**
+     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     */
+    @java.lang.Override
+    public models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+        int index) {
+      return computerBuilds_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < computerBuilds_.size(); i++) {
+        output.writeMessage(1, computerBuilds_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < computerBuilds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, computerBuilds_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof models.PcBuilder.ComputerBuildList)) {
+        return super.equals(obj);
+      }
+      models.PcBuilder.ComputerBuildList other = (models.PcBuilder.ComputerBuildList) obj;
+
+      if (!getComputerBuildsList()
+          .equals(other.getComputerBuildsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getComputerBuildsCount() > 0) {
+        hash = (37 * hash) + COMPUTERBUILDS_FIELD_NUMBER;
+        hash = (53 * hash) + getComputerBuildsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static models.PcBuilder.ComputerBuildList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static models.PcBuilder.ComputerBuildList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static models.PcBuilder.ComputerBuildList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code models.ComputerBuildList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildList)
+        models.PcBuilder.ComputerBuildListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return models.PcBuilder.internal_static_models_ComputerBuildList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                models.PcBuilder.ComputerBuildList.class, models.PcBuilder.ComputerBuildList.Builder.class);
+      }
+
+      // Construct using models.PcBuilder.ComputerBuildList.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (computerBuildsBuilder_ == null) {
+          computerBuilds_ = java.util.Collections.emptyList();
+        } else {
+          computerBuilds_ = null;
+          computerBuildsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildList getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildList build() {
+        models.PcBuilder.ComputerBuildList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildList buildPartial() {
+        models.PcBuilder.ComputerBuildList result = new models.PcBuilder.ComputerBuildList(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(models.PcBuilder.ComputerBuildList result) {
+        if (computerBuildsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            computerBuilds_ = java.util.Collections.unmodifiableList(computerBuilds_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.computerBuilds_ = computerBuilds_;
+        } else {
+          result.computerBuilds_ = computerBuildsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(models.PcBuilder.ComputerBuildList result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof models.PcBuilder.ComputerBuildList) {
+          return mergeFrom((models.PcBuilder.ComputerBuildList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildList other) {
+        if (other == models.PcBuilder.ComputerBuildList.getDefaultInstance()) return this;
+        if (computerBuildsBuilder_ == null) {
+          if (!other.computerBuilds_.isEmpty()) {
+            if (computerBuilds_.isEmpty()) {
+              computerBuilds_ = other.computerBuilds_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureComputerBuildsIsMutable();
+              computerBuilds_.addAll(other.computerBuilds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.computerBuilds_.isEmpty()) {
+            if (computerBuildsBuilder_.isEmpty()) {
+              computerBuildsBuilder_.dispose();
+              computerBuildsBuilder_ = null;
+              computerBuilds_ = other.computerBuilds_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              computerBuildsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getComputerBuildsFieldBuilder() : null;
+            } else {
+              computerBuildsBuilder_.addAllMessages(other.computerBuilds_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                models.PcBuilder.ComputerBuild m =
+                    input.readMessage(
+                        models.PcBuilder.ComputerBuild.parser(),
+                        extensionRegistry);
+                if (computerBuildsBuilder_ == null) {
+                  ensureComputerBuildsIsMutable();
+                  computerBuilds_.add(m);
+                } else {
+                  computerBuildsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<models.PcBuilder.ComputerBuild> computerBuilds_ =
+        java.util.Collections.emptyList();
+      private void ensureComputerBuildsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          computerBuilds_ = new java.util.ArrayList<models.PcBuilder.ComputerBuild>(computerBuilds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder> computerBuildsBuilder_;
+
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public java.util.List<models.PcBuilder.ComputerBuild> getComputerBuildsList() {
+        if (computerBuildsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(computerBuilds_);
+        } else {
+          return computerBuildsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public int getComputerBuildsCount() {
+        if (computerBuildsBuilder_ == null) {
+          return computerBuilds_.size();
+        } else {
+          return computerBuildsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public models.PcBuilder.ComputerBuild getComputerBuilds(int index) {
+        if (computerBuildsBuilder_ == null) {
+          return computerBuilds_.get(index);
+        } else {
+          return computerBuildsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder setComputerBuilds(
+          int index, models.PcBuilder.ComputerBuild value) {
+        if (computerBuildsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.set(index, value);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder setComputerBuilds(
+          int index, models.PcBuilder.ComputerBuild.Builder builderForValue) {
+        if (computerBuildsBuilder_ == null) {
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          computerBuildsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder addComputerBuilds(models.PcBuilder.ComputerBuild value) {
+        if (computerBuildsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.add(value);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder addComputerBuilds(
+          int index, models.PcBuilder.ComputerBuild value) {
+        if (computerBuildsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.add(index, value);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder addComputerBuilds(
+          models.PcBuilder.ComputerBuild.Builder builderForValue) {
+        if (computerBuildsBuilder_ == null) {
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          computerBuildsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder addComputerBuilds(
+          int index, models.PcBuilder.ComputerBuild.Builder builderForValue) {
+        if (computerBuildsBuilder_ == null) {
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          computerBuildsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder addAllComputerBuilds(
+          java.lang.Iterable<? extends models.PcBuilder.ComputerBuild> values) {
+        if (computerBuildsBuilder_ == null) {
+          ensureComputerBuildsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, computerBuilds_);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder clearComputerBuilds() {
+        if (computerBuildsBuilder_ == null) {
+          computerBuilds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public Builder removeComputerBuilds(int index) {
+        if (computerBuildsBuilder_ == null) {
+          ensureComputerBuildsIsMutable();
+          computerBuilds_.remove(index);
+          onChanged();
+        } else {
+          computerBuildsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public models.PcBuilder.ComputerBuild.Builder getComputerBuildsBuilder(
+          int index) {
+        return getComputerBuildsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+          int index) {
+        if (computerBuildsBuilder_ == null) {
+          return computerBuilds_.get(index);  } else {
+          return computerBuildsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+           getComputerBuildsOrBuilderList() {
+        if (computerBuildsBuilder_ != null) {
+          return computerBuildsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(computerBuilds_);
+        }
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public models.PcBuilder.ComputerBuild.Builder addComputerBuildsBuilder() {
+        return getComputerBuildsFieldBuilder().addBuilder(
+            models.PcBuilder.ComputerBuild.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public models.PcBuilder.ComputerBuild.Builder addComputerBuildsBuilder(
+          int index) {
+        return getComputerBuildsFieldBuilder().addBuilder(
+            index, models.PcBuilder.ComputerBuild.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       */
+      public java.util.List<models.PcBuilder.ComputerBuild.Builder> 
+           getComputerBuildsBuilderList() {
+        return getComputerBuildsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder> 
+          getComputerBuildsFieldBuilder() {
+        if (computerBuildsBuilder_ == null) {
+          computerBuildsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder>(
+                  computerBuilds_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          computerBuilds_ = null;
+        }
+        return computerBuildsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildList)
+    }
+
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildList)
+    private static final models.PcBuilder.ComputerBuildList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildList();
+    }
+
+    public static models.PcBuilder.ComputerBuildList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ComputerBuildList>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildList>() {
+      @java.lang.Override
+      public ComputerBuildList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ComputerBuildList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ComputerBuildList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public models.PcBuilder.ComputerBuildList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ComputerBuildCommentOrBuilder extends
       // @@protoc_insertion_point(interface_extends:models.ComputerBuildComment)
       com.google.protobuf.MessageOrBuilder {
@@ -17046,6 +17828,1990 @@ public final class PcBuilder {
 
   }
 
+  public interface ComputerBuildDraftOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildDraft)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string displayName = 1;</code>
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <code>string displayName = 1;</code>
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
+
+    /**
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @return A list containing the cpuIds.
+     */
+    java.util.List<java.lang.String>
+        getCpuIdsList();
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @return The count of cpuIds.
+     */
+    int getCpuIdsCount();
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @param index The index of the element to return.
+     * @return The cpuIds at the given index.
+     */
+    java.lang.String getCpuIds(int index);
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the cpuIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getCpuIdsBytes(int index);
+
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @return A list containing the motherboardIds.
+     */
+    java.util.List<java.lang.String>
+        getMotherboardIdsList();
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @return The count of motherboardIds.
+     */
+    int getMotherboardIdsCount();
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @param index The index of the element to return.
+     * @return The motherboardIds at the given index.
+     */
+    java.lang.String getMotherboardIds(int index);
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the motherboardIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getMotherboardIdsBytes(int index);
+
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @return A list containing the storageIds.
+     */
+    java.util.List<java.lang.String>
+        getStorageIdsList();
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @return The count of storageIds.
+     */
+    int getStorageIdsCount();
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @param index The index of the element to return.
+     * @return The storageIds at the given index.
+     */
+    java.lang.String getStorageIds(int index);
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the storageIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getStorageIdsBytes(int index);
+
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @return A list containing the memoryIds.
+     */
+    java.util.List<java.lang.String>
+        getMemoryIdsList();
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @return The count of memoryIds.
+     */
+    int getMemoryIdsCount();
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @param index The index of the element to return.
+     * @return The memoryIds at the given index.
+     */
+    java.lang.String getMemoryIds(int index);
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the memoryIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getMemoryIdsBytes(int index);
+
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @return A list containing the videoCardIds.
+     */
+    java.util.List<java.lang.String>
+        getVideoCardIdsList();
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @return The count of videoCardIds.
+     */
+    int getVideoCardIdsCount();
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @param index The index of the element to return.
+     * @return The videoCardIds at the given index.
+     */
+    java.lang.String getVideoCardIds(int index);
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the videoCardIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getVideoCardIdsBytes(int index);
+
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @return A list containing the powerSupplyIds.
+     */
+    java.util.List<java.lang.String>
+        getPowerSupplyIdsList();
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @return The count of powerSupplyIds.
+     */
+    int getPowerSupplyIdsCount();
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @param index The index of the element to return.
+     * @return The powerSupplyIds at the given index.
+     */
+    java.lang.String getPowerSupplyIds(int index);
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the powerSupplyIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getPowerSupplyIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code models.ComputerBuildDraft}
+   */
+  public static final class ComputerBuildDraft extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildDraft)
+      ComputerBuildDraftOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ComputerBuildDraft.newBuilder() to construct.
+    private ComputerBuildDraft(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ComputerBuildDraft() {
+      displayName_ = "";
+      description_ = "";
+      cpuIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      motherboardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      storageIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      memoryIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      videoCardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      powerSupplyIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ComputerBuildDraft();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return models.PcBuilder.internal_static_models_ComputerBuildDraft_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              models.PcBuilder.ComputerBuildDraft.class, models.PcBuilder.ComputerBuildDraft.Builder.class);
+    }
+
+    public static final int DISPLAYNAME_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
+    /**
+     * <code>string displayName = 1;</code>
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string displayName = 1;</code>
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+    /**
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CPUIDS_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList cpuIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @return A list containing the cpuIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCpuIdsList() {
+      return cpuIds_;
+    }
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @return The count of cpuIds.
+     */
+    public int getCpuIdsCount() {
+      return cpuIds_.size();
+    }
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @param index The index of the element to return.
+     * @return The cpuIds at the given index.
+     */
+    public java.lang.String getCpuIds(int index) {
+      return cpuIds_.get(index);
+    }
+    /**
+     * <code>repeated string cpuIds = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the cpuIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCpuIdsBytes(int index) {
+      return cpuIds_.getByteString(index);
+    }
+
+    public static final int MOTHERBOARDIDS_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList motherboardIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @return A list containing the motherboardIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMotherboardIdsList() {
+      return motherboardIds_;
+    }
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @return The count of motherboardIds.
+     */
+    public int getMotherboardIdsCount() {
+      return motherboardIds_.size();
+    }
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @param index The index of the element to return.
+     * @return The motherboardIds at the given index.
+     */
+    public java.lang.String getMotherboardIds(int index) {
+      return motherboardIds_.get(index);
+    }
+    /**
+     * <code>repeated string motherboardIds = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the motherboardIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMotherboardIdsBytes(int index) {
+      return motherboardIds_.getByteString(index);
+    }
+
+    public static final int STORAGEIDS_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList storageIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @return A list containing the storageIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getStorageIdsList() {
+      return storageIds_;
+    }
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @return The count of storageIds.
+     */
+    public int getStorageIdsCount() {
+      return storageIds_.size();
+    }
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @param index The index of the element to return.
+     * @return The storageIds at the given index.
+     */
+    public java.lang.String getStorageIds(int index) {
+      return storageIds_.get(index);
+    }
+    /**
+     * <code>repeated string storageIds = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the storageIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getStorageIdsBytes(int index) {
+      return storageIds_.getByteString(index);
+    }
+
+    public static final int MEMORYIDS_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList memoryIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @return A list containing the memoryIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMemoryIdsList() {
+      return memoryIds_;
+    }
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @return The count of memoryIds.
+     */
+    public int getMemoryIdsCount() {
+      return memoryIds_.size();
+    }
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @param index The index of the element to return.
+     * @return The memoryIds at the given index.
+     */
+    public java.lang.String getMemoryIds(int index) {
+      return memoryIds_.get(index);
+    }
+    /**
+     * <code>repeated string memoryIds = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the memoryIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMemoryIdsBytes(int index) {
+      return memoryIds_.getByteString(index);
+    }
+
+    public static final int VIDEOCARDIDS_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList videoCardIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @return A list containing the videoCardIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVideoCardIdsList() {
+      return videoCardIds_;
+    }
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @return The count of videoCardIds.
+     */
+    public int getVideoCardIdsCount() {
+      return videoCardIds_.size();
+    }
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @param index The index of the element to return.
+     * @return The videoCardIds at the given index.
+     */
+    public java.lang.String getVideoCardIds(int index) {
+      return videoCardIds_.get(index);
+    }
+    /**
+     * <code>repeated string videoCardIds = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the videoCardIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getVideoCardIdsBytes(int index) {
+      return videoCardIds_.getByteString(index);
+    }
+
+    public static final int POWERSUPPLYIDS_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList powerSupplyIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @return A list containing the powerSupplyIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPowerSupplyIdsList() {
+      return powerSupplyIds_;
+    }
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @return The count of powerSupplyIds.
+     */
+    public int getPowerSupplyIdsCount() {
+      return powerSupplyIds_.size();
+    }
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @param index The index of the element to return.
+     * @return The powerSupplyIds at the given index.
+     */
+    public java.lang.String getPowerSupplyIds(int index) {
+      return powerSupplyIds_.get(index);
+    }
+    /**
+     * <code>repeated string powerSupplyIds = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the powerSupplyIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPowerSupplyIdsBytes(int index) {
+      return powerSupplyIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+      }
+      for (int i = 0; i < cpuIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cpuIds_.getRaw(i));
+      }
+      for (int i = 0; i < motherboardIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, motherboardIds_.getRaw(i));
+      }
+      for (int i = 0; i < storageIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, storageIds_.getRaw(i));
+      }
+      for (int i = 0; i < memoryIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, memoryIds_.getRaw(i));
+      }
+      for (int i = 0; i < videoCardIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, videoCardIds_.getRaw(i));
+      }
+      for (int i = 0; i < powerSupplyIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, powerSupplyIds_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cpuIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(cpuIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCpuIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < motherboardIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(motherboardIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getMotherboardIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < storageIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(storageIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getStorageIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < memoryIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(memoryIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getMemoryIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < videoCardIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(videoCardIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getVideoCardIdsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < powerSupplyIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(powerSupplyIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPowerSupplyIdsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof models.PcBuilder.ComputerBuildDraft)) {
+        return super.equals(obj);
+      }
+      models.PcBuilder.ComputerBuildDraft other = (models.PcBuilder.ComputerBuildDraft) obj;
+
+      if (!getDisplayName()
+          .equals(other.getDisplayName())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getCpuIdsList()
+          .equals(other.getCpuIdsList())) return false;
+      if (!getMotherboardIdsList()
+          .equals(other.getMotherboardIdsList())) return false;
+      if (!getStorageIdsList()
+          .equals(other.getStorageIdsList())) return false;
+      if (!getMemoryIdsList()
+          .equals(other.getMemoryIdsList())) return false;
+      if (!getVideoCardIdsList()
+          .equals(other.getVideoCardIdsList())) return false;
+      if (!getPowerSupplyIdsList()
+          .equals(other.getPowerSupplyIdsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DISPLAYNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      if (getCpuIdsCount() > 0) {
+        hash = (37 * hash) + CPUIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getCpuIdsList().hashCode();
+      }
+      if (getMotherboardIdsCount() > 0) {
+        hash = (37 * hash) + MOTHERBOARDIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getMotherboardIdsList().hashCode();
+      }
+      if (getStorageIdsCount() > 0) {
+        hash = (37 * hash) + STORAGEIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getStorageIdsList().hashCode();
+      }
+      if (getMemoryIdsCount() > 0) {
+        hash = (37 * hash) + MEMORYIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getMemoryIdsList().hashCode();
+      }
+      if (getVideoCardIdsCount() > 0) {
+        hash = (37 * hash) + VIDEOCARDIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoCardIdsList().hashCode();
+      }
+      if (getPowerSupplyIdsCount() > 0) {
+        hash = (37 * hash) + POWERSUPPLYIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getPowerSupplyIdsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static models.PcBuilder.ComputerBuildDraft parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static models.PcBuilder.ComputerBuildDraft parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildDraft prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code models.ComputerBuildDraft}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildDraft)
+        models.PcBuilder.ComputerBuildDraftOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return models.PcBuilder.internal_static_models_ComputerBuildDraft_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                models.PcBuilder.ComputerBuildDraft.class, models.PcBuilder.ComputerBuildDraft.Builder.class);
+      }
+
+      // Construct using models.PcBuilder.ComputerBuildDraft.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        displayName_ = "";
+        description_ = "";
+        cpuIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        motherboardIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        storageIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        memoryIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        videoCardIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        powerSupplyIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildDraft getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildDraft.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildDraft build() {
+        models.PcBuilder.ComputerBuildDraft result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public models.PcBuilder.ComputerBuildDraft buildPartial() {
+        models.PcBuilder.ComputerBuildDraft result = new models.PcBuilder.ComputerBuildDraft(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(models.PcBuilder.ComputerBuildDraft result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          cpuIds_.makeImmutable();
+          result.cpuIds_ = cpuIds_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          motherboardIds_.makeImmutable();
+          result.motherboardIds_ = motherboardIds_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          storageIds_.makeImmutable();
+          result.storageIds_ = storageIds_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          memoryIds_.makeImmutable();
+          result.memoryIds_ = memoryIds_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          videoCardIds_.makeImmutable();
+          result.videoCardIds_ = videoCardIds_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          powerSupplyIds_.makeImmutable();
+          result.powerSupplyIds_ = powerSupplyIds_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof models.PcBuilder.ComputerBuildDraft) {
+          return mergeFrom((models.PcBuilder.ComputerBuildDraft)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildDraft other) {
+        if (other == models.PcBuilder.ComputerBuildDraft.getDefaultInstance()) return this;
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.cpuIds_.isEmpty()) {
+          if (cpuIds_.isEmpty()) {
+            cpuIds_ = other.cpuIds_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureCpuIdsIsMutable();
+            cpuIds_.addAll(other.cpuIds_);
+          }
+          onChanged();
+        }
+        if (!other.motherboardIds_.isEmpty()) {
+          if (motherboardIds_.isEmpty()) {
+            motherboardIds_ = other.motherboardIds_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureMotherboardIdsIsMutable();
+            motherboardIds_.addAll(other.motherboardIds_);
+          }
+          onChanged();
+        }
+        if (!other.storageIds_.isEmpty()) {
+          if (storageIds_.isEmpty()) {
+            storageIds_ = other.storageIds_;
+            bitField0_ |= 0x00000010;
+          } else {
+            ensureStorageIdsIsMutable();
+            storageIds_.addAll(other.storageIds_);
+          }
+          onChanged();
+        }
+        if (!other.memoryIds_.isEmpty()) {
+          if (memoryIds_.isEmpty()) {
+            memoryIds_ = other.memoryIds_;
+            bitField0_ |= 0x00000020;
+          } else {
+            ensureMemoryIdsIsMutable();
+            memoryIds_.addAll(other.memoryIds_);
+          }
+          onChanged();
+        }
+        if (!other.videoCardIds_.isEmpty()) {
+          if (videoCardIds_.isEmpty()) {
+            videoCardIds_ = other.videoCardIds_;
+            bitField0_ |= 0x00000040;
+          } else {
+            ensureVideoCardIdsIsMutable();
+            videoCardIds_.addAll(other.videoCardIds_);
+          }
+          onChanged();
+        }
+        if (!other.powerSupplyIds_.isEmpty()) {
+          if (powerSupplyIds_.isEmpty()) {
+            powerSupplyIds_ = other.powerSupplyIds_;
+            bitField0_ |= 0x00000080;
+          } else {
+            ensurePowerSupplyIdsIsMutable();
+            powerSupplyIds_.addAll(other.powerSupplyIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCpuIdsIsMutable();
+                cpuIds_.add(s);
+                break;
+              } // case 26
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMotherboardIdsIsMutable();
+                motherboardIds_.add(s);
+                break;
+              } // case 34
+              case 42: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStorageIdsIsMutable();
+                storageIds_.add(s);
+                break;
+              } // case 42
+              case 50: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMemoryIdsIsMutable();
+                memoryIds_.add(s);
+                break;
+              } // case 50
+              case 58: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureVideoCardIdsIsMutable();
+                videoCardIds_.add(s);
+                break;
+              } // case 58
+              case 66: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePowerSupplyIdsIsMutable();
+                powerSupplyIds_.add(s);
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <code>string displayName = 1;</code>
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string displayName = 1;</code>
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string displayName = 1;</code>
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        displayName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string displayName = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string displayName = 1;</code>
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        displayName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 2;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        description_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 2;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList cpuIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureCpuIdsIsMutable() {
+        if (!cpuIds_.isModifiable()) {
+          cpuIds_ = new com.google.protobuf.LazyStringArrayList(cpuIds_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @return A list containing the cpuIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCpuIdsList() {
+        cpuIds_.makeImmutable();
+        return cpuIds_;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @return The count of cpuIds.
+       */
+      public int getCpuIdsCount() {
+        return cpuIds_.size();
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param index The index of the element to return.
+       * @return The cpuIds at the given index.
+       */
+      public java.lang.String getCpuIds(int index) {
+        return cpuIds_.get(index);
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the cpuIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCpuIdsBytes(int index) {
+        return cpuIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The cpuIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCpuIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureCpuIdsIsMutable();
+        cpuIds_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param value The cpuIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCpuIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureCpuIdsIsMutable();
+        cpuIds_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param values The cpuIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCpuIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCpuIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cpuIds_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCpuIds() {
+        cpuIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cpuIds = 3;</code>
+       * @param value The bytes of the cpuIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCpuIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureCpuIdsIsMutable();
+        cpuIds_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList motherboardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureMotherboardIdsIsMutable() {
+        if (!motherboardIds_.isModifiable()) {
+          motherboardIds_ = new com.google.protobuf.LazyStringArrayList(motherboardIds_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @return A list containing the motherboardIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMotherboardIdsList() {
+        motherboardIds_.makeImmutable();
+        return motherboardIds_;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @return The count of motherboardIds.
+       */
+      public int getMotherboardIdsCount() {
+        return motherboardIds_.size();
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param index The index of the element to return.
+       * @return The motherboardIds at the given index.
+       */
+      public java.lang.String getMotherboardIds(int index) {
+        return motherboardIds_.get(index);
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the motherboardIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getMotherboardIdsBytes(int index) {
+        return motherboardIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The motherboardIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMotherboardIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMotherboardIdsIsMutable();
+        motherboardIds_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param value The motherboardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMotherboardIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMotherboardIdsIsMutable();
+        motherboardIds_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param values The motherboardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMotherboardIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureMotherboardIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, motherboardIds_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMotherboardIds() {
+        motherboardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string motherboardIds = 4;</code>
+       * @param value The bytes of the motherboardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMotherboardIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureMotherboardIdsIsMutable();
+        motherboardIds_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList storageIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureStorageIdsIsMutable() {
+        if (!storageIds_.isModifiable()) {
+          storageIds_ = new com.google.protobuf.LazyStringArrayList(storageIds_);
+        }
+        bitField0_ |= 0x00000010;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @return A list containing the storageIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getStorageIdsList() {
+        storageIds_.makeImmutable();
+        return storageIds_;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @return The count of storageIds.
+       */
+      public int getStorageIdsCount() {
+        return storageIds_.size();
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param index The index of the element to return.
+       * @return The storageIds at the given index.
+       */
+      public java.lang.String getStorageIds(int index) {
+        return storageIds_.get(index);
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the storageIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getStorageIdsBytes(int index) {
+        return storageIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The storageIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStorageIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureStorageIdsIsMutable();
+        storageIds_.set(index, value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param value The storageIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addStorageIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureStorageIdsIsMutable();
+        storageIds_.add(value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param values The storageIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllStorageIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureStorageIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, storageIds_);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStorageIds() {
+        storageIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string storageIds = 5;</code>
+       * @param value The bytes of the storageIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addStorageIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureStorageIdsIsMutable();
+        storageIds_.add(value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList memoryIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureMemoryIdsIsMutable() {
+        if (!memoryIds_.isModifiable()) {
+          memoryIds_ = new com.google.protobuf.LazyStringArrayList(memoryIds_);
+        }
+        bitField0_ |= 0x00000020;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @return A list containing the memoryIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMemoryIdsList() {
+        memoryIds_.makeImmutable();
+        return memoryIds_;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @return The count of memoryIds.
+       */
+      public int getMemoryIdsCount() {
+        return memoryIds_.size();
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param index The index of the element to return.
+       * @return The memoryIds at the given index.
+       */
+      public java.lang.String getMemoryIds(int index) {
+        return memoryIds_.get(index);
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the memoryIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getMemoryIdsBytes(int index) {
+        return memoryIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The memoryIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMemoryIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMemoryIdsIsMutable();
+        memoryIds_.set(index, value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param value The memoryIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMemoryIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMemoryIdsIsMutable();
+        memoryIds_.add(value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param values The memoryIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMemoryIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureMemoryIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, memoryIds_);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMemoryIds() {
+        memoryIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string memoryIds = 6;</code>
+       * @param value The bytes of the memoryIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMemoryIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureMemoryIdsIsMutable();
+        memoryIds_.add(value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList videoCardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureVideoCardIdsIsMutable() {
+        if (!videoCardIds_.isModifiable()) {
+          videoCardIds_ = new com.google.protobuf.LazyStringArrayList(videoCardIds_);
+        }
+        bitField0_ |= 0x00000040;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @return A list containing the videoCardIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVideoCardIdsList() {
+        videoCardIds_.makeImmutable();
+        return videoCardIds_;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @return The count of videoCardIds.
+       */
+      public int getVideoCardIdsCount() {
+        return videoCardIds_.size();
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param index The index of the element to return.
+       * @return The videoCardIds at the given index.
+       */
+      public java.lang.String getVideoCardIds(int index) {
+        return videoCardIds_.get(index);
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the videoCardIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getVideoCardIdsBytes(int index) {
+        return videoCardIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The videoCardIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVideoCardIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureVideoCardIdsIsMutable();
+        videoCardIds_.set(index, value);
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param value The videoCardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addVideoCardIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureVideoCardIdsIsMutable();
+        videoCardIds_.add(value);
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param values The videoCardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllVideoCardIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVideoCardIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, videoCardIds_);
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVideoCardIds() {
+        videoCardIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string videoCardIds = 7;</code>
+       * @param value The bytes of the videoCardIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addVideoCardIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureVideoCardIdsIsMutable();
+        videoCardIds_.add(value);
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList powerSupplyIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensurePowerSupplyIdsIsMutable() {
+        if (!powerSupplyIds_.isModifiable()) {
+          powerSupplyIds_ = new com.google.protobuf.LazyStringArrayList(powerSupplyIds_);
+        }
+        bitField0_ |= 0x00000080;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @return A list containing the powerSupplyIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPowerSupplyIdsList() {
+        powerSupplyIds_.makeImmutable();
+        return powerSupplyIds_;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @return The count of powerSupplyIds.
+       */
+      public int getPowerSupplyIdsCount() {
+        return powerSupplyIds_.size();
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param index The index of the element to return.
+       * @return The powerSupplyIds at the given index.
+       */
+      public java.lang.String getPowerSupplyIds(int index) {
+        return powerSupplyIds_.get(index);
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the powerSupplyIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPowerSupplyIdsBytes(int index) {
+        return powerSupplyIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The powerSupplyIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPowerSupplyIds(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensurePowerSupplyIdsIsMutable();
+        powerSupplyIds_.set(index, value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param value The powerSupplyIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPowerSupplyIds(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensurePowerSupplyIdsIsMutable();
+        powerSupplyIds_.add(value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param values The powerSupplyIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPowerSupplyIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePowerSupplyIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, powerSupplyIds_);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPowerSupplyIds() {
+        powerSupplyIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string powerSupplyIds = 8;</code>
+       * @param value The bytes of the powerSupplyIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPowerSupplyIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensurePowerSupplyIdsIsMutable();
+        powerSupplyIds_.add(value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildDraft)
+    }
+
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildDraft)
+    private static final models.PcBuilder.ComputerBuildDraft DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildDraft();
+    }
+
+    public static models.PcBuilder.ComputerBuildDraft getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ComputerBuildDraft>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildDraft>() {
+      @java.lang.Override
+      public ComputerBuildDraft parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ComputerBuildDraft> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ComputerBuildDraft> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public models.PcBuilder.ComputerBuildDraft getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_models_UserProfile_descriptor;
   private static final 
@@ -17117,10 +19883,20 @@ public final class PcBuilder {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_models_ComputerBuild_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_models_ComputerBuildList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_models_ComputerBuildList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_models_ComputerBuildComment_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_models_ComputerBuildComment_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_models_ComputerBuildDraft_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_models_ComputerBuildDraft_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -17184,9 +19960,16 @@ public final class PcBuilder {
       "s.VideoCardComponentList\0229\n\017powerSupplyL" +
       "ist\030\n \001(\0132 .models.PowerSupplyComponentL" +
       "ist\022\024\n\014creationDate\030\013 \001(\003\022\026\n\016lastUpdateD" +
-      "ate\030\014 \001(\003\"T\n\024ComputerBuildComment\022\022\n\naut" +
-      "horName\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\027\n\017lastUp" +
-      "datedDate\030\004 \001(\tb\006proto3"
+      "ate\030\014 \001(\003\"B\n\021ComputerBuildList\022-\n\016comput" +
+      "erBuilds\030\001 \003(\0132\025.models.ComputerBuild\"T\n" +
+      "\024ComputerBuildComment\022\022\n\nauthorName\030\001 \001(" +
+      "\t\022\017\n\007content\030\002 \001(\t\022\027\n\017lastUpdatedDate\030\004 " +
+      "\001(\t\"\273\001\n\022ComputerBuildDraft\022\023\n\013displayNam" +
+      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006cpuIds\030\003" +
+      " \003(\t\022\026\n\016motherboardIds\030\004 \003(\t\022\022\n\nstorageI" +
+      "ds\030\005 \003(\t\022\021\n\tmemoryIds\030\006 \003(\t\022\024\n\014videoCard" +
+      "Ids\030\007 \003(\t\022\026\n\016powerSupplyIds\030\010 \003(\tb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17276,12 +20059,24 @@ public final class PcBuilder {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_models_ComputerBuild_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "Description", "Username", "CpuList", "MotherboardList", "StorageList", "MemoryList", "VideoCardList", "PowerSupplyList", "CreationDate", "LastUpdateDate", });
-    internal_static_models_ComputerBuildComment_descriptor =
+    internal_static_models_ComputerBuildList_descriptor =
       getDescriptor().getMessageTypes().get(14);
+    internal_static_models_ComputerBuildList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_models_ComputerBuildList_descriptor,
+        new java.lang.String[] { "ComputerBuilds", });
+    internal_static_models_ComputerBuildComment_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_models_ComputerBuildComment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_models_ComputerBuildComment_descriptor,
         new java.lang.String[] { "AuthorName", "Content", "LastUpdatedDate", });
+    internal_static_models_ComputerBuildDraft_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_models_ComputerBuildDraft_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_models_ComputerBuildDraft_descriptor,
+        new java.lang.String[] { "DisplayName", "Description", "CpuIds", "MotherboardIds", "StorageIds", "MemoryIds", "VideoCardIds", "PowerSupplyIds", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public userProfile$: BehaviorSubject<UserProfile>;
+  public userProfile$: BehaviorSubject<UserProfile | null>;
   public isLoginFormOpen: boolean = false;
   public errorMessage?: string;
 

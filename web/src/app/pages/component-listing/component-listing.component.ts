@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {PcBuilderService} from "../../services/pc-builder/pc-builder.service";
 import { Observable } from "rxjs";
-import {CpuComponent} from "../../models/pc-builder";
-import { ColDef, GridColumnsChangedEvent } from "ag-grid-community";
+import { AgGridEvent, ColDef, GridOptions } from "ag-grid-community";
 import { AgGridAngular } from 'ag-grid-angular';
+import { Store } from '@ngrx/store';
+import { updateDraftComponentIds } from './build-list.reducer';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-component-listing',
@@ -12,30 +14,33 @@ import { AgGridAngular } from 'ag-grid-angular';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentListingComponent {
-  public components$!: Observable<CpuComponent[]>;
-  public defaultColDef: ColDef = {
-    sortable: true,
-    filter: true,
-  };
+  public components$!: Observable<any[]>;
+  public gridOptions: GridOptions = {
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+    },
+    pagination: true,
+    suppressCellFocus: true,
+    rowSelection: "multiple",
+    rowMultiSelectWithClick: true,
+    suppressRowDeselection: true
+  }
   public columnDefs!: ColDef[];
   public searchText: string = "";
+  public selectedComponentType: string = "cpu";
 
-  constructor(private _pcBuilderService: PcBuilderService) {
-    this._updateCpuGrid();
+  constructor(private _store: Store<any>,
+              private _router: Router,
+              private _pcBuilderService: PcBuilderService,
+              route: ActivatedRoute) {
+    route.queryParamMap.subscribe(((paramMap: ParamMap) => {
+      const componentType = paramMap.get("component");
+      this.updateComponentType(componentType ?? "cpu");
+    }).bind(this));
   }
 
-  public onColumnsChanged(params: GridColumnsChangedEvent, componentType: string) {
-    const selectedIds = new Set(this._getSelectedIds(componentType));
-    console.log(params);
-    params.api.forEachNode((node) => {
-      if (selectedIds.has(node.data.uuid)) {
-        node.setSelected(true);
-      }
-    })
-    this.resizeGrid(params);
-  }
-
-  public resizeGrid(params: GridColumnsChangedEvent) {
+  public resizeGrid(params: AgGridEvent) {
     params.api.sizeColumnsToFit();
   }
 
@@ -44,12 +49,13 @@ export class ComponentListingComponent {
   }
 
   public updateBuildList(componentType: string, grid: AgGridAngular) {
-    const componentIds: string[] = grid.api.getSelectedRows().map(component => component.uuid);
-    console.log(grid.api.getSelectedRows());
-    localStorage.setItem(componentType, JSON.stringify(componentIds));
+    const ids: string[] = grid.api.getSelectedRows().map(component => component.uuid);
+    this._store.dispatch(updateDraftComponentIds({ componentType, ids }));
+    this._router.navigate(["builder"]);
   }
 
-  public updateComponentSelection(componentType: string) {
+  public updateComponentType(componentType: string) {
+    this.selectedComponentType = componentType;
     switch (componentType) {
       case "cpu":
         this._updateCpuGrid();
@@ -146,24 +152,5 @@ export class ComponentListingComponent {
       { field: 'price' }
     ]
     this.components$ = this._pcBuilderService.getPowerSupplyComponents();
-  }
-
-  private _getSelectedIds(componentType: string): string[] {
-    switch (componentType) {
-      case "cpu":
-        return this._pcBuilderService.selectedCpuIds;
-      case "motherboard":
-        return this._pcBuilderService.selectedMotherboardIds;
-      case "memory":
-        return this._pcBuilderService.selectedMemoryIds;
-      case "storage":
-        return this._pcBuilderService.selectedStorageIds;
-      case "videoCard":
-        return this._pcBuilderService.selectedVideoCardIds;
-      case "powerSupply":
-        return this._pcBuilderService.selectedPowerSupplyIds;
-      default:
-        throw Error(`Selected invalid componentType ${componentType}`)
-    }
   }
 }

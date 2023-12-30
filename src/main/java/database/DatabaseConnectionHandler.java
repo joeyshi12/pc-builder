@@ -9,6 +9,8 @@ import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.protobuf.ProtocolStringList;
+
 import models.PcBuilder.*;
 import java.sql.*;
 import java.util.*;
@@ -106,84 +108,74 @@ public class DatabaseConnectionHandler {
         return userProfile;
     }
 
-    public ComputerBuild createComputerBuild(ComputerBuild build) throws SQLException {
+    public ComputerBuild createComputerBuildFromDraft(ComputerBuildDraft draft, String username) throws SQLException {
         java.util.Date currentDate = new java.util.Date();
         ComputerBuild.Builder builder = ComputerBuild.newBuilder()
             .setUuid(UUID.randomUUID().toString())
+            .setDisplayName(draft.getDisplayName())
+            .setDescription(draft.getDescription())
+            .setUsername(username)
             .setCreationDate(currentDate.getTime())
             .setLastUpdateDate(currentDate.getTime());
 
-        List<String> cpuIds = new ArrayList<>();
-        for (CpuComponent cpuComponent : build.getCpuList().getCpuComponentsList()) {
-            cpuIds.add(cpuComponent.getUuid());
-        }
-        List<CpuComponent> cpuComponents = getCpuComponents((String[]) cpuIds.toArray());
+        List<CpuComponent> cpuComponents = getCpuComponents(protocolStringListToArray(draft.getCpuIdsList()));
         builder.setCpuList(CpuComponentList.newBuilder().addAllCpuComponents(cpuComponents).build());
 
-        List<String> motherboardIds = new ArrayList<>();
-        for (MotherboardComponent motherboardComponent : build.getMotherboardList().getMotherboardComponentsList()) {
-            motherboardIds.add(motherboardComponent.getUuid());
-        }
-        List<MotherboardComponent> motherboardComponents = getMotherboardComponents((String[]) motherboardIds.toArray());
+        List<MotherboardComponent> motherboardComponents = getMotherboardComponents(protocolStringListToArray(draft.getMotherboardIdsList()));
         builder.setMotherboardList(MotherboardComponentList.newBuilder().addAllMotherboardComponents(motherboardComponents).build());
 
-        List<String> memoryIds = new ArrayList<>();
-        for (MemoryComponent memoryComponent : build.getMemoryList().getMemoryComponentsList()) {
-            memoryIds.add(memoryComponent.getUuid());
-        }
-        List<MemoryComponent> memoryComponents = getMemoryComponents((String[]) memoryIds.toArray());
+        List<MemoryComponent> memoryComponents = getMemoryComponents(protocolStringListToArray(draft.getMemoryIdsList()));
         builder.setMemoryList(MemoryComponentList.newBuilder().addAllMemoryComponents(memoryComponents).build());
 
-        List<String> storageIds = new ArrayList<>();
-        for (StorageComponent storageComponent : build.getStorageList().getStorageComponentsList()) {
-            storageIds.add(storageComponent.getUuid());
-        }
-        List<StorageComponent> storageComponents = getStorageComponents((String[]) storageIds.toArray());
+        List<StorageComponent> storageComponents = getStorageComponents(protocolStringListToArray(draft.getStorageIdsList()));
         builder.setStorageList(StorageComponentList.newBuilder().addAllStorageComponents(storageComponents).build());
 
-        List<String> videoCardIds = new ArrayList<>();
-        for (VideoCardComponent videoCardComponent : build.getVideoCardList().getVideoCardComponentsList()) {
-            videoCardIds.add(videoCardComponent.getUuid());
-        }
-        List<VideoCardComponent> videoCardComponents = getVideoCardComponents((String[]) videoCardIds.toArray());
+        List<VideoCardComponent> videoCardComponents = getVideoCardComponents(protocolStringListToArray(draft.getVideoCardIdsList()));
         builder.setVideoCardList(VideoCardComponentList.newBuilder().addAllVideoCardComponents(videoCardComponents).build());
 
-        List<String> powerSupplyIds = new ArrayList<>();
-        for (PowerSupplyComponent powerSupplyComponent : build.getPowerSupplyList().getPowerSupplyComponentsList()) {
-            powerSupplyIds.add(powerSupplyComponent.getUuid());
-        }
-        List<PowerSupplyComponent> powerSupplyComponents = getPowerSupplyComponents((String[]) powerSupplyIds.toArray());
+        List<PowerSupplyComponent> powerSupplyComponents = getPowerSupplyComponents(protocolStringListToArray(draft.getPowerSupplyIdsList()));
         builder.setPowerSupplyList(PowerSupplyComponentList.newBuilder().addAllPowerSupplyComponents(powerSupplyComponents).build());
 
         ComputerBuild newBuild = builder.build();
-
-        String query = "INSERT INTO computer_build (id, creation_date, last_updated_date) VALUES (?, ?, ?)";
+        String query = "INSERT INTO computer_build (id, display_name, creation_date, last_updated_date) VALUES (?, ?, ?, ?)";
         Connection connection = getConnection();
         PreparedStatement ps = connection.prepareStatement(query);
         ps.setString(1, newBuild.getUuid());
-        ps.setDate(2, new java.sql.Date(newBuild.getCreationDate()));
-        ps.setDate(3, new java.sql.Date(newBuild.getLastUpdateDate()));
+        ps.setString(2, newBuild.getDisplayName());
+        ps.setDate(3, new java.sql.Date(newBuild.getCreationDate()));
+        ps.setDate(4, new java.sql.Date(newBuild.getLastUpdateDate()));
         ps.executeQuery();
         connection.commit();
         logger.info(String.format("Created computer build %s", newBuild.getUuid()));
         ps.close();
         connection.close();
-
         return builder.build();
     }
 
-    public List<ComputerBuild> getAllComputerBuilds(String buildId) throws SQLException {
+    private String[] protocolStringListToArray(ProtocolStringList strList) {
+        String[] strArr = new String[strList.size()];
+        Iterator<String> it = strList.listIterator();
+        for (int i = 0; it.hasNext(); i++) {
+            strArr[i] = it.next();
+        }
+        return strArr;
+    }
+
+    public List<ComputerBuild> getAllComputerBuilds(String[] buildIds, String username) throws SQLException {
         List<ComputerBuild> builds = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(", ", TableColumnNames.COMPUTER_BUILD_COLUMNS);
+        String query = formQueryWithIdsFilter("computer_build", TableColumnNames.COMPUTER_BUILD_COLUMNS, buildIds);
         PreparedStatement ps;
-        if (StringUtil.isBlank(buildId)) {
-            String query = String.format("SELECT %s FROM computer_build", columnString);
+        if (StringUtil.isNotBlank(username)) {
+            if (buildIds == null || buildIds.length == 0) {
+                query = query + " WHERE username = ?";
+            } else {
+                query = query + " AND username = ?";
+            }
             ps = connection.prepareStatement(query);
+            ps.setString(1, username);
         } else {
-            String query = String.format("SELECT %s FROM computer_build WHERE id = ?", columnString);
             ps = connection.prepareStatement(query);
-            ps.setString(1, buildId);
         }
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
@@ -196,29 +188,7 @@ public class DatabaseConnectionHandler {
                     .build();
             builds.add(build);
         }
-        rs.close();
-
-//        if (StringUtil.isBlank(buildId) || builds.isEmpty()) {
-//            return builds;
-//        }
-//
-//        ComputerBuild.Builder builder = builds.get(0).toBuilder();
-//        List<String> componentIds = new ArrayList<>();
-//        String query = "SELECT component_id, build_id FROM is_part_of WHERE build_id = ?";
-//        ps = connection.prepareStatement(query);
-//        ps.setString(1, buildId);
-//        rs = ps.executeQuery();
-//        while (rs.next()) {
-//            componentIds.add("'" + rs.getString("component_id") + "'");
-//        }
-//        rs.close();
-//        connection.close();
-//
-//        List<CpuComponent> cpuComponents = getCpuComponents((String[]) componentIds.toArray());
-//        CpuComponentList cpuList = CpuComponentList.newBuilder()
-//            .addAllCpuComponents(cpuComponents)
-//            .build();
-//        builder.setCpuList(cpuList);
+        connection.close();
         return builds;
     }
 
@@ -233,21 +203,8 @@ public class DatabaseConnectionHandler {
     public List<CpuComponent> getCpuComponents(String[] componentIds) throws SQLException {
         List<CpuComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(", ", TableColumnNames.CPU_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM cpu", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            List<String> delimitedIds = new ArrayList<>();
-            for (int i = 0; i < componentIds.length; i++) {
-                String delimitedId = String.format("'%s'", componentIds[i]);
-                delimitedIds.add(delimitedId);
-            }
-            String idSetString = String.join(",", delimitedIds);
-            String query = String.format("SELECT %s FROM cpu WHERE id IN (%s)", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("cpu", TableColumnNames.CPU_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             CpuComponent component = CpuComponent.newBuilder()
@@ -263,7 +220,6 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
     }
@@ -271,17 +227,8 @@ public class DatabaseConnectionHandler {
     public List<MotherboardComponent> getMotherboardComponents(String[] componentIds) throws SQLException {
         List<MotherboardComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(",", TableColumnNames.MOTHERBOARD_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM motherboard", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            String[] delimitedIds = (String[]) Arrays.stream(componentIds).map(id -> "'" + id + "'").toArray();
-            String idSetString = String.join(", ", delimitedIds);
-            String query = String.join("SELECT %s FROM motherboard WHERE id IN %s", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             MotherboardComponent component = MotherboardComponent.newBuilder()
@@ -296,7 +243,6 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
     }
@@ -304,17 +250,8 @@ public class DatabaseConnectionHandler {
     public List<MemoryComponent> getMemoryComponents(String[] componentIds) throws SQLException {
         List<MemoryComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(",", TableColumnNames.MEMORY_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM memory", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            String[] delimitedIds = (String[]) Arrays.stream(componentIds).map(id -> "'" + id + "'").toArray();
-            String idSetString = String.join(", ", delimitedIds);
-            String query = String.join("SELECT %s FROM memory WHERE id IN %s", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("memory", TableColumnNames.MEMORY_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             MemoryComponent component = MemoryComponent.newBuilder()
@@ -331,7 +268,6 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
     }
@@ -339,17 +275,8 @@ public class DatabaseConnectionHandler {
     public List<StorageComponent> getStorageComponents(String[] componentIds) throws SQLException {
         List<StorageComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(",", TableColumnNames.STORAGE_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM storage", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            String[] delimitedIds = (String[]) Arrays.stream(componentIds).map(id -> "'" + id + "'").toArray();
-            String idSetString = String.join(", ", delimitedIds);
-            String query = String.join("SELECT %s FROM storage WHERE id IN %s", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("storage", TableColumnNames.STORAGE_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             StorageComponent component = StorageComponent.newBuilder()
@@ -364,7 +291,6 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
     }
@@ -372,17 +298,8 @@ public class DatabaseConnectionHandler {
     public List<VideoCardComponent> getVideoCardComponents(String[] componentIds) throws SQLException {
         List<VideoCardComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(",", TableColumnNames.VIDEO_CARD_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM video_card", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            String[] delimitedIds = (String[]) Arrays.stream(componentIds).map(id -> "'" + id + "'").toArray();
-            String idSetString = String.join(", ", delimitedIds);
-            String query = String.join("SELECT %s FROM video_card WHERE id IN %s", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             VideoCardComponent component = VideoCardComponent.newBuilder()
@@ -398,7 +315,6 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
     }
@@ -406,17 +322,8 @@ public class DatabaseConnectionHandler {
     public List<PowerSupplyComponent> getPowerSupplyComponents(String[] componentIds) throws SQLException {
         List<PowerSupplyComponent> components = new ArrayList<>();
         Connection connection = getConnection();
-        String columnString = String.join(",", TableColumnNames.POWER_SUPPLY_COLUMNS);
-        PreparedStatement ps;
-        if (componentIds == null || componentIds.length == 0) {
-            String query = String.format("SELECT %s FROM power_supply", columnString);
-            ps = connection.prepareStatement(query);
-        } else {
-            String[] delimitedIds = (String[]) Arrays.stream(componentIds).map(id -> "'" + id + "'").toArray();
-            String idSetString = String.join(", ", delimitedIds);
-            String query = String.join("SELECT %s FROM power_supply WHERE id IN %s", columnString, idSetString);
-            ps = connection.prepareStatement(query);
-        }
+        String query = formQueryWithIdsFilter("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIds);
+        PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             PowerSupplyComponent component = PowerSupplyComponent.newBuilder()
@@ -431,8 +338,23 @@ public class DatabaseConnectionHandler {
                     .build();
             components.add(component);
         }
-        rs.close();
         connection.close();
         return components;
+    }
+
+    private String formQueryWithIdsFilter(String tableName, String[] columns, String[] ids) {
+        String columnString = String.join(", ", columns);
+        if (ids == null || ids.length == 0) {
+            String query = String.format("SELECT %s FROM %s", columnString, tableName);
+            return query;
+        }
+        List<String> delimitedIds = new ArrayList<>();
+        for (int i = 0; i < ids.length; i++) {
+            String delimitedId = String.format("'%s'", ids[i]);
+            delimitedIds.add(delimitedId);
+        }
+        String idSetString = String.join(",", delimitedIds);
+        String query = String.format("SELECT %s FROM %s WHERE id IN (%s)", columnString, tableName, idSetString);
+        return query;
     }
 }
