@@ -4,14 +4,14 @@ import _m0 from "protobufjs/minimal";
 
 export const protobufPackage = "models";
 
-export interface UserProfile {
+export interface UserProfileDto {
   username?: string | undefined;
   displayName?: string | undefined;
   email?: string | undefined;
   password?: string | undefined;
 }
 
-export interface CpuComponent {
+export interface CpuComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   coreCount?: number | undefined;
@@ -23,11 +23,11 @@ export interface CpuComponent {
   price?: number | undefined;
 }
 
-export interface CpuComponentList {
-  cpuComponents?: CpuComponent[] | undefined;
+export interface CpuComponentListDto {
+  cpuComponents?: CpuComponentDto[] | undefined;
 }
 
-export interface MotherboardComponent {
+export interface MotherboardComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   cpuSocket?: string | undefined;
@@ -38,11 +38,11 @@ export interface MotherboardComponent {
   price?: number | undefined;
 }
 
-export interface MotherboardComponentList {
-  motherboardComponents?: MotherboardComponent[] | undefined;
+export interface MotherboardComponentListDto {
+  motherboardComponents?: MotherboardComponentDto[] | undefined;
 }
 
-export interface MemoryComponent {
+export interface MemoryComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   ddrVersion?: number | undefined;
@@ -55,11 +55,11 @@ export interface MemoryComponent {
   price?: number | undefined;
 }
 
-export interface MemoryComponentList {
-  memoryComponents?: MemoryComponent[] | undefined;
+export interface MemoryComponentListDto {
+  memoryComponents?: MemoryComponentDto[] | undefined;
 }
 
-export interface StorageComponent {
+export interface StorageComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   capacityGigabytes?: number | undefined;
@@ -70,11 +70,11 @@ export interface StorageComponent {
   price?: number | undefined;
 }
 
-export interface StorageComponentList {
-  storageComponents?: StorageComponent[] | undefined;
+export interface StorageComponentListDto {
+  storageComponents?: StorageComponentDto[] | undefined;
 }
 
-export interface VideoCardComponent {
+export interface VideoCardComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   chipset?: string | undefined;
@@ -86,11 +86,11 @@ export interface VideoCardComponent {
   price?: number | undefined;
 }
 
-export interface VideoCardComponentList {
-  videoCardComponents?: VideoCardComponent[] | undefined;
+export interface VideoCardComponentListDto {
+  videoCardComponents?: VideoCardComponentDto[] | undefined;
 }
 
-export interface PowerSupplyComponent {
+export interface PowerSupplyComponentDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   type?: string | undefined;
@@ -101,36 +101,36 @@ export interface PowerSupplyComponent {
   price?: number | undefined;
 }
 
-export interface PowerSupplyComponentList {
-  powerSupplyComponents?: PowerSupplyComponent[] | undefined;
+export interface PowerSupplyComponentListDto {
+  powerSupplyComponents?: PowerSupplyComponentDto[] | undefined;
 }
 
-export interface ComputerBuild {
+export interface ComputerBuildDto {
   uuid?: string | undefined;
   displayName?: string | undefined;
   description?: string | undefined;
   username?: string | undefined;
-  cpuList?: CpuComponentList | undefined;
-  motherboardList?: MotherboardComponentList | undefined;
-  storageList?: StorageComponentList | undefined;
-  memoryList?: MemoryComponentList | undefined;
-  videoCardList?: VideoCardComponentList | undefined;
-  powerSupplyList?: PowerSupplyComponentList | undefined;
+  cpuList?: CpuComponentListDto | undefined;
+  motherboardList?: MotherboardComponentListDto | undefined;
+  storageList?: StorageComponentListDto | undefined;
+  memoryList?: MemoryComponentListDto | undefined;
+  videoCardList?: VideoCardComponentListDto | undefined;
+  powerSupplyList?: PowerSupplyComponentListDto | undefined;
   creationDate?: number | undefined;
   lastUpdateDate?: number | undefined;
 }
 
-export interface ComputerBuildList {
-  computerBuilds?: ComputerBuild[] | undefined;
+export interface ComputerBuildListDto {
+  computerBuilds?: ComputerBuildDto[] | undefined;
 }
 
-export interface ComputerBuildComment {
+export interface ComputerBuildCommentDto {
   authorName?: string | undefined;
   content?: string | undefined;
   lastUpdatedDate?: string | undefined;
 }
 
-export interface ComputerBuildDraft {
+export interface ComputerBuildDraftDto {
   displayName?: string | undefined;
   description?: string | undefined;
   cpuIds?: string[] | undefined;
@@ -141,12 +141,12 @@ export interface ComputerBuildDraft {
   powerSupplyIds?: string[] | undefined;
 }
 
-function createBaseUserProfile(): UserProfile {
+function createBaseUserProfileDto(): UserProfileDto {
   return { username: "", displayName: "", email: "", password: "" };
 }
 
-export const UserProfile = {
-  encode(message: UserProfile, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const UserProfileDto = {
+  encode(message: UserProfileDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.username !== undefined && message.username !== "") {
       writer.uint32(10).string(message.username);
     }
@@ -162,10 +162,10 @@ export const UserProfile = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): UserProfile {
+  decode(input: _m0.Reader | Uint8Array, length?: number): UserProfileDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUserProfile();
+    const message = createBaseUserProfileDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -206,7 +206,7 @@ export const UserProfile = {
     return message;
   },
 
-  fromJSON(object: any): UserProfile {
+  fromJSON(object: any): UserProfileDto {
     return {
       username: isSet(object.username) ? globalThis.String(object.username) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -215,7 +215,7 @@ export const UserProfile = {
     };
   },
 
-  toJSON(message: UserProfile): unknown {
+  toJSON(message: UserProfileDto): unknown {
     const obj: any = {};
     if (message.username !== undefined && message.username !== "") {
       obj.username = message.username;
@@ -232,11 +232,11 @@ export const UserProfile = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<UserProfile>, I>>(base?: I): UserProfile {
-    return UserProfile.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<UserProfileDto>, I>>(base?: I): UserProfileDto {
+    return UserProfileDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<UserProfile>, I>>(object: I): UserProfile {
-    const message = createBaseUserProfile();
+  fromPartial<I extends Exact<DeepPartial<UserProfileDto>, I>>(object: I): UserProfileDto {
+    const message = createBaseUserProfileDto();
     message.username = object.username ?? "";
     message.displayName = object.displayName ?? "";
     message.email = object.email ?? "";
@@ -245,7 +245,7 @@ export const UserProfile = {
   },
 };
 
-function createBaseCpuComponent(): CpuComponent {
+function createBaseCpuComponentDto(): CpuComponentDto {
   return {
     uuid: "",
     displayName: "",
@@ -259,8 +259,8 @@ function createBaseCpuComponent(): CpuComponent {
   };
 }
 
-export const CpuComponent = {
-  encode(message: CpuComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const CpuComponentDto = {
+  encode(message: CpuComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -291,10 +291,10 @@ export const CpuComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): CpuComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): CpuComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCpuComponent();
+    const message = createBaseCpuComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -370,7 +370,7 @@ export const CpuComponent = {
     return message;
   },
 
-  fromJSON(object: any): CpuComponent {
+  fromJSON(object: any): CpuComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -384,7 +384,7 @@ export const CpuComponent = {
     };
   },
 
-  toJSON(message: CpuComponent): unknown {
+  toJSON(message: CpuComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -416,11 +416,11 @@ export const CpuComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<CpuComponent>, I>>(base?: I): CpuComponent {
-    return CpuComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<CpuComponentDto>, I>>(base?: I): CpuComponentDto {
+    return CpuComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<CpuComponent>, I>>(object: I): CpuComponent {
-    const message = createBaseCpuComponent();
+  fromPartial<I extends Exact<DeepPartial<CpuComponentDto>, I>>(object: I): CpuComponentDto {
+    const message = createBaseCpuComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.coreCount = object.coreCount ?? 0;
@@ -434,24 +434,24 @@ export const CpuComponent = {
   },
 };
 
-function createBaseCpuComponentList(): CpuComponentList {
+function createBaseCpuComponentListDto(): CpuComponentListDto {
   return { cpuComponents: [] };
 }
 
-export const CpuComponentList = {
-  encode(message: CpuComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const CpuComponentListDto = {
+  encode(message: CpuComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.cpuComponents !== undefined && message.cpuComponents.length !== 0) {
       for (const v of message.cpuComponents) {
-        CpuComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        CpuComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): CpuComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): CpuComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCpuComponentList();
+    const message = createBaseCpuComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -460,7 +460,7 @@ export const CpuComponentList = {
             break;
           }
 
-          message.cpuComponents!.push(CpuComponent.decode(reader, reader.uint32()));
+          message.cpuComponents!.push(CpuComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -471,33 +471,33 @@ export const CpuComponentList = {
     return message;
   },
 
-  fromJSON(object: any): CpuComponentList {
+  fromJSON(object: any): CpuComponentListDto {
     return {
       cpuComponents: globalThis.Array.isArray(object?.cpuComponents)
-        ? object.cpuComponents.map((e: any) => CpuComponent.fromJSON(e))
+        ? object.cpuComponents.map((e: any) => CpuComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: CpuComponentList): unknown {
+  toJSON(message: CpuComponentListDto): unknown {
     const obj: any = {};
     if (message.cpuComponents?.length) {
-      obj.cpuComponents = message.cpuComponents.map((e) => CpuComponent.toJSON(e));
+      obj.cpuComponents = message.cpuComponents.map((e) => CpuComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<CpuComponentList>, I>>(base?: I): CpuComponentList {
-    return CpuComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<CpuComponentListDto>, I>>(base?: I): CpuComponentListDto {
+    return CpuComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<CpuComponentList>, I>>(object: I): CpuComponentList {
-    const message = createBaseCpuComponentList();
-    message.cpuComponents = object.cpuComponents?.map((e) => CpuComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<CpuComponentListDto>, I>>(object: I): CpuComponentListDto {
+    const message = createBaseCpuComponentListDto();
+    message.cpuComponents = object.cpuComponents?.map((e) => CpuComponentDto.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseMotherboardComponent(): MotherboardComponent {
+function createBaseMotherboardComponentDto(): MotherboardComponentDto {
   return {
     uuid: "",
     displayName: "",
@@ -510,8 +510,8 @@ function createBaseMotherboardComponent(): MotherboardComponent {
   };
 }
 
-export const MotherboardComponent = {
-  encode(message: MotherboardComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const MotherboardComponentDto = {
+  encode(message: MotherboardComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -539,10 +539,10 @@ export const MotherboardComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): MotherboardComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): MotherboardComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseMotherboardComponent();
+    const message = createBaseMotherboardComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -611,7 +611,7 @@ export const MotherboardComponent = {
     return message;
   },
 
-  fromJSON(object: any): MotherboardComponent {
+  fromJSON(object: any): MotherboardComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -624,7 +624,7 @@ export const MotherboardComponent = {
     };
   },
 
-  toJSON(message: MotherboardComponent): unknown {
+  toJSON(message: MotherboardComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -653,11 +653,11 @@ export const MotherboardComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MotherboardComponent>, I>>(base?: I): MotherboardComponent {
-    return MotherboardComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<MotherboardComponentDto>, I>>(base?: I): MotherboardComponentDto {
+    return MotherboardComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<MotherboardComponent>, I>>(object: I): MotherboardComponent {
-    const message = createBaseMotherboardComponent();
+  fromPartial<I extends Exact<DeepPartial<MotherboardComponentDto>, I>>(object: I): MotherboardComponentDto {
+    const message = createBaseMotherboardComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.cpuSocket = object.cpuSocket ?? "";
@@ -670,24 +670,24 @@ export const MotherboardComponent = {
   },
 };
 
-function createBaseMotherboardComponentList(): MotherboardComponentList {
+function createBaseMotherboardComponentListDto(): MotherboardComponentListDto {
   return { motherboardComponents: [] };
 }
 
-export const MotherboardComponentList = {
-  encode(message: MotherboardComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const MotherboardComponentListDto = {
+  encode(message: MotherboardComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.motherboardComponents !== undefined && message.motherboardComponents.length !== 0) {
       for (const v of message.motherboardComponents) {
-        MotherboardComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        MotherboardComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): MotherboardComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): MotherboardComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseMotherboardComponentList();
+    const message = createBaseMotherboardComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -696,7 +696,7 @@ export const MotherboardComponentList = {
             break;
           }
 
-          message.motherboardComponents!.push(MotherboardComponent.decode(reader, reader.uint32()));
+          message.motherboardComponents!.push(MotherboardComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -707,33 +707,34 @@ export const MotherboardComponentList = {
     return message;
   },
 
-  fromJSON(object: any): MotherboardComponentList {
+  fromJSON(object: any): MotherboardComponentListDto {
     return {
       motherboardComponents: globalThis.Array.isArray(object?.motherboardComponents)
-        ? object.motherboardComponents.map((e: any) => MotherboardComponent.fromJSON(e))
+        ? object.motherboardComponents.map((e: any) => MotherboardComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: MotherboardComponentList): unknown {
+  toJSON(message: MotherboardComponentListDto): unknown {
     const obj: any = {};
     if (message.motherboardComponents?.length) {
-      obj.motherboardComponents = message.motherboardComponents.map((e) => MotherboardComponent.toJSON(e));
+      obj.motherboardComponents = message.motherboardComponents.map((e) => MotherboardComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MotherboardComponentList>, I>>(base?: I): MotherboardComponentList {
-    return MotherboardComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<MotherboardComponentListDto>, I>>(base?: I): MotherboardComponentListDto {
+    return MotherboardComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<MotherboardComponentList>, I>>(object: I): MotherboardComponentList {
-    const message = createBaseMotherboardComponentList();
-    message.motherboardComponents = object.motherboardComponents?.map((e) => MotherboardComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<MotherboardComponentListDto>, I>>(object: I): MotherboardComponentListDto {
+    const message = createBaseMotherboardComponentListDto();
+    message.motherboardComponents = object.motherboardComponents?.map((e) => MotherboardComponentDto.fromPartial(e)) ||
+      [];
     return message;
   },
 };
 
-function createBaseMemoryComponent(): MemoryComponent {
+function createBaseMemoryComponentDto(): MemoryComponentDto {
   return {
     uuid: "",
     displayName: "",
@@ -748,8 +749,8 @@ function createBaseMemoryComponent(): MemoryComponent {
   };
 }
 
-export const MemoryComponent = {
-  encode(message: MemoryComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const MemoryComponentDto = {
+  encode(message: MemoryComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -783,10 +784,10 @@ export const MemoryComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): MemoryComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): MemoryComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseMemoryComponent();
+    const message = createBaseMemoryComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -869,7 +870,7 @@ export const MemoryComponent = {
     return message;
   },
 
-  fromJSON(object: any): MemoryComponent {
+  fromJSON(object: any): MemoryComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -884,7 +885,7 @@ export const MemoryComponent = {
     };
   },
 
-  toJSON(message: MemoryComponent): unknown {
+  toJSON(message: MemoryComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -919,11 +920,11 @@ export const MemoryComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MemoryComponent>, I>>(base?: I): MemoryComponent {
-    return MemoryComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<MemoryComponentDto>, I>>(base?: I): MemoryComponentDto {
+    return MemoryComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<MemoryComponent>, I>>(object: I): MemoryComponent {
-    const message = createBaseMemoryComponent();
+  fromPartial<I extends Exact<DeepPartial<MemoryComponentDto>, I>>(object: I): MemoryComponentDto {
+    const message = createBaseMemoryComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.ddrVersion = object.ddrVersion ?? 0;
@@ -938,24 +939,24 @@ export const MemoryComponent = {
   },
 };
 
-function createBaseMemoryComponentList(): MemoryComponentList {
+function createBaseMemoryComponentListDto(): MemoryComponentListDto {
   return { memoryComponents: [] };
 }
 
-export const MemoryComponentList = {
-  encode(message: MemoryComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const MemoryComponentListDto = {
+  encode(message: MemoryComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.memoryComponents !== undefined && message.memoryComponents.length !== 0) {
       for (const v of message.memoryComponents) {
-        MemoryComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        MemoryComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): MemoryComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): MemoryComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseMemoryComponentList();
+    const message = createBaseMemoryComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -964,7 +965,7 @@ export const MemoryComponentList = {
             break;
           }
 
-          message.memoryComponents!.push(MemoryComponent.decode(reader, reader.uint32()));
+          message.memoryComponents!.push(MemoryComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -975,33 +976,33 @@ export const MemoryComponentList = {
     return message;
   },
 
-  fromJSON(object: any): MemoryComponentList {
+  fromJSON(object: any): MemoryComponentListDto {
     return {
       memoryComponents: globalThis.Array.isArray(object?.memoryComponents)
-        ? object.memoryComponents.map((e: any) => MemoryComponent.fromJSON(e))
+        ? object.memoryComponents.map((e: any) => MemoryComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: MemoryComponentList): unknown {
+  toJSON(message: MemoryComponentListDto): unknown {
     const obj: any = {};
     if (message.memoryComponents?.length) {
-      obj.memoryComponents = message.memoryComponents.map((e) => MemoryComponent.toJSON(e));
+      obj.memoryComponents = message.memoryComponents.map((e) => MemoryComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MemoryComponentList>, I>>(base?: I): MemoryComponentList {
-    return MemoryComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<MemoryComponentListDto>, I>>(base?: I): MemoryComponentListDto {
+    return MemoryComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<MemoryComponentList>, I>>(object: I): MemoryComponentList {
-    const message = createBaseMemoryComponentList();
-    message.memoryComponents = object.memoryComponents?.map((e) => MemoryComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<MemoryComponentListDto>, I>>(object: I): MemoryComponentListDto {
+    const message = createBaseMemoryComponentListDto();
+    message.memoryComponents = object.memoryComponents?.map((e) => MemoryComponentDto.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseStorageComponent(): StorageComponent {
+function createBaseStorageComponentDto(): StorageComponentDto {
   return {
     uuid: "",
     displayName: "",
@@ -1014,8 +1015,8 @@ function createBaseStorageComponent(): StorageComponent {
   };
 }
 
-export const StorageComponent = {
-  encode(message: StorageComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const StorageComponentDto = {
+  encode(message: StorageComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -1043,10 +1044,10 @@ export const StorageComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): StorageComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): StorageComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseStorageComponent();
+    const message = createBaseStorageComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1115,7 +1116,7 @@ export const StorageComponent = {
     return message;
   },
 
-  fromJSON(object: any): StorageComponent {
+  fromJSON(object: any): StorageComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -1128,7 +1129,7 @@ export const StorageComponent = {
     };
   },
 
-  toJSON(message: StorageComponent): unknown {
+  toJSON(message: StorageComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -1157,11 +1158,11 @@ export const StorageComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<StorageComponent>, I>>(base?: I): StorageComponent {
-    return StorageComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<StorageComponentDto>, I>>(base?: I): StorageComponentDto {
+    return StorageComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<StorageComponent>, I>>(object: I): StorageComponent {
-    const message = createBaseStorageComponent();
+  fromPartial<I extends Exact<DeepPartial<StorageComponentDto>, I>>(object: I): StorageComponentDto {
+    const message = createBaseStorageComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.capacityGigabytes = object.capacityGigabytes ?? 0;
@@ -1174,24 +1175,24 @@ export const StorageComponent = {
   },
 };
 
-function createBaseStorageComponentList(): StorageComponentList {
+function createBaseStorageComponentListDto(): StorageComponentListDto {
   return { storageComponents: [] };
 }
 
-export const StorageComponentList = {
-  encode(message: StorageComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const StorageComponentListDto = {
+  encode(message: StorageComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.storageComponents !== undefined && message.storageComponents.length !== 0) {
       for (const v of message.storageComponents) {
-        StorageComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        StorageComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): StorageComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): StorageComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseStorageComponentList();
+    const message = createBaseStorageComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1200,7 +1201,7 @@ export const StorageComponentList = {
             break;
           }
 
-          message.storageComponents!.push(StorageComponent.decode(reader, reader.uint32()));
+          message.storageComponents!.push(StorageComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -1211,33 +1212,33 @@ export const StorageComponentList = {
     return message;
   },
 
-  fromJSON(object: any): StorageComponentList {
+  fromJSON(object: any): StorageComponentListDto {
     return {
       storageComponents: globalThis.Array.isArray(object?.storageComponents)
-        ? object.storageComponents.map((e: any) => StorageComponent.fromJSON(e))
+        ? object.storageComponents.map((e: any) => StorageComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: StorageComponentList): unknown {
+  toJSON(message: StorageComponentListDto): unknown {
     const obj: any = {};
     if (message.storageComponents?.length) {
-      obj.storageComponents = message.storageComponents.map((e) => StorageComponent.toJSON(e));
+      obj.storageComponents = message.storageComponents.map((e) => StorageComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<StorageComponentList>, I>>(base?: I): StorageComponentList {
-    return StorageComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<StorageComponentListDto>, I>>(base?: I): StorageComponentListDto {
+    return StorageComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<StorageComponentList>, I>>(object: I): StorageComponentList {
-    const message = createBaseStorageComponentList();
-    message.storageComponents = object.storageComponents?.map((e) => StorageComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<StorageComponentListDto>, I>>(object: I): StorageComponentListDto {
+    const message = createBaseStorageComponentListDto();
+    message.storageComponents = object.storageComponents?.map((e) => StorageComponentDto.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseVideoCardComponent(): VideoCardComponent {
+function createBaseVideoCardComponentDto(): VideoCardComponentDto {
   return {
     uuid: "",
     displayName: "",
@@ -1251,8 +1252,8 @@ function createBaseVideoCardComponent(): VideoCardComponent {
   };
 }
 
-export const VideoCardComponent = {
-  encode(message: VideoCardComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const VideoCardComponentDto = {
+  encode(message: VideoCardComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -1283,10 +1284,10 @@ export const VideoCardComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): VideoCardComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): VideoCardComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseVideoCardComponent();
+    const message = createBaseVideoCardComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1362,7 +1363,7 @@ export const VideoCardComponent = {
     return message;
   },
 
-  fromJSON(object: any): VideoCardComponent {
+  fromJSON(object: any): VideoCardComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -1376,7 +1377,7 @@ export const VideoCardComponent = {
     };
   },
 
-  toJSON(message: VideoCardComponent): unknown {
+  toJSON(message: VideoCardComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -1408,11 +1409,11 @@ export const VideoCardComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<VideoCardComponent>, I>>(base?: I): VideoCardComponent {
-    return VideoCardComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<VideoCardComponentDto>, I>>(base?: I): VideoCardComponentDto {
+    return VideoCardComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<VideoCardComponent>, I>>(object: I): VideoCardComponent {
-    const message = createBaseVideoCardComponent();
+  fromPartial<I extends Exact<DeepPartial<VideoCardComponentDto>, I>>(object: I): VideoCardComponentDto {
+    const message = createBaseVideoCardComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.chipset = object.chipset ?? "";
@@ -1426,24 +1427,24 @@ export const VideoCardComponent = {
   },
 };
 
-function createBaseVideoCardComponentList(): VideoCardComponentList {
+function createBaseVideoCardComponentListDto(): VideoCardComponentListDto {
   return { videoCardComponents: [] };
 }
 
-export const VideoCardComponentList = {
-  encode(message: VideoCardComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const VideoCardComponentListDto = {
+  encode(message: VideoCardComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.videoCardComponents !== undefined && message.videoCardComponents.length !== 0) {
       for (const v of message.videoCardComponents) {
-        VideoCardComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        VideoCardComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): VideoCardComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): VideoCardComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseVideoCardComponentList();
+    const message = createBaseVideoCardComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1452,7 +1453,7 @@ export const VideoCardComponentList = {
             break;
           }
 
-          message.videoCardComponents!.push(VideoCardComponent.decode(reader, reader.uint32()));
+          message.videoCardComponents!.push(VideoCardComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -1463,38 +1464,38 @@ export const VideoCardComponentList = {
     return message;
   },
 
-  fromJSON(object: any): VideoCardComponentList {
+  fromJSON(object: any): VideoCardComponentListDto {
     return {
       videoCardComponents: globalThis.Array.isArray(object?.videoCardComponents)
-        ? object.videoCardComponents.map((e: any) => VideoCardComponent.fromJSON(e))
+        ? object.videoCardComponents.map((e: any) => VideoCardComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: VideoCardComponentList): unknown {
+  toJSON(message: VideoCardComponentListDto): unknown {
     const obj: any = {};
     if (message.videoCardComponents?.length) {
-      obj.videoCardComponents = message.videoCardComponents.map((e) => VideoCardComponent.toJSON(e));
+      obj.videoCardComponents = message.videoCardComponents.map((e) => VideoCardComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<VideoCardComponentList>, I>>(base?: I): VideoCardComponentList {
-    return VideoCardComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<VideoCardComponentListDto>, I>>(base?: I): VideoCardComponentListDto {
+    return VideoCardComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<VideoCardComponentList>, I>>(object: I): VideoCardComponentList {
-    const message = createBaseVideoCardComponentList();
-    message.videoCardComponents = object.videoCardComponents?.map((e) => VideoCardComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<VideoCardComponentListDto>, I>>(object: I): VideoCardComponentListDto {
+    const message = createBaseVideoCardComponentListDto();
+    message.videoCardComponents = object.videoCardComponents?.map((e) => VideoCardComponentDto.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBasePowerSupplyComponent(): PowerSupplyComponent {
+function createBasePowerSupplyComponentDto(): PowerSupplyComponentDto {
   return { uuid: "", displayName: "", type: "", efficiency: "", wattage: 0, modular: "", colour: "", price: 0 };
 }
 
-export const PowerSupplyComponent = {
-  encode(message: PowerSupplyComponent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const PowerSupplyComponentDto = {
+  encode(message: PowerSupplyComponentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -1522,10 +1523,10 @@ export const PowerSupplyComponent = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): PowerSupplyComponent {
+  decode(input: _m0.Reader | Uint8Array, length?: number): PowerSupplyComponentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePowerSupplyComponent();
+    const message = createBasePowerSupplyComponentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1594,7 +1595,7 @@ export const PowerSupplyComponent = {
     return message;
   },
 
-  fromJSON(object: any): PowerSupplyComponent {
+  fromJSON(object: any): PowerSupplyComponentDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
@@ -1607,7 +1608,7 @@ export const PowerSupplyComponent = {
     };
   },
 
-  toJSON(message: PowerSupplyComponent): unknown {
+  toJSON(message: PowerSupplyComponentDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -1636,11 +1637,11 @@ export const PowerSupplyComponent = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<PowerSupplyComponent>, I>>(base?: I): PowerSupplyComponent {
-    return PowerSupplyComponent.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<PowerSupplyComponentDto>, I>>(base?: I): PowerSupplyComponentDto {
+    return PowerSupplyComponentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<PowerSupplyComponent>, I>>(object: I): PowerSupplyComponent {
-    const message = createBasePowerSupplyComponent();
+  fromPartial<I extends Exact<DeepPartial<PowerSupplyComponentDto>, I>>(object: I): PowerSupplyComponentDto {
+    const message = createBasePowerSupplyComponentDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.type = object.type ?? "";
@@ -1653,24 +1654,24 @@ export const PowerSupplyComponent = {
   },
 };
 
-function createBasePowerSupplyComponentList(): PowerSupplyComponentList {
+function createBasePowerSupplyComponentListDto(): PowerSupplyComponentListDto {
   return { powerSupplyComponents: [] };
 }
 
-export const PowerSupplyComponentList = {
-  encode(message: PowerSupplyComponentList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const PowerSupplyComponentListDto = {
+  encode(message: PowerSupplyComponentListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.powerSupplyComponents !== undefined && message.powerSupplyComponents.length !== 0) {
       for (const v of message.powerSupplyComponents) {
-        PowerSupplyComponent.encode(v!, writer.uint32(10).fork()).ldelim();
+        PowerSupplyComponentDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): PowerSupplyComponentList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): PowerSupplyComponentListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePowerSupplyComponentList();
+    const message = createBasePowerSupplyComponentListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1679,7 +1680,7 @@ export const PowerSupplyComponentList = {
             break;
           }
 
-          message.powerSupplyComponents!.push(PowerSupplyComponent.decode(reader, reader.uint32()));
+          message.powerSupplyComponents!.push(PowerSupplyComponentDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -1690,33 +1691,34 @@ export const PowerSupplyComponentList = {
     return message;
   },
 
-  fromJSON(object: any): PowerSupplyComponentList {
+  fromJSON(object: any): PowerSupplyComponentListDto {
     return {
       powerSupplyComponents: globalThis.Array.isArray(object?.powerSupplyComponents)
-        ? object.powerSupplyComponents.map((e: any) => PowerSupplyComponent.fromJSON(e))
+        ? object.powerSupplyComponents.map((e: any) => PowerSupplyComponentDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: PowerSupplyComponentList): unknown {
+  toJSON(message: PowerSupplyComponentListDto): unknown {
     const obj: any = {};
     if (message.powerSupplyComponents?.length) {
-      obj.powerSupplyComponents = message.powerSupplyComponents.map((e) => PowerSupplyComponent.toJSON(e));
+      obj.powerSupplyComponents = message.powerSupplyComponents.map((e) => PowerSupplyComponentDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<PowerSupplyComponentList>, I>>(base?: I): PowerSupplyComponentList {
-    return PowerSupplyComponentList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<PowerSupplyComponentListDto>, I>>(base?: I): PowerSupplyComponentListDto {
+    return PowerSupplyComponentListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<PowerSupplyComponentList>, I>>(object: I): PowerSupplyComponentList {
-    const message = createBasePowerSupplyComponentList();
-    message.powerSupplyComponents = object.powerSupplyComponents?.map((e) => PowerSupplyComponent.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<PowerSupplyComponentListDto>, I>>(object: I): PowerSupplyComponentListDto {
+    const message = createBasePowerSupplyComponentListDto();
+    message.powerSupplyComponents = object.powerSupplyComponents?.map((e) => PowerSupplyComponentDto.fromPartial(e)) ||
+      [];
     return message;
   },
 };
 
-function createBaseComputerBuild(): ComputerBuild {
+function createBaseComputerBuildDto(): ComputerBuildDto {
   return {
     uuid: "",
     displayName: "",
@@ -1733,8 +1735,8 @@ function createBaseComputerBuild(): ComputerBuild {
   };
 }
 
-export const ComputerBuild = {
-  encode(message: ComputerBuild, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const ComputerBuildDto = {
+  encode(message: ComputerBuildDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.uuid !== undefined && message.uuid !== "") {
       writer.uint32(10).string(message.uuid);
     }
@@ -1748,22 +1750,22 @@ export const ComputerBuild = {
       writer.uint32(34).string(message.username);
     }
     if (message.cpuList !== undefined) {
-      CpuComponentList.encode(message.cpuList, writer.uint32(42).fork()).ldelim();
+      CpuComponentListDto.encode(message.cpuList, writer.uint32(42).fork()).ldelim();
     }
     if (message.motherboardList !== undefined) {
-      MotherboardComponentList.encode(message.motherboardList, writer.uint32(50).fork()).ldelim();
+      MotherboardComponentListDto.encode(message.motherboardList, writer.uint32(50).fork()).ldelim();
     }
     if (message.storageList !== undefined) {
-      StorageComponentList.encode(message.storageList, writer.uint32(58).fork()).ldelim();
+      StorageComponentListDto.encode(message.storageList, writer.uint32(58).fork()).ldelim();
     }
     if (message.memoryList !== undefined) {
-      MemoryComponentList.encode(message.memoryList, writer.uint32(66).fork()).ldelim();
+      MemoryComponentListDto.encode(message.memoryList, writer.uint32(66).fork()).ldelim();
     }
     if (message.videoCardList !== undefined) {
-      VideoCardComponentList.encode(message.videoCardList, writer.uint32(74).fork()).ldelim();
+      VideoCardComponentListDto.encode(message.videoCardList, writer.uint32(74).fork()).ldelim();
     }
     if (message.powerSupplyList !== undefined) {
-      PowerSupplyComponentList.encode(message.powerSupplyList, writer.uint32(82).fork()).ldelim();
+      PowerSupplyComponentListDto.encode(message.powerSupplyList, writer.uint32(82).fork()).ldelim();
     }
     if (message.creationDate !== undefined && message.creationDate !== 0) {
       writer.uint32(88).int64(message.creationDate);
@@ -1774,10 +1776,10 @@ export const ComputerBuild = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuild {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseComputerBuild();
+    const message = createBaseComputerBuildDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1814,42 +1816,42 @@ export const ComputerBuild = {
             break;
           }
 
-          message.cpuList = CpuComponentList.decode(reader, reader.uint32());
+          message.cpuList = CpuComponentListDto.decode(reader, reader.uint32());
           continue;
         case 6:
           if (tag !== 50) {
             break;
           }
 
-          message.motherboardList = MotherboardComponentList.decode(reader, reader.uint32());
+          message.motherboardList = MotherboardComponentListDto.decode(reader, reader.uint32());
           continue;
         case 7:
           if (tag !== 58) {
             break;
           }
 
-          message.storageList = StorageComponentList.decode(reader, reader.uint32());
+          message.storageList = StorageComponentListDto.decode(reader, reader.uint32());
           continue;
         case 8:
           if (tag !== 66) {
             break;
           }
 
-          message.memoryList = MemoryComponentList.decode(reader, reader.uint32());
+          message.memoryList = MemoryComponentListDto.decode(reader, reader.uint32());
           continue;
         case 9:
           if (tag !== 74) {
             break;
           }
 
-          message.videoCardList = VideoCardComponentList.decode(reader, reader.uint32());
+          message.videoCardList = VideoCardComponentListDto.decode(reader, reader.uint32());
           continue;
         case 10:
           if (tag !== 82) {
             break;
           }
 
-          message.powerSupplyList = PowerSupplyComponentList.decode(reader, reader.uint32());
+          message.powerSupplyList = PowerSupplyComponentListDto.decode(reader, reader.uint32());
           continue;
         case 11:
           if (tag !== 88) {
@@ -1874,28 +1876,28 @@ export const ComputerBuild = {
     return message;
   },
 
-  fromJSON(object: any): ComputerBuild {
+  fromJSON(object: any): ComputerBuildDto {
     return {
       uuid: isSet(object.uuid) ? globalThis.String(object.uuid) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
       description: isSet(object.description) ? globalThis.String(object.description) : "",
       username: isSet(object.username) ? globalThis.String(object.username) : "",
-      cpuList: isSet(object.cpuList) ? CpuComponentList.fromJSON(object.cpuList) : undefined,
+      cpuList: isSet(object.cpuList) ? CpuComponentListDto.fromJSON(object.cpuList) : undefined,
       motherboardList: isSet(object.motherboardList)
-        ? MotherboardComponentList.fromJSON(object.motherboardList)
+        ? MotherboardComponentListDto.fromJSON(object.motherboardList)
         : undefined,
-      storageList: isSet(object.storageList) ? StorageComponentList.fromJSON(object.storageList) : undefined,
-      memoryList: isSet(object.memoryList) ? MemoryComponentList.fromJSON(object.memoryList) : undefined,
-      videoCardList: isSet(object.videoCardList) ? VideoCardComponentList.fromJSON(object.videoCardList) : undefined,
+      storageList: isSet(object.storageList) ? StorageComponentListDto.fromJSON(object.storageList) : undefined,
+      memoryList: isSet(object.memoryList) ? MemoryComponentListDto.fromJSON(object.memoryList) : undefined,
+      videoCardList: isSet(object.videoCardList) ? VideoCardComponentListDto.fromJSON(object.videoCardList) : undefined,
       powerSupplyList: isSet(object.powerSupplyList)
-        ? PowerSupplyComponentList.fromJSON(object.powerSupplyList)
+        ? PowerSupplyComponentListDto.fromJSON(object.powerSupplyList)
         : undefined,
       creationDate: isSet(object.creationDate) ? globalThis.Number(object.creationDate) : 0,
       lastUpdateDate: isSet(object.lastUpdateDate) ? globalThis.Number(object.lastUpdateDate) : 0,
     };
   },
 
-  toJSON(message: ComputerBuild): unknown {
+  toJSON(message: ComputerBuildDto): unknown {
     const obj: any = {};
     if (message.uuid !== undefined && message.uuid !== "") {
       obj.uuid = message.uuid;
@@ -1910,22 +1912,22 @@ export const ComputerBuild = {
       obj.username = message.username;
     }
     if (message.cpuList !== undefined) {
-      obj.cpuList = CpuComponentList.toJSON(message.cpuList);
+      obj.cpuList = CpuComponentListDto.toJSON(message.cpuList);
     }
     if (message.motherboardList !== undefined) {
-      obj.motherboardList = MotherboardComponentList.toJSON(message.motherboardList);
+      obj.motherboardList = MotherboardComponentListDto.toJSON(message.motherboardList);
     }
     if (message.storageList !== undefined) {
-      obj.storageList = StorageComponentList.toJSON(message.storageList);
+      obj.storageList = StorageComponentListDto.toJSON(message.storageList);
     }
     if (message.memoryList !== undefined) {
-      obj.memoryList = MemoryComponentList.toJSON(message.memoryList);
+      obj.memoryList = MemoryComponentListDto.toJSON(message.memoryList);
     }
     if (message.videoCardList !== undefined) {
-      obj.videoCardList = VideoCardComponentList.toJSON(message.videoCardList);
+      obj.videoCardList = VideoCardComponentListDto.toJSON(message.videoCardList);
     }
     if (message.powerSupplyList !== undefined) {
-      obj.powerSupplyList = PowerSupplyComponentList.toJSON(message.powerSupplyList);
+      obj.powerSupplyList = PowerSupplyComponentListDto.toJSON(message.powerSupplyList);
     }
     if (message.creationDate !== undefined && message.creationDate !== 0) {
       obj.creationDate = Math.round(message.creationDate);
@@ -1936,32 +1938,32 @@ export const ComputerBuild = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ComputerBuild>, I>>(base?: I): ComputerBuild {
-    return ComputerBuild.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ComputerBuildDto>, I>>(base?: I): ComputerBuildDto {
+    return ComputerBuildDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ComputerBuild>, I>>(object: I): ComputerBuild {
-    const message = createBaseComputerBuild();
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildDto>, I>>(object: I): ComputerBuildDto {
+    const message = createBaseComputerBuildDto();
     message.uuid = object.uuid ?? "";
     message.displayName = object.displayName ?? "";
     message.description = object.description ?? "";
     message.username = object.username ?? "";
     message.cpuList = (object.cpuList !== undefined && object.cpuList !== null)
-      ? CpuComponentList.fromPartial(object.cpuList)
+      ? CpuComponentListDto.fromPartial(object.cpuList)
       : undefined;
     message.motherboardList = (object.motherboardList !== undefined && object.motherboardList !== null)
-      ? MotherboardComponentList.fromPartial(object.motherboardList)
+      ? MotherboardComponentListDto.fromPartial(object.motherboardList)
       : undefined;
     message.storageList = (object.storageList !== undefined && object.storageList !== null)
-      ? StorageComponentList.fromPartial(object.storageList)
+      ? StorageComponentListDto.fromPartial(object.storageList)
       : undefined;
     message.memoryList = (object.memoryList !== undefined && object.memoryList !== null)
-      ? MemoryComponentList.fromPartial(object.memoryList)
+      ? MemoryComponentListDto.fromPartial(object.memoryList)
       : undefined;
     message.videoCardList = (object.videoCardList !== undefined && object.videoCardList !== null)
-      ? VideoCardComponentList.fromPartial(object.videoCardList)
+      ? VideoCardComponentListDto.fromPartial(object.videoCardList)
       : undefined;
     message.powerSupplyList = (object.powerSupplyList !== undefined && object.powerSupplyList !== null)
-      ? PowerSupplyComponentList.fromPartial(object.powerSupplyList)
+      ? PowerSupplyComponentListDto.fromPartial(object.powerSupplyList)
       : undefined;
     message.creationDate = object.creationDate ?? 0;
     message.lastUpdateDate = object.lastUpdateDate ?? 0;
@@ -1969,24 +1971,24 @@ export const ComputerBuild = {
   },
 };
 
-function createBaseComputerBuildList(): ComputerBuildList {
+function createBaseComputerBuildListDto(): ComputerBuildListDto {
   return { computerBuilds: [] };
 }
 
-export const ComputerBuildList = {
-  encode(message: ComputerBuildList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const ComputerBuildListDto = {
+  encode(message: ComputerBuildListDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.computerBuilds !== undefined && message.computerBuilds.length !== 0) {
       for (const v of message.computerBuilds) {
-        ComputerBuild.encode(v!, writer.uint32(10).fork()).ldelim();
+        ComputerBuildDto.encode(v!, writer.uint32(10).fork()).ldelim();
       }
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildListDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseComputerBuildList();
+    const message = createBaseComputerBuildListDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -1995,7 +1997,7 @@ export const ComputerBuildList = {
             break;
           }
 
-          message.computerBuilds!.push(ComputerBuild.decode(reader, reader.uint32()));
+          message.computerBuilds!.push(ComputerBuildDto.decode(reader, reader.uint32()));
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
@@ -2006,38 +2008,38 @@ export const ComputerBuildList = {
     return message;
   },
 
-  fromJSON(object: any): ComputerBuildList {
+  fromJSON(object: any): ComputerBuildListDto {
     return {
       computerBuilds: globalThis.Array.isArray(object?.computerBuilds)
-        ? object.computerBuilds.map((e: any) => ComputerBuild.fromJSON(e))
+        ? object.computerBuilds.map((e: any) => ComputerBuildDto.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: ComputerBuildList): unknown {
+  toJSON(message: ComputerBuildListDto): unknown {
     const obj: any = {};
     if (message.computerBuilds?.length) {
-      obj.computerBuilds = message.computerBuilds.map((e) => ComputerBuild.toJSON(e));
+      obj.computerBuilds = message.computerBuilds.map((e) => ComputerBuildDto.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ComputerBuildList>, I>>(base?: I): ComputerBuildList {
-    return ComputerBuildList.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ComputerBuildListDto>, I>>(base?: I): ComputerBuildListDto {
+    return ComputerBuildListDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ComputerBuildList>, I>>(object: I): ComputerBuildList {
-    const message = createBaseComputerBuildList();
-    message.computerBuilds = object.computerBuilds?.map((e) => ComputerBuild.fromPartial(e)) || [];
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildListDto>, I>>(object: I): ComputerBuildListDto {
+    const message = createBaseComputerBuildListDto();
+    message.computerBuilds = object.computerBuilds?.map((e) => ComputerBuildDto.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseComputerBuildComment(): ComputerBuildComment {
+function createBaseComputerBuildCommentDto(): ComputerBuildCommentDto {
   return { authorName: "", content: "", lastUpdatedDate: "" };
 }
 
-export const ComputerBuildComment = {
-  encode(message: ComputerBuildComment, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const ComputerBuildCommentDto = {
+  encode(message: ComputerBuildCommentDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.authorName !== undefined && message.authorName !== "") {
       writer.uint32(10).string(message.authorName);
     }
@@ -2050,10 +2052,10 @@ export const ComputerBuildComment = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildComment {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildCommentDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseComputerBuildComment();
+    const message = createBaseComputerBuildCommentDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2087,7 +2089,7 @@ export const ComputerBuildComment = {
     return message;
   },
 
-  fromJSON(object: any): ComputerBuildComment {
+  fromJSON(object: any): ComputerBuildCommentDto {
     return {
       authorName: isSet(object.authorName) ? globalThis.String(object.authorName) : "",
       content: isSet(object.content) ? globalThis.String(object.content) : "",
@@ -2095,7 +2097,7 @@ export const ComputerBuildComment = {
     };
   },
 
-  toJSON(message: ComputerBuildComment): unknown {
+  toJSON(message: ComputerBuildCommentDto): unknown {
     const obj: any = {};
     if (message.authorName !== undefined && message.authorName !== "") {
       obj.authorName = message.authorName;
@@ -2109,11 +2111,11 @@ export const ComputerBuildComment = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ComputerBuildComment>, I>>(base?: I): ComputerBuildComment {
-    return ComputerBuildComment.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ComputerBuildCommentDto>, I>>(base?: I): ComputerBuildCommentDto {
+    return ComputerBuildCommentDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ComputerBuildComment>, I>>(object: I): ComputerBuildComment {
-    const message = createBaseComputerBuildComment();
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildCommentDto>, I>>(object: I): ComputerBuildCommentDto {
+    const message = createBaseComputerBuildCommentDto();
     message.authorName = object.authorName ?? "";
     message.content = object.content ?? "";
     message.lastUpdatedDate = object.lastUpdatedDate ?? "";
@@ -2121,7 +2123,7 @@ export const ComputerBuildComment = {
   },
 };
 
-function createBaseComputerBuildDraft(): ComputerBuildDraft {
+function createBaseComputerBuildDraftDto(): ComputerBuildDraftDto {
   return {
     displayName: "",
     description: "",
@@ -2134,8 +2136,8 @@ function createBaseComputerBuildDraft(): ComputerBuildDraft {
   };
 }
 
-export const ComputerBuildDraft = {
-  encode(message: ComputerBuildDraft, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const ComputerBuildDraftDto = {
+  encode(message: ComputerBuildDraftDto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.displayName !== undefined && message.displayName !== "") {
       writer.uint32(10).string(message.displayName);
     }
@@ -2175,10 +2177,10 @@ export const ComputerBuildDraft = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildDraft {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ComputerBuildDraftDto {
     const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseComputerBuildDraft();
+    const message = createBaseComputerBuildDraftDto();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2247,7 +2249,7 @@ export const ComputerBuildDraft = {
     return message;
   },
 
-  fromJSON(object: any): ComputerBuildDraft {
+  fromJSON(object: any): ComputerBuildDraftDto {
     return {
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
       description: isSet(object.description) ? globalThis.String(object.description) : "",
@@ -2270,7 +2272,7 @@ export const ComputerBuildDraft = {
     };
   },
 
-  toJSON(message: ComputerBuildDraft): unknown {
+  toJSON(message: ComputerBuildDraftDto): unknown {
     const obj: any = {};
     if (message.displayName !== undefined && message.displayName !== "") {
       obj.displayName = message.displayName;
@@ -2299,11 +2301,11 @@ export const ComputerBuildDraft = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ComputerBuildDraft>, I>>(base?: I): ComputerBuildDraft {
-    return ComputerBuildDraft.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ComputerBuildDraftDto>, I>>(base?: I): ComputerBuildDraftDto {
+    return ComputerBuildDraftDto.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ComputerBuildDraft>, I>>(object: I): ComputerBuildDraft {
-    const message = createBaseComputerBuildDraft();
+  fromPartial<I extends Exact<DeepPartial<ComputerBuildDraftDto>, I>>(object: I): ComputerBuildDraftDto {
+    const message = createBaseComputerBuildDraftDto();
     message.displayName = object.displayName ?? "";
     message.description = object.description ?? "";
     message.cpuIds = object.cpuIds?.map((e) => e) || [];

@@ -15,8 +15,8 @@ public final class PcBuilder {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface UserProfileOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.UserProfile)
+  public interface UserProfileDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.UserProfileDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -68,18 +68,18 @@ public final class PcBuilder {
         getPasswordBytes();
   }
   /**
-   * Protobuf type {@code models.UserProfile}
+   * Protobuf type {@code models.UserProfileDto}
    */
-  public static final class UserProfile extends
+  public static final class UserProfileDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.UserProfile)
-      UserProfileOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.UserProfileDto)
+      UserProfileDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UserProfile.newBuilder() to construct.
-    private UserProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserProfileDto.newBuilder() to construct.
+    private UserProfileDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UserProfile() {
+    private UserProfileDto() {
       username_ = "";
       displayName_ = "";
       email_ = "";
@@ -90,20 +90,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UserProfile();
+      return new UserProfileDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_UserProfile_descriptor;
+      return models.PcBuilder.internal_static_models_UserProfileDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_UserProfile_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_UserProfileDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.UserProfile.class, models.PcBuilder.UserProfile.Builder.class);
+              models.PcBuilder.UserProfileDto.class, models.PcBuilder.UserProfileDto.Builder.class);
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
@@ -319,10 +319,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.UserProfile)) {
+      if (!(obj instanceof models.PcBuilder.UserProfileDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.UserProfile other = (models.PcBuilder.UserProfile) obj;
+      models.PcBuilder.UserProfileDto other = (models.PcBuilder.UserProfileDto) obj;
 
       if (!getUsername()
           .equals(other.getUsername())) return false;
@@ -356,44 +356,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.UserProfile parseFrom(byte[] data)
+    public static models.PcBuilder.UserProfileDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.UserProfile parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.UserProfileDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -401,26 +401,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.UserProfile parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.UserProfileDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.UserProfile parseDelimitedFrom(
+    public static models.PcBuilder.UserProfileDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.UserProfile parseFrom(
+    public static models.PcBuilder.UserProfileDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -433,7 +433,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.UserProfile prototype) {
+    public static Builder newBuilder(models.PcBuilder.UserProfileDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -449,26 +449,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.UserProfile}
+     * Protobuf type {@code models.UserProfileDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.UserProfile)
-        models.PcBuilder.UserProfileOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.UserProfileDto)
+        models.PcBuilder.UserProfileDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_UserProfile_descriptor;
+        return models.PcBuilder.internal_static_models_UserProfileDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_UserProfile_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_UserProfileDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.UserProfile.class, models.PcBuilder.UserProfile.Builder.class);
+                models.PcBuilder.UserProfileDto.class, models.PcBuilder.UserProfileDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.UserProfile.newBuilder()
+      // Construct using models.PcBuilder.UserProfileDto.newBuilder()
       private Builder() {
 
       }
@@ -492,17 +492,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_UserProfile_descriptor;
+        return models.PcBuilder.internal_static_models_UserProfileDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.UserProfile getDefaultInstanceForType() {
-        return models.PcBuilder.UserProfile.getDefaultInstance();
+      public models.PcBuilder.UserProfileDto getDefaultInstanceForType() {
+        return models.PcBuilder.UserProfileDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.UserProfile build() {
-        models.PcBuilder.UserProfile result = buildPartial();
+      public models.PcBuilder.UserProfileDto build() {
+        models.PcBuilder.UserProfileDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -510,14 +510,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.UserProfile buildPartial() {
-        models.PcBuilder.UserProfile result = new models.PcBuilder.UserProfile(this);
+      public models.PcBuilder.UserProfileDto buildPartial() {
+        models.PcBuilder.UserProfileDto result = new models.PcBuilder.UserProfileDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.UserProfile result) {
+      private void buildPartial0(models.PcBuilder.UserProfileDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.username_ = username_;
@@ -567,16 +567,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.UserProfile) {
-          return mergeFrom((models.PcBuilder.UserProfile)other);
+        if (other instanceof models.PcBuilder.UserProfileDto) {
+          return mergeFrom((models.PcBuilder.UserProfileDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.UserProfile other) {
-        if (other == models.PcBuilder.UserProfile.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.UserProfileDto other) {
+        if (other == models.PcBuilder.UserProfileDto.getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           bitField0_ |= 0x00000001;
@@ -960,23 +960,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.UserProfile)
+      // @@protoc_insertion_point(builder_scope:models.UserProfileDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.UserProfile)
-    private static final models.PcBuilder.UserProfile DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.UserProfileDto)
+    private static final models.PcBuilder.UserProfileDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.UserProfile();
+      DEFAULT_INSTANCE = new models.PcBuilder.UserProfileDto();
     }
 
-    public static models.PcBuilder.UserProfile getDefaultInstance() {
+    public static models.PcBuilder.UserProfileDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserProfile>
-        PARSER = new com.google.protobuf.AbstractParser<UserProfile>() {
+    private static final com.google.protobuf.Parser<UserProfileDto>
+        PARSER = new com.google.protobuf.AbstractParser<UserProfileDto>() {
       @java.lang.Override
-      public UserProfile parsePartialFrom(
+      public UserProfileDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -995,24 +995,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<UserProfile> parser() {
+    public static com.google.protobuf.Parser<UserProfileDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserProfile> getParserForType() {
+    public com.google.protobuf.Parser<UserProfileDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.UserProfile getDefaultInstanceForType() {
+    public models.PcBuilder.UserProfileDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CpuComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.CpuComponent)
+  public interface CpuComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.CpuComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1088,18 +1088,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.CpuComponent}
+   * Protobuf type {@code models.CpuComponentDto}
    */
-  public static final class CpuComponent extends
+  public static final class CpuComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.CpuComponent)
-      CpuComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.CpuComponentDto)
+      CpuComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CpuComponent.newBuilder() to construct.
-    private CpuComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CpuComponentDto.newBuilder() to construct.
+    private CpuComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CpuComponent() {
+    private CpuComponentDto() {
       uuid_ = "";
       displayName_ = "";
       integratedGraphics_ = "";
@@ -1109,20 +1109,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CpuComponent();
+      return new CpuComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_CpuComponent_descriptor;
+      return models.PcBuilder.internal_static_models_CpuComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_CpuComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_CpuComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.CpuComponent.class, models.PcBuilder.CpuComponent.Builder.class);
+              models.PcBuilder.CpuComponentDto.class, models.PcBuilder.CpuComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -1401,10 +1401,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.CpuComponent)) {
+      if (!(obj instanceof models.PcBuilder.CpuComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.CpuComponent other = (models.PcBuilder.CpuComponent) obj;
+      models.PcBuilder.CpuComponentDto other = (models.PcBuilder.CpuComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -1459,44 +1459,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(byte[] data)
+    public static models.PcBuilder.CpuComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.CpuComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1504,26 +1504,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.CpuComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.CpuComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.CpuComponent parseDelimitedFrom(
+    public static models.PcBuilder.CpuComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.CpuComponent parseFrom(
+    public static models.PcBuilder.CpuComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1536,7 +1536,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.CpuComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.CpuComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1552,26 +1552,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.CpuComponent}
+     * Protobuf type {@code models.CpuComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.CpuComponent)
-        models.PcBuilder.CpuComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.CpuComponentDto)
+        models.PcBuilder.CpuComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_CpuComponent_descriptor;
+        return models.PcBuilder.internal_static_models_CpuComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_CpuComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_CpuComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.CpuComponent.class, models.PcBuilder.CpuComponent.Builder.class);
+                models.PcBuilder.CpuComponentDto.class, models.PcBuilder.CpuComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.CpuComponent.newBuilder()
+      // Construct using models.PcBuilder.CpuComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -1600,17 +1600,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_CpuComponent_descriptor;
+        return models.PcBuilder.internal_static_models_CpuComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponent getDefaultInstanceForType() {
-        return models.PcBuilder.CpuComponent.getDefaultInstance();
+      public models.PcBuilder.CpuComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.CpuComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponent build() {
-        models.PcBuilder.CpuComponent result = buildPartial();
+      public models.PcBuilder.CpuComponentDto build() {
+        models.PcBuilder.CpuComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1618,14 +1618,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponent buildPartial() {
-        models.PcBuilder.CpuComponent result = new models.PcBuilder.CpuComponent(this);
+      public models.PcBuilder.CpuComponentDto buildPartial() {
+        models.PcBuilder.CpuComponentDto result = new models.PcBuilder.CpuComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.CpuComponent result) {
+      private void buildPartial0(models.PcBuilder.CpuComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -1690,16 +1690,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.CpuComponent) {
-          return mergeFrom((models.PcBuilder.CpuComponent)other);
+        if (other instanceof models.PcBuilder.CpuComponentDto) {
+          return mergeFrom((models.PcBuilder.CpuComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.CpuComponent other) {
-        if (other == models.PcBuilder.CpuComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.CpuComponentDto other) {
+        if (other == models.PcBuilder.CpuComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -2241,23 +2241,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.CpuComponent)
+      // @@protoc_insertion_point(builder_scope:models.CpuComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.CpuComponent)
-    private static final models.PcBuilder.CpuComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.CpuComponentDto)
+    private static final models.PcBuilder.CpuComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.CpuComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.CpuComponentDto();
     }
 
-    public static models.PcBuilder.CpuComponent getDefaultInstance() {
+    public static models.PcBuilder.CpuComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CpuComponent>
-        PARSER = new com.google.protobuf.AbstractParser<CpuComponent>() {
+    private static final com.google.protobuf.Parser<CpuComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<CpuComponentDto>() {
       @java.lang.Override
-      public CpuComponent parsePartialFrom(
+      public CpuComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2276,63 +2276,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<CpuComponent> parser() {
+    public static com.google.protobuf.Parser<CpuComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CpuComponent> getParserForType() {
+    public com.google.protobuf.Parser<CpuComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.CpuComponent getDefaultInstanceForType() {
+    public models.PcBuilder.CpuComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CpuComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.CpuComponentList)
+  public interface CpuComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.CpuComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.CpuComponent> 
+    java.util.List<models.PcBuilder.CpuComponentDto> 
         getCpuComponentsList();
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
-    models.PcBuilder.CpuComponent getCpuComponents(int index);
+    models.PcBuilder.CpuComponentDto getCpuComponents(int index);
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     int getCpuComponentsCount();
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.CpuComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.CpuComponentDtoOrBuilder> 
         getCpuComponentsOrBuilderList();
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
-    models.PcBuilder.CpuComponentOrBuilder getCpuComponentsOrBuilder(
+    models.PcBuilder.CpuComponentDtoOrBuilder getCpuComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.CpuComponentList}
+   * Protobuf type {@code models.CpuComponentListDto}
    */
-  public static final class CpuComponentList extends
+  public static final class CpuComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.CpuComponentList)
-      CpuComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.CpuComponentListDto)
+      CpuComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CpuComponentList.newBuilder() to construct.
-    private CpuComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CpuComponentListDto.newBuilder() to construct.
+    private CpuComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CpuComponentList() {
+    private CpuComponentListDto() {
       cpuComponents_ = java.util.Collections.emptyList();
     }
 
@@ -2340,59 +2340,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CpuComponentList();
+      return new CpuComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_CpuComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_CpuComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_CpuComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_CpuComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.CpuComponentList.class, models.PcBuilder.CpuComponentList.Builder.class);
+              models.PcBuilder.CpuComponentListDto.class, models.PcBuilder.CpuComponentListDto.Builder.class);
     }
 
     public static final int CPUCOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.CpuComponent> cpuComponents_;
+    private java.util.List<models.PcBuilder.CpuComponentDto> cpuComponents_;
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.CpuComponent> getCpuComponentsList() {
+    public java.util.List<models.PcBuilder.CpuComponentDto> getCpuComponentsList() {
       return cpuComponents_;
     }
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.CpuComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.CpuComponentDtoOrBuilder> 
         getCpuComponentsOrBuilderList() {
       return cpuComponents_;
     }
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     @java.lang.Override
     public int getCpuComponentsCount() {
       return cpuComponents_.size();
     }
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.CpuComponent getCpuComponents(int index) {
+    public models.PcBuilder.CpuComponentDto getCpuComponents(int index) {
       return cpuComponents_.get(index);
     }
     /**
-     * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+     * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.CpuComponentOrBuilder getCpuComponentsOrBuilder(
+    public models.PcBuilder.CpuComponentDtoOrBuilder getCpuComponentsOrBuilder(
         int index) {
       return cpuComponents_.get(index);
     }
@@ -2437,10 +2437,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.CpuComponentList)) {
+      if (!(obj instanceof models.PcBuilder.CpuComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.CpuComponentList other = (models.PcBuilder.CpuComponentList) obj;
+      models.PcBuilder.CpuComponentListDto other = (models.PcBuilder.CpuComponentListDto) obj;
 
       if (!getCpuComponentsList()
           .equals(other.getCpuComponentsList())) return false;
@@ -2464,44 +2464,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.CpuComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.CpuComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2509,26 +2509,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.CpuComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.CpuComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.CpuComponentList parseDelimitedFrom(
+    public static models.PcBuilder.CpuComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.CpuComponentList parseFrom(
+    public static models.PcBuilder.CpuComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2541,7 +2541,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.CpuComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.CpuComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2557,26 +2557,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.CpuComponentList}
+     * Protobuf type {@code models.CpuComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.CpuComponentList)
-        models.PcBuilder.CpuComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.CpuComponentListDto)
+        models.PcBuilder.CpuComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_CpuComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_CpuComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_CpuComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_CpuComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.CpuComponentList.class, models.PcBuilder.CpuComponentList.Builder.class);
+                models.PcBuilder.CpuComponentListDto.class, models.PcBuilder.CpuComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.CpuComponentList.newBuilder()
+      // Construct using models.PcBuilder.CpuComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -2603,17 +2603,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_CpuComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_CpuComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.CpuComponentList.getDefaultInstance();
+      public models.PcBuilder.CpuComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.CpuComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponentList build() {
-        models.PcBuilder.CpuComponentList result = buildPartial();
+      public models.PcBuilder.CpuComponentListDto build() {
+        models.PcBuilder.CpuComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2621,15 +2621,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.CpuComponentList buildPartial() {
-        models.PcBuilder.CpuComponentList result = new models.PcBuilder.CpuComponentList(this);
+      public models.PcBuilder.CpuComponentListDto buildPartial() {
+        models.PcBuilder.CpuComponentListDto result = new models.PcBuilder.CpuComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.CpuComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.CpuComponentListDto result) {
         if (cpuComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cpuComponents_ = java.util.Collections.unmodifiableList(cpuComponents_);
@@ -2641,7 +2641,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.CpuComponentList result) {
+      private void buildPartial0(models.PcBuilder.CpuComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -2679,16 +2679,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.CpuComponentList) {
-          return mergeFrom((models.PcBuilder.CpuComponentList)other);
+        if (other instanceof models.PcBuilder.CpuComponentListDto) {
+          return mergeFrom((models.PcBuilder.CpuComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.CpuComponentList other) {
-        if (other == models.PcBuilder.CpuComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.CpuComponentListDto other) {
+        if (other == models.PcBuilder.CpuComponentListDto.getDefaultInstance()) return this;
         if (cpuComponentsBuilder_ == null) {
           if (!other.cpuComponents_.isEmpty()) {
             if (cpuComponents_.isEmpty()) {
@@ -2742,9 +2742,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.CpuComponent m =
+                models.PcBuilder.CpuComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.CpuComponent.parser(),
+                        models.PcBuilder.CpuComponentDto.parser(),
                         extensionRegistry);
                 if (cpuComponentsBuilder_ == null) {
                   ensureCpuComponentsIsMutable();
@@ -2771,22 +2771,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.CpuComponent> cpuComponents_ =
+      private java.util.List<models.PcBuilder.CpuComponentDto> cpuComponents_ =
         java.util.Collections.emptyList();
       private void ensureCpuComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          cpuComponents_ = new java.util.ArrayList<models.PcBuilder.CpuComponent>(cpuComponents_);
+          cpuComponents_ = new java.util.ArrayList<models.PcBuilder.CpuComponentDto>(cpuComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.CpuComponent, models.PcBuilder.CpuComponent.Builder, models.PcBuilder.CpuComponentOrBuilder> cpuComponentsBuilder_;
+          models.PcBuilder.CpuComponentDto, models.PcBuilder.CpuComponentDto.Builder, models.PcBuilder.CpuComponentDtoOrBuilder> cpuComponentsBuilder_;
 
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.CpuComponent> getCpuComponentsList() {
+      public java.util.List<models.PcBuilder.CpuComponentDto> getCpuComponentsList() {
         if (cpuComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(cpuComponents_);
         } else {
@@ -2794,7 +2794,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public int getCpuComponentsCount() {
         if (cpuComponentsBuilder_ == null) {
@@ -2804,9 +2804,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public models.PcBuilder.CpuComponent getCpuComponents(int index) {
+      public models.PcBuilder.CpuComponentDto getCpuComponents(int index) {
         if (cpuComponentsBuilder_ == null) {
           return cpuComponents_.get(index);
         } else {
@@ -2814,10 +2814,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder setCpuComponents(
-          int index, models.PcBuilder.CpuComponent value) {
+          int index, models.PcBuilder.CpuComponentDto value) {
         if (cpuComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2831,10 +2831,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder setCpuComponents(
-          int index, models.PcBuilder.CpuComponent.Builder builderForValue) {
+          int index, models.PcBuilder.CpuComponentDto.Builder builderForValue) {
         if (cpuComponentsBuilder_ == null) {
           ensureCpuComponentsIsMutable();
           cpuComponents_.set(index, builderForValue.build());
@@ -2845,9 +2845,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public Builder addCpuComponents(models.PcBuilder.CpuComponent value) {
+      public Builder addCpuComponents(models.PcBuilder.CpuComponentDto value) {
         if (cpuComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2861,10 +2861,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder addCpuComponents(
-          int index, models.PcBuilder.CpuComponent value) {
+          int index, models.PcBuilder.CpuComponentDto value) {
         if (cpuComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2878,10 +2878,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder addCpuComponents(
-          models.PcBuilder.CpuComponent.Builder builderForValue) {
+          models.PcBuilder.CpuComponentDto.Builder builderForValue) {
         if (cpuComponentsBuilder_ == null) {
           ensureCpuComponentsIsMutable();
           cpuComponents_.add(builderForValue.build());
@@ -2892,10 +2892,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder addCpuComponents(
-          int index, models.PcBuilder.CpuComponent.Builder builderForValue) {
+          int index, models.PcBuilder.CpuComponentDto.Builder builderForValue) {
         if (cpuComponentsBuilder_ == null) {
           ensureCpuComponentsIsMutable();
           cpuComponents_.add(index, builderForValue.build());
@@ -2906,10 +2906,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder addAllCpuComponents(
-          java.lang.Iterable<? extends models.PcBuilder.CpuComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.CpuComponentDto> values) {
         if (cpuComponentsBuilder_ == null) {
           ensureCpuComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2921,7 +2921,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder clearCpuComponents() {
         if (cpuComponentsBuilder_ == null) {
@@ -2934,7 +2934,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
       public Builder removeCpuComponents(int index) {
         if (cpuComponentsBuilder_ == null) {
@@ -2947,16 +2947,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public models.PcBuilder.CpuComponent.Builder getCpuComponentsBuilder(
+      public models.PcBuilder.CpuComponentDto.Builder getCpuComponentsBuilder(
           int index) {
         return getCpuComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public models.PcBuilder.CpuComponentOrBuilder getCpuComponentsOrBuilder(
+      public models.PcBuilder.CpuComponentDtoOrBuilder getCpuComponentsOrBuilder(
           int index) {
         if (cpuComponentsBuilder_ == null) {
           return cpuComponents_.get(index);  } else {
@@ -2964,9 +2964,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.CpuComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.CpuComponentDtoOrBuilder> 
            getCpuComponentsOrBuilderList() {
         if (cpuComponentsBuilder_ != null) {
           return cpuComponentsBuilder_.getMessageOrBuilderList();
@@ -2975,33 +2975,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public models.PcBuilder.CpuComponent.Builder addCpuComponentsBuilder() {
+      public models.PcBuilder.CpuComponentDto.Builder addCpuComponentsBuilder() {
         return getCpuComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.CpuComponent.getDefaultInstance());
+            models.PcBuilder.CpuComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public models.PcBuilder.CpuComponent.Builder addCpuComponentsBuilder(
+      public models.PcBuilder.CpuComponentDto.Builder addCpuComponentsBuilder(
           int index) {
         return getCpuComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.CpuComponent.getDefaultInstance());
+            index, models.PcBuilder.CpuComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.CpuComponent cpuComponents = 1;</code>
+       * <code>repeated .models.CpuComponentDto cpuComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.CpuComponent.Builder> 
+      public java.util.List<models.PcBuilder.CpuComponentDto.Builder> 
            getCpuComponentsBuilderList() {
         return getCpuComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.CpuComponent, models.PcBuilder.CpuComponent.Builder, models.PcBuilder.CpuComponentOrBuilder> 
+          models.PcBuilder.CpuComponentDto, models.PcBuilder.CpuComponentDto.Builder, models.PcBuilder.CpuComponentDtoOrBuilder> 
           getCpuComponentsFieldBuilder() {
         if (cpuComponentsBuilder_ == null) {
           cpuComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.CpuComponent, models.PcBuilder.CpuComponent.Builder, models.PcBuilder.CpuComponentOrBuilder>(
+              models.PcBuilder.CpuComponentDto, models.PcBuilder.CpuComponentDto.Builder, models.PcBuilder.CpuComponentDtoOrBuilder>(
                   cpuComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3023,23 +3023,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.CpuComponentList)
+      // @@protoc_insertion_point(builder_scope:models.CpuComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.CpuComponentList)
-    private static final models.PcBuilder.CpuComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.CpuComponentListDto)
+    private static final models.PcBuilder.CpuComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.CpuComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.CpuComponentListDto();
     }
 
-    public static models.PcBuilder.CpuComponentList getDefaultInstance() {
+    public static models.PcBuilder.CpuComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CpuComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<CpuComponentList>() {
+    private static final com.google.protobuf.Parser<CpuComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<CpuComponentListDto>() {
       @java.lang.Override
-      public CpuComponentList parsePartialFrom(
+      public CpuComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3058,24 +3058,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<CpuComponentList> parser() {
+    public static com.google.protobuf.Parser<CpuComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CpuComponentList> getParserForType() {
+    public com.google.protobuf.Parser<CpuComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.CpuComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.CpuComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MotherboardComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.MotherboardComponent)
+  public interface MotherboardComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.MotherboardComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3157,18 +3157,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.MotherboardComponent}
+   * Protobuf type {@code models.MotherboardComponentDto}
    */
-  public static final class MotherboardComponent extends
+  public static final class MotherboardComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.MotherboardComponent)
-      MotherboardComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.MotherboardComponentDto)
+      MotherboardComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MotherboardComponent.newBuilder() to construct.
-    private MotherboardComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MotherboardComponentDto.newBuilder() to construct.
+    private MotherboardComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MotherboardComponent() {
+    private MotherboardComponentDto() {
       uuid_ = "";
       displayName_ = "";
       cpuSocket_ = "";
@@ -3180,20 +3180,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MotherboardComponent();
+      return new MotherboardComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_MotherboardComponent_descriptor;
+      return models.PcBuilder.internal_static_models_MotherboardComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_MotherboardComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_MotherboardComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.MotherboardComponent.class, models.PcBuilder.MotherboardComponent.Builder.class);
+              models.PcBuilder.MotherboardComponentDto.class, models.PcBuilder.MotherboardComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -3508,10 +3508,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.MotherboardComponent)) {
+      if (!(obj instanceof models.PcBuilder.MotherboardComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.MotherboardComponent other = (models.PcBuilder.MotherboardComponent) obj;
+      models.PcBuilder.MotherboardComponentDto other = (models.PcBuilder.MotherboardComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -3561,44 +3561,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(byte[] data)
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3606,26 +3606,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.MotherboardComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.MotherboardComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.MotherboardComponent parseDelimitedFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MotherboardComponent parseFrom(
+    public static models.PcBuilder.MotherboardComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3638,7 +3638,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.MotherboardComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.MotherboardComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3654,26 +3654,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.MotherboardComponent}
+     * Protobuf type {@code models.MotherboardComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.MotherboardComponent)
-        models.PcBuilder.MotherboardComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.MotherboardComponentDto)
+        models.PcBuilder.MotherboardComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_MotherboardComponent_descriptor;
+        return models.PcBuilder.internal_static_models_MotherboardComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_MotherboardComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_MotherboardComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.MotherboardComponent.class, models.PcBuilder.MotherboardComponent.Builder.class);
+                models.PcBuilder.MotherboardComponentDto.class, models.PcBuilder.MotherboardComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.MotherboardComponent.newBuilder()
+      // Construct using models.PcBuilder.MotherboardComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -3701,17 +3701,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_MotherboardComponent_descriptor;
+        return models.PcBuilder.internal_static_models_MotherboardComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponent getDefaultInstanceForType() {
-        return models.PcBuilder.MotherboardComponent.getDefaultInstance();
+      public models.PcBuilder.MotherboardComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.MotherboardComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponent build() {
-        models.PcBuilder.MotherboardComponent result = buildPartial();
+      public models.PcBuilder.MotherboardComponentDto build() {
+        models.PcBuilder.MotherboardComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3719,14 +3719,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponent buildPartial() {
-        models.PcBuilder.MotherboardComponent result = new models.PcBuilder.MotherboardComponent(this);
+      public models.PcBuilder.MotherboardComponentDto buildPartial() {
+        models.PcBuilder.MotherboardComponentDto result = new models.PcBuilder.MotherboardComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.MotherboardComponent result) {
+      private void buildPartial0(models.PcBuilder.MotherboardComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -3788,16 +3788,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.MotherboardComponent) {
-          return mergeFrom((models.PcBuilder.MotherboardComponent)other);
+        if (other instanceof models.PcBuilder.MotherboardComponentDto) {
+          return mergeFrom((models.PcBuilder.MotherboardComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.MotherboardComponent other) {
-        if (other == models.PcBuilder.MotherboardComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.MotherboardComponentDto other) {
+        if (other == models.PcBuilder.MotherboardComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -4383,23 +4383,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.MotherboardComponent)
+      // @@protoc_insertion_point(builder_scope:models.MotherboardComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.MotherboardComponent)
-    private static final models.PcBuilder.MotherboardComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.MotherboardComponentDto)
+    private static final models.PcBuilder.MotherboardComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.MotherboardComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.MotherboardComponentDto();
     }
 
-    public static models.PcBuilder.MotherboardComponent getDefaultInstance() {
+    public static models.PcBuilder.MotherboardComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MotherboardComponent>
-        PARSER = new com.google.protobuf.AbstractParser<MotherboardComponent>() {
+    private static final com.google.protobuf.Parser<MotherboardComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<MotherboardComponentDto>() {
       @java.lang.Override
-      public MotherboardComponent parsePartialFrom(
+      public MotherboardComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4418,63 +4418,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<MotherboardComponent> parser() {
+    public static com.google.protobuf.Parser<MotherboardComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MotherboardComponent> getParserForType() {
+    public com.google.protobuf.Parser<MotherboardComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponent getDefaultInstanceForType() {
+    public models.PcBuilder.MotherboardComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MotherboardComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.MotherboardComponentList)
+  public interface MotherboardComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.MotherboardComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.MotherboardComponent> 
+    java.util.List<models.PcBuilder.MotherboardComponentDto> 
         getMotherboardComponentsList();
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
-    models.PcBuilder.MotherboardComponent getMotherboardComponents(int index);
+    models.PcBuilder.MotherboardComponentDto getMotherboardComponents(int index);
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     int getMotherboardComponentsCount();
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.MotherboardComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.MotherboardComponentDtoOrBuilder> 
         getMotherboardComponentsOrBuilderList();
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
-    models.PcBuilder.MotherboardComponentOrBuilder getMotherboardComponentsOrBuilder(
+    models.PcBuilder.MotherboardComponentDtoOrBuilder getMotherboardComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.MotherboardComponentList}
+   * Protobuf type {@code models.MotherboardComponentListDto}
    */
-  public static final class MotherboardComponentList extends
+  public static final class MotherboardComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.MotherboardComponentList)
-      MotherboardComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.MotherboardComponentListDto)
+      MotherboardComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MotherboardComponentList.newBuilder() to construct.
-    private MotherboardComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MotherboardComponentListDto.newBuilder() to construct.
+    private MotherboardComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MotherboardComponentList() {
+    private MotherboardComponentListDto() {
       motherboardComponents_ = java.util.Collections.emptyList();
     }
 
@@ -4482,59 +4482,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MotherboardComponentList();
+      return new MotherboardComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_MotherboardComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_MotherboardComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_MotherboardComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_MotherboardComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.MotherboardComponentList.class, models.PcBuilder.MotherboardComponentList.Builder.class);
+              models.PcBuilder.MotherboardComponentListDto.class, models.PcBuilder.MotherboardComponentListDto.Builder.class);
     }
 
     public static final int MOTHERBOARDCOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.MotherboardComponent> motherboardComponents_;
+    private java.util.List<models.PcBuilder.MotherboardComponentDto> motherboardComponents_;
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.MotherboardComponent> getMotherboardComponentsList() {
+    public java.util.List<models.PcBuilder.MotherboardComponentDto> getMotherboardComponentsList() {
       return motherboardComponents_;
     }
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.MotherboardComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.MotherboardComponentDtoOrBuilder> 
         getMotherboardComponentsOrBuilderList() {
       return motherboardComponents_;
     }
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     @java.lang.Override
     public int getMotherboardComponentsCount() {
       return motherboardComponents_.size();
     }
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponent getMotherboardComponents(int index) {
+    public models.PcBuilder.MotherboardComponentDto getMotherboardComponents(int index) {
       return motherboardComponents_.get(index);
     }
     /**
-     * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+     * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponentOrBuilder getMotherboardComponentsOrBuilder(
+    public models.PcBuilder.MotherboardComponentDtoOrBuilder getMotherboardComponentsOrBuilder(
         int index) {
       return motherboardComponents_.get(index);
     }
@@ -4579,10 +4579,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.MotherboardComponentList)) {
+      if (!(obj instanceof models.PcBuilder.MotherboardComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.MotherboardComponentList other = (models.PcBuilder.MotherboardComponentList) obj;
+      models.PcBuilder.MotherboardComponentListDto other = (models.PcBuilder.MotherboardComponentListDto) obj;
 
       if (!getMotherboardComponentsList()
           .equals(other.getMotherboardComponentsList())) return false;
@@ -4606,44 +4606,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4651,26 +4651,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.MotherboardComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.MotherboardComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.MotherboardComponentList parseDelimitedFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MotherboardComponentList parseFrom(
+    public static models.PcBuilder.MotherboardComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4683,7 +4683,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.MotherboardComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.MotherboardComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4699,26 +4699,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.MotherboardComponentList}
+     * Protobuf type {@code models.MotherboardComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.MotherboardComponentList)
-        models.PcBuilder.MotherboardComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.MotherboardComponentListDto)
+        models.PcBuilder.MotherboardComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_MotherboardComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_MotherboardComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_MotherboardComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_MotherboardComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.MotherboardComponentList.class, models.PcBuilder.MotherboardComponentList.Builder.class);
+                models.PcBuilder.MotherboardComponentListDto.class, models.PcBuilder.MotherboardComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.MotherboardComponentList.newBuilder()
+      // Construct using models.PcBuilder.MotherboardComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -4745,17 +4745,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_MotherboardComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_MotherboardComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.MotherboardComponentList.getDefaultInstance();
+      public models.PcBuilder.MotherboardComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.MotherboardComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponentList build() {
-        models.PcBuilder.MotherboardComponentList result = buildPartial();
+      public models.PcBuilder.MotherboardComponentListDto build() {
+        models.PcBuilder.MotherboardComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4763,15 +4763,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.MotherboardComponentList buildPartial() {
-        models.PcBuilder.MotherboardComponentList result = new models.PcBuilder.MotherboardComponentList(this);
+      public models.PcBuilder.MotherboardComponentListDto buildPartial() {
+        models.PcBuilder.MotherboardComponentListDto result = new models.PcBuilder.MotherboardComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.MotherboardComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.MotherboardComponentListDto result) {
         if (motherboardComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             motherboardComponents_ = java.util.Collections.unmodifiableList(motherboardComponents_);
@@ -4783,7 +4783,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.MotherboardComponentList result) {
+      private void buildPartial0(models.PcBuilder.MotherboardComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -4821,16 +4821,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.MotherboardComponentList) {
-          return mergeFrom((models.PcBuilder.MotherboardComponentList)other);
+        if (other instanceof models.PcBuilder.MotherboardComponentListDto) {
+          return mergeFrom((models.PcBuilder.MotherboardComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.MotherboardComponentList other) {
-        if (other == models.PcBuilder.MotherboardComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.MotherboardComponentListDto other) {
+        if (other == models.PcBuilder.MotherboardComponentListDto.getDefaultInstance()) return this;
         if (motherboardComponentsBuilder_ == null) {
           if (!other.motherboardComponents_.isEmpty()) {
             if (motherboardComponents_.isEmpty()) {
@@ -4884,9 +4884,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.MotherboardComponent m =
+                models.PcBuilder.MotherboardComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.MotherboardComponent.parser(),
+                        models.PcBuilder.MotherboardComponentDto.parser(),
                         extensionRegistry);
                 if (motherboardComponentsBuilder_ == null) {
                   ensureMotherboardComponentsIsMutable();
@@ -4913,22 +4913,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.MotherboardComponent> motherboardComponents_ =
+      private java.util.List<models.PcBuilder.MotherboardComponentDto> motherboardComponents_ =
         java.util.Collections.emptyList();
       private void ensureMotherboardComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          motherboardComponents_ = new java.util.ArrayList<models.PcBuilder.MotherboardComponent>(motherboardComponents_);
+          motherboardComponents_ = new java.util.ArrayList<models.PcBuilder.MotherboardComponentDto>(motherboardComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.MotherboardComponent, models.PcBuilder.MotherboardComponent.Builder, models.PcBuilder.MotherboardComponentOrBuilder> motherboardComponentsBuilder_;
+          models.PcBuilder.MotherboardComponentDto, models.PcBuilder.MotherboardComponentDto.Builder, models.PcBuilder.MotherboardComponentDtoOrBuilder> motherboardComponentsBuilder_;
 
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.MotherboardComponent> getMotherboardComponentsList() {
+      public java.util.List<models.PcBuilder.MotherboardComponentDto> getMotherboardComponentsList() {
         if (motherboardComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(motherboardComponents_);
         } else {
@@ -4936,7 +4936,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public int getMotherboardComponentsCount() {
         if (motherboardComponentsBuilder_ == null) {
@@ -4946,9 +4946,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public models.PcBuilder.MotherboardComponent getMotherboardComponents(int index) {
+      public models.PcBuilder.MotherboardComponentDto getMotherboardComponents(int index) {
         if (motherboardComponentsBuilder_ == null) {
           return motherboardComponents_.get(index);
         } else {
@@ -4956,10 +4956,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder setMotherboardComponents(
-          int index, models.PcBuilder.MotherboardComponent value) {
+          int index, models.PcBuilder.MotherboardComponentDto value) {
         if (motherboardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4973,10 +4973,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder setMotherboardComponents(
-          int index, models.PcBuilder.MotherboardComponent.Builder builderForValue) {
+          int index, models.PcBuilder.MotherboardComponentDto.Builder builderForValue) {
         if (motherboardComponentsBuilder_ == null) {
           ensureMotherboardComponentsIsMutable();
           motherboardComponents_.set(index, builderForValue.build());
@@ -4987,9 +4987,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public Builder addMotherboardComponents(models.PcBuilder.MotherboardComponent value) {
+      public Builder addMotherboardComponents(models.PcBuilder.MotherboardComponentDto value) {
         if (motherboardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5003,10 +5003,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder addMotherboardComponents(
-          int index, models.PcBuilder.MotherboardComponent value) {
+          int index, models.PcBuilder.MotherboardComponentDto value) {
         if (motherboardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5020,10 +5020,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder addMotherboardComponents(
-          models.PcBuilder.MotherboardComponent.Builder builderForValue) {
+          models.PcBuilder.MotherboardComponentDto.Builder builderForValue) {
         if (motherboardComponentsBuilder_ == null) {
           ensureMotherboardComponentsIsMutable();
           motherboardComponents_.add(builderForValue.build());
@@ -5034,10 +5034,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder addMotherboardComponents(
-          int index, models.PcBuilder.MotherboardComponent.Builder builderForValue) {
+          int index, models.PcBuilder.MotherboardComponentDto.Builder builderForValue) {
         if (motherboardComponentsBuilder_ == null) {
           ensureMotherboardComponentsIsMutable();
           motherboardComponents_.add(index, builderForValue.build());
@@ -5048,10 +5048,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder addAllMotherboardComponents(
-          java.lang.Iterable<? extends models.PcBuilder.MotherboardComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.MotherboardComponentDto> values) {
         if (motherboardComponentsBuilder_ == null) {
           ensureMotherboardComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5063,7 +5063,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder clearMotherboardComponents() {
         if (motherboardComponentsBuilder_ == null) {
@@ -5076,7 +5076,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
       public Builder removeMotherboardComponents(int index) {
         if (motherboardComponentsBuilder_ == null) {
@@ -5089,16 +5089,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public models.PcBuilder.MotherboardComponent.Builder getMotherboardComponentsBuilder(
+      public models.PcBuilder.MotherboardComponentDto.Builder getMotherboardComponentsBuilder(
           int index) {
         return getMotherboardComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public models.PcBuilder.MotherboardComponentOrBuilder getMotherboardComponentsOrBuilder(
+      public models.PcBuilder.MotherboardComponentDtoOrBuilder getMotherboardComponentsOrBuilder(
           int index) {
         if (motherboardComponentsBuilder_ == null) {
           return motherboardComponents_.get(index);  } else {
@@ -5106,9 +5106,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.MotherboardComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.MotherboardComponentDtoOrBuilder> 
            getMotherboardComponentsOrBuilderList() {
         if (motherboardComponentsBuilder_ != null) {
           return motherboardComponentsBuilder_.getMessageOrBuilderList();
@@ -5117,33 +5117,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public models.PcBuilder.MotherboardComponent.Builder addMotherboardComponentsBuilder() {
+      public models.PcBuilder.MotherboardComponentDto.Builder addMotherboardComponentsBuilder() {
         return getMotherboardComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.MotherboardComponent.getDefaultInstance());
+            models.PcBuilder.MotherboardComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public models.PcBuilder.MotherboardComponent.Builder addMotherboardComponentsBuilder(
+      public models.PcBuilder.MotherboardComponentDto.Builder addMotherboardComponentsBuilder(
           int index) {
         return getMotherboardComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.MotherboardComponent.getDefaultInstance());
+            index, models.PcBuilder.MotherboardComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.MotherboardComponent motherboardComponents = 1;</code>
+       * <code>repeated .models.MotherboardComponentDto motherboardComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.MotherboardComponent.Builder> 
+      public java.util.List<models.PcBuilder.MotherboardComponentDto.Builder> 
            getMotherboardComponentsBuilderList() {
         return getMotherboardComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.MotherboardComponent, models.PcBuilder.MotherboardComponent.Builder, models.PcBuilder.MotherboardComponentOrBuilder> 
+          models.PcBuilder.MotherboardComponentDto, models.PcBuilder.MotherboardComponentDto.Builder, models.PcBuilder.MotherboardComponentDtoOrBuilder> 
           getMotherboardComponentsFieldBuilder() {
         if (motherboardComponentsBuilder_ == null) {
           motherboardComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.MotherboardComponent, models.PcBuilder.MotherboardComponent.Builder, models.PcBuilder.MotherboardComponentOrBuilder>(
+              models.PcBuilder.MotherboardComponentDto, models.PcBuilder.MotherboardComponentDto.Builder, models.PcBuilder.MotherboardComponentDtoOrBuilder>(
                   motherboardComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -5165,23 +5165,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.MotherboardComponentList)
+      // @@protoc_insertion_point(builder_scope:models.MotherboardComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.MotherboardComponentList)
-    private static final models.PcBuilder.MotherboardComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.MotherboardComponentListDto)
+    private static final models.PcBuilder.MotherboardComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.MotherboardComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.MotherboardComponentListDto();
     }
 
-    public static models.PcBuilder.MotherboardComponentList getDefaultInstance() {
+    public static models.PcBuilder.MotherboardComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MotherboardComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<MotherboardComponentList>() {
+    private static final com.google.protobuf.Parser<MotherboardComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<MotherboardComponentListDto>() {
       @java.lang.Override
-      public MotherboardComponentList parsePartialFrom(
+      public MotherboardComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5200,24 +5200,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<MotherboardComponentList> parser() {
+    public static com.google.protobuf.Parser<MotherboardComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MotherboardComponentList> getParserForType() {
+    public com.google.protobuf.Parser<MotherboardComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.MotherboardComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MemoryComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.MemoryComponent)
+  public interface MemoryComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.MemoryComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5299,18 +5299,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.MemoryComponent}
+   * Protobuf type {@code models.MemoryComponentDto}
    */
-  public static final class MemoryComponent extends
+  public static final class MemoryComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.MemoryComponent)
-      MemoryComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.MemoryComponentDto)
+      MemoryComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MemoryComponent.newBuilder() to construct.
-    private MemoryComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MemoryComponentDto.newBuilder() to construct.
+    private MemoryComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MemoryComponent() {
+    private MemoryComponentDto() {
       uuid_ = "";
       displayName_ = "";
       colour_ = "";
@@ -5320,20 +5320,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MemoryComponent();
+      return new MemoryComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_MemoryComponent_descriptor;
+      return models.PcBuilder.internal_static_models_MemoryComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_MemoryComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_MemoryComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.MemoryComponent.class, models.PcBuilder.MemoryComponent.Builder.class);
+              models.PcBuilder.MemoryComponentDto.class, models.PcBuilder.MemoryComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -5630,10 +5630,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.MemoryComponent)) {
+      if (!(obj instanceof models.PcBuilder.MemoryComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.MemoryComponent other = (models.PcBuilder.MemoryComponent) obj;
+      models.PcBuilder.MemoryComponentDto other = (models.PcBuilder.MemoryComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -5691,44 +5691,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(byte[] data)
+    public static models.PcBuilder.MemoryComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.MemoryComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5736,26 +5736,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.MemoryComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.MemoryComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.MemoryComponent parseDelimitedFrom(
+    public static models.PcBuilder.MemoryComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MemoryComponent parseFrom(
+    public static models.PcBuilder.MemoryComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5768,7 +5768,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.MemoryComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.MemoryComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5784,26 +5784,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.MemoryComponent}
+     * Protobuf type {@code models.MemoryComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.MemoryComponent)
-        models.PcBuilder.MemoryComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.MemoryComponentDto)
+        models.PcBuilder.MemoryComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_MemoryComponent_descriptor;
+        return models.PcBuilder.internal_static_models_MemoryComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_MemoryComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_MemoryComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.MemoryComponent.class, models.PcBuilder.MemoryComponent.Builder.class);
+                models.PcBuilder.MemoryComponentDto.class, models.PcBuilder.MemoryComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.MemoryComponent.newBuilder()
+      // Construct using models.PcBuilder.MemoryComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -5833,17 +5833,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_MemoryComponent_descriptor;
+        return models.PcBuilder.internal_static_models_MemoryComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponent getDefaultInstanceForType() {
-        return models.PcBuilder.MemoryComponent.getDefaultInstance();
+      public models.PcBuilder.MemoryComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.MemoryComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponent build() {
-        models.PcBuilder.MemoryComponent result = buildPartial();
+      public models.PcBuilder.MemoryComponentDto build() {
+        models.PcBuilder.MemoryComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5851,14 +5851,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponent buildPartial() {
-        models.PcBuilder.MemoryComponent result = new models.PcBuilder.MemoryComponent(this);
+      public models.PcBuilder.MemoryComponentDto buildPartial() {
+        models.PcBuilder.MemoryComponentDto result = new models.PcBuilder.MemoryComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.MemoryComponent result) {
+      private void buildPartial0(models.PcBuilder.MemoryComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -5926,16 +5926,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.MemoryComponent) {
-          return mergeFrom((models.PcBuilder.MemoryComponent)other);
+        if (other instanceof models.PcBuilder.MemoryComponentDto) {
+          return mergeFrom((models.PcBuilder.MemoryComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.MemoryComponent other) {
-        if (other == models.PcBuilder.MemoryComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.MemoryComponentDto other) {
+        if (other == models.PcBuilder.MemoryComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -6517,23 +6517,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.MemoryComponent)
+      // @@protoc_insertion_point(builder_scope:models.MemoryComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.MemoryComponent)
-    private static final models.PcBuilder.MemoryComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.MemoryComponentDto)
+    private static final models.PcBuilder.MemoryComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.MemoryComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.MemoryComponentDto();
     }
 
-    public static models.PcBuilder.MemoryComponent getDefaultInstance() {
+    public static models.PcBuilder.MemoryComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MemoryComponent>
-        PARSER = new com.google.protobuf.AbstractParser<MemoryComponent>() {
+    private static final com.google.protobuf.Parser<MemoryComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<MemoryComponentDto>() {
       @java.lang.Override
-      public MemoryComponent parsePartialFrom(
+      public MemoryComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6552,63 +6552,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<MemoryComponent> parser() {
+    public static com.google.protobuf.Parser<MemoryComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MemoryComponent> getParserForType() {
+    public com.google.protobuf.Parser<MemoryComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.MemoryComponent getDefaultInstanceForType() {
+    public models.PcBuilder.MemoryComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MemoryComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.MemoryComponentList)
+  public interface MemoryComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.MemoryComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.MemoryComponent> 
+    java.util.List<models.PcBuilder.MemoryComponentDto> 
         getMemoryComponentsList();
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
-    models.PcBuilder.MemoryComponent getMemoryComponents(int index);
+    models.PcBuilder.MemoryComponentDto getMemoryComponents(int index);
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     int getMemoryComponentsCount();
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.MemoryComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.MemoryComponentDtoOrBuilder> 
         getMemoryComponentsOrBuilderList();
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
-    models.PcBuilder.MemoryComponentOrBuilder getMemoryComponentsOrBuilder(
+    models.PcBuilder.MemoryComponentDtoOrBuilder getMemoryComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.MemoryComponentList}
+   * Protobuf type {@code models.MemoryComponentListDto}
    */
-  public static final class MemoryComponentList extends
+  public static final class MemoryComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.MemoryComponentList)
-      MemoryComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.MemoryComponentListDto)
+      MemoryComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MemoryComponentList.newBuilder() to construct.
-    private MemoryComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MemoryComponentListDto.newBuilder() to construct.
+    private MemoryComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MemoryComponentList() {
+    private MemoryComponentListDto() {
       memoryComponents_ = java.util.Collections.emptyList();
     }
 
@@ -6616,59 +6616,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MemoryComponentList();
+      return new MemoryComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_MemoryComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_MemoryComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_MemoryComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_MemoryComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.MemoryComponentList.class, models.PcBuilder.MemoryComponentList.Builder.class);
+              models.PcBuilder.MemoryComponentListDto.class, models.PcBuilder.MemoryComponentListDto.Builder.class);
     }
 
     public static final int MEMORYCOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.MemoryComponent> memoryComponents_;
+    private java.util.List<models.PcBuilder.MemoryComponentDto> memoryComponents_;
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.MemoryComponent> getMemoryComponentsList() {
+    public java.util.List<models.PcBuilder.MemoryComponentDto> getMemoryComponentsList() {
       return memoryComponents_;
     }
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.MemoryComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.MemoryComponentDtoOrBuilder> 
         getMemoryComponentsOrBuilderList() {
       return memoryComponents_;
     }
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     @java.lang.Override
     public int getMemoryComponentsCount() {
       return memoryComponents_.size();
     }
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MemoryComponent getMemoryComponents(int index) {
+    public models.PcBuilder.MemoryComponentDto getMemoryComponents(int index) {
       return memoryComponents_.get(index);
     }
     /**
-     * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+     * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MemoryComponentOrBuilder getMemoryComponentsOrBuilder(
+    public models.PcBuilder.MemoryComponentDtoOrBuilder getMemoryComponentsOrBuilder(
         int index) {
       return memoryComponents_.get(index);
     }
@@ -6713,10 +6713,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.MemoryComponentList)) {
+      if (!(obj instanceof models.PcBuilder.MemoryComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.MemoryComponentList other = (models.PcBuilder.MemoryComponentList) obj;
+      models.PcBuilder.MemoryComponentListDto other = (models.PcBuilder.MemoryComponentListDto) obj;
 
       if (!getMemoryComponentsList()
           .equals(other.getMemoryComponentsList())) return false;
@@ -6740,44 +6740,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6785,26 +6785,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.MemoryComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.MemoryComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.MemoryComponentList parseDelimitedFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.MemoryComponentList parseFrom(
+    public static models.PcBuilder.MemoryComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6817,7 +6817,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.MemoryComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.MemoryComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6833,26 +6833,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.MemoryComponentList}
+     * Protobuf type {@code models.MemoryComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.MemoryComponentList)
-        models.PcBuilder.MemoryComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.MemoryComponentListDto)
+        models.PcBuilder.MemoryComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_MemoryComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_MemoryComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_MemoryComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_MemoryComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.MemoryComponentList.class, models.PcBuilder.MemoryComponentList.Builder.class);
+                models.PcBuilder.MemoryComponentListDto.class, models.PcBuilder.MemoryComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.MemoryComponentList.newBuilder()
+      // Construct using models.PcBuilder.MemoryComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -6879,17 +6879,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_MemoryComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_MemoryComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.MemoryComponentList.getDefaultInstance();
+      public models.PcBuilder.MemoryComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.MemoryComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponentList build() {
-        models.PcBuilder.MemoryComponentList result = buildPartial();
+      public models.PcBuilder.MemoryComponentListDto build() {
+        models.PcBuilder.MemoryComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6897,15 +6897,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.MemoryComponentList buildPartial() {
-        models.PcBuilder.MemoryComponentList result = new models.PcBuilder.MemoryComponentList(this);
+      public models.PcBuilder.MemoryComponentListDto buildPartial() {
+        models.PcBuilder.MemoryComponentListDto result = new models.PcBuilder.MemoryComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.MemoryComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.MemoryComponentListDto result) {
         if (memoryComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             memoryComponents_ = java.util.Collections.unmodifiableList(memoryComponents_);
@@ -6917,7 +6917,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.MemoryComponentList result) {
+      private void buildPartial0(models.PcBuilder.MemoryComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -6955,16 +6955,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.MemoryComponentList) {
-          return mergeFrom((models.PcBuilder.MemoryComponentList)other);
+        if (other instanceof models.PcBuilder.MemoryComponentListDto) {
+          return mergeFrom((models.PcBuilder.MemoryComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.MemoryComponentList other) {
-        if (other == models.PcBuilder.MemoryComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.MemoryComponentListDto other) {
+        if (other == models.PcBuilder.MemoryComponentListDto.getDefaultInstance()) return this;
         if (memoryComponentsBuilder_ == null) {
           if (!other.memoryComponents_.isEmpty()) {
             if (memoryComponents_.isEmpty()) {
@@ -7018,9 +7018,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.MemoryComponent m =
+                models.PcBuilder.MemoryComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.MemoryComponent.parser(),
+                        models.PcBuilder.MemoryComponentDto.parser(),
                         extensionRegistry);
                 if (memoryComponentsBuilder_ == null) {
                   ensureMemoryComponentsIsMutable();
@@ -7047,22 +7047,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.MemoryComponent> memoryComponents_ =
+      private java.util.List<models.PcBuilder.MemoryComponentDto> memoryComponents_ =
         java.util.Collections.emptyList();
       private void ensureMemoryComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          memoryComponents_ = new java.util.ArrayList<models.PcBuilder.MemoryComponent>(memoryComponents_);
+          memoryComponents_ = new java.util.ArrayList<models.PcBuilder.MemoryComponentDto>(memoryComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.MemoryComponent, models.PcBuilder.MemoryComponent.Builder, models.PcBuilder.MemoryComponentOrBuilder> memoryComponentsBuilder_;
+          models.PcBuilder.MemoryComponentDto, models.PcBuilder.MemoryComponentDto.Builder, models.PcBuilder.MemoryComponentDtoOrBuilder> memoryComponentsBuilder_;
 
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.MemoryComponent> getMemoryComponentsList() {
+      public java.util.List<models.PcBuilder.MemoryComponentDto> getMemoryComponentsList() {
         if (memoryComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(memoryComponents_);
         } else {
@@ -7070,7 +7070,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public int getMemoryComponentsCount() {
         if (memoryComponentsBuilder_ == null) {
@@ -7080,9 +7080,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public models.PcBuilder.MemoryComponent getMemoryComponents(int index) {
+      public models.PcBuilder.MemoryComponentDto getMemoryComponents(int index) {
         if (memoryComponentsBuilder_ == null) {
           return memoryComponents_.get(index);
         } else {
@@ -7090,10 +7090,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder setMemoryComponents(
-          int index, models.PcBuilder.MemoryComponent value) {
+          int index, models.PcBuilder.MemoryComponentDto value) {
         if (memoryComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7107,10 +7107,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder setMemoryComponents(
-          int index, models.PcBuilder.MemoryComponent.Builder builderForValue) {
+          int index, models.PcBuilder.MemoryComponentDto.Builder builderForValue) {
         if (memoryComponentsBuilder_ == null) {
           ensureMemoryComponentsIsMutable();
           memoryComponents_.set(index, builderForValue.build());
@@ -7121,9 +7121,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public Builder addMemoryComponents(models.PcBuilder.MemoryComponent value) {
+      public Builder addMemoryComponents(models.PcBuilder.MemoryComponentDto value) {
         if (memoryComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7137,10 +7137,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder addMemoryComponents(
-          int index, models.PcBuilder.MemoryComponent value) {
+          int index, models.PcBuilder.MemoryComponentDto value) {
         if (memoryComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7154,10 +7154,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder addMemoryComponents(
-          models.PcBuilder.MemoryComponent.Builder builderForValue) {
+          models.PcBuilder.MemoryComponentDto.Builder builderForValue) {
         if (memoryComponentsBuilder_ == null) {
           ensureMemoryComponentsIsMutable();
           memoryComponents_.add(builderForValue.build());
@@ -7168,10 +7168,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder addMemoryComponents(
-          int index, models.PcBuilder.MemoryComponent.Builder builderForValue) {
+          int index, models.PcBuilder.MemoryComponentDto.Builder builderForValue) {
         if (memoryComponentsBuilder_ == null) {
           ensureMemoryComponentsIsMutable();
           memoryComponents_.add(index, builderForValue.build());
@@ -7182,10 +7182,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder addAllMemoryComponents(
-          java.lang.Iterable<? extends models.PcBuilder.MemoryComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.MemoryComponentDto> values) {
         if (memoryComponentsBuilder_ == null) {
           ensureMemoryComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7197,7 +7197,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder clearMemoryComponents() {
         if (memoryComponentsBuilder_ == null) {
@@ -7210,7 +7210,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
       public Builder removeMemoryComponents(int index) {
         if (memoryComponentsBuilder_ == null) {
@@ -7223,16 +7223,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public models.PcBuilder.MemoryComponent.Builder getMemoryComponentsBuilder(
+      public models.PcBuilder.MemoryComponentDto.Builder getMemoryComponentsBuilder(
           int index) {
         return getMemoryComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public models.PcBuilder.MemoryComponentOrBuilder getMemoryComponentsOrBuilder(
+      public models.PcBuilder.MemoryComponentDtoOrBuilder getMemoryComponentsOrBuilder(
           int index) {
         if (memoryComponentsBuilder_ == null) {
           return memoryComponents_.get(index);  } else {
@@ -7240,9 +7240,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.MemoryComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.MemoryComponentDtoOrBuilder> 
            getMemoryComponentsOrBuilderList() {
         if (memoryComponentsBuilder_ != null) {
           return memoryComponentsBuilder_.getMessageOrBuilderList();
@@ -7251,33 +7251,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public models.PcBuilder.MemoryComponent.Builder addMemoryComponentsBuilder() {
+      public models.PcBuilder.MemoryComponentDto.Builder addMemoryComponentsBuilder() {
         return getMemoryComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.MemoryComponent.getDefaultInstance());
+            models.PcBuilder.MemoryComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public models.PcBuilder.MemoryComponent.Builder addMemoryComponentsBuilder(
+      public models.PcBuilder.MemoryComponentDto.Builder addMemoryComponentsBuilder(
           int index) {
         return getMemoryComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.MemoryComponent.getDefaultInstance());
+            index, models.PcBuilder.MemoryComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.MemoryComponent memoryComponents = 1;</code>
+       * <code>repeated .models.MemoryComponentDto memoryComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.MemoryComponent.Builder> 
+      public java.util.List<models.PcBuilder.MemoryComponentDto.Builder> 
            getMemoryComponentsBuilderList() {
         return getMemoryComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.MemoryComponent, models.PcBuilder.MemoryComponent.Builder, models.PcBuilder.MemoryComponentOrBuilder> 
+          models.PcBuilder.MemoryComponentDto, models.PcBuilder.MemoryComponentDto.Builder, models.PcBuilder.MemoryComponentDtoOrBuilder> 
           getMemoryComponentsFieldBuilder() {
         if (memoryComponentsBuilder_ == null) {
           memoryComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.MemoryComponent, models.PcBuilder.MemoryComponent.Builder, models.PcBuilder.MemoryComponentOrBuilder>(
+              models.PcBuilder.MemoryComponentDto, models.PcBuilder.MemoryComponentDto.Builder, models.PcBuilder.MemoryComponentDtoOrBuilder>(
                   memoryComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -7299,23 +7299,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.MemoryComponentList)
+      // @@protoc_insertion_point(builder_scope:models.MemoryComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.MemoryComponentList)
-    private static final models.PcBuilder.MemoryComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.MemoryComponentListDto)
+    private static final models.PcBuilder.MemoryComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.MemoryComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.MemoryComponentListDto();
     }
 
-    public static models.PcBuilder.MemoryComponentList getDefaultInstance() {
+    public static models.PcBuilder.MemoryComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MemoryComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<MemoryComponentList>() {
+    private static final com.google.protobuf.Parser<MemoryComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<MemoryComponentListDto>() {
       @java.lang.Override
-      public MemoryComponentList parsePartialFrom(
+      public MemoryComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7334,24 +7334,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<MemoryComponentList> parser() {
+    public static com.google.protobuf.Parser<MemoryComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MemoryComponentList> getParserForType() {
+    public com.google.protobuf.Parser<MemoryComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.MemoryComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.MemoryComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface StorageComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.StorageComponent)
+  public interface StorageComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.StorageComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7433,18 +7433,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.StorageComponent}
+   * Protobuf type {@code models.StorageComponentDto}
    */
-  public static final class StorageComponent extends
+  public static final class StorageComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.StorageComponent)
-      StorageComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.StorageComponentDto)
+      StorageComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use StorageComponent.newBuilder() to construct.
-    private StorageComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StorageComponentDto.newBuilder() to construct.
+    private StorageComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StorageComponent() {
+    private StorageComponentDto() {
       uuid_ = "";
       displayName_ = "";
       type_ = "";
@@ -7456,20 +7456,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new StorageComponent();
+      return new StorageComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_StorageComponent_descriptor;
+      return models.PcBuilder.internal_static_models_StorageComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_StorageComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_StorageComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.StorageComponent.class, models.PcBuilder.StorageComponent.Builder.class);
+              models.PcBuilder.StorageComponentDto.class, models.PcBuilder.StorageComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -7784,10 +7784,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.StorageComponent)) {
+      if (!(obj instanceof models.PcBuilder.StorageComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.StorageComponent other = (models.PcBuilder.StorageComponent) obj;
+      models.PcBuilder.StorageComponentDto other = (models.PcBuilder.StorageComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -7837,44 +7837,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(byte[] data)
+    public static models.PcBuilder.StorageComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.StorageComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7882,26 +7882,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.StorageComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.StorageComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.StorageComponent parseDelimitedFrom(
+    public static models.PcBuilder.StorageComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.StorageComponent parseFrom(
+    public static models.PcBuilder.StorageComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7914,7 +7914,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.StorageComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.StorageComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7930,26 +7930,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.StorageComponent}
+     * Protobuf type {@code models.StorageComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.StorageComponent)
-        models.PcBuilder.StorageComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.StorageComponentDto)
+        models.PcBuilder.StorageComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_StorageComponent_descriptor;
+        return models.PcBuilder.internal_static_models_StorageComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_StorageComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_StorageComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.StorageComponent.class, models.PcBuilder.StorageComponent.Builder.class);
+                models.PcBuilder.StorageComponentDto.class, models.PcBuilder.StorageComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.StorageComponent.newBuilder()
+      // Construct using models.PcBuilder.StorageComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -7977,17 +7977,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_StorageComponent_descriptor;
+        return models.PcBuilder.internal_static_models_StorageComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponent getDefaultInstanceForType() {
-        return models.PcBuilder.StorageComponent.getDefaultInstance();
+      public models.PcBuilder.StorageComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.StorageComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponent build() {
-        models.PcBuilder.StorageComponent result = buildPartial();
+      public models.PcBuilder.StorageComponentDto build() {
+        models.PcBuilder.StorageComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7995,14 +7995,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponent buildPartial() {
-        models.PcBuilder.StorageComponent result = new models.PcBuilder.StorageComponent(this);
+      public models.PcBuilder.StorageComponentDto buildPartial() {
+        models.PcBuilder.StorageComponentDto result = new models.PcBuilder.StorageComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.StorageComponent result) {
+      private void buildPartial0(models.PcBuilder.StorageComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -8064,16 +8064,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.StorageComponent) {
-          return mergeFrom((models.PcBuilder.StorageComponent)other);
+        if (other instanceof models.PcBuilder.StorageComponentDto) {
+          return mergeFrom((models.PcBuilder.StorageComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.StorageComponent other) {
-        if (other == models.PcBuilder.StorageComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.StorageComponentDto other) {
+        if (other == models.PcBuilder.StorageComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -8659,23 +8659,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.StorageComponent)
+      // @@protoc_insertion_point(builder_scope:models.StorageComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.StorageComponent)
-    private static final models.PcBuilder.StorageComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.StorageComponentDto)
+    private static final models.PcBuilder.StorageComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.StorageComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.StorageComponentDto();
     }
 
-    public static models.PcBuilder.StorageComponent getDefaultInstance() {
+    public static models.PcBuilder.StorageComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StorageComponent>
-        PARSER = new com.google.protobuf.AbstractParser<StorageComponent>() {
+    private static final com.google.protobuf.Parser<StorageComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<StorageComponentDto>() {
       @java.lang.Override
-      public StorageComponent parsePartialFrom(
+      public StorageComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8694,63 +8694,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<StorageComponent> parser() {
+    public static com.google.protobuf.Parser<StorageComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<StorageComponent> getParserForType() {
+    public com.google.protobuf.Parser<StorageComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.StorageComponent getDefaultInstanceForType() {
+    public models.PcBuilder.StorageComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface StorageComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.StorageComponentList)
+  public interface StorageComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.StorageComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.StorageComponent> 
+    java.util.List<models.PcBuilder.StorageComponentDto> 
         getStorageComponentsList();
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
-    models.PcBuilder.StorageComponent getStorageComponents(int index);
+    models.PcBuilder.StorageComponentDto getStorageComponents(int index);
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     int getStorageComponentsCount();
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.StorageComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.StorageComponentDtoOrBuilder> 
         getStorageComponentsOrBuilderList();
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
-    models.PcBuilder.StorageComponentOrBuilder getStorageComponentsOrBuilder(
+    models.PcBuilder.StorageComponentDtoOrBuilder getStorageComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.StorageComponentList}
+   * Protobuf type {@code models.StorageComponentListDto}
    */
-  public static final class StorageComponentList extends
+  public static final class StorageComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.StorageComponentList)
-      StorageComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.StorageComponentListDto)
+      StorageComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use StorageComponentList.newBuilder() to construct.
-    private StorageComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StorageComponentListDto.newBuilder() to construct.
+    private StorageComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StorageComponentList() {
+    private StorageComponentListDto() {
       storageComponents_ = java.util.Collections.emptyList();
     }
 
@@ -8758,59 +8758,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new StorageComponentList();
+      return new StorageComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_StorageComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_StorageComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_StorageComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_StorageComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.StorageComponentList.class, models.PcBuilder.StorageComponentList.Builder.class);
+              models.PcBuilder.StorageComponentListDto.class, models.PcBuilder.StorageComponentListDto.Builder.class);
     }
 
     public static final int STORAGECOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.StorageComponent> storageComponents_;
+    private java.util.List<models.PcBuilder.StorageComponentDto> storageComponents_;
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.StorageComponent> getStorageComponentsList() {
+    public java.util.List<models.PcBuilder.StorageComponentDto> getStorageComponentsList() {
       return storageComponents_;
     }
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.StorageComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.StorageComponentDtoOrBuilder> 
         getStorageComponentsOrBuilderList() {
       return storageComponents_;
     }
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     @java.lang.Override
     public int getStorageComponentsCount() {
       return storageComponents_.size();
     }
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.StorageComponent getStorageComponents(int index) {
+    public models.PcBuilder.StorageComponentDto getStorageComponents(int index) {
       return storageComponents_.get(index);
     }
     /**
-     * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+     * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.StorageComponentOrBuilder getStorageComponentsOrBuilder(
+    public models.PcBuilder.StorageComponentDtoOrBuilder getStorageComponentsOrBuilder(
         int index) {
       return storageComponents_.get(index);
     }
@@ -8855,10 +8855,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.StorageComponentList)) {
+      if (!(obj instanceof models.PcBuilder.StorageComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.StorageComponentList other = (models.PcBuilder.StorageComponentList) obj;
+      models.PcBuilder.StorageComponentListDto other = (models.PcBuilder.StorageComponentListDto) obj;
 
       if (!getStorageComponentsList()
           .equals(other.getStorageComponentsList())) return false;
@@ -8882,44 +8882,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.StorageComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.StorageComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8927,26 +8927,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.StorageComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.StorageComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.StorageComponentList parseDelimitedFrom(
+    public static models.PcBuilder.StorageComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.StorageComponentList parseFrom(
+    public static models.PcBuilder.StorageComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8959,7 +8959,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.StorageComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.StorageComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8975,26 +8975,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.StorageComponentList}
+     * Protobuf type {@code models.StorageComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.StorageComponentList)
-        models.PcBuilder.StorageComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.StorageComponentListDto)
+        models.PcBuilder.StorageComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_StorageComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_StorageComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_StorageComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_StorageComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.StorageComponentList.class, models.PcBuilder.StorageComponentList.Builder.class);
+                models.PcBuilder.StorageComponentListDto.class, models.PcBuilder.StorageComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.StorageComponentList.newBuilder()
+      // Construct using models.PcBuilder.StorageComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -9021,17 +9021,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_StorageComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_StorageComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.StorageComponentList.getDefaultInstance();
+      public models.PcBuilder.StorageComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.StorageComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponentList build() {
-        models.PcBuilder.StorageComponentList result = buildPartial();
+      public models.PcBuilder.StorageComponentListDto build() {
+        models.PcBuilder.StorageComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9039,15 +9039,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.StorageComponentList buildPartial() {
-        models.PcBuilder.StorageComponentList result = new models.PcBuilder.StorageComponentList(this);
+      public models.PcBuilder.StorageComponentListDto buildPartial() {
+        models.PcBuilder.StorageComponentListDto result = new models.PcBuilder.StorageComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.StorageComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.StorageComponentListDto result) {
         if (storageComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             storageComponents_ = java.util.Collections.unmodifiableList(storageComponents_);
@@ -9059,7 +9059,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.StorageComponentList result) {
+      private void buildPartial0(models.PcBuilder.StorageComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -9097,16 +9097,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.StorageComponentList) {
-          return mergeFrom((models.PcBuilder.StorageComponentList)other);
+        if (other instanceof models.PcBuilder.StorageComponentListDto) {
+          return mergeFrom((models.PcBuilder.StorageComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.StorageComponentList other) {
-        if (other == models.PcBuilder.StorageComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.StorageComponentListDto other) {
+        if (other == models.PcBuilder.StorageComponentListDto.getDefaultInstance()) return this;
         if (storageComponentsBuilder_ == null) {
           if (!other.storageComponents_.isEmpty()) {
             if (storageComponents_.isEmpty()) {
@@ -9160,9 +9160,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.StorageComponent m =
+                models.PcBuilder.StorageComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.StorageComponent.parser(),
+                        models.PcBuilder.StorageComponentDto.parser(),
                         extensionRegistry);
                 if (storageComponentsBuilder_ == null) {
                   ensureStorageComponentsIsMutable();
@@ -9189,22 +9189,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.StorageComponent> storageComponents_ =
+      private java.util.List<models.PcBuilder.StorageComponentDto> storageComponents_ =
         java.util.Collections.emptyList();
       private void ensureStorageComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          storageComponents_ = new java.util.ArrayList<models.PcBuilder.StorageComponent>(storageComponents_);
+          storageComponents_ = new java.util.ArrayList<models.PcBuilder.StorageComponentDto>(storageComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.StorageComponent, models.PcBuilder.StorageComponent.Builder, models.PcBuilder.StorageComponentOrBuilder> storageComponentsBuilder_;
+          models.PcBuilder.StorageComponentDto, models.PcBuilder.StorageComponentDto.Builder, models.PcBuilder.StorageComponentDtoOrBuilder> storageComponentsBuilder_;
 
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.StorageComponent> getStorageComponentsList() {
+      public java.util.List<models.PcBuilder.StorageComponentDto> getStorageComponentsList() {
         if (storageComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(storageComponents_);
         } else {
@@ -9212,7 +9212,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public int getStorageComponentsCount() {
         if (storageComponentsBuilder_ == null) {
@@ -9222,9 +9222,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public models.PcBuilder.StorageComponent getStorageComponents(int index) {
+      public models.PcBuilder.StorageComponentDto getStorageComponents(int index) {
         if (storageComponentsBuilder_ == null) {
           return storageComponents_.get(index);
         } else {
@@ -9232,10 +9232,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder setStorageComponents(
-          int index, models.PcBuilder.StorageComponent value) {
+          int index, models.PcBuilder.StorageComponentDto value) {
         if (storageComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9249,10 +9249,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder setStorageComponents(
-          int index, models.PcBuilder.StorageComponent.Builder builderForValue) {
+          int index, models.PcBuilder.StorageComponentDto.Builder builderForValue) {
         if (storageComponentsBuilder_ == null) {
           ensureStorageComponentsIsMutable();
           storageComponents_.set(index, builderForValue.build());
@@ -9263,9 +9263,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public Builder addStorageComponents(models.PcBuilder.StorageComponent value) {
+      public Builder addStorageComponents(models.PcBuilder.StorageComponentDto value) {
         if (storageComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9279,10 +9279,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder addStorageComponents(
-          int index, models.PcBuilder.StorageComponent value) {
+          int index, models.PcBuilder.StorageComponentDto value) {
         if (storageComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9296,10 +9296,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder addStorageComponents(
-          models.PcBuilder.StorageComponent.Builder builderForValue) {
+          models.PcBuilder.StorageComponentDto.Builder builderForValue) {
         if (storageComponentsBuilder_ == null) {
           ensureStorageComponentsIsMutable();
           storageComponents_.add(builderForValue.build());
@@ -9310,10 +9310,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder addStorageComponents(
-          int index, models.PcBuilder.StorageComponent.Builder builderForValue) {
+          int index, models.PcBuilder.StorageComponentDto.Builder builderForValue) {
         if (storageComponentsBuilder_ == null) {
           ensureStorageComponentsIsMutable();
           storageComponents_.add(index, builderForValue.build());
@@ -9324,10 +9324,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder addAllStorageComponents(
-          java.lang.Iterable<? extends models.PcBuilder.StorageComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.StorageComponentDto> values) {
         if (storageComponentsBuilder_ == null) {
           ensureStorageComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -9339,7 +9339,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder clearStorageComponents() {
         if (storageComponentsBuilder_ == null) {
@@ -9352,7 +9352,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
       public Builder removeStorageComponents(int index) {
         if (storageComponentsBuilder_ == null) {
@@ -9365,16 +9365,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public models.PcBuilder.StorageComponent.Builder getStorageComponentsBuilder(
+      public models.PcBuilder.StorageComponentDto.Builder getStorageComponentsBuilder(
           int index) {
         return getStorageComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public models.PcBuilder.StorageComponentOrBuilder getStorageComponentsOrBuilder(
+      public models.PcBuilder.StorageComponentDtoOrBuilder getStorageComponentsOrBuilder(
           int index) {
         if (storageComponentsBuilder_ == null) {
           return storageComponents_.get(index);  } else {
@@ -9382,9 +9382,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.StorageComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.StorageComponentDtoOrBuilder> 
            getStorageComponentsOrBuilderList() {
         if (storageComponentsBuilder_ != null) {
           return storageComponentsBuilder_.getMessageOrBuilderList();
@@ -9393,33 +9393,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public models.PcBuilder.StorageComponent.Builder addStorageComponentsBuilder() {
+      public models.PcBuilder.StorageComponentDto.Builder addStorageComponentsBuilder() {
         return getStorageComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.StorageComponent.getDefaultInstance());
+            models.PcBuilder.StorageComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public models.PcBuilder.StorageComponent.Builder addStorageComponentsBuilder(
+      public models.PcBuilder.StorageComponentDto.Builder addStorageComponentsBuilder(
           int index) {
         return getStorageComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.StorageComponent.getDefaultInstance());
+            index, models.PcBuilder.StorageComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.StorageComponent storageComponents = 1;</code>
+       * <code>repeated .models.StorageComponentDto storageComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.StorageComponent.Builder> 
+      public java.util.List<models.PcBuilder.StorageComponentDto.Builder> 
            getStorageComponentsBuilderList() {
         return getStorageComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.StorageComponent, models.PcBuilder.StorageComponent.Builder, models.PcBuilder.StorageComponentOrBuilder> 
+          models.PcBuilder.StorageComponentDto, models.PcBuilder.StorageComponentDto.Builder, models.PcBuilder.StorageComponentDtoOrBuilder> 
           getStorageComponentsFieldBuilder() {
         if (storageComponentsBuilder_ == null) {
           storageComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.StorageComponent, models.PcBuilder.StorageComponent.Builder, models.PcBuilder.StorageComponentOrBuilder>(
+              models.PcBuilder.StorageComponentDto, models.PcBuilder.StorageComponentDto.Builder, models.PcBuilder.StorageComponentDtoOrBuilder>(
                   storageComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -9441,23 +9441,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.StorageComponentList)
+      // @@protoc_insertion_point(builder_scope:models.StorageComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.StorageComponentList)
-    private static final models.PcBuilder.StorageComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.StorageComponentListDto)
+    private static final models.PcBuilder.StorageComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.StorageComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.StorageComponentListDto();
     }
 
-    public static models.PcBuilder.StorageComponentList getDefaultInstance() {
+    public static models.PcBuilder.StorageComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StorageComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<StorageComponentList>() {
+    private static final com.google.protobuf.Parser<StorageComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<StorageComponentListDto>() {
       @java.lang.Override
-      public StorageComponentList parsePartialFrom(
+      public StorageComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9476,24 +9476,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<StorageComponentList> parser() {
+    public static com.google.protobuf.Parser<StorageComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<StorageComponentList> getParserForType() {
+    public com.google.protobuf.Parser<StorageComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.StorageComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.StorageComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface VideoCardComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.VideoCardComponent)
+  public interface VideoCardComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.VideoCardComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9575,18 +9575,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.VideoCardComponent}
+   * Protobuf type {@code models.VideoCardComponentDto}
    */
-  public static final class VideoCardComponent extends
+  public static final class VideoCardComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.VideoCardComponent)
-      VideoCardComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.VideoCardComponentDto)
+      VideoCardComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use VideoCardComponent.newBuilder() to construct.
-    private VideoCardComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use VideoCardComponentDto.newBuilder() to construct.
+    private VideoCardComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private VideoCardComponent() {
+    private VideoCardComponentDto() {
       uuid_ = "";
       displayName_ = "";
       chipset_ = "";
@@ -9597,20 +9597,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new VideoCardComponent();
+      return new VideoCardComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_VideoCardComponent_descriptor;
+      return models.PcBuilder.internal_static_models_VideoCardComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_VideoCardComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_VideoCardComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.VideoCardComponent.class, models.PcBuilder.VideoCardComponent.Builder.class);
+              models.PcBuilder.VideoCardComponentDto.class, models.PcBuilder.VideoCardComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -9916,10 +9916,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.VideoCardComponent)) {
+      if (!(obj instanceof models.PcBuilder.VideoCardComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.VideoCardComponent other = (models.PcBuilder.VideoCardComponent) obj;
+      models.PcBuilder.VideoCardComponentDto other = (models.PcBuilder.VideoCardComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -9973,44 +9973,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(byte[] data)
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10018,26 +10018,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.VideoCardComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.VideoCardComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.VideoCardComponent parseDelimitedFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.VideoCardComponent parseFrom(
+    public static models.PcBuilder.VideoCardComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10050,7 +10050,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.VideoCardComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.VideoCardComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10066,26 +10066,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.VideoCardComponent}
+     * Protobuf type {@code models.VideoCardComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.VideoCardComponent)
-        models.PcBuilder.VideoCardComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.VideoCardComponentDto)
+        models.PcBuilder.VideoCardComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_VideoCardComponent_descriptor;
+        return models.PcBuilder.internal_static_models_VideoCardComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_VideoCardComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_VideoCardComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.VideoCardComponent.class, models.PcBuilder.VideoCardComponent.Builder.class);
+                models.PcBuilder.VideoCardComponentDto.class, models.PcBuilder.VideoCardComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.VideoCardComponent.newBuilder()
+      // Construct using models.PcBuilder.VideoCardComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -10114,17 +10114,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_VideoCardComponent_descriptor;
+        return models.PcBuilder.internal_static_models_VideoCardComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponent getDefaultInstanceForType() {
-        return models.PcBuilder.VideoCardComponent.getDefaultInstance();
+      public models.PcBuilder.VideoCardComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.VideoCardComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponent build() {
-        models.PcBuilder.VideoCardComponent result = buildPartial();
+      public models.PcBuilder.VideoCardComponentDto build() {
+        models.PcBuilder.VideoCardComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10132,14 +10132,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponent buildPartial() {
-        models.PcBuilder.VideoCardComponent result = new models.PcBuilder.VideoCardComponent(this);
+      public models.PcBuilder.VideoCardComponentDto buildPartial() {
+        models.PcBuilder.VideoCardComponentDto result = new models.PcBuilder.VideoCardComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.VideoCardComponent result) {
+      private void buildPartial0(models.PcBuilder.VideoCardComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -10204,16 +10204,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.VideoCardComponent) {
-          return mergeFrom((models.PcBuilder.VideoCardComponent)other);
+        if (other instanceof models.PcBuilder.VideoCardComponentDto) {
+          return mergeFrom((models.PcBuilder.VideoCardComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.VideoCardComponent other) {
-        if (other == models.PcBuilder.VideoCardComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.VideoCardComponentDto other) {
+        if (other == models.PcBuilder.VideoCardComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -10797,23 +10797,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.VideoCardComponent)
+      // @@protoc_insertion_point(builder_scope:models.VideoCardComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.VideoCardComponent)
-    private static final models.PcBuilder.VideoCardComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.VideoCardComponentDto)
+    private static final models.PcBuilder.VideoCardComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.VideoCardComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.VideoCardComponentDto();
     }
 
-    public static models.PcBuilder.VideoCardComponent getDefaultInstance() {
+    public static models.PcBuilder.VideoCardComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<VideoCardComponent>
-        PARSER = new com.google.protobuf.AbstractParser<VideoCardComponent>() {
+    private static final com.google.protobuf.Parser<VideoCardComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<VideoCardComponentDto>() {
       @java.lang.Override
-      public VideoCardComponent parsePartialFrom(
+      public VideoCardComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10832,63 +10832,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<VideoCardComponent> parser() {
+    public static com.google.protobuf.Parser<VideoCardComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<VideoCardComponent> getParserForType() {
+    public com.google.protobuf.Parser<VideoCardComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponent getDefaultInstanceForType() {
+    public models.PcBuilder.VideoCardComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface VideoCardComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.VideoCardComponentList)
+  public interface VideoCardComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.VideoCardComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.VideoCardComponent> 
+    java.util.List<models.PcBuilder.VideoCardComponentDto> 
         getVideoCardComponentsList();
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
-    models.PcBuilder.VideoCardComponent getVideoCardComponents(int index);
+    models.PcBuilder.VideoCardComponentDto getVideoCardComponents(int index);
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     int getVideoCardComponentsCount();
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.VideoCardComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.VideoCardComponentDtoOrBuilder> 
         getVideoCardComponentsOrBuilderList();
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
-    models.PcBuilder.VideoCardComponentOrBuilder getVideoCardComponentsOrBuilder(
+    models.PcBuilder.VideoCardComponentDtoOrBuilder getVideoCardComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.VideoCardComponentList}
+   * Protobuf type {@code models.VideoCardComponentListDto}
    */
-  public static final class VideoCardComponentList extends
+  public static final class VideoCardComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.VideoCardComponentList)
-      VideoCardComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.VideoCardComponentListDto)
+      VideoCardComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use VideoCardComponentList.newBuilder() to construct.
-    private VideoCardComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use VideoCardComponentListDto.newBuilder() to construct.
+    private VideoCardComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private VideoCardComponentList() {
+    private VideoCardComponentListDto() {
       videoCardComponents_ = java.util.Collections.emptyList();
     }
 
@@ -10896,59 +10896,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new VideoCardComponentList();
+      return new VideoCardComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_VideoCardComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_VideoCardComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_VideoCardComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_VideoCardComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.VideoCardComponentList.class, models.PcBuilder.VideoCardComponentList.Builder.class);
+              models.PcBuilder.VideoCardComponentListDto.class, models.PcBuilder.VideoCardComponentListDto.Builder.class);
     }
 
     public static final int VIDEOCARDCOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.VideoCardComponent> videoCardComponents_;
+    private java.util.List<models.PcBuilder.VideoCardComponentDto> videoCardComponents_;
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.VideoCardComponent> getVideoCardComponentsList() {
+    public java.util.List<models.PcBuilder.VideoCardComponentDto> getVideoCardComponentsList() {
       return videoCardComponents_;
     }
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.VideoCardComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.VideoCardComponentDtoOrBuilder> 
         getVideoCardComponentsOrBuilderList() {
       return videoCardComponents_;
     }
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     @java.lang.Override
     public int getVideoCardComponentsCount() {
       return videoCardComponents_.size();
     }
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponent getVideoCardComponents(int index) {
+    public models.PcBuilder.VideoCardComponentDto getVideoCardComponents(int index) {
       return videoCardComponents_.get(index);
     }
     /**
-     * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+     * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponentOrBuilder getVideoCardComponentsOrBuilder(
+    public models.PcBuilder.VideoCardComponentDtoOrBuilder getVideoCardComponentsOrBuilder(
         int index) {
       return videoCardComponents_.get(index);
     }
@@ -10993,10 +10993,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.VideoCardComponentList)) {
+      if (!(obj instanceof models.PcBuilder.VideoCardComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.VideoCardComponentList other = (models.PcBuilder.VideoCardComponentList) obj;
+      models.PcBuilder.VideoCardComponentListDto other = (models.PcBuilder.VideoCardComponentListDto) obj;
 
       if (!getVideoCardComponentsList()
           .equals(other.getVideoCardComponentsList())) return false;
@@ -11020,44 +11020,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11065,26 +11065,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.VideoCardComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.VideoCardComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.VideoCardComponentList parseDelimitedFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.VideoCardComponentList parseFrom(
+    public static models.PcBuilder.VideoCardComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11097,7 +11097,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.VideoCardComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.VideoCardComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11113,26 +11113,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.VideoCardComponentList}
+     * Protobuf type {@code models.VideoCardComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.VideoCardComponentList)
-        models.PcBuilder.VideoCardComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.VideoCardComponentListDto)
+        models.PcBuilder.VideoCardComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_VideoCardComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_VideoCardComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_VideoCardComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_VideoCardComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.VideoCardComponentList.class, models.PcBuilder.VideoCardComponentList.Builder.class);
+                models.PcBuilder.VideoCardComponentListDto.class, models.PcBuilder.VideoCardComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.VideoCardComponentList.newBuilder()
+      // Construct using models.PcBuilder.VideoCardComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -11159,17 +11159,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_VideoCardComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_VideoCardComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.VideoCardComponentList.getDefaultInstance();
+      public models.PcBuilder.VideoCardComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.VideoCardComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponentList build() {
-        models.PcBuilder.VideoCardComponentList result = buildPartial();
+      public models.PcBuilder.VideoCardComponentListDto build() {
+        models.PcBuilder.VideoCardComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11177,15 +11177,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.VideoCardComponentList buildPartial() {
-        models.PcBuilder.VideoCardComponentList result = new models.PcBuilder.VideoCardComponentList(this);
+      public models.PcBuilder.VideoCardComponentListDto buildPartial() {
+        models.PcBuilder.VideoCardComponentListDto result = new models.PcBuilder.VideoCardComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.VideoCardComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.VideoCardComponentListDto result) {
         if (videoCardComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             videoCardComponents_ = java.util.Collections.unmodifiableList(videoCardComponents_);
@@ -11197,7 +11197,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.VideoCardComponentList result) {
+      private void buildPartial0(models.PcBuilder.VideoCardComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -11235,16 +11235,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.VideoCardComponentList) {
-          return mergeFrom((models.PcBuilder.VideoCardComponentList)other);
+        if (other instanceof models.PcBuilder.VideoCardComponentListDto) {
+          return mergeFrom((models.PcBuilder.VideoCardComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.VideoCardComponentList other) {
-        if (other == models.PcBuilder.VideoCardComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.VideoCardComponentListDto other) {
+        if (other == models.PcBuilder.VideoCardComponentListDto.getDefaultInstance()) return this;
         if (videoCardComponentsBuilder_ == null) {
           if (!other.videoCardComponents_.isEmpty()) {
             if (videoCardComponents_.isEmpty()) {
@@ -11298,9 +11298,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.VideoCardComponent m =
+                models.PcBuilder.VideoCardComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.VideoCardComponent.parser(),
+                        models.PcBuilder.VideoCardComponentDto.parser(),
                         extensionRegistry);
                 if (videoCardComponentsBuilder_ == null) {
                   ensureVideoCardComponentsIsMutable();
@@ -11327,22 +11327,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.VideoCardComponent> videoCardComponents_ =
+      private java.util.List<models.PcBuilder.VideoCardComponentDto> videoCardComponents_ =
         java.util.Collections.emptyList();
       private void ensureVideoCardComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          videoCardComponents_ = new java.util.ArrayList<models.PcBuilder.VideoCardComponent>(videoCardComponents_);
+          videoCardComponents_ = new java.util.ArrayList<models.PcBuilder.VideoCardComponentDto>(videoCardComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.VideoCardComponent, models.PcBuilder.VideoCardComponent.Builder, models.PcBuilder.VideoCardComponentOrBuilder> videoCardComponentsBuilder_;
+          models.PcBuilder.VideoCardComponentDto, models.PcBuilder.VideoCardComponentDto.Builder, models.PcBuilder.VideoCardComponentDtoOrBuilder> videoCardComponentsBuilder_;
 
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.VideoCardComponent> getVideoCardComponentsList() {
+      public java.util.List<models.PcBuilder.VideoCardComponentDto> getVideoCardComponentsList() {
         if (videoCardComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(videoCardComponents_);
         } else {
@@ -11350,7 +11350,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public int getVideoCardComponentsCount() {
         if (videoCardComponentsBuilder_ == null) {
@@ -11360,9 +11360,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public models.PcBuilder.VideoCardComponent getVideoCardComponents(int index) {
+      public models.PcBuilder.VideoCardComponentDto getVideoCardComponents(int index) {
         if (videoCardComponentsBuilder_ == null) {
           return videoCardComponents_.get(index);
         } else {
@@ -11370,10 +11370,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder setVideoCardComponents(
-          int index, models.PcBuilder.VideoCardComponent value) {
+          int index, models.PcBuilder.VideoCardComponentDto value) {
         if (videoCardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11387,10 +11387,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder setVideoCardComponents(
-          int index, models.PcBuilder.VideoCardComponent.Builder builderForValue) {
+          int index, models.PcBuilder.VideoCardComponentDto.Builder builderForValue) {
         if (videoCardComponentsBuilder_ == null) {
           ensureVideoCardComponentsIsMutable();
           videoCardComponents_.set(index, builderForValue.build());
@@ -11401,9 +11401,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public Builder addVideoCardComponents(models.PcBuilder.VideoCardComponent value) {
+      public Builder addVideoCardComponents(models.PcBuilder.VideoCardComponentDto value) {
         if (videoCardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11417,10 +11417,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder addVideoCardComponents(
-          int index, models.PcBuilder.VideoCardComponent value) {
+          int index, models.PcBuilder.VideoCardComponentDto value) {
         if (videoCardComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11434,10 +11434,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder addVideoCardComponents(
-          models.PcBuilder.VideoCardComponent.Builder builderForValue) {
+          models.PcBuilder.VideoCardComponentDto.Builder builderForValue) {
         if (videoCardComponentsBuilder_ == null) {
           ensureVideoCardComponentsIsMutable();
           videoCardComponents_.add(builderForValue.build());
@@ -11448,10 +11448,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder addVideoCardComponents(
-          int index, models.PcBuilder.VideoCardComponent.Builder builderForValue) {
+          int index, models.PcBuilder.VideoCardComponentDto.Builder builderForValue) {
         if (videoCardComponentsBuilder_ == null) {
           ensureVideoCardComponentsIsMutable();
           videoCardComponents_.add(index, builderForValue.build());
@@ -11462,10 +11462,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder addAllVideoCardComponents(
-          java.lang.Iterable<? extends models.PcBuilder.VideoCardComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.VideoCardComponentDto> values) {
         if (videoCardComponentsBuilder_ == null) {
           ensureVideoCardComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -11477,7 +11477,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder clearVideoCardComponents() {
         if (videoCardComponentsBuilder_ == null) {
@@ -11490,7 +11490,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
       public Builder removeVideoCardComponents(int index) {
         if (videoCardComponentsBuilder_ == null) {
@@ -11503,16 +11503,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public models.PcBuilder.VideoCardComponent.Builder getVideoCardComponentsBuilder(
+      public models.PcBuilder.VideoCardComponentDto.Builder getVideoCardComponentsBuilder(
           int index) {
         return getVideoCardComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public models.PcBuilder.VideoCardComponentOrBuilder getVideoCardComponentsOrBuilder(
+      public models.PcBuilder.VideoCardComponentDtoOrBuilder getVideoCardComponentsOrBuilder(
           int index) {
         if (videoCardComponentsBuilder_ == null) {
           return videoCardComponents_.get(index);  } else {
@@ -11520,9 +11520,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.VideoCardComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.VideoCardComponentDtoOrBuilder> 
            getVideoCardComponentsOrBuilderList() {
         if (videoCardComponentsBuilder_ != null) {
           return videoCardComponentsBuilder_.getMessageOrBuilderList();
@@ -11531,33 +11531,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public models.PcBuilder.VideoCardComponent.Builder addVideoCardComponentsBuilder() {
+      public models.PcBuilder.VideoCardComponentDto.Builder addVideoCardComponentsBuilder() {
         return getVideoCardComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.VideoCardComponent.getDefaultInstance());
+            models.PcBuilder.VideoCardComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public models.PcBuilder.VideoCardComponent.Builder addVideoCardComponentsBuilder(
+      public models.PcBuilder.VideoCardComponentDto.Builder addVideoCardComponentsBuilder(
           int index) {
         return getVideoCardComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.VideoCardComponent.getDefaultInstance());
+            index, models.PcBuilder.VideoCardComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.VideoCardComponent videoCardComponents = 1;</code>
+       * <code>repeated .models.VideoCardComponentDto videoCardComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.VideoCardComponent.Builder> 
+      public java.util.List<models.PcBuilder.VideoCardComponentDto.Builder> 
            getVideoCardComponentsBuilderList() {
         return getVideoCardComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.VideoCardComponent, models.PcBuilder.VideoCardComponent.Builder, models.PcBuilder.VideoCardComponentOrBuilder> 
+          models.PcBuilder.VideoCardComponentDto, models.PcBuilder.VideoCardComponentDto.Builder, models.PcBuilder.VideoCardComponentDtoOrBuilder> 
           getVideoCardComponentsFieldBuilder() {
         if (videoCardComponentsBuilder_ == null) {
           videoCardComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.VideoCardComponent, models.PcBuilder.VideoCardComponent.Builder, models.PcBuilder.VideoCardComponentOrBuilder>(
+              models.PcBuilder.VideoCardComponentDto, models.PcBuilder.VideoCardComponentDto.Builder, models.PcBuilder.VideoCardComponentDtoOrBuilder>(
                   videoCardComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -11579,23 +11579,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.VideoCardComponentList)
+      // @@protoc_insertion_point(builder_scope:models.VideoCardComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.VideoCardComponentList)
-    private static final models.PcBuilder.VideoCardComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.VideoCardComponentListDto)
+    private static final models.PcBuilder.VideoCardComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.VideoCardComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.VideoCardComponentListDto();
     }
 
-    public static models.PcBuilder.VideoCardComponentList getDefaultInstance() {
+    public static models.PcBuilder.VideoCardComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<VideoCardComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<VideoCardComponentList>() {
+    private static final com.google.protobuf.Parser<VideoCardComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<VideoCardComponentListDto>() {
       @java.lang.Override
-      public VideoCardComponentList parsePartialFrom(
+      public VideoCardComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11614,24 +11614,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<VideoCardComponentList> parser() {
+    public static com.google.protobuf.Parser<VideoCardComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<VideoCardComponentList> getParserForType() {
+    public com.google.protobuf.Parser<VideoCardComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.VideoCardComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PowerSupplyComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.PowerSupplyComponent)
+  public interface PowerSupplyComponentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.PowerSupplyComponentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -11719,18 +11719,18 @@ public final class PcBuilder {
     int getPrice();
   }
   /**
-   * Protobuf type {@code models.PowerSupplyComponent}
+   * Protobuf type {@code models.PowerSupplyComponentDto}
    */
-  public static final class PowerSupplyComponent extends
+  public static final class PowerSupplyComponentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.PowerSupplyComponent)
-      PowerSupplyComponentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.PowerSupplyComponentDto)
+      PowerSupplyComponentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PowerSupplyComponent.newBuilder() to construct.
-    private PowerSupplyComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PowerSupplyComponentDto.newBuilder() to construct.
+    private PowerSupplyComponentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PowerSupplyComponent() {
+    private PowerSupplyComponentDto() {
       uuid_ = "";
       displayName_ = "";
       type_ = "";
@@ -11743,20 +11743,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PowerSupplyComponent();
+      return new PowerSupplyComponentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_PowerSupplyComponent_descriptor;
+      return models.PcBuilder.internal_static_models_PowerSupplyComponentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_PowerSupplyComponent_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_PowerSupplyComponentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.PowerSupplyComponent.class, models.PcBuilder.PowerSupplyComponent.Builder.class);
+              models.PcBuilder.PowerSupplyComponentDto.class, models.PcBuilder.PowerSupplyComponentDto.Builder.class);
     }
 
     public static final int UUID_FIELD_NUMBER = 1;
@@ -12098,10 +12098,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.PowerSupplyComponent)) {
+      if (!(obj instanceof models.PcBuilder.PowerSupplyComponentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.PowerSupplyComponent other = (models.PcBuilder.PowerSupplyComponent) obj;
+      models.PcBuilder.PowerSupplyComponentDto other = (models.PcBuilder.PowerSupplyComponentDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -12151,44 +12151,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(byte[] data)
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12196,26 +12196,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.PowerSupplyComponent parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.PowerSupplyComponentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.PowerSupplyComponent parseDelimitedFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.PowerSupplyComponent parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12228,7 +12228,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.PowerSupplyComponent prototype) {
+    public static Builder newBuilder(models.PcBuilder.PowerSupplyComponentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -12244,26 +12244,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.PowerSupplyComponent}
+     * Protobuf type {@code models.PowerSupplyComponentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.PowerSupplyComponent)
-        models.PcBuilder.PowerSupplyComponentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.PowerSupplyComponentDto)
+        models.PcBuilder.PowerSupplyComponentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponent_descriptor;
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponent_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.PowerSupplyComponent.class, models.PcBuilder.PowerSupplyComponent.Builder.class);
+                models.PcBuilder.PowerSupplyComponentDto.class, models.PcBuilder.PowerSupplyComponentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.PowerSupplyComponent.newBuilder()
+      // Construct using models.PcBuilder.PowerSupplyComponentDto.newBuilder()
       private Builder() {
 
       }
@@ -12291,17 +12291,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponent_descriptor;
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponent getDefaultInstanceForType() {
-        return models.PcBuilder.PowerSupplyComponent.getDefaultInstance();
+      public models.PcBuilder.PowerSupplyComponentDto getDefaultInstanceForType() {
+        return models.PcBuilder.PowerSupplyComponentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponent build() {
-        models.PcBuilder.PowerSupplyComponent result = buildPartial();
+      public models.PcBuilder.PowerSupplyComponentDto build() {
+        models.PcBuilder.PowerSupplyComponentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12309,14 +12309,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponent buildPartial() {
-        models.PcBuilder.PowerSupplyComponent result = new models.PcBuilder.PowerSupplyComponent(this);
+      public models.PcBuilder.PowerSupplyComponentDto buildPartial() {
+        models.PcBuilder.PowerSupplyComponentDto result = new models.PcBuilder.PowerSupplyComponentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.PowerSupplyComponent result) {
+      private void buildPartial0(models.PcBuilder.PowerSupplyComponentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -12378,16 +12378,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.PowerSupplyComponent) {
-          return mergeFrom((models.PcBuilder.PowerSupplyComponent)other);
+        if (other instanceof models.PcBuilder.PowerSupplyComponentDto) {
+          return mergeFrom((models.PcBuilder.PowerSupplyComponentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.PowerSupplyComponent other) {
-        if (other == models.PcBuilder.PowerSupplyComponent.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.PowerSupplyComponentDto other) {
+        if (other == models.PcBuilder.PowerSupplyComponentDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -13015,23 +13015,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.PowerSupplyComponent)
+      // @@protoc_insertion_point(builder_scope:models.PowerSupplyComponentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.PowerSupplyComponent)
-    private static final models.PcBuilder.PowerSupplyComponent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.PowerSupplyComponentDto)
+    private static final models.PcBuilder.PowerSupplyComponentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.PowerSupplyComponent();
+      DEFAULT_INSTANCE = new models.PcBuilder.PowerSupplyComponentDto();
     }
 
-    public static models.PcBuilder.PowerSupplyComponent getDefaultInstance() {
+    public static models.PcBuilder.PowerSupplyComponentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PowerSupplyComponent>
-        PARSER = new com.google.protobuf.AbstractParser<PowerSupplyComponent>() {
+    private static final com.google.protobuf.Parser<PowerSupplyComponentDto>
+        PARSER = new com.google.protobuf.AbstractParser<PowerSupplyComponentDto>() {
       @java.lang.Override
-      public PowerSupplyComponent parsePartialFrom(
+      public PowerSupplyComponentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13050,63 +13050,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<PowerSupplyComponent> parser() {
+    public static com.google.protobuf.Parser<PowerSupplyComponentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PowerSupplyComponent> getParserForType() {
+    public com.google.protobuf.Parser<PowerSupplyComponentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponent getDefaultInstanceForType() {
+    public models.PcBuilder.PowerSupplyComponentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PowerSupplyComponentListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.PowerSupplyComponentList)
+  public interface PowerSupplyComponentListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.PowerSupplyComponentListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
-    java.util.List<models.PcBuilder.PowerSupplyComponent> 
+    java.util.List<models.PcBuilder.PowerSupplyComponentDto> 
         getPowerSupplyComponentsList();
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
-    models.PcBuilder.PowerSupplyComponent getPowerSupplyComponents(int index);
+    models.PcBuilder.PowerSupplyComponentDto getPowerSupplyComponents(int index);
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     int getPowerSupplyComponentsCount();
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.PowerSupplyComponentOrBuilder> 
+    java.util.List<? extends models.PcBuilder.PowerSupplyComponentDtoOrBuilder> 
         getPowerSupplyComponentsOrBuilderList();
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
-    models.PcBuilder.PowerSupplyComponentOrBuilder getPowerSupplyComponentsOrBuilder(
+    models.PcBuilder.PowerSupplyComponentDtoOrBuilder getPowerSupplyComponentsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.PowerSupplyComponentList}
+   * Protobuf type {@code models.PowerSupplyComponentListDto}
    */
-  public static final class PowerSupplyComponentList extends
+  public static final class PowerSupplyComponentListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.PowerSupplyComponentList)
-      PowerSupplyComponentListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.PowerSupplyComponentListDto)
+      PowerSupplyComponentListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PowerSupplyComponentList.newBuilder() to construct.
-    private PowerSupplyComponentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PowerSupplyComponentListDto.newBuilder() to construct.
+    private PowerSupplyComponentListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PowerSupplyComponentList() {
+    private PowerSupplyComponentListDto() {
       powerSupplyComponents_ = java.util.Collections.emptyList();
     }
 
@@ -13114,59 +13114,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PowerSupplyComponentList();
+      return new PowerSupplyComponentListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_PowerSupplyComponentList_descriptor;
+      return models.PcBuilder.internal_static_models_PowerSupplyComponentListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_PowerSupplyComponentList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_PowerSupplyComponentListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.PowerSupplyComponentList.class, models.PcBuilder.PowerSupplyComponentList.Builder.class);
+              models.PcBuilder.PowerSupplyComponentListDto.class, models.PcBuilder.PowerSupplyComponentListDto.Builder.class);
     }
 
     public static final int POWERSUPPLYCOMPONENTS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.PowerSupplyComponent> powerSupplyComponents_;
+    private java.util.List<models.PcBuilder.PowerSupplyComponentDto> powerSupplyComponents_;
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.PowerSupplyComponent> getPowerSupplyComponentsList() {
+    public java.util.List<models.PcBuilder.PowerSupplyComponentDto> getPowerSupplyComponentsList() {
       return powerSupplyComponents_;
     }
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.PowerSupplyComponentOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.PowerSupplyComponentDtoOrBuilder> 
         getPowerSupplyComponentsOrBuilderList() {
       return powerSupplyComponents_;
     }
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     @java.lang.Override
     public int getPowerSupplyComponentsCount() {
       return powerSupplyComponents_.size();
     }
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponent getPowerSupplyComponents(int index) {
+    public models.PcBuilder.PowerSupplyComponentDto getPowerSupplyComponents(int index) {
       return powerSupplyComponents_.get(index);
     }
     /**
-     * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+     * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponentOrBuilder getPowerSupplyComponentsOrBuilder(
+    public models.PcBuilder.PowerSupplyComponentDtoOrBuilder getPowerSupplyComponentsOrBuilder(
         int index) {
       return powerSupplyComponents_.get(index);
     }
@@ -13211,10 +13211,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.PowerSupplyComponentList)) {
+      if (!(obj instanceof models.PcBuilder.PowerSupplyComponentListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.PowerSupplyComponentList other = (models.PcBuilder.PowerSupplyComponentList) obj;
+      models.PcBuilder.PowerSupplyComponentListDto other = (models.PcBuilder.PowerSupplyComponentListDto) obj;
 
       if (!getPowerSupplyComponentsList()
           .equals(other.getPowerSupplyComponentsList())) return false;
@@ -13238,44 +13238,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(byte[] data)
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13283,26 +13283,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.PowerSupplyComponentList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.PowerSupplyComponentListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.PowerSupplyComponentList parseDelimitedFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.PowerSupplyComponentList parseFrom(
+    public static models.PcBuilder.PowerSupplyComponentListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13315,7 +13315,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.PowerSupplyComponentList prototype) {
+    public static Builder newBuilder(models.PcBuilder.PowerSupplyComponentListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -13331,26 +13331,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.PowerSupplyComponentList}
+     * Protobuf type {@code models.PowerSupplyComponentListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.PowerSupplyComponentList)
-        models.PcBuilder.PowerSupplyComponentListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.PowerSupplyComponentListDto)
+        models.PcBuilder.PowerSupplyComponentListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponentList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.PowerSupplyComponentList.class, models.PcBuilder.PowerSupplyComponentList.Builder.class);
+                models.PcBuilder.PowerSupplyComponentListDto.class, models.PcBuilder.PowerSupplyComponentListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.PowerSupplyComponentList.newBuilder()
+      // Construct using models.PcBuilder.PowerSupplyComponentListDto.newBuilder()
       private Builder() {
 
       }
@@ -13377,17 +13377,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_PowerSupplyComponentList_descriptor;
+        return models.PcBuilder.internal_static_models_PowerSupplyComponentListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponentList getDefaultInstanceForType() {
-        return models.PcBuilder.PowerSupplyComponentList.getDefaultInstance();
+      public models.PcBuilder.PowerSupplyComponentListDto getDefaultInstanceForType() {
+        return models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponentList build() {
-        models.PcBuilder.PowerSupplyComponentList result = buildPartial();
+      public models.PcBuilder.PowerSupplyComponentListDto build() {
+        models.PcBuilder.PowerSupplyComponentListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -13395,15 +13395,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.PowerSupplyComponentList buildPartial() {
-        models.PcBuilder.PowerSupplyComponentList result = new models.PcBuilder.PowerSupplyComponentList(this);
+      public models.PcBuilder.PowerSupplyComponentListDto buildPartial() {
+        models.PcBuilder.PowerSupplyComponentListDto result = new models.PcBuilder.PowerSupplyComponentListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.PowerSupplyComponentList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.PowerSupplyComponentListDto result) {
         if (powerSupplyComponentsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             powerSupplyComponents_ = java.util.Collections.unmodifiableList(powerSupplyComponents_);
@@ -13415,7 +13415,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.PowerSupplyComponentList result) {
+      private void buildPartial0(models.PcBuilder.PowerSupplyComponentListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -13453,16 +13453,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.PowerSupplyComponentList) {
-          return mergeFrom((models.PcBuilder.PowerSupplyComponentList)other);
+        if (other instanceof models.PcBuilder.PowerSupplyComponentListDto) {
+          return mergeFrom((models.PcBuilder.PowerSupplyComponentListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.PowerSupplyComponentList other) {
-        if (other == models.PcBuilder.PowerSupplyComponentList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.PowerSupplyComponentListDto other) {
+        if (other == models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance()) return this;
         if (powerSupplyComponentsBuilder_ == null) {
           if (!other.powerSupplyComponents_.isEmpty()) {
             if (powerSupplyComponents_.isEmpty()) {
@@ -13516,9 +13516,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.PowerSupplyComponent m =
+                models.PcBuilder.PowerSupplyComponentDto m =
                     input.readMessage(
-                        models.PcBuilder.PowerSupplyComponent.parser(),
+                        models.PcBuilder.PowerSupplyComponentDto.parser(),
                         extensionRegistry);
                 if (powerSupplyComponentsBuilder_ == null) {
                   ensurePowerSupplyComponentsIsMutable();
@@ -13545,22 +13545,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.PowerSupplyComponent> powerSupplyComponents_ =
+      private java.util.List<models.PcBuilder.PowerSupplyComponentDto> powerSupplyComponents_ =
         java.util.Collections.emptyList();
       private void ensurePowerSupplyComponentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          powerSupplyComponents_ = new java.util.ArrayList<models.PcBuilder.PowerSupplyComponent>(powerSupplyComponents_);
+          powerSupplyComponents_ = new java.util.ArrayList<models.PcBuilder.PowerSupplyComponentDto>(powerSupplyComponents_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.PowerSupplyComponent, models.PcBuilder.PowerSupplyComponent.Builder, models.PcBuilder.PowerSupplyComponentOrBuilder> powerSupplyComponentsBuilder_;
+          models.PcBuilder.PowerSupplyComponentDto, models.PcBuilder.PowerSupplyComponentDto.Builder, models.PcBuilder.PowerSupplyComponentDtoOrBuilder> powerSupplyComponentsBuilder_;
 
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.PowerSupplyComponent> getPowerSupplyComponentsList() {
+      public java.util.List<models.PcBuilder.PowerSupplyComponentDto> getPowerSupplyComponentsList() {
         if (powerSupplyComponentsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(powerSupplyComponents_);
         } else {
@@ -13568,7 +13568,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public int getPowerSupplyComponentsCount() {
         if (powerSupplyComponentsBuilder_ == null) {
@@ -13578,9 +13578,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public models.PcBuilder.PowerSupplyComponent getPowerSupplyComponents(int index) {
+      public models.PcBuilder.PowerSupplyComponentDto getPowerSupplyComponents(int index) {
         if (powerSupplyComponentsBuilder_ == null) {
           return powerSupplyComponents_.get(index);
         } else {
@@ -13588,10 +13588,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder setPowerSupplyComponents(
-          int index, models.PcBuilder.PowerSupplyComponent value) {
+          int index, models.PcBuilder.PowerSupplyComponentDto value) {
         if (powerSupplyComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13605,10 +13605,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder setPowerSupplyComponents(
-          int index, models.PcBuilder.PowerSupplyComponent.Builder builderForValue) {
+          int index, models.PcBuilder.PowerSupplyComponentDto.Builder builderForValue) {
         if (powerSupplyComponentsBuilder_ == null) {
           ensurePowerSupplyComponentsIsMutable();
           powerSupplyComponents_.set(index, builderForValue.build());
@@ -13619,9 +13619,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public Builder addPowerSupplyComponents(models.PcBuilder.PowerSupplyComponent value) {
+      public Builder addPowerSupplyComponents(models.PcBuilder.PowerSupplyComponentDto value) {
         if (powerSupplyComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13635,10 +13635,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder addPowerSupplyComponents(
-          int index, models.PcBuilder.PowerSupplyComponent value) {
+          int index, models.PcBuilder.PowerSupplyComponentDto value) {
         if (powerSupplyComponentsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13652,10 +13652,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder addPowerSupplyComponents(
-          models.PcBuilder.PowerSupplyComponent.Builder builderForValue) {
+          models.PcBuilder.PowerSupplyComponentDto.Builder builderForValue) {
         if (powerSupplyComponentsBuilder_ == null) {
           ensurePowerSupplyComponentsIsMutable();
           powerSupplyComponents_.add(builderForValue.build());
@@ -13666,10 +13666,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder addPowerSupplyComponents(
-          int index, models.PcBuilder.PowerSupplyComponent.Builder builderForValue) {
+          int index, models.PcBuilder.PowerSupplyComponentDto.Builder builderForValue) {
         if (powerSupplyComponentsBuilder_ == null) {
           ensurePowerSupplyComponentsIsMutable();
           powerSupplyComponents_.add(index, builderForValue.build());
@@ -13680,10 +13680,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder addAllPowerSupplyComponents(
-          java.lang.Iterable<? extends models.PcBuilder.PowerSupplyComponent> values) {
+          java.lang.Iterable<? extends models.PcBuilder.PowerSupplyComponentDto> values) {
         if (powerSupplyComponentsBuilder_ == null) {
           ensurePowerSupplyComponentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -13695,7 +13695,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder clearPowerSupplyComponents() {
         if (powerSupplyComponentsBuilder_ == null) {
@@ -13708,7 +13708,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
       public Builder removePowerSupplyComponents(int index) {
         if (powerSupplyComponentsBuilder_ == null) {
@@ -13721,16 +13721,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public models.PcBuilder.PowerSupplyComponent.Builder getPowerSupplyComponentsBuilder(
+      public models.PcBuilder.PowerSupplyComponentDto.Builder getPowerSupplyComponentsBuilder(
           int index) {
         return getPowerSupplyComponentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public models.PcBuilder.PowerSupplyComponentOrBuilder getPowerSupplyComponentsOrBuilder(
+      public models.PcBuilder.PowerSupplyComponentDtoOrBuilder getPowerSupplyComponentsOrBuilder(
           int index) {
         if (powerSupplyComponentsBuilder_ == null) {
           return powerSupplyComponents_.get(index);  } else {
@@ -13738,9 +13738,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.PowerSupplyComponentOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.PowerSupplyComponentDtoOrBuilder> 
            getPowerSupplyComponentsOrBuilderList() {
         if (powerSupplyComponentsBuilder_ != null) {
           return powerSupplyComponentsBuilder_.getMessageOrBuilderList();
@@ -13749,33 +13749,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public models.PcBuilder.PowerSupplyComponent.Builder addPowerSupplyComponentsBuilder() {
+      public models.PcBuilder.PowerSupplyComponentDto.Builder addPowerSupplyComponentsBuilder() {
         return getPowerSupplyComponentsFieldBuilder().addBuilder(
-            models.PcBuilder.PowerSupplyComponent.getDefaultInstance());
+            models.PcBuilder.PowerSupplyComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public models.PcBuilder.PowerSupplyComponent.Builder addPowerSupplyComponentsBuilder(
+      public models.PcBuilder.PowerSupplyComponentDto.Builder addPowerSupplyComponentsBuilder(
           int index) {
         return getPowerSupplyComponentsFieldBuilder().addBuilder(
-            index, models.PcBuilder.PowerSupplyComponent.getDefaultInstance());
+            index, models.PcBuilder.PowerSupplyComponentDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.PowerSupplyComponent powerSupplyComponents = 1;</code>
+       * <code>repeated .models.PowerSupplyComponentDto powerSupplyComponents = 1;</code>
        */
-      public java.util.List<models.PcBuilder.PowerSupplyComponent.Builder> 
+      public java.util.List<models.PcBuilder.PowerSupplyComponentDto.Builder> 
            getPowerSupplyComponentsBuilderList() {
         return getPowerSupplyComponentsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.PowerSupplyComponent, models.PcBuilder.PowerSupplyComponent.Builder, models.PcBuilder.PowerSupplyComponentOrBuilder> 
+          models.PcBuilder.PowerSupplyComponentDto, models.PcBuilder.PowerSupplyComponentDto.Builder, models.PcBuilder.PowerSupplyComponentDtoOrBuilder> 
           getPowerSupplyComponentsFieldBuilder() {
         if (powerSupplyComponentsBuilder_ == null) {
           powerSupplyComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.PowerSupplyComponent, models.PcBuilder.PowerSupplyComponent.Builder, models.PcBuilder.PowerSupplyComponentOrBuilder>(
+              models.PcBuilder.PowerSupplyComponentDto, models.PcBuilder.PowerSupplyComponentDto.Builder, models.PcBuilder.PowerSupplyComponentDtoOrBuilder>(
                   powerSupplyComponents_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -13797,23 +13797,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.PowerSupplyComponentList)
+      // @@protoc_insertion_point(builder_scope:models.PowerSupplyComponentListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.PowerSupplyComponentList)
-    private static final models.PcBuilder.PowerSupplyComponentList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.PowerSupplyComponentListDto)
+    private static final models.PcBuilder.PowerSupplyComponentListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.PowerSupplyComponentList();
+      DEFAULT_INSTANCE = new models.PcBuilder.PowerSupplyComponentListDto();
     }
 
-    public static models.PcBuilder.PowerSupplyComponentList getDefaultInstance() {
+    public static models.PcBuilder.PowerSupplyComponentListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PowerSupplyComponentList>
-        PARSER = new com.google.protobuf.AbstractParser<PowerSupplyComponentList>() {
+    private static final com.google.protobuf.Parser<PowerSupplyComponentListDto>
+        PARSER = new com.google.protobuf.AbstractParser<PowerSupplyComponentListDto>() {
       @java.lang.Override
-      public PowerSupplyComponentList parsePartialFrom(
+      public PowerSupplyComponentListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13832,24 +13832,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<PowerSupplyComponentList> parser() {
+    public static com.google.protobuf.Parser<PowerSupplyComponentListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PowerSupplyComponentList> getParserForType() {
+    public com.google.protobuf.Parser<PowerSupplyComponentListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponentList getDefaultInstanceForType() {
+    public models.PcBuilder.PowerSupplyComponentListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ComputerBuildOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.ComputerBuild)
+  public interface ComputerBuildDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -13901,94 +13901,94 @@ public final class PcBuilder {
         getUsernameBytes();
 
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      * @return Whether the cpuList field is set.
      */
     boolean hasCpuList();
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      * @return The cpuList.
      */
-    models.PcBuilder.CpuComponentList getCpuList();
+    models.PcBuilder.CpuComponentListDto getCpuList();
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      */
-    models.PcBuilder.CpuComponentListOrBuilder getCpuListOrBuilder();
+    models.PcBuilder.CpuComponentListDtoOrBuilder getCpuListOrBuilder();
 
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      * @return Whether the motherboardList field is set.
      */
     boolean hasMotherboardList();
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      * @return The motherboardList.
      */
-    models.PcBuilder.MotherboardComponentList getMotherboardList();
+    models.PcBuilder.MotherboardComponentListDto getMotherboardList();
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      */
-    models.PcBuilder.MotherboardComponentListOrBuilder getMotherboardListOrBuilder();
+    models.PcBuilder.MotherboardComponentListDtoOrBuilder getMotherboardListOrBuilder();
 
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      * @return Whether the storageList field is set.
      */
     boolean hasStorageList();
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      * @return The storageList.
      */
-    models.PcBuilder.StorageComponentList getStorageList();
+    models.PcBuilder.StorageComponentListDto getStorageList();
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      */
-    models.PcBuilder.StorageComponentListOrBuilder getStorageListOrBuilder();
+    models.PcBuilder.StorageComponentListDtoOrBuilder getStorageListOrBuilder();
 
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      * @return Whether the memoryList field is set.
      */
     boolean hasMemoryList();
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      * @return The memoryList.
      */
-    models.PcBuilder.MemoryComponentList getMemoryList();
+    models.PcBuilder.MemoryComponentListDto getMemoryList();
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      */
-    models.PcBuilder.MemoryComponentListOrBuilder getMemoryListOrBuilder();
+    models.PcBuilder.MemoryComponentListDtoOrBuilder getMemoryListOrBuilder();
 
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      * @return Whether the videoCardList field is set.
      */
     boolean hasVideoCardList();
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      * @return The videoCardList.
      */
-    models.PcBuilder.VideoCardComponentList getVideoCardList();
+    models.PcBuilder.VideoCardComponentListDto getVideoCardList();
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      */
-    models.PcBuilder.VideoCardComponentListOrBuilder getVideoCardListOrBuilder();
+    models.PcBuilder.VideoCardComponentListDtoOrBuilder getVideoCardListOrBuilder();
 
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      * @return Whether the powerSupplyList field is set.
      */
     boolean hasPowerSupplyList();
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      * @return The powerSupplyList.
      */
-    models.PcBuilder.PowerSupplyComponentList getPowerSupplyList();
+    models.PcBuilder.PowerSupplyComponentListDto getPowerSupplyList();
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      */
-    models.PcBuilder.PowerSupplyComponentListOrBuilder getPowerSupplyListOrBuilder();
+    models.PcBuilder.PowerSupplyComponentListDtoOrBuilder getPowerSupplyListOrBuilder();
 
     /**
      * <code>int64 creationDate = 11;</code>
@@ -14003,18 +14003,18 @@ public final class PcBuilder {
     long getLastUpdateDate();
   }
   /**
-   * Protobuf type {@code models.ComputerBuild}
+   * Protobuf type {@code models.ComputerBuildDto}
    */
-  public static final class ComputerBuild extends
+  public static final class ComputerBuildDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.ComputerBuild)
-      ComputerBuildOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildDto)
+      ComputerBuildDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ComputerBuild.newBuilder() to construct.
-    private ComputerBuild(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ComputerBuildDto.newBuilder() to construct.
+    private ComputerBuildDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ComputerBuild() {
+    private ComputerBuildDto() {
       uuid_ = "";
       displayName_ = "";
       description_ = "";
@@ -14025,20 +14025,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ComputerBuild();
+      return new ComputerBuildDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_ComputerBuild_descriptor;
+      return models.PcBuilder.internal_static_models_ComputerBuildDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_ComputerBuild_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_ComputerBuildDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.ComputerBuild.class, models.PcBuilder.ComputerBuild.Builder.class);
+              models.PcBuilder.ComputerBuildDto.class, models.PcBuilder.ComputerBuildDto.Builder.class);
     }
 
     private int bitField0_;
@@ -14199,9 +14199,9 @@ public final class PcBuilder {
     }
 
     public static final int CPULIST_FIELD_NUMBER = 5;
-    private models.PcBuilder.CpuComponentList cpuList_;
+    private models.PcBuilder.CpuComponentListDto cpuList_;
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      * @return Whether the cpuList field is set.
      */
     @java.lang.Override
@@ -14209,25 +14209,25 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      * @return The cpuList.
      */
     @java.lang.Override
-    public models.PcBuilder.CpuComponentList getCpuList() {
-      return cpuList_ == null ? models.PcBuilder.CpuComponentList.getDefaultInstance() : cpuList_;
+    public models.PcBuilder.CpuComponentListDto getCpuList() {
+      return cpuList_ == null ? models.PcBuilder.CpuComponentListDto.getDefaultInstance() : cpuList_;
     }
     /**
-     * <code>.models.CpuComponentList cpuList = 5;</code>
+     * <code>.models.CpuComponentListDto cpuList = 5;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.CpuComponentListOrBuilder getCpuListOrBuilder() {
-      return cpuList_ == null ? models.PcBuilder.CpuComponentList.getDefaultInstance() : cpuList_;
+    public models.PcBuilder.CpuComponentListDtoOrBuilder getCpuListOrBuilder() {
+      return cpuList_ == null ? models.PcBuilder.CpuComponentListDto.getDefaultInstance() : cpuList_;
     }
 
     public static final int MOTHERBOARDLIST_FIELD_NUMBER = 6;
-    private models.PcBuilder.MotherboardComponentList motherboardList_;
+    private models.PcBuilder.MotherboardComponentListDto motherboardList_;
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      * @return Whether the motherboardList field is set.
      */
     @java.lang.Override
@@ -14235,25 +14235,25 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      * @return The motherboardList.
      */
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponentList getMotherboardList() {
-      return motherboardList_ == null ? models.PcBuilder.MotherboardComponentList.getDefaultInstance() : motherboardList_;
+    public models.PcBuilder.MotherboardComponentListDto getMotherboardList() {
+      return motherboardList_ == null ? models.PcBuilder.MotherboardComponentListDto.getDefaultInstance() : motherboardList_;
     }
     /**
-     * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+     * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MotherboardComponentListOrBuilder getMotherboardListOrBuilder() {
-      return motherboardList_ == null ? models.PcBuilder.MotherboardComponentList.getDefaultInstance() : motherboardList_;
+    public models.PcBuilder.MotherboardComponentListDtoOrBuilder getMotherboardListOrBuilder() {
+      return motherboardList_ == null ? models.PcBuilder.MotherboardComponentListDto.getDefaultInstance() : motherboardList_;
     }
 
     public static final int STORAGELIST_FIELD_NUMBER = 7;
-    private models.PcBuilder.StorageComponentList storageList_;
+    private models.PcBuilder.StorageComponentListDto storageList_;
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      * @return Whether the storageList field is set.
      */
     @java.lang.Override
@@ -14261,25 +14261,25 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      * @return The storageList.
      */
     @java.lang.Override
-    public models.PcBuilder.StorageComponentList getStorageList() {
-      return storageList_ == null ? models.PcBuilder.StorageComponentList.getDefaultInstance() : storageList_;
+    public models.PcBuilder.StorageComponentListDto getStorageList() {
+      return storageList_ == null ? models.PcBuilder.StorageComponentListDto.getDefaultInstance() : storageList_;
     }
     /**
-     * <code>.models.StorageComponentList storageList = 7;</code>
+     * <code>.models.StorageComponentListDto storageList = 7;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.StorageComponentListOrBuilder getStorageListOrBuilder() {
-      return storageList_ == null ? models.PcBuilder.StorageComponentList.getDefaultInstance() : storageList_;
+    public models.PcBuilder.StorageComponentListDtoOrBuilder getStorageListOrBuilder() {
+      return storageList_ == null ? models.PcBuilder.StorageComponentListDto.getDefaultInstance() : storageList_;
     }
 
     public static final int MEMORYLIST_FIELD_NUMBER = 8;
-    private models.PcBuilder.MemoryComponentList memoryList_;
+    private models.PcBuilder.MemoryComponentListDto memoryList_;
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      * @return Whether the memoryList field is set.
      */
     @java.lang.Override
@@ -14287,25 +14287,25 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      * @return The memoryList.
      */
     @java.lang.Override
-    public models.PcBuilder.MemoryComponentList getMemoryList() {
-      return memoryList_ == null ? models.PcBuilder.MemoryComponentList.getDefaultInstance() : memoryList_;
+    public models.PcBuilder.MemoryComponentListDto getMemoryList() {
+      return memoryList_ == null ? models.PcBuilder.MemoryComponentListDto.getDefaultInstance() : memoryList_;
     }
     /**
-     * <code>.models.MemoryComponentList memoryList = 8;</code>
+     * <code>.models.MemoryComponentListDto memoryList = 8;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.MemoryComponentListOrBuilder getMemoryListOrBuilder() {
-      return memoryList_ == null ? models.PcBuilder.MemoryComponentList.getDefaultInstance() : memoryList_;
+    public models.PcBuilder.MemoryComponentListDtoOrBuilder getMemoryListOrBuilder() {
+      return memoryList_ == null ? models.PcBuilder.MemoryComponentListDto.getDefaultInstance() : memoryList_;
     }
 
     public static final int VIDEOCARDLIST_FIELD_NUMBER = 9;
-    private models.PcBuilder.VideoCardComponentList videoCardList_;
+    private models.PcBuilder.VideoCardComponentListDto videoCardList_;
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      * @return Whether the videoCardList field is set.
      */
     @java.lang.Override
@@ -14313,25 +14313,25 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      * @return The videoCardList.
      */
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponentList getVideoCardList() {
-      return videoCardList_ == null ? models.PcBuilder.VideoCardComponentList.getDefaultInstance() : videoCardList_;
+    public models.PcBuilder.VideoCardComponentListDto getVideoCardList() {
+      return videoCardList_ == null ? models.PcBuilder.VideoCardComponentListDto.getDefaultInstance() : videoCardList_;
     }
     /**
-     * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+     * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.VideoCardComponentListOrBuilder getVideoCardListOrBuilder() {
-      return videoCardList_ == null ? models.PcBuilder.VideoCardComponentList.getDefaultInstance() : videoCardList_;
+    public models.PcBuilder.VideoCardComponentListDtoOrBuilder getVideoCardListOrBuilder() {
+      return videoCardList_ == null ? models.PcBuilder.VideoCardComponentListDto.getDefaultInstance() : videoCardList_;
     }
 
     public static final int POWERSUPPLYLIST_FIELD_NUMBER = 10;
-    private models.PcBuilder.PowerSupplyComponentList powerSupplyList_;
+    private models.PcBuilder.PowerSupplyComponentListDto powerSupplyList_;
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      * @return Whether the powerSupplyList field is set.
      */
     @java.lang.Override
@@ -14339,19 +14339,19 @@ public final class PcBuilder {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      * @return The powerSupplyList.
      */
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponentList getPowerSupplyList() {
-      return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentList.getDefaultInstance() : powerSupplyList_;
+    public models.PcBuilder.PowerSupplyComponentListDto getPowerSupplyList() {
+      return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance() : powerSupplyList_;
     }
     /**
-     * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+     * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.PowerSupplyComponentListOrBuilder getPowerSupplyListOrBuilder() {
-      return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentList.getDefaultInstance() : powerSupplyList_;
+    public models.PcBuilder.PowerSupplyComponentListDtoOrBuilder getPowerSupplyListOrBuilder() {
+      return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance() : powerSupplyList_;
     }
 
     public static final int CREATIONDATE_FIELD_NUMBER = 11;
@@ -14489,10 +14489,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.ComputerBuild)) {
+      if (!(obj instanceof models.PcBuilder.ComputerBuildDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.ComputerBuild other = (models.PcBuilder.ComputerBuild) obj;
+      models.PcBuilder.ComputerBuildDto other = (models.PcBuilder.ComputerBuildDto) obj;
 
       if (!getUuid()
           .equals(other.getUuid())) return false;
@@ -14590,44 +14590,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(byte[] data)
+    public static models.PcBuilder.ComputerBuildDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14635,26 +14635,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.ComputerBuild parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.ComputerBuild parseDelimitedFrom(
+    public static models.PcBuilder.ComputerBuildDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuild parseFrom(
+    public static models.PcBuilder.ComputerBuildDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14667,7 +14667,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.ComputerBuild prototype) {
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -14683,26 +14683,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.ComputerBuild}
+     * Protobuf type {@code models.ComputerBuildDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.ComputerBuild)
-        models.PcBuilder.ComputerBuildOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildDto)
+        models.PcBuilder.ComputerBuildDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_ComputerBuild_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_ComputerBuild_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_ComputerBuildDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.ComputerBuild.class, models.PcBuilder.ComputerBuild.Builder.class);
+                models.PcBuilder.ComputerBuildDto.class, models.PcBuilder.ComputerBuildDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.ComputerBuild.newBuilder()
+      // Construct using models.PcBuilder.ComputerBuildDto.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14769,17 +14769,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_ComputerBuild_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuild getDefaultInstanceForType() {
-        return models.PcBuilder.ComputerBuild.getDefaultInstance();
+      public models.PcBuilder.ComputerBuildDto getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuild build() {
-        models.PcBuilder.ComputerBuild result = buildPartial();
+      public models.PcBuilder.ComputerBuildDto build() {
+        models.PcBuilder.ComputerBuildDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -14787,14 +14787,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuild buildPartial() {
-        models.PcBuilder.ComputerBuild result = new models.PcBuilder.ComputerBuild(this);
+      public models.PcBuilder.ComputerBuildDto buildPartial() {
+        models.PcBuilder.ComputerBuildDto result = new models.PcBuilder.ComputerBuildDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.ComputerBuild result) {
+      private void buildPartial0(models.PcBuilder.ComputerBuildDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uuid_ = uuid_;
@@ -14888,16 +14888,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.ComputerBuild) {
-          return mergeFrom((models.PcBuilder.ComputerBuild)other);
+        if (other instanceof models.PcBuilder.ComputerBuildDto) {
+          return mergeFrom((models.PcBuilder.ComputerBuildDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.ComputerBuild other) {
-        if (other == models.PcBuilder.ComputerBuild.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildDto other) {
+        if (other == models.PcBuilder.ComputerBuildDto.getDefaultInstance()) return this;
         if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
@@ -15345,31 +15345,31 @@ public final class PcBuilder {
         return this;
       }
 
-      private models.PcBuilder.CpuComponentList cpuList_;
+      private models.PcBuilder.CpuComponentListDto cpuList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.CpuComponentList, models.PcBuilder.CpuComponentList.Builder, models.PcBuilder.CpuComponentListOrBuilder> cpuListBuilder_;
+          models.PcBuilder.CpuComponentListDto, models.PcBuilder.CpuComponentListDto.Builder, models.PcBuilder.CpuComponentListDtoOrBuilder> cpuListBuilder_;
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        * @return Whether the cpuList field is set.
        */
       public boolean hasCpuList() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        * @return The cpuList.
        */
-      public models.PcBuilder.CpuComponentList getCpuList() {
+      public models.PcBuilder.CpuComponentListDto getCpuList() {
         if (cpuListBuilder_ == null) {
-          return cpuList_ == null ? models.PcBuilder.CpuComponentList.getDefaultInstance() : cpuList_;
+          return cpuList_ == null ? models.PcBuilder.CpuComponentListDto.getDefaultInstance() : cpuList_;
         } else {
           return cpuListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
-      public Builder setCpuList(models.PcBuilder.CpuComponentList value) {
+      public Builder setCpuList(models.PcBuilder.CpuComponentListDto value) {
         if (cpuListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15383,10 +15383,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
       public Builder setCpuList(
-          models.PcBuilder.CpuComponentList.Builder builderForValue) {
+          models.PcBuilder.CpuComponentListDto.Builder builderForValue) {
         if (cpuListBuilder_ == null) {
           cpuList_ = builderForValue.build();
         } else {
@@ -15397,13 +15397,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
-      public Builder mergeCpuList(models.PcBuilder.CpuComponentList value) {
+      public Builder mergeCpuList(models.PcBuilder.CpuComponentListDto value) {
         if (cpuListBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0) &&
             cpuList_ != null &&
-            cpuList_ != models.PcBuilder.CpuComponentList.getDefaultInstance()) {
+            cpuList_ != models.PcBuilder.CpuComponentListDto.getDefaultInstance()) {
             getCpuListBuilder().mergeFrom(value);
           } else {
             cpuList_ = value;
@@ -15418,7 +15418,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
       public Builder clearCpuList() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -15431,33 +15431,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
-      public models.PcBuilder.CpuComponentList.Builder getCpuListBuilder() {
+      public models.PcBuilder.CpuComponentListDto.Builder getCpuListBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
         return getCpuListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
-      public models.PcBuilder.CpuComponentListOrBuilder getCpuListOrBuilder() {
+      public models.PcBuilder.CpuComponentListDtoOrBuilder getCpuListOrBuilder() {
         if (cpuListBuilder_ != null) {
           return cpuListBuilder_.getMessageOrBuilder();
         } else {
           return cpuList_ == null ?
-              models.PcBuilder.CpuComponentList.getDefaultInstance() : cpuList_;
+              models.PcBuilder.CpuComponentListDto.getDefaultInstance() : cpuList_;
         }
       }
       /**
-       * <code>.models.CpuComponentList cpuList = 5;</code>
+       * <code>.models.CpuComponentListDto cpuList = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.CpuComponentList, models.PcBuilder.CpuComponentList.Builder, models.PcBuilder.CpuComponentListOrBuilder> 
+          models.PcBuilder.CpuComponentListDto, models.PcBuilder.CpuComponentListDto.Builder, models.PcBuilder.CpuComponentListDtoOrBuilder> 
           getCpuListFieldBuilder() {
         if (cpuListBuilder_ == null) {
           cpuListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.CpuComponentList, models.PcBuilder.CpuComponentList.Builder, models.PcBuilder.CpuComponentListOrBuilder>(
+              models.PcBuilder.CpuComponentListDto, models.PcBuilder.CpuComponentListDto.Builder, models.PcBuilder.CpuComponentListDtoOrBuilder>(
                   getCpuList(),
                   getParentForChildren(),
                   isClean());
@@ -15466,31 +15466,31 @@ public final class PcBuilder {
         return cpuListBuilder_;
       }
 
-      private models.PcBuilder.MotherboardComponentList motherboardList_;
+      private models.PcBuilder.MotherboardComponentListDto motherboardList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.MotherboardComponentList, models.PcBuilder.MotherboardComponentList.Builder, models.PcBuilder.MotherboardComponentListOrBuilder> motherboardListBuilder_;
+          models.PcBuilder.MotherboardComponentListDto, models.PcBuilder.MotherboardComponentListDto.Builder, models.PcBuilder.MotherboardComponentListDtoOrBuilder> motherboardListBuilder_;
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        * @return Whether the motherboardList field is set.
        */
       public boolean hasMotherboardList() {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        * @return The motherboardList.
        */
-      public models.PcBuilder.MotherboardComponentList getMotherboardList() {
+      public models.PcBuilder.MotherboardComponentListDto getMotherboardList() {
         if (motherboardListBuilder_ == null) {
-          return motherboardList_ == null ? models.PcBuilder.MotherboardComponentList.getDefaultInstance() : motherboardList_;
+          return motherboardList_ == null ? models.PcBuilder.MotherboardComponentListDto.getDefaultInstance() : motherboardList_;
         } else {
           return motherboardListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
-      public Builder setMotherboardList(models.PcBuilder.MotherboardComponentList value) {
+      public Builder setMotherboardList(models.PcBuilder.MotherboardComponentListDto value) {
         if (motherboardListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15504,10 +15504,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
       public Builder setMotherboardList(
-          models.PcBuilder.MotherboardComponentList.Builder builderForValue) {
+          models.PcBuilder.MotherboardComponentListDto.Builder builderForValue) {
         if (motherboardListBuilder_ == null) {
           motherboardList_ = builderForValue.build();
         } else {
@@ -15518,13 +15518,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
-      public Builder mergeMotherboardList(models.PcBuilder.MotherboardComponentList value) {
+      public Builder mergeMotherboardList(models.PcBuilder.MotherboardComponentListDto value) {
         if (motherboardListBuilder_ == null) {
           if (((bitField0_ & 0x00000020) != 0) &&
             motherboardList_ != null &&
-            motherboardList_ != models.PcBuilder.MotherboardComponentList.getDefaultInstance()) {
+            motherboardList_ != models.PcBuilder.MotherboardComponentListDto.getDefaultInstance()) {
             getMotherboardListBuilder().mergeFrom(value);
           } else {
             motherboardList_ = value;
@@ -15539,7 +15539,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
       public Builder clearMotherboardList() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -15552,33 +15552,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
-      public models.PcBuilder.MotherboardComponentList.Builder getMotherboardListBuilder() {
+      public models.PcBuilder.MotherboardComponentListDto.Builder getMotherboardListBuilder() {
         bitField0_ |= 0x00000020;
         onChanged();
         return getMotherboardListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
-      public models.PcBuilder.MotherboardComponentListOrBuilder getMotherboardListOrBuilder() {
+      public models.PcBuilder.MotherboardComponentListDtoOrBuilder getMotherboardListOrBuilder() {
         if (motherboardListBuilder_ != null) {
           return motherboardListBuilder_.getMessageOrBuilder();
         } else {
           return motherboardList_ == null ?
-              models.PcBuilder.MotherboardComponentList.getDefaultInstance() : motherboardList_;
+              models.PcBuilder.MotherboardComponentListDto.getDefaultInstance() : motherboardList_;
         }
       }
       /**
-       * <code>.models.MotherboardComponentList motherboardList = 6;</code>
+       * <code>.models.MotherboardComponentListDto motherboardList = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.MotherboardComponentList, models.PcBuilder.MotherboardComponentList.Builder, models.PcBuilder.MotherboardComponentListOrBuilder> 
+          models.PcBuilder.MotherboardComponentListDto, models.PcBuilder.MotherboardComponentListDto.Builder, models.PcBuilder.MotherboardComponentListDtoOrBuilder> 
           getMotherboardListFieldBuilder() {
         if (motherboardListBuilder_ == null) {
           motherboardListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.MotherboardComponentList, models.PcBuilder.MotherboardComponentList.Builder, models.PcBuilder.MotherboardComponentListOrBuilder>(
+              models.PcBuilder.MotherboardComponentListDto, models.PcBuilder.MotherboardComponentListDto.Builder, models.PcBuilder.MotherboardComponentListDtoOrBuilder>(
                   getMotherboardList(),
                   getParentForChildren(),
                   isClean());
@@ -15587,31 +15587,31 @@ public final class PcBuilder {
         return motherboardListBuilder_;
       }
 
-      private models.PcBuilder.StorageComponentList storageList_;
+      private models.PcBuilder.StorageComponentListDto storageList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.StorageComponentList, models.PcBuilder.StorageComponentList.Builder, models.PcBuilder.StorageComponentListOrBuilder> storageListBuilder_;
+          models.PcBuilder.StorageComponentListDto, models.PcBuilder.StorageComponentListDto.Builder, models.PcBuilder.StorageComponentListDtoOrBuilder> storageListBuilder_;
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        * @return Whether the storageList field is set.
        */
       public boolean hasStorageList() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        * @return The storageList.
        */
-      public models.PcBuilder.StorageComponentList getStorageList() {
+      public models.PcBuilder.StorageComponentListDto getStorageList() {
         if (storageListBuilder_ == null) {
-          return storageList_ == null ? models.PcBuilder.StorageComponentList.getDefaultInstance() : storageList_;
+          return storageList_ == null ? models.PcBuilder.StorageComponentListDto.getDefaultInstance() : storageList_;
         } else {
           return storageListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
-      public Builder setStorageList(models.PcBuilder.StorageComponentList value) {
+      public Builder setStorageList(models.PcBuilder.StorageComponentListDto value) {
         if (storageListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15625,10 +15625,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
       public Builder setStorageList(
-          models.PcBuilder.StorageComponentList.Builder builderForValue) {
+          models.PcBuilder.StorageComponentListDto.Builder builderForValue) {
         if (storageListBuilder_ == null) {
           storageList_ = builderForValue.build();
         } else {
@@ -15639,13 +15639,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
-      public Builder mergeStorageList(models.PcBuilder.StorageComponentList value) {
+      public Builder mergeStorageList(models.PcBuilder.StorageComponentListDto value) {
         if (storageListBuilder_ == null) {
           if (((bitField0_ & 0x00000040) != 0) &&
             storageList_ != null &&
-            storageList_ != models.PcBuilder.StorageComponentList.getDefaultInstance()) {
+            storageList_ != models.PcBuilder.StorageComponentListDto.getDefaultInstance()) {
             getStorageListBuilder().mergeFrom(value);
           } else {
             storageList_ = value;
@@ -15660,7 +15660,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
       public Builder clearStorageList() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -15673,33 +15673,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
-      public models.PcBuilder.StorageComponentList.Builder getStorageListBuilder() {
+      public models.PcBuilder.StorageComponentListDto.Builder getStorageListBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
         return getStorageListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
-      public models.PcBuilder.StorageComponentListOrBuilder getStorageListOrBuilder() {
+      public models.PcBuilder.StorageComponentListDtoOrBuilder getStorageListOrBuilder() {
         if (storageListBuilder_ != null) {
           return storageListBuilder_.getMessageOrBuilder();
         } else {
           return storageList_ == null ?
-              models.PcBuilder.StorageComponentList.getDefaultInstance() : storageList_;
+              models.PcBuilder.StorageComponentListDto.getDefaultInstance() : storageList_;
         }
       }
       /**
-       * <code>.models.StorageComponentList storageList = 7;</code>
+       * <code>.models.StorageComponentListDto storageList = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.StorageComponentList, models.PcBuilder.StorageComponentList.Builder, models.PcBuilder.StorageComponentListOrBuilder> 
+          models.PcBuilder.StorageComponentListDto, models.PcBuilder.StorageComponentListDto.Builder, models.PcBuilder.StorageComponentListDtoOrBuilder> 
           getStorageListFieldBuilder() {
         if (storageListBuilder_ == null) {
           storageListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.StorageComponentList, models.PcBuilder.StorageComponentList.Builder, models.PcBuilder.StorageComponentListOrBuilder>(
+              models.PcBuilder.StorageComponentListDto, models.PcBuilder.StorageComponentListDto.Builder, models.PcBuilder.StorageComponentListDtoOrBuilder>(
                   getStorageList(),
                   getParentForChildren(),
                   isClean());
@@ -15708,31 +15708,31 @@ public final class PcBuilder {
         return storageListBuilder_;
       }
 
-      private models.PcBuilder.MemoryComponentList memoryList_;
+      private models.PcBuilder.MemoryComponentListDto memoryList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.MemoryComponentList, models.PcBuilder.MemoryComponentList.Builder, models.PcBuilder.MemoryComponentListOrBuilder> memoryListBuilder_;
+          models.PcBuilder.MemoryComponentListDto, models.PcBuilder.MemoryComponentListDto.Builder, models.PcBuilder.MemoryComponentListDtoOrBuilder> memoryListBuilder_;
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        * @return Whether the memoryList field is set.
        */
       public boolean hasMemoryList() {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        * @return The memoryList.
        */
-      public models.PcBuilder.MemoryComponentList getMemoryList() {
+      public models.PcBuilder.MemoryComponentListDto getMemoryList() {
         if (memoryListBuilder_ == null) {
-          return memoryList_ == null ? models.PcBuilder.MemoryComponentList.getDefaultInstance() : memoryList_;
+          return memoryList_ == null ? models.PcBuilder.MemoryComponentListDto.getDefaultInstance() : memoryList_;
         } else {
           return memoryListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
-      public Builder setMemoryList(models.PcBuilder.MemoryComponentList value) {
+      public Builder setMemoryList(models.PcBuilder.MemoryComponentListDto value) {
         if (memoryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15746,10 +15746,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
       public Builder setMemoryList(
-          models.PcBuilder.MemoryComponentList.Builder builderForValue) {
+          models.PcBuilder.MemoryComponentListDto.Builder builderForValue) {
         if (memoryListBuilder_ == null) {
           memoryList_ = builderForValue.build();
         } else {
@@ -15760,13 +15760,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
-      public Builder mergeMemoryList(models.PcBuilder.MemoryComponentList value) {
+      public Builder mergeMemoryList(models.PcBuilder.MemoryComponentListDto value) {
         if (memoryListBuilder_ == null) {
           if (((bitField0_ & 0x00000080) != 0) &&
             memoryList_ != null &&
-            memoryList_ != models.PcBuilder.MemoryComponentList.getDefaultInstance()) {
+            memoryList_ != models.PcBuilder.MemoryComponentListDto.getDefaultInstance()) {
             getMemoryListBuilder().mergeFrom(value);
           } else {
             memoryList_ = value;
@@ -15781,7 +15781,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
       public Builder clearMemoryList() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -15794,33 +15794,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
-      public models.PcBuilder.MemoryComponentList.Builder getMemoryListBuilder() {
+      public models.PcBuilder.MemoryComponentListDto.Builder getMemoryListBuilder() {
         bitField0_ |= 0x00000080;
         onChanged();
         return getMemoryListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
-      public models.PcBuilder.MemoryComponentListOrBuilder getMemoryListOrBuilder() {
+      public models.PcBuilder.MemoryComponentListDtoOrBuilder getMemoryListOrBuilder() {
         if (memoryListBuilder_ != null) {
           return memoryListBuilder_.getMessageOrBuilder();
         } else {
           return memoryList_ == null ?
-              models.PcBuilder.MemoryComponentList.getDefaultInstance() : memoryList_;
+              models.PcBuilder.MemoryComponentListDto.getDefaultInstance() : memoryList_;
         }
       }
       /**
-       * <code>.models.MemoryComponentList memoryList = 8;</code>
+       * <code>.models.MemoryComponentListDto memoryList = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.MemoryComponentList, models.PcBuilder.MemoryComponentList.Builder, models.PcBuilder.MemoryComponentListOrBuilder> 
+          models.PcBuilder.MemoryComponentListDto, models.PcBuilder.MemoryComponentListDto.Builder, models.PcBuilder.MemoryComponentListDtoOrBuilder> 
           getMemoryListFieldBuilder() {
         if (memoryListBuilder_ == null) {
           memoryListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.MemoryComponentList, models.PcBuilder.MemoryComponentList.Builder, models.PcBuilder.MemoryComponentListOrBuilder>(
+              models.PcBuilder.MemoryComponentListDto, models.PcBuilder.MemoryComponentListDto.Builder, models.PcBuilder.MemoryComponentListDtoOrBuilder>(
                   getMemoryList(),
                   getParentForChildren(),
                   isClean());
@@ -15829,31 +15829,31 @@ public final class PcBuilder {
         return memoryListBuilder_;
       }
 
-      private models.PcBuilder.VideoCardComponentList videoCardList_;
+      private models.PcBuilder.VideoCardComponentListDto videoCardList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.VideoCardComponentList, models.PcBuilder.VideoCardComponentList.Builder, models.PcBuilder.VideoCardComponentListOrBuilder> videoCardListBuilder_;
+          models.PcBuilder.VideoCardComponentListDto, models.PcBuilder.VideoCardComponentListDto.Builder, models.PcBuilder.VideoCardComponentListDtoOrBuilder> videoCardListBuilder_;
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        * @return Whether the videoCardList field is set.
        */
       public boolean hasVideoCardList() {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        * @return The videoCardList.
        */
-      public models.PcBuilder.VideoCardComponentList getVideoCardList() {
+      public models.PcBuilder.VideoCardComponentListDto getVideoCardList() {
         if (videoCardListBuilder_ == null) {
-          return videoCardList_ == null ? models.PcBuilder.VideoCardComponentList.getDefaultInstance() : videoCardList_;
+          return videoCardList_ == null ? models.PcBuilder.VideoCardComponentListDto.getDefaultInstance() : videoCardList_;
         } else {
           return videoCardListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
-      public Builder setVideoCardList(models.PcBuilder.VideoCardComponentList value) {
+      public Builder setVideoCardList(models.PcBuilder.VideoCardComponentListDto value) {
         if (videoCardListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15867,10 +15867,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
       public Builder setVideoCardList(
-          models.PcBuilder.VideoCardComponentList.Builder builderForValue) {
+          models.PcBuilder.VideoCardComponentListDto.Builder builderForValue) {
         if (videoCardListBuilder_ == null) {
           videoCardList_ = builderForValue.build();
         } else {
@@ -15881,13 +15881,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
-      public Builder mergeVideoCardList(models.PcBuilder.VideoCardComponentList value) {
+      public Builder mergeVideoCardList(models.PcBuilder.VideoCardComponentListDto value) {
         if (videoCardListBuilder_ == null) {
           if (((bitField0_ & 0x00000100) != 0) &&
             videoCardList_ != null &&
-            videoCardList_ != models.PcBuilder.VideoCardComponentList.getDefaultInstance()) {
+            videoCardList_ != models.PcBuilder.VideoCardComponentListDto.getDefaultInstance()) {
             getVideoCardListBuilder().mergeFrom(value);
           } else {
             videoCardList_ = value;
@@ -15902,7 +15902,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
       public Builder clearVideoCardList() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -15915,33 +15915,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
-      public models.PcBuilder.VideoCardComponentList.Builder getVideoCardListBuilder() {
+      public models.PcBuilder.VideoCardComponentListDto.Builder getVideoCardListBuilder() {
         bitField0_ |= 0x00000100;
         onChanged();
         return getVideoCardListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
-      public models.PcBuilder.VideoCardComponentListOrBuilder getVideoCardListOrBuilder() {
+      public models.PcBuilder.VideoCardComponentListDtoOrBuilder getVideoCardListOrBuilder() {
         if (videoCardListBuilder_ != null) {
           return videoCardListBuilder_.getMessageOrBuilder();
         } else {
           return videoCardList_ == null ?
-              models.PcBuilder.VideoCardComponentList.getDefaultInstance() : videoCardList_;
+              models.PcBuilder.VideoCardComponentListDto.getDefaultInstance() : videoCardList_;
         }
       }
       /**
-       * <code>.models.VideoCardComponentList videoCardList = 9;</code>
+       * <code>.models.VideoCardComponentListDto videoCardList = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.VideoCardComponentList, models.PcBuilder.VideoCardComponentList.Builder, models.PcBuilder.VideoCardComponentListOrBuilder> 
+          models.PcBuilder.VideoCardComponentListDto, models.PcBuilder.VideoCardComponentListDto.Builder, models.PcBuilder.VideoCardComponentListDtoOrBuilder> 
           getVideoCardListFieldBuilder() {
         if (videoCardListBuilder_ == null) {
           videoCardListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.VideoCardComponentList, models.PcBuilder.VideoCardComponentList.Builder, models.PcBuilder.VideoCardComponentListOrBuilder>(
+              models.PcBuilder.VideoCardComponentListDto, models.PcBuilder.VideoCardComponentListDto.Builder, models.PcBuilder.VideoCardComponentListDtoOrBuilder>(
                   getVideoCardList(),
                   getParentForChildren(),
                   isClean());
@@ -15950,31 +15950,31 @@ public final class PcBuilder {
         return videoCardListBuilder_;
       }
 
-      private models.PcBuilder.PowerSupplyComponentList powerSupplyList_;
+      private models.PcBuilder.PowerSupplyComponentListDto powerSupplyList_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.PowerSupplyComponentList, models.PcBuilder.PowerSupplyComponentList.Builder, models.PcBuilder.PowerSupplyComponentListOrBuilder> powerSupplyListBuilder_;
+          models.PcBuilder.PowerSupplyComponentListDto, models.PcBuilder.PowerSupplyComponentListDto.Builder, models.PcBuilder.PowerSupplyComponentListDtoOrBuilder> powerSupplyListBuilder_;
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        * @return Whether the powerSupplyList field is set.
        */
       public boolean hasPowerSupplyList() {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        * @return The powerSupplyList.
        */
-      public models.PcBuilder.PowerSupplyComponentList getPowerSupplyList() {
+      public models.PcBuilder.PowerSupplyComponentListDto getPowerSupplyList() {
         if (powerSupplyListBuilder_ == null) {
-          return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentList.getDefaultInstance() : powerSupplyList_;
+          return powerSupplyList_ == null ? models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance() : powerSupplyList_;
         } else {
           return powerSupplyListBuilder_.getMessage();
         }
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
-      public Builder setPowerSupplyList(models.PcBuilder.PowerSupplyComponentList value) {
+      public Builder setPowerSupplyList(models.PcBuilder.PowerSupplyComponentListDto value) {
         if (powerSupplyListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -15988,10 +15988,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
       public Builder setPowerSupplyList(
-          models.PcBuilder.PowerSupplyComponentList.Builder builderForValue) {
+          models.PcBuilder.PowerSupplyComponentListDto.Builder builderForValue) {
         if (powerSupplyListBuilder_ == null) {
           powerSupplyList_ = builderForValue.build();
         } else {
@@ -16002,13 +16002,13 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
-      public Builder mergePowerSupplyList(models.PcBuilder.PowerSupplyComponentList value) {
+      public Builder mergePowerSupplyList(models.PcBuilder.PowerSupplyComponentListDto value) {
         if (powerSupplyListBuilder_ == null) {
           if (((bitField0_ & 0x00000200) != 0) &&
             powerSupplyList_ != null &&
-            powerSupplyList_ != models.PcBuilder.PowerSupplyComponentList.getDefaultInstance()) {
+            powerSupplyList_ != models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance()) {
             getPowerSupplyListBuilder().mergeFrom(value);
           } else {
             powerSupplyList_ = value;
@@ -16023,7 +16023,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
       public Builder clearPowerSupplyList() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -16036,33 +16036,33 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
-      public models.PcBuilder.PowerSupplyComponentList.Builder getPowerSupplyListBuilder() {
+      public models.PcBuilder.PowerSupplyComponentListDto.Builder getPowerSupplyListBuilder() {
         bitField0_ |= 0x00000200;
         onChanged();
         return getPowerSupplyListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
-      public models.PcBuilder.PowerSupplyComponentListOrBuilder getPowerSupplyListOrBuilder() {
+      public models.PcBuilder.PowerSupplyComponentListDtoOrBuilder getPowerSupplyListOrBuilder() {
         if (powerSupplyListBuilder_ != null) {
           return powerSupplyListBuilder_.getMessageOrBuilder();
         } else {
           return powerSupplyList_ == null ?
-              models.PcBuilder.PowerSupplyComponentList.getDefaultInstance() : powerSupplyList_;
+              models.PcBuilder.PowerSupplyComponentListDto.getDefaultInstance() : powerSupplyList_;
         }
       }
       /**
-       * <code>.models.PowerSupplyComponentList powerSupplyList = 10;</code>
+       * <code>.models.PowerSupplyComponentListDto powerSupplyList = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          models.PcBuilder.PowerSupplyComponentList, models.PcBuilder.PowerSupplyComponentList.Builder, models.PcBuilder.PowerSupplyComponentListOrBuilder> 
+          models.PcBuilder.PowerSupplyComponentListDto, models.PcBuilder.PowerSupplyComponentListDto.Builder, models.PcBuilder.PowerSupplyComponentListDtoOrBuilder> 
           getPowerSupplyListFieldBuilder() {
         if (powerSupplyListBuilder_ == null) {
           powerSupplyListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              models.PcBuilder.PowerSupplyComponentList, models.PcBuilder.PowerSupplyComponentList.Builder, models.PcBuilder.PowerSupplyComponentListOrBuilder>(
+              models.PcBuilder.PowerSupplyComponentListDto, models.PcBuilder.PowerSupplyComponentListDto.Builder, models.PcBuilder.PowerSupplyComponentListDtoOrBuilder>(
                   getPowerSupplyList(),
                   getParentForChildren(),
                   isClean());
@@ -16147,23 +16147,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.ComputerBuild)
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.ComputerBuild)
-    private static final models.PcBuilder.ComputerBuild DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildDto)
+    private static final models.PcBuilder.ComputerBuildDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuild();
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildDto();
     }
 
-    public static models.PcBuilder.ComputerBuild getDefaultInstance() {
+    public static models.PcBuilder.ComputerBuildDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ComputerBuild>
-        PARSER = new com.google.protobuf.AbstractParser<ComputerBuild>() {
+    private static final com.google.protobuf.Parser<ComputerBuildDto>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildDto>() {
       @java.lang.Override
-      public ComputerBuild parsePartialFrom(
+      public ComputerBuildDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16182,63 +16182,63 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<ComputerBuild> parser() {
+    public static com.google.protobuf.Parser<ComputerBuildDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ComputerBuild> getParserForType() {
+    public com.google.protobuf.Parser<ComputerBuildDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.ComputerBuild getDefaultInstanceForType() {
+    public models.PcBuilder.ComputerBuildDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ComputerBuildListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.ComputerBuildList)
+  public interface ComputerBuildListDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildListDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
-    java.util.List<models.PcBuilder.ComputerBuild> 
+    java.util.List<models.PcBuilder.ComputerBuildDto> 
         getComputerBuildsList();
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
-    models.PcBuilder.ComputerBuild getComputerBuilds(int index);
+    models.PcBuilder.ComputerBuildDto getComputerBuilds(int index);
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     int getComputerBuildsCount();
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
-    java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+    java.util.List<? extends models.PcBuilder.ComputerBuildDtoOrBuilder> 
         getComputerBuildsOrBuilderList();
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
-    models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+    models.PcBuilder.ComputerBuildDtoOrBuilder getComputerBuildsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code models.ComputerBuildList}
+   * Protobuf type {@code models.ComputerBuildListDto}
    */
-  public static final class ComputerBuildList extends
+  public static final class ComputerBuildListDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.ComputerBuildList)
-      ComputerBuildListOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildListDto)
+      ComputerBuildListDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ComputerBuildList.newBuilder() to construct.
-    private ComputerBuildList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ComputerBuildListDto.newBuilder() to construct.
+    private ComputerBuildListDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ComputerBuildList() {
+    private ComputerBuildListDto() {
       computerBuilds_ = java.util.Collections.emptyList();
     }
 
@@ -16246,59 +16246,59 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ComputerBuildList();
+      return new ComputerBuildListDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+      return models.PcBuilder.internal_static_models_ComputerBuildListDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_ComputerBuildList_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_ComputerBuildListDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.ComputerBuildList.class, models.PcBuilder.ComputerBuildList.Builder.class);
+              models.PcBuilder.ComputerBuildListDto.class, models.PcBuilder.ComputerBuildListDto.Builder.class);
     }
 
     public static final int COMPUTERBUILDS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<models.PcBuilder.ComputerBuild> computerBuilds_;
+    private java.util.List<models.PcBuilder.ComputerBuildDto> computerBuilds_;
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<models.PcBuilder.ComputerBuild> getComputerBuildsList() {
+    public java.util.List<models.PcBuilder.ComputerBuildDto> getComputerBuildsList() {
       return computerBuilds_;
     }
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+    public java.util.List<? extends models.PcBuilder.ComputerBuildDtoOrBuilder> 
         getComputerBuildsOrBuilderList() {
       return computerBuilds_;
     }
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     @java.lang.Override
     public int getComputerBuildsCount() {
       return computerBuilds_.size();
     }
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.ComputerBuild getComputerBuilds(int index) {
+    public models.PcBuilder.ComputerBuildDto getComputerBuilds(int index) {
       return computerBuilds_.get(index);
     }
     /**
-     * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+     * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
      */
     @java.lang.Override
-    public models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+    public models.PcBuilder.ComputerBuildDtoOrBuilder getComputerBuildsOrBuilder(
         int index) {
       return computerBuilds_.get(index);
     }
@@ -16343,10 +16343,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.ComputerBuildList)) {
+      if (!(obj instanceof models.PcBuilder.ComputerBuildListDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.ComputerBuildList other = (models.PcBuilder.ComputerBuildList) obj;
+      models.PcBuilder.ComputerBuildListDto other = (models.PcBuilder.ComputerBuildListDto) obj;
 
       if (!getComputerBuildsList()
           .equals(other.getComputerBuildsList())) return false;
@@ -16370,44 +16370,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(byte[] data)
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16415,26 +16415,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.ComputerBuildList parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildListDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.ComputerBuildList parseDelimitedFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildList parseFrom(
+    public static models.PcBuilder.ComputerBuildListDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16447,7 +16447,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.ComputerBuildList prototype) {
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildListDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16463,26 +16463,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.ComputerBuildList}
+     * Protobuf type {@code models.ComputerBuildListDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.ComputerBuildList)
-        models.PcBuilder.ComputerBuildListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildListDto)
+        models.PcBuilder.ComputerBuildListDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildListDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_ComputerBuildList_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_ComputerBuildListDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.ComputerBuildList.class, models.PcBuilder.ComputerBuildList.Builder.class);
+                models.PcBuilder.ComputerBuildListDto.class, models.PcBuilder.ComputerBuildListDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.ComputerBuildList.newBuilder()
+      // Construct using models.PcBuilder.ComputerBuildListDto.newBuilder()
       private Builder() {
 
       }
@@ -16509,17 +16509,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_ComputerBuildList_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildListDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildList getDefaultInstanceForType() {
-        return models.PcBuilder.ComputerBuildList.getDefaultInstance();
+      public models.PcBuilder.ComputerBuildListDto getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildListDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildList build() {
-        models.PcBuilder.ComputerBuildList result = buildPartial();
+      public models.PcBuilder.ComputerBuildListDto build() {
+        models.PcBuilder.ComputerBuildListDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16527,15 +16527,15 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildList buildPartial() {
-        models.PcBuilder.ComputerBuildList result = new models.PcBuilder.ComputerBuildList(this);
+      public models.PcBuilder.ComputerBuildListDto buildPartial() {
+        models.PcBuilder.ComputerBuildListDto result = new models.PcBuilder.ComputerBuildListDto(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(models.PcBuilder.ComputerBuildList result) {
+      private void buildPartialRepeatedFields(models.PcBuilder.ComputerBuildListDto result) {
         if (computerBuildsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             computerBuilds_ = java.util.Collections.unmodifiableList(computerBuilds_);
@@ -16547,7 +16547,7 @@ public final class PcBuilder {
         }
       }
 
-      private void buildPartial0(models.PcBuilder.ComputerBuildList result) {
+      private void buildPartial0(models.PcBuilder.ComputerBuildListDto result) {
         int from_bitField0_ = bitField0_;
       }
 
@@ -16585,16 +16585,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.ComputerBuildList) {
-          return mergeFrom((models.PcBuilder.ComputerBuildList)other);
+        if (other instanceof models.PcBuilder.ComputerBuildListDto) {
+          return mergeFrom((models.PcBuilder.ComputerBuildListDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.ComputerBuildList other) {
-        if (other == models.PcBuilder.ComputerBuildList.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildListDto other) {
+        if (other == models.PcBuilder.ComputerBuildListDto.getDefaultInstance()) return this;
         if (computerBuildsBuilder_ == null) {
           if (!other.computerBuilds_.isEmpty()) {
             if (computerBuilds_.isEmpty()) {
@@ -16648,9 +16648,9 @@ public final class PcBuilder {
                 done = true;
                 break;
               case 10: {
-                models.PcBuilder.ComputerBuild m =
+                models.PcBuilder.ComputerBuildDto m =
                     input.readMessage(
-                        models.PcBuilder.ComputerBuild.parser(),
+                        models.PcBuilder.ComputerBuildDto.parser(),
                         extensionRegistry);
                 if (computerBuildsBuilder_ == null) {
                   ensureComputerBuildsIsMutable();
@@ -16677,22 +16677,22 @@ public final class PcBuilder {
       }
       private int bitField0_;
 
-      private java.util.List<models.PcBuilder.ComputerBuild> computerBuilds_ =
+      private java.util.List<models.PcBuilder.ComputerBuildDto> computerBuilds_ =
         java.util.Collections.emptyList();
       private void ensureComputerBuildsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          computerBuilds_ = new java.util.ArrayList<models.PcBuilder.ComputerBuild>(computerBuilds_);
+          computerBuilds_ = new java.util.ArrayList<models.PcBuilder.ComputerBuildDto>(computerBuilds_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder> computerBuildsBuilder_;
+          models.PcBuilder.ComputerBuildDto, models.PcBuilder.ComputerBuildDto.Builder, models.PcBuilder.ComputerBuildDtoOrBuilder> computerBuildsBuilder_;
 
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public java.util.List<models.PcBuilder.ComputerBuild> getComputerBuildsList() {
+      public java.util.List<models.PcBuilder.ComputerBuildDto> getComputerBuildsList() {
         if (computerBuildsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(computerBuilds_);
         } else {
@@ -16700,7 +16700,7 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public int getComputerBuildsCount() {
         if (computerBuildsBuilder_ == null) {
@@ -16710,9 +16710,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public models.PcBuilder.ComputerBuild getComputerBuilds(int index) {
+      public models.PcBuilder.ComputerBuildDto getComputerBuilds(int index) {
         if (computerBuildsBuilder_ == null) {
           return computerBuilds_.get(index);
         } else {
@@ -16720,10 +16720,10 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder setComputerBuilds(
-          int index, models.PcBuilder.ComputerBuild value) {
+          int index, models.PcBuilder.ComputerBuildDto value) {
         if (computerBuildsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16737,10 +16737,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder setComputerBuilds(
-          int index, models.PcBuilder.ComputerBuild.Builder builderForValue) {
+          int index, models.PcBuilder.ComputerBuildDto.Builder builderForValue) {
         if (computerBuildsBuilder_ == null) {
           ensureComputerBuildsIsMutable();
           computerBuilds_.set(index, builderForValue.build());
@@ -16751,9 +16751,9 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public Builder addComputerBuilds(models.PcBuilder.ComputerBuild value) {
+      public Builder addComputerBuilds(models.PcBuilder.ComputerBuildDto value) {
         if (computerBuildsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16767,10 +16767,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder addComputerBuilds(
-          int index, models.PcBuilder.ComputerBuild value) {
+          int index, models.PcBuilder.ComputerBuildDto value) {
         if (computerBuildsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -16784,10 +16784,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder addComputerBuilds(
-          models.PcBuilder.ComputerBuild.Builder builderForValue) {
+          models.PcBuilder.ComputerBuildDto.Builder builderForValue) {
         if (computerBuildsBuilder_ == null) {
           ensureComputerBuildsIsMutable();
           computerBuilds_.add(builderForValue.build());
@@ -16798,10 +16798,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder addComputerBuilds(
-          int index, models.PcBuilder.ComputerBuild.Builder builderForValue) {
+          int index, models.PcBuilder.ComputerBuildDto.Builder builderForValue) {
         if (computerBuildsBuilder_ == null) {
           ensureComputerBuildsIsMutable();
           computerBuilds_.add(index, builderForValue.build());
@@ -16812,10 +16812,10 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder addAllComputerBuilds(
-          java.lang.Iterable<? extends models.PcBuilder.ComputerBuild> values) {
+          java.lang.Iterable<? extends models.PcBuilder.ComputerBuildDto> values) {
         if (computerBuildsBuilder_ == null) {
           ensureComputerBuildsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -16827,7 +16827,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder clearComputerBuilds() {
         if (computerBuildsBuilder_ == null) {
@@ -16840,7 +16840,7 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
       public Builder removeComputerBuilds(int index) {
         if (computerBuildsBuilder_ == null) {
@@ -16853,16 +16853,16 @@ public final class PcBuilder {
         return this;
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public models.PcBuilder.ComputerBuild.Builder getComputerBuildsBuilder(
+      public models.PcBuilder.ComputerBuildDto.Builder getComputerBuildsBuilder(
           int index) {
         return getComputerBuildsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public models.PcBuilder.ComputerBuildOrBuilder getComputerBuildsOrBuilder(
+      public models.PcBuilder.ComputerBuildDtoOrBuilder getComputerBuildsOrBuilder(
           int index) {
         if (computerBuildsBuilder_ == null) {
           return computerBuilds_.get(index);  } else {
@@ -16870,9 +16870,9 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public java.util.List<? extends models.PcBuilder.ComputerBuildOrBuilder> 
+      public java.util.List<? extends models.PcBuilder.ComputerBuildDtoOrBuilder> 
            getComputerBuildsOrBuilderList() {
         if (computerBuildsBuilder_ != null) {
           return computerBuildsBuilder_.getMessageOrBuilderList();
@@ -16881,33 +16881,33 @@ public final class PcBuilder {
         }
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public models.PcBuilder.ComputerBuild.Builder addComputerBuildsBuilder() {
+      public models.PcBuilder.ComputerBuildDto.Builder addComputerBuildsBuilder() {
         return getComputerBuildsFieldBuilder().addBuilder(
-            models.PcBuilder.ComputerBuild.getDefaultInstance());
+            models.PcBuilder.ComputerBuildDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public models.PcBuilder.ComputerBuild.Builder addComputerBuildsBuilder(
+      public models.PcBuilder.ComputerBuildDto.Builder addComputerBuildsBuilder(
           int index) {
         return getComputerBuildsFieldBuilder().addBuilder(
-            index, models.PcBuilder.ComputerBuild.getDefaultInstance());
+            index, models.PcBuilder.ComputerBuildDto.getDefaultInstance());
       }
       /**
-       * <code>repeated .models.ComputerBuild computerBuilds = 1;</code>
+       * <code>repeated .models.ComputerBuildDto computerBuilds = 1;</code>
        */
-      public java.util.List<models.PcBuilder.ComputerBuild.Builder> 
+      public java.util.List<models.PcBuilder.ComputerBuildDto.Builder> 
            getComputerBuildsBuilderList() {
         return getComputerBuildsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder> 
+          models.PcBuilder.ComputerBuildDto, models.PcBuilder.ComputerBuildDto.Builder, models.PcBuilder.ComputerBuildDtoOrBuilder> 
           getComputerBuildsFieldBuilder() {
         if (computerBuildsBuilder_ == null) {
           computerBuildsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              models.PcBuilder.ComputerBuild, models.PcBuilder.ComputerBuild.Builder, models.PcBuilder.ComputerBuildOrBuilder>(
+              models.PcBuilder.ComputerBuildDto, models.PcBuilder.ComputerBuildDto.Builder, models.PcBuilder.ComputerBuildDtoOrBuilder>(
                   computerBuilds_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -16929,23 +16929,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.ComputerBuildList)
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildListDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.ComputerBuildList)
-    private static final models.PcBuilder.ComputerBuildList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildListDto)
+    private static final models.PcBuilder.ComputerBuildListDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildList();
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildListDto();
     }
 
-    public static models.PcBuilder.ComputerBuildList getDefaultInstance() {
+    public static models.PcBuilder.ComputerBuildListDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ComputerBuildList>
-        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildList>() {
+    private static final com.google.protobuf.Parser<ComputerBuildListDto>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildListDto>() {
       @java.lang.Override
-      public ComputerBuildList parsePartialFrom(
+      public ComputerBuildListDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -16964,24 +16964,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<ComputerBuildList> parser() {
+    public static com.google.protobuf.Parser<ComputerBuildListDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ComputerBuildList> getParserForType() {
+    public com.google.protobuf.Parser<ComputerBuildListDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.ComputerBuildList getDefaultInstanceForType() {
+    public models.PcBuilder.ComputerBuildListDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ComputerBuildCommentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.ComputerBuildComment)
+  public interface ComputerBuildCommentDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildCommentDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -17021,18 +17021,18 @@ public final class PcBuilder {
         getLastUpdatedDateBytes();
   }
   /**
-   * Protobuf type {@code models.ComputerBuildComment}
+   * Protobuf type {@code models.ComputerBuildCommentDto}
    */
-  public static final class ComputerBuildComment extends
+  public static final class ComputerBuildCommentDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.ComputerBuildComment)
-      ComputerBuildCommentOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildCommentDto)
+      ComputerBuildCommentDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ComputerBuildComment.newBuilder() to construct.
-    private ComputerBuildComment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ComputerBuildCommentDto.newBuilder() to construct.
+    private ComputerBuildCommentDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ComputerBuildComment() {
+    private ComputerBuildCommentDto() {
       authorName_ = "";
       content_ = "";
       lastUpdatedDate_ = "";
@@ -17042,20 +17042,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ComputerBuildComment();
+      return new ComputerBuildCommentDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_ComputerBuildComment_descriptor;
+      return models.PcBuilder.internal_static_models_ComputerBuildCommentDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_ComputerBuildComment_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_ComputerBuildCommentDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.ComputerBuildComment.class, models.PcBuilder.ComputerBuildComment.Builder.class);
+              models.PcBuilder.ComputerBuildCommentDto.class, models.PcBuilder.ComputerBuildCommentDto.Builder.class);
     }
 
     public static final int AUTHORNAME_FIELD_NUMBER = 1;
@@ -17226,10 +17226,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.ComputerBuildComment)) {
+      if (!(obj instanceof models.PcBuilder.ComputerBuildCommentDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.ComputerBuildComment other = (models.PcBuilder.ComputerBuildComment) obj;
+      models.PcBuilder.ComputerBuildCommentDto other = (models.PcBuilder.ComputerBuildCommentDto) obj;
 
       if (!getAuthorName()
           .equals(other.getAuthorName())) return false;
@@ -17259,44 +17259,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(byte[] data)
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17304,26 +17304,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.ComputerBuildComment parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildCommentDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.ComputerBuildComment parseDelimitedFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildComment parseFrom(
+    public static models.PcBuilder.ComputerBuildCommentDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17336,7 +17336,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.ComputerBuildComment prototype) {
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildCommentDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -17352,26 +17352,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.ComputerBuildComment}
+     * Protobuf type {@code models.ComputerBuildCommentDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.ComputerBuildComment)
-        models.PcBuilder.ComputerBuildCommentOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildCommentDto)
+        models.PcBuilder.ComputerBuildCommentDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_ComputerBuildComment_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildCommentDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_ComputerBuildComment_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_ComputerBuildCommentDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.ComputerBuildComment.class, models.PcBuilder.ComputerBuildComment.Builder.class);
+                models.PcBuilder.ComputerBuildCommentDto.class, models.PcBuilder.ComputerBuildCommentDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.ComputerBuildComment.newBuilder()
+      // Construct using models.PcBuilder.ComputerBuildCommentDto.newBuilder()
       private Builder() {
 
       }
@@ -17394,17 +17394,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_ComputerBuildComment_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildCommentDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildComment getDefaultInstanceForType() {
-        return models.PcBuilder.ComputerBuildComment.getDefaultInstance();
+      public models.PcBuilder.ComputerBuildCommentDto getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildCommentDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildComment build() {
-        models.PcBuilder.ComputerBuildComment result = buildPartial();
+      public models.PcBuilder.ComputerBuildCommentDto build() {
+        models.PcBuilder.ComputerBuildCommentDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -17412,14 +17412,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildComment buildPartial() {
-        models.PcBuilder.ComputerBuildComment result = new models.PcBuilder.ComputerBuildComment(this);
+      public models.PcBuilder.ComputerBuildCommentDto buildPartial() {
+        models.PcBuilder.ComputerBuildCommentDto result = new models.PcBuilder.ComputerBuildCommentDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.ComputerBuildComment result) {
+      private void buildPartial0(models.PcBuilder.ComputerBuildCommentDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.authorName_ = authorName_;
@@ -17466,16 +17466,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.ComputerBuildComment) {
-          return mergeFrom((models.PcBuilder.ComputerBuildComment)other);
+        if (other instanceof models.PcBuilder.ComputerBuildCommentDto) {
+          return mergeFrom((models.PcBuilder.ComputerBuildCommentDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.ComputerBuildComment other) {
-        if (other == models.PcBuilder.ComputerBuildComment.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildCommentDto other) {
+        if (other == models.PcBuilder.ComputerBuildCommentDto.getDefaultInstance()) return this;
         if (!other.getAuthorName().isEmpty()) {
           authorName_ = other.authorName_;
           bitField0_ |= 0x00000001;
@@ -17777,23 +17777,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.ComputerBuildComment)
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildCommentDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.ComputerBuildComment)
-    private static final models.PcBuilder.ComputerBuildComment DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildCommentDto)
+    private static final models.PcBuilder.ComputerBuildCommentDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildComment();
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildCommentDto();
     }
 
-    public static models.PcBuilder.ComputerBuildComment getDefaultInstance() {
+    public static models.PcBuilder.ComputerBuildCommentDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ComputerBuildComment>
-        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildComment>() {
+    private static final com.google.protobuf.Parser<ComputerBuildCommentDto>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildCommentDto>() {
       @java.lang.Override
-      public ComputerBuildComment parsePartialFrom(
+      public ComputerBuildCommentDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -17812,24 +17812,24 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<ComputerBuildComment> parser() {
+    public static com.google.protobuf.Parser<ComputerBuildCommentDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ComputerBuildComment> getParserForType() {
+    public com.google.protobuf.Parser<ComputerBuildCommentDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.ComputerBuildComment getDefaultInstanceForType() {
+    public models.PcBuilder.ComputerBuildCommentDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ComputerBuildDraftOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:models.ComputerBuildDraft)
+  public interface ComputerBuildDraftDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:models.ComputerBuildDraftDto)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -18007,18 +18007,18 @@ public final class PcBuilder {
         getPowerSupplyIdsBytes(int index);
   }
   /**
-   * Protobuf type {@code models.ComputerBuildDraft}
+   * Protobuf type {@code models.ComputerBuildDraftDto}
    */
-  public static final class ComputerBuildDraft extends
+  public static final class ComputerBuildDraftDto extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:models.ComputerBuildDraft)
-      ComputerBuildDraftOrBuilder {
+      // @@protoc_insertion_point(message_implements:models.ComputerBuildDraftDto)
+      ComputerBuildDraftDtoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ComputerBuildDraft.newBuilder() to construct.
-    private ComputerBuildDraft(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ComputerBuildDraftDto.newBuilder() to construct.
+    private ComputerBuildDraftDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ComputerBuildDraft() {
+    private ComputerBuildDraftDto() {
       displayName_ = "";
       description_ = "";
       cpuIds_ =
@@ -18039,20 +18039,20 @@ public final class PcBuilder {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ComputerBuildDraft();
+      return new ComputerBuildDraftDto();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+      return models.PcBuilder.internal_static_models_ComputerBuildDraftDto_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return models.PcBuilder.internal_static_models_ComputerBuildDraft_fieldAccessorTable
+      return models.PcBuilder.internal_static_models_ComputerBuildDraftDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              models.PcBuilder.ComputerBuildDraft.class, models.PcBuilder.ComputerBuildDraft.Builder.class);
+              models.PcBuilder.ComputerBuildDraftDto.class, models.PcBuilder.ComputerBuildDraftDto.Builder.class);
     }
 
     public static final int DISPLAYNAME_FIELD_NUMBER = 1;
@@ -18466,10 +18466,10 @@ public final class PcBuilder {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof models.PcBuilder.ComputerBuildDraft)) {
+      if (!(obj instanceof models.PcBuilder.ComputerBuildDraftDto)) {
         return super.equals(obj);
       }
-      models.PcBuilder.ComputerBuildDraft other = (models.PcBuilder.ComputerBuildDraft) obj;
+      models.PcBuilder.ComputerBuildDraftDto other = (models.PcBuilder.ComputerBuildDraftDto) obj;
 
       if (!getDisplayName()
           .equals(other.getDisplayName())) return false;
@@ -18531,44 +18531,44 @@ public final class PcBuilder {
       return hash;
     }
 
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(byte[] data)
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18576,26 +18576,26 @@ public final class PcBuilder {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static models.PcBuilder.ComputerBuildDraft parseDelimitedFrom(java.io.InputStream input)
+    public static models.PcBuilder.ComputerBuildDraftDto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static models.PcBuilder.ComputerBuildDraft parseDelimitedFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static models.PcBuilder.ComputerBuildDraft parseFrom(
+    public static models.PcBuilder.ComputerBuildDraftDto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18608,7 +18608,7 @@ public final class PcBuilder {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(models.PcBuilder.ComputerBuildDraft prototype) {
+    public static Builder newBuilder(models.PcBuilder.ComputerBuildDraftDto prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -18624,26 +18624,26 @@ public final class PcBuilder {
       return builder;
     }
     /**
-     * Protobuf type {@code models.ComputerBuildDraft}
+     * Protobuf type {@code models.ComputerBuildDraftDto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:models.ComputerBuildDraft)
-        models.PcBuilder.ComputerBuildDraftOrBuilder {
+        // @@protoc_insertion_point(builder_implements:models.ComputerBuildDraftDto)
+        models.PcBuilder.ComputerBuildDraftDtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildDraftDto_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return models.PcBuilder.internal_static_models_ComputerBuildDraft_fieldAccessorTable
+        return models.PcBuilder.internal_static_models_ComputerBuildDraftDto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                models.PcBuilder.ComputerBuildDraft.class, models.PcBuilder.ComputerBuildDraft.Builder.class);
+                models.PcBuilder.ComputerBuildDraftDto.class, models.PcBuilder.ComputerBuildDraftDto.Builder.class);
       }
 
-      // Construct using models.PcBuilder.ComputerBuildDraft.newBuilder()
+      // Construct using models.PcBuilder.ComputerBuildDraftDto.newBuilder()
       private Builder() {
 
       }
@@ -18677,17 +18677,17 @@ public final class PcBuilder {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return models.PcBuilder.internal_static_models_ComputerBuildDraft_descriptor;
+        return models.PcBuilder.internal_static_models_ComputerBuildDraftDto_descriptor;
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildDraft getDefaultInstanceForType() {
-        return models.PcBuilder.ComputerBuildDraft.getDefaultInstance();
+      public models.PcBuilder.ComputerBuildDraftDto getDefaultInstanceForType() {
+        return models.PcBuilder.ComputerBuildDraftDto.getDefaultInstance();
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildDraft build() {
-        models.PcBuilder.ComputerBuildDraft result = buildPartial();
+      public models.PcBuilder.ComputerBuildDraftDto build() {
+        models.PcBuilder.ComputerBuildDraftDto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -18695,14 +18695,14 @@ public final class PcBuilder {
       }
 
       @java.lang.Override
-      public models.PcBuilder.ComputerBuildDraft buildPartial() {
-        models.PcBuilder.ComputerBuildDraft result = new models.PcBuilder.ComputerBuildDraft(this);
+      public models.PcBuilder.ComputerBuildDraftDto buildPartial() {
+        models.PcBuilder.ComputerBuildDraftDto result = new models.PcBuilder.ComputerBuildDraftDto(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(models.PcBuilder.ComputerBuildDraft result) {
+      private void buildPartial0(models.PcBuilder.ComputerBuildDraftDto result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.displayName_ = displayName_;
@@ -18770,16 +18770,16 @@ public final class PcBuilder {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof models.PcBuilder.ComputerBuildDraft) {
-          return mergeFrom((models.PcBuilder.ComputerBuildDraft)other);
+        if (other instanceof models.PcBuilder.ComputerBuildDraftDto) {
+          return mergeFrom((models.PcBuilder.ComputerBuildDraftDto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(models.PcBuilder.ComputerBuildDraft other) {
-        if (other == models.PcBuilder.ComputerBuildDraft.getDefaultInstance()) return this;
+      public Builder mergeFrom(models.PcBuilder.ComputerBuildDraftDto other) {
+        if (other == models.PcBuilder.ComputerBuildDraftDto.getDefaultInstance()) return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
           bitField0_ |= 0x00000001;
@@ -19761,23 +19761,23 @@ public final class PcBuilder {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:models.ComputerBuildDraft)
+      // @@protoc_insertion_point(builder_scope:models.ComputerBuildDraftDto)
     }
 
-    // @@protoc_insertion_point(class_scope:models.ComputerBuildDraft)
-    private static final models.PcBuilder.ComputerBuildDraft DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:models.ComputerBuildDraftDto)
+    private static final models.PcBuilder.ComputerBuildDraftDto DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildDraft();
+      DEFAULT_INSTANCE = new models.PcBuilder.ComputerBuildDraftDto();
     }
 
-    public static models.PcBuilder.ComputerBuildDraft getDefaultInstance() {
+    public static models.PcBuilder.ComputerBuildDraftDto getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ComputerBuildDraft>
-        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildDraft>() {
+    private static final com.google.protobuf.Parser<ComputerBuildDraftDto>
+        PARSER = new com.google.protobuf.AbstractParser<ComputerBuildDraftDto>() {
       @java.lang.Override
-      public ComputerBuildDraft parsePartialFrom(
+      public ComputerBuildDraftDto parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -19796,107 +19796,107 @@ public final class PcBuilder {
       }
     };
 
-    public static com.google.protobuf.Parser<ComputerBuildDraft> parser() {
+    public static com.google.protobuf.Parser<ComputerBuildDraftDto> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ComputerBuildDraft> getParserForType() {
+    public com.google.protobuf.Parser<ComputerBuildDraftDto> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public models.PcBuilder.ComputerBuildDraft getDefaultInstanceForType() {
+    public models.PcBuilder.ComputerBuildDraftDto getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_UserProfile_descriptor;
+    internal_static_models_UserProfileDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_UserProfile_fieldAccessorTable;
+      internal_static_models_UserProfileDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_CpuComponent_descriptor;
+    internal_static_models_CpuComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_CpuComponent_fieldAccessorTable;
+      internal_static_models_CpuComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_CpuComponentList_descriptor;
+    internal_static_models_CpuComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_CpuComponentList_fieldAccessorTable;
+      internal_static_models_CpuComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_MotherboardComponent_descriptor;
+    internal_static_models_MotherboardComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_MotherboardComponent_fieldAccessorTable;
+      internal_static_models_MotherboardComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_MotherboardComponentList_descriptor;
+    internal_static_models_MotherboardComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_MotherboardComponentList_fieldAccessorTable;
+      internal_static_models_MotherboardComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_MemoryComponent_descriptor;
+    internal_static_models_MemoryComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_MemoryComponent_fieldAccessorTable;
+      internal_static_models_MemoryComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_MemoryComponentList_descriptor;
+    internal_static_models_MemoryComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_MemoryComponentList_fieldAccessorTable;
+      internal_static_models_MemoryComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_StorageComponent_descriptor;
+    internal_static_models_StorageComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_StorageComponent_fieldAccessorTable;
+      internal_static_models_StorageComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_StorageComponentList_descriptor;
+    internal_static_models_StorageComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_StorageComponentList_fieldAccessorTable;
+      internal_static_models_StorageComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_VideoCardComponent_descriptor;
+    internal_static_models_VideoCardComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_VideoCardComponent_fieldAccessorTable;
+      internal_static_models_VideoCardComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_VideoCardComponentList_descriptor;
+    internal_static_models_VideoCardComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_VideoCardComponentList_fieldAccessorTable;
+      internal_static_models_VideoCardComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_PowerSupplyComponent_descriptor;
+    internal_static_models_PowerSupplyComponentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_PowerSupplyComponent_fieldAccessorTable;
+      internal_static_models_PowerSupplyComponentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_PowerSupplyComponentList_descriptor;
+    internal_static_models_PowerSupplyComponentListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_PowerSupplyComponentList_fieldAccessorTable;
+      internal_static_models_PowerSupplyComponentListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_ComputerBuild_descriptor;
+    internal_static_models_ComputerBuildDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_ComputerBuild_fieldAccessorTable;
+      internal_static_models_ComputerBuildDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_ComputerBuildList_descriptor;
+    internal_static_models_ComputerBuildListDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_ComputerBuildList_fieldAccessorTable;
+      internal_static_models_ComputerBuildListDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_ComputerBuildComment_descriptor;
+    internal_static_models_ComputerBuildCommentDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_ComputerBuildComment_fieldAccessorTable;
+      internal_static_models_ComputerBuildCommentDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_models_ComputerBuildDraft_descriptor;
+    internal_static_models_ComputerBuildDraftDto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_models_ComputerBuildDraft_fieldAccessorTable;
+      internal_static_models_ComputerBuildDraftDto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19906,176 +19906,178 @@ public final class PcBuilder {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027models/pc-builder.proto\022\006models\"U\n\013Use" +
-      "rProfile\022\020\n\010username\030\001 \001(\t\022\023\n\013displayNam" +
-      "e\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(\t" +
-      "\"\263\001\n\014CpuComponent\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displ" +
-      "ayName\030\002 \001(\t\022\021\n\tcoreCount\030\003 \001(\005\022\021\n\tcoreC" +
-      "lock\030\004 \001(\005\022\022\n\nboostClock\030\005 \001(\005\022\013\n\003tdp\030\006 " +
-      "\001(\005\022\032\n\022integratedGraphics\030\007 \001(\t\022\016\n\006hasSm" +
-      "t\030\010 \001(\010\022\r\n\005price\030\t \001(\005\"?\n\020CpuComponentLi" +
-      "st\022+\n\rcpuComponents\030\001 \003(\0132\024.models.CpuCo" +
-      "mponent\"\263\001\n\024MotherboardComponent\022\014\n\004uuid" +
-      "\030\001 \001(\t\022\023\n\013displayName\030\002 \001(\t\022\021\n\tcpuSocket" +
-      "\030\003 \001(\t\022\022\n\nformFactor\030\004 \001(\t\022\032\n\022maxMemoryG" +
-      "igabytes\030\005 \001(\005\022\026\n\016numMemorySlots\030\006 \001(\005\022\016" +
-      "\n\006colour\030\007 \001(\t\022\r\n\005price\030\010 \001(\005\"W\n\030Motherb" +
-      "oardComponentList\022;\n\025motherboardComponen" +
-      "ts\030\001 \003(\0132\034.models.MotherboardComponent\"\330" +
-      "\001\n\017MemoryComponent\022\014\n\004uuid\030\001 \001(\t\022\023\n\013disp" +
-      "layName\030\002 \001(\t\022\022\n\nddrVersion\030\003 \001(\005\022\020\n\010ddr" +
-      "Clock\030\004 \001(\005\022\022\n\nnumModules\030\005 \001(\005\022\033\n\023modul" +
-      "eSizeGigabytes\030\006 \001(\005\022\016\n\006colour\030\007 \001(\t\022\030\n\020" +
-      "firstWordLatency\030\010 \001(\005\022\022\n\ncasLatency\030\t \001" +
-      "(\005\022\r\n\005price\030\n \001(\005\"H\n\023MemoryComponentList" +
-      "\0221\n\020memoryComponents\030\001 \003(\0132\027.models.Memo" +
-      "ryComponent\"\260\001\n\020StorageComponent\022\014\n\004uuid" +
-      "\030\001 \001(\t\022\023\n\013displayName\030\002 \001(\t\022\031\n\021capacityG" +
-      "igabytes\030\003 \001(\005\022\014\n\004type\030\004 \001(\t\022\032\n\022cacheSiz" +
-      "eMegabytes\030\005 \001(\005\022\022\n\nformFactor\030\006 \001(\t\022\021\n\t" +
-      "interface\030\007 \001(\t\022\r\n\005price\030\010 \001(\005\"K\n\024Storag" +
-      "eComponentList\0223\n\021storageComponents\030\001 \003(" +
-      "\0132\030.models.StorageComponent\"\302\001\n\022VideoCar" +
-      "dComponent\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayName\030" +
-      "\002 \001(\t\022\017\n\007chipset\030\003 \001(\t\022\027\n\017memoryGigabyte" +
-      "s\030\004 \001(\005\022\021\n\tcoreClock\030\005 \001(\005\022\022\n\nboostClock" +
-      "\030\006 \001(\005\022\016\n\006colour\030\007 \001(\t\022\031\n\021lengthMillimet" +
-      "ers\030\010 \001(\005\022\r\n\005price\030\t \001(\005\"Q\n\026VideoCardCom" +
-      "ponentList\0227\n\023videoCardComponents\030\001 \003(\0132" +
-      "\032.models.VideoCardComponent\"\234\001\n\024PowerSup" +
-      "plyComponent\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayNam" +
-      "e\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\022\n\nefficiency\030\004 \001(" +
-      "\t\022\017\n\007wattage\030\005 \001(\005\022\017\n\007modular\030\006 \001(\t\022\016\n\006c" +
-      "olour\030\007 \001(\t\022\r\n\005price\030\010 \001(\005\"W\n\030PowerSuppl" +
-      "yComponentList\022;\n\025powerSupplyComponents\030" +
-      "\001 \003(\0132\034.models.PowerSupplyComponent\"\303\003\n\r" +
-      "ComputerBuild\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayNa" +
-      "me\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\020\n\010usernam" +
-      "e\030\004 \001(\t\022)\n\007cpuList\030\005 \001(\0132\030.models.CpuCom" +
-      "ponentList\0229\n\017motherboardList\030\006 \001(\0132 .mo" +
-      "dels.MotherboardComponentList\0221\n\013storage" +
-      "List\030\007 \001(\0132\034.models.StorageComponentList" +
-      "\022/\n\nmemoryList\030\010 \001(\0132\033.models.MemoryComp" +
-      "onentList\0225\n\rvideoCardList\030\t \001(\0132\036.model" +
-      "s.VideoCardComponentList\0229\n\017powerSupplyL" +
-      "ist\030\n \001(\0132 .models.PowerSupplyComponentL" +
-      "ist\022\024\n\014creationDate\030\013 \001(\003\022\026\n\016lastUpdateD" +
-      "ate\030\014 \001(\003\"B\n\021ComputerBuildList\022-\n\016comput" +
-      "erBuilds\030\001 \003(\0132\025.models.ComputerBuild\"T\n" +
-      "\024ComputerBuildComment\022\022\n\nauthorName\030\001 \001(" +
-      "\t\022\017\n\007content\030\002 \001(\t\022\027\n\017lastUpdatedDate\030\004 " +
-      "\001(\t\"\273\001\n\022ComputerBuildDraft\022\023\n\013displayNam" +
-      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006cpuIds\030\003" +
-      " \003(\t\022\026\n\016motherboardIds\030\004 \003(\t\022\022\n\nstorageI" +
-      "ds\030\005 \003(\t\022\021\n\tmemoryIds\030\006 \003(\t\022\024\n\014videoCard" +
-      "Ids\030\007 \003(\t\022\026\n\016powerSupplyIds\030\010 \003(\tb\006proto" +
-      "3"
+      "\n\027models/pc-builder.proto\022\006models\"X\n\016Use" +
+      "rProfileDto\022\020\n\010username\030\001 \001(\t\022\023\n\013display" +
+      "Name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 " +
+      "\001(\t\"\266\001\n\017CpuComponentDto\022\014\n\004uuid\030\001 \001(\t\022\023\n" +
+      "\013displayName\030\002 \001(\t\022\021\n\tcoreCount\030\003 \001(\005\022\021\n" +
+      "\tcoreClock\030\004 \001(\005\022\022\n\nboostClock\030\005 \001(\005\022\013\n\003" +
+      "tdp\030\006 \001(\005\022\032\n\022integratedGraphics\030\007 \001(\t\022\016\n" +
+      "\006hasSmt\030\010 \001(\010\022\r\n\005price\030\t \001(\005\"E\n\023CpuCompo" +
+      "nentListDto\022.\n\rcpuComponents\030\001 \003(\0132\027.mod" +
+      "els.CpuComponentDto\"\266\001\n\027MotherboardCompo" +
+      "nentDto\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayName\030\002 \001" +
+      "(\t\022\021\n\tcpuSocket\030\003 \001(\t\022\022\n\nformFactor\030\004 \001(" +
+      "\t\022\032\n\022maxMemoryGigabytes\030\005 \001(\005\022\026\n\016numMemo" +
+      "rySlots\030\006 \001(\005\022\016\n\006colour\030\007 \001(\t\022\r\n\005price\030\010" +
+      " \001(\005\"]\n\033MotherboardComponentListDto\022>\n\025m" +
+      "otherboardComponents\030\001 \003(\0132\037.models.Moth" +
+      "erboardComponentDto\"\333\001\n\022MemoryComponentD" +
+      "to\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayName\030\002 \001(\t\022\022\n" +
+      "\nddrVersion\030\003 \001(\005\022\020\n\010ddrClock\030\004 \001(\005\022\022\n\nn" +
+      "umModules\030\005 \001(\005\022\033\n\023moduleSizeGigabytes\030\006" +
+      " \001(\005\022\016\n\006colour\030\007 \001(\t\022\030\n\020firstWordLatency" +
+      "\030\010 \001(\005\022\022\n\ncasLatency\030\t \001(\005\022\r\n\005price\030\n \001(" +
+      "\005\"N\n\026MemoryComponentListDto\0224\n\020memoryCom" +
+      "ponents\030\001 \003(\0132\032.models.MemoryComponentDt" +
+      "o\"\263\001\n\023StorageComponentDto\022\014\n\004uuid\030\001 \001(\t\022" +
+      "\023\n\013displayName\030\002 \001(\t\022\031\n\021capacityGigabyte" +
+      "s\030\003 \001(\005\022\014\n\004type\030\004 \001(\t\022\032\n\022cacheSizeMegaby" +
+      "tes\030\005 \001(\005\022\022\n\nformFactor\030\006 \001(\t\022\021\n\tinterfa" +
+      "ce\030\007 \001(\t\022\r\n\005price\030\010 \001(\005\"Q\n\027StorageCompon" +
+      "entListDto\0226\n\021storageComponents\030\001 \003(\0132\033." +
+      "models.StorageComponentDto\"\305\001\n\025VideoCard" +
+      "ComponentDto\022\014\n\004uuid\030\001 \001(\t\022\023\n\013displayNam" +
+      "e\030\002 \001(\t\022\017\n\007chipset\030\003 \001(\t\022\027\n\017memoryGigaby" +
+      "tes\030\004 \001(\005\022\021\n\tcoreClock\030\005 \001(\005\022\022\n\nboostClo" +
+      "ck\030\006 \001(\005\022\016\n\006colour\030\007 \001(\t\022\031\n\021lengthMillim" +
+      "eters\030\010 \001(\005\022\r\n\005price\030\t \001(\005\"W\n\031VideoCardC" +
+      "omponentListDto\022:\n\023videoCardComponents\030\001" +
+      " \003(\0132\035.models.VideoCardComponentDto\"\237\001\n\027" +
+      "PowerSupplyComponentDto\022\014\n\004uuid\030\001 \001(\t\022\023\n" +
+      "\013displayName\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\022\n\neffi" +
+      "ciency\030\004 \001(\t\022\017\n\007wattage\030\005 \001(\005\022\017\n\007modular" +
+      "\030\006 \001(\t\022\016\n\006colour\030\007 \001(\t\022\r\n\005price\030\010 \001(\005\"]\n" +
+      "\033PowerSupplyComponentListDto\022>\n\025powerSup" +
+      "plyComponents\030\001 \003(\0132\037.models.PowerSupply" +
+      "ComponentDto\"\330\003\n\020ComputerBuildDto\022\014\n\004uui" +
+      "d\030\001 \001(\t\022\023\n\013displayName\030\002 \001(\t\022\023\n\013descript" +
+      "ion\030\003 \001(\t\022\020\n\010username\030\004 \001(\t\022,\n\007cpuList\030\005" +
+      " \001(\0132\033.models.CpuComponentListDto\022<\n\017mot" +
+      "herboardList\030\006 \001(\0132#.models.MotherboardC" +
+      "omponentListDto\0224\n\013storageList\030\007 \001(\0132\037.m" +
+      "odels.StorageComponentListDto\0222\n\nmemoryL" +
+      "ist\030\010 \001(\0132\036.models.MemoryComponentListDt" +
+      "o\0228\n\rvideoCardList\030\t \001(\0132!.models.VideoC" +
+      "ardComponentListDto\022<\n\017powerSupplyList\030\n" +
+      " \001(\0132#.models.PowerSupplyComponentListDt" +
+      "o\022\024\n\014creationDate\030\013 \001(\003\022\026\n\016lastUpdateDat" +
+      "e\030\014 \001(\003\"H\n\024ComputerBuildListDto\0220\n\016compu" +
+      "terBuilds\030\001 \003(\0132\030.models.ComputerBuildDt" +
+      "o\"W\n\027ComputerBuildCommentDto\022\022\n\nauthorNa" +
+      "me\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\027\n\017lastUpdated" +
+      "Date\030\004 \001(\t\"\276\001\n\025ComputerBuildDraftDto\022\023\n\013" +
+      "displayName\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016" +
+      "\n\006cpuIds\030\003 \003(\t\022\026\n\016motherboardIds\030\004 \003(\t\022\022" +
+      "\n\nstorageIds\030\005 \003(\t\022\021\n\tmemoryIds\030\006 \003(\t\022\024\n" +
+      "\014videoCardIds\030\007 \003(\t\022\026\n\016powerSupplyIds\030\010 " +
+      "\003(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_models_UserProfile_descriptor =
+    internal_static_models_UserProfileDto_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_models_UserProfile_fieldAccessorTable = new
+    internal_static_models_UserProfileDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_UserProfile_descriptor,
+        internal_static_models_UserProfileDto_descriptor,
         new java.lang.String[] { "Username", "DisplayName", "Email", "Password", });
-    internal_static_models_CpuComponent_descriptor =
+    internal_static_models_CpuComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_models_CpuComponent_fieldAccessorTable = new
+    internal_static_models_CpuComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_CpuComponent_descriptor,
+        internal_static_models_CpuComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "CoreCount", "CoreClock", "BoostClock", "Tdp", "IntegratedGraphics", "HasSmt", "Price", });
-    internal_static_models_CpuComponentList_descriptor =
+    internal_static_models_CpuComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_models_CpuComponentList_fieldAccessorTable = new
+    internal_static_models_CpuComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_CpuComponentList_descriptor,
+        internal_static_models_CpuComponentListDto_descriptor,
         new java.lang.String[] { "CpuComponents", });
-    internal_static_models_MotherboardComponent_descriptor =
+    internal_static_models_MotherboardComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_models_MotherboardComponent_fieldAccessorTable = new
+    internal_static_models_MotherboardComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_MotherboardComponent_descriptor,
+        internal_static_models_MotherboardComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "CpuSocket", "FormFactor", "MaxMemoryGigabytes", "NumMemorySlots", "Colour", "Price", });
-    internal_static_models_MotherboardComponentList_descriptor =
+    internal_static_models_MotherboardComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_models_MotherboardComponentList_fieldAccessorTable = new
+    internal_static_models_MotherboardComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_MotherboardComponentList_descriptor,
+        internal_static_models_MotherboardComponentListDto_descriptor,
         new java.lang.String[] { "MotherboardComponents", });
-    internal_static_models_MemoryComponent_descriptor =
+    internal_static_models_MemoryComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_models_MemoryComponent_fieldAccessorTable = new
+    internal_static_models_MemoryComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_MemoryComponent_descriptor,
+        internal_static_models_MemoryComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "DdrVersion", "DdrClock", "NumModules", "ModuleSizeGigabytes", "Colour", "FirstWordLatency", "CasLatency", "Price", });
-    internal_static_models_MemoryComponentList_descriptor =
+    internal_static_models_MemoryComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_models_MemoryComponentList_fieldAccessorTable = new
+    internal_static_models_MemoryComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_MemoryComponentList_descriptor,
+        internal_static_models_MemoryComponentListDto_descriptor,
         new java.lang.String[] { "MemoryComponents", });
-    internal_static_models_StorageComponent_descriptor =
+    internal_static_models_StorageComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_models_StorageComponent_fieldAccessorTable = new
+    internal_static_models_StorageComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_StorageComponent_descriptor,
+        internal_static_models_StorageComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "CapacityGigabytes", "Type", "CacheSizeMegabytes", "FormFactor", "Interface", "Price", });
-    internal_static_models_StorageComponentList_descriptor =
+    internal_static_models_StorageComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_models_StorageComponentList_fieldAccessorTable = new
+    internal_static_models_StorageComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_StorageComponentList_descriptor,
+        internal_static_models_StorageComponentListDto_descriptor,
         new java.lang.String[] { "StorageComponents", });
-    internal_static_models_VideoCardComponent_descriptor =
+    internal_static_models_VideoCardComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_models_VideoCardComponent_fieldAccessorTable = new
+    internal_static_models_VideoCardComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_VideoCardComponent_descriptor,
+        internal_static_models_VideoCardComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "Chipset", "MemoryGigabytes", "CoreClock", "BoostClock", "Colour", "LengthMillimeters", "Price", });
-    internal_static_models_VideoCardComponentList_descriptor =
+    internal_static_models_VideoCardComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_models_VideoCardComponentList_fieldAccessorTable = new
+    internal_static_models_VideoCardComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_VideoCardComponentList_descriptor,
+        internal_static_models_VideoCardComponentListDto_descriptor,
         new java.lang.String[] { "VideoCardComponents", });
-    internal_static_models_PowerSupplyComponent_descriptor =
+    internal_static_models_PowerSupplyComponentDto_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_models_PowerSupplyComponent_fieldAccessorTable = new
+    internal_static_models_PowerSupplyComponentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_PowerSupplyComponent_descriptor,
+        internal_static_models_PowerSupplyComponentDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "Type", "Efficiency", "Wattage", "Modular", "Colour", "Price", });
-    internal_static_models_PowerSupplyComponentList_descriptor =
+    internal_static_models_PowerSupplyComponentListDto_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_models_PowerSupplyComponentList_fieldAccessorTable = new
+    internal_static_models_PowerSupplyComponentListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_PowerSupplyComponentList_descriptor,
+        internal_static_models_PowerSupplyComponentListDto_descriptor,
         new java.lang.String[] { "PowerSupplyComponents", });
-    internal_static_models_ComputerBuild_descriptor =
+    internal_static_models_ComputerBuildDto_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_models_ComputerBuild_fieldAccessorTable = new
+    internal_static_models_ComputerBuildDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_ComputerBuild_descriptor,
+        internal_static_models_ComputerBuildDto_descriptor,
         new java.lang.String[] { "Uuid", "DisplayName", "Description", "Username", "CpuList", "MotherboardList", "StorageList", "MemoryList", "VideoCardList", "PowerSupplyList", "CreationDate", "LastUpdateDate", });
-    internal_static_models_ComputerBuildList_descriptor =
+    internal_static_models_ComputerBuildListDto_descriptor =
       getDescriptor().getMessageTypes().get(14);
-    internal_static_models_ComputerBuildList_fieldAccessorTable = new
+    internal_static_models_ComputerBuildListDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_ComputerBuildList_descriptor,
+        internal_static_models_ComputerBuildListDto_descriptor,
         new java.lang.String[] { "ComputerBuilds", });
-    internal_static_models_ComputerBuildComment_descriptor =
+    internal_static_models_ComputerBuildCommentDto_descriptor =
       getDescriptor().getMessageTypes().get(15);
-    internal_static_models_ComputerBuildComment_fieldAccessorTable = new
+    internal_static_models_ComputerBuildCommentDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_ComputerBuildComment_descriptor,
+        internal_static_models_ComputerBuildCommentDto_descriptor,
         new java.lang.String[] { "AuthorName", "Content", "LastUpdatedDate", });
-    internal_static_models_ComputerBuildDraft_descriptor =
+    internal_static_models_ComputerBuildDraftDto_descriptor =
       getDescriptor().getMessageTypes().get(16);
-    internal_static_models_ComputerBuildDraft_fieldAccessorTable = new
+    internal_static_models_ComputerBuildDraftDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_models_ComputerBuildDraft_descriptor,
+        internal_static_models_ComputerBuildDraftDto_descriptor,
         new java.lang.String[] { "DisplayName", "Description", "CpuIds", "MotherboardIds", "StorageIds", "MemoryIds", "VideoCardIds", "PowerSupplyIds", });
   }
 

@@ -25,9 +25,9 @@ public class PcBuilderController {
 
     public void authenticateUser(Context ctx) {
         try {
-            UserProfile.Builder builder = UserProfile.newBuilder();
+            UserProfileDto.Builder builder = UserProfileDto.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            UserProfile userProfile = builder.build();
+            UserProfileDto userProfile = builder.build();
             if (userProfile.getEmail() == null) {
                 throw new Exception("Missing email");
             }
@@ -53,7 +53,7 @@ public class PcBuilderController {
     public void getSessionUser(Context ctx) {
         try {
             String username = ctx.sessionAttribute(PcBuilderController.SESSION_USERNAME);
-            UserProfile user = databaseConnectionHandler.getUserProfile(username);
+            UserProfileDto user = databaseConnectionHandler.getUserProfile(username);
             ctx.json(JsonFormat.printer().print(user));
             ctx.status(200);
         } catch (Throwable e) {
@@ -74,9 +74,9 @@ public class PcBuilderController {
 
     public void updateUserProfile(Context ctx) {
         try {
-            UserProfile.Builder builder = UserProfile.newBuilder();
+            UserProfileDto.Builder builder = UserProfileDto.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            UserProfile userProfile = builder.build();
+            UserProfileDto userProfile = builder.build();
             databaseConnectionHandler.updateUserProfile(userProfile);
             ctx.status(200);
         } catch (Throwable e) {
@@ -88,10 +88,10 @@ public class PcBuilderController {
     public void createComputerBuild(Context ctx) {
         try {
             String username = ctx.sessionAttribute(PcBuilderController.SESSION_USERNAME);
-            ComputerBuildDraft.Builder builder = ComputerBuildDraft.newBuilder();
+            ComputerBuildDraftDto.Builder builder = ComputerBuildDraftDto.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            ComputerBuildDraft draft = builder.build();
-            ComputerBuild build = databaseConnectionHandler.createComputerBuildFromDraft(draft, username);
+            ComputerBuildDraftDto draft = builder.build();
+            ComputerBuildDto build = databaseConnectionHandler.createComputerBuildFromDraft(draft, username);
             ctx.json(JsonFormat.printer().print(build));
             ctx.status(200);
         } catch (Throwable e) {
@@ -108,8 +108,8 @@ public class PcBuilderController {
                 idList =  idsValue.split(",");
             }
             String username = ctx.queryParam(PcBuilderController.USER_PARAM_KEY);
-            List<ComputerBuild> builds = databaseConnectionHandler.getAllComputerBuilds(idList, username);
-            ComputerBuildList buildList = ComputerBuildList.newBuilder().addAllComputerBuilds(builds).build();
+            List<ComputerBuildDto> builds = databaseConnectionHandler.getAllComputerBuilds(idList, username);
+            ComputerBuildListDto buildList = ComputerBuildListDto.newBuilder().addAllComputerBuilds(builds).build();
             ctx.json(JsonFormat.printer().print(buildList));
             ctx.status(200);
         } catch (Throwable e) {
@@ -120,9 +120,9 @@ public class PcBuilderController {
 
     public void updateComputerBuild(Context ctx) {
         try {
-            ComputerBuild.Builder builder = ComputerBuild.newBuilder();
+            ComputerBuildDto.Builder builder = ComputerBuildDto.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            ComputerBuild build = builder.build();
+            ComputerBuildDto build = builder.build();
             Date lastUpdatedDate = new Date();
             build = build.toBuilder()
                     .setLastUpdateDate(lastUpdatedDate.getTime())
@@ -149,15 +149,8 @@ public class PcBuilderController {
 
     public void getAllCpuComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<CpuComponent> components = databaseConnectionHandler.getCpuComponents(idList);
-            CpuComponentList cpuList = CpuComponentList.newBuilder()
-                    .addAllCpuComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            CpuComponentListDto cpuList = databaseConnectionHandler.getCpuComponents(idList);
             ctx.json(JsonFormat.printer().print(cpuList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all cpu components", e);
@@ -167,15 +160,8 @@ public class PcBuilderController {
 
     public void getAllMotherboardComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<MotherboardComponent> components = databaseConnectionHandler.getMotherboardComponents(idList);
-            MotherboardComponentList motherboardList = MotherboardComponentList.newBuilder()
-                    .addAllMotherboardComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            MotherboardComponentListDto motherboardList = databaseConnectionHandler.getMotherboardComponents(idList);
             ctx.json(JsonFormat.printer().print(motherboardList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all motherboard components", e);
@@ -185,15 +171,8 @@ public class PcBuilderController {
 
     public void getAllMemoryComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<MemoryComponent> components = databaseConnectionHandler.getMemoryComponents(idList);
-            MemoryComponentList memoryList = MemoryComponentList.newBuilder()
-                    .addAllMemoryComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            MemoryComponentListDto memoryList = databaseConnectionHandler.getMemoryComponents(idList);
             ctx.json(JsonFormat.printer().print(memoryList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all memory components", e);
@@ -203,15 +182,8 @@ public class PcBuilderController {
 
     public void getAllStorageComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<StorageComponent> components = databaseConnectionHandler.getStorageComponents(idList);
-            StorageComponentList storageList = StorageComponentList.newBuilder()
-                    .addAllStorageComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            StorageComponentListDto storageList = databaseConnectionHandler.getStorageComponents(idList);
             ctx.json(JsonFormat.printer().print(storageList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all storage components", e);
@@ -221,15 +193,8 @@ public class PcBuilderController {
 
     public void getAllVideoCardComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<VideoCardComponent> components = databaseConnectionHandler.getVideoCardComponents(idList);
-            VideoCardComponentList videoCardList = VideoCardComponentList.newBuilder()
-                    .addAllVideoCardComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            VideoCardComponentListDto videoCardList = databaseConnectionHandler.getVideoCardComponents(idList);
             ctx.json(JsonFormat.printer().print(videoCardList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);
@@ -239,19 +204,17 @@ public class PcBuilderController {
 
     public void getAllPowerSupplyComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
-            String[] idList = null;
-            if (idsValue != null) {
-                idList =  idsValue.split(",");
-            }
-            List<PowerSupplyComponent> components = databaseConnectionHandler.getPowerSupplyComponents(idList);
-            PowerSupplyComponentList powerSupplyList = PowerSupplyComponentList.newBuilder()
-                    .addAllPowerSupplyComponents(components)
-                    .build();
+            String[] idList = parseIdsQueryParam(ctx);
+            PowerSupplyComponentListDto powerSupplyList = databaseConnectionHandler.getPowerSupplyComponents(idList);
             ctx.json(JsonFormat.printer().print(powerSupplyList));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all powerSupply components", e);
             ctx.status(500);
         }
+    }
+
+    private String[] parseIdsQueryParam(Context ctx) {
+        String idsValue = ctx.queryParam(PcBuilderController.IDS_PARAM_KEY);
+        return idsValue == null ? null : idsValue.split(",");
     }
 }

@@ -2,14 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import {
-    ComputerBuild,
-  ComputerBuildDraft,
-  ComputerBuildList,
-  CpuComponent,
-  CpuComponentList, MemoryComponent, MemoryComponentList,
-  MotherboardComponent,
-  MotherboardComponentList, PowerSupplyComponent, PowerSupplyComponentList,
-  StorageComponent, StorageComponentList, UserProfile, VideoCardComponent, VideoCardComponentList
+  ComputerBuildDto,
+  ComputerBuildDraftDto,
+  ComputerBuildListDto,
+  CpuComponentDto,
+  CpuComponentListDto, MemoryComponentDto, MemoryComponentListDto,
+  MotherboardComponentDto,
+  MotherboardComponentListDto, PowerSupplyComponentDto, PowerSupplyComponentListDto,
+  StorageComponentDto, StorageComponentListDto, UserProfileDto, VideoCardComponentDto, VideoCardComponentListDto
 } from "../../models/pc-builder";
 
 @Injectable({
@@ -17,13 +17,13 @@ import {
 })
 export class PcBuilderService {
   public static USERNAME_KEY: string = "username";
-  public currentUser$: BehaviorSubject<UserProfile | null> = new BehaviorSubject<UserProfile | null>(null);
+  public currentUser$: BehaviorSubject<UserProfileDto | null> = new BehaviorSubject<UserProfileDto | null>(null);
 
   constructor(private http: HttpClient) {
     const userId: string | undefined = localStorage.getItem(PcBuilderService.USERNAME_KEY) || undefined;
     if (userId) {
       this.getSessionUser().subscribe({
-        next: (userProfile: UserProfile) => {
+        next: (userProfile: UserProfileDto) => {
           if (userProfile.email) {
             this.currentUser$.next(userProfile);
           }
@@ -35,20 +35,20 @@ export class PcBuilderService {
     }
   }
 
-  public authenticateUser(userProfile: UserProfile): Observable<UserProfile> {
-    return this.http.post<UserProfile>('/session/authenticate', userProfile);
+  public authenticateUser(userProfile: UserProfileDto): Observable<UserProfileDto> {
+    return this.http.post<UserProfileDto>('/session/authenticate', userProfile);
   }
 
-  public setCurrentUser(userProfile: UserProfile): void {
+  public setCurrentUser(userProfile: UserProfileDto): void {
     if (userProfile.email) {
       this.currentUser$.next(userProfile);
       localStorage.setItem(PcBuilderService.USERNAME_KEY, userProfile.email);
     }
   }
 
-  public getSessionUser(): Observable<UserProfile> {
+  public getSessionUser(): Observable<UserProfileDto> {
     const headers = new HttpHeaders().set("credentials", "include");
-    return this.http.get<UserProfile>('/session/user', { headers: headers });
+    return this.http.get<UserProfileDto>('/session/user', { headers: headers });
   }
 
   public clearSessionUser(): Observable<void> {
@@ -57,75 +57,75 @@ export class PcBuilderService {
     return this.http.delete<void>('/session/user', { headers: headers });
   }
 
-  public updateUserProfile(displayName: string, email: string): Observable<UserProfile | null> {
+  public updateUserProfile(displayName: string, email: string): Observable<UserProfileDto | null> {
     const userProfile = this.currentUser$.getValue();
     if (!userProfile) {
       return this.currentUser$;
     }
     userProfile.displayName = displayName;
     userProfile.email = email;
-    return this.http.put<UserProfile>(`/users/${userProfile.email}`, userProfile);
+    return this.http.put<UserProfileDto>(`/users/${userProfile.email}`, userProfile);
   }
 
-  public getCpuComponents(ids?: string[]): Observable<CpuComponent[]> {
+  public getCpuComponents(ids?: string[]): Observable<CpuComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/cpu?ids=${ids.join(",")}` : "/cpu";
-    return this.http.get<CpuComponentList>(url)
-      .pipe(map((cpuList: CpuComponentList) => cpuList?.cpuComponents ?? []));
+    return this.http.get<CpuComponentListDto>(url)
+      .pipe(map((cpuList: CpuComponentListDto) => cpuList?.cpuComponents ?? []));
   }
 
-  public getMotherboardComponents(ids?: string[]): Observable<MotherboardComponent[]> {
+  public getMotherboardComponents(ids?: string[]): Observable<MotherboardComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/motherboards?ids=${ids.join(",")}` : "/motherboards";
-    return this.http.get<MotherboardComponentList>(url)
-      .pipe(map((motherboardList: MotherboardComponentList) => motherboardList?.motherboardComponents ?? []));
+    return this.http.get<MotherboardComponentListDto>(url)
+      .pipe(map((motherboardList: MotherboardComponentListDto) => motherboardList?.motherboardComponents ?? []));
   }
 
-  public getMemoryComponents(ids?: string[]): Observable<MemoryComponent[]> {
+  public getMemoryComponents(ids?: string[]): Observable<MemoryComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/memory?ids=${ids.join(",")}` : "/memory";
-    return this.http.get<MemoryComponentList>(url)
-      .pipe(map((memoryList: MemoryComponentList) => memoryList?.memoryComponents ?? []));
+    return this.http.get<MemoryComponentListDto>(url)
+      .pipe(map((memoryList: MemoryComponentListDto) => memoryList?.memoryComponents ?? []));
   }
 
-  public getStorageComponents(ids?: string[]): Observable<StorageComponent[]> {
+  public getStorageComponents(ids?: string[]): Observable<StorageComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/storage?ids=${ids.join(",")}` : "/storage";
-    return this.http.get<StorageComponentList>(url)
-      .pipe(map((storageList: StorageComponentList) => storageList?.storageComponents ?? []));
+    return this.http.get<StorageComponentListDto>(url)
+      .pipe(map((storageList: StorageComponentListDto) => storageList?.storageComponents ?? []));
   }
 
-  public getVideoCardComponents(ids?: string[]): Observable<VideoCardComponent[]> {
+  public getVideoCardComponents(ids?: string[]): Observable<VideoCardComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/video-cards?ids=${ids.join(",")}` : "/video-cards";
-    return this.http.get<VideoCardComponentList>(url)
-      .pipe(map((videoCardList: VideoCardComponentList) => videoCardList?.videoCardComponents ?? []));
+    return this.http.get<VideoCardComponentListDto>(url)
+      .pipe(map((videoCardList: VideoCardComponentListDto) => videoCardList?.videoCardComponents ?? []));
   }
 
-  public getPowerSupplyComponents(ids?: string[]): Observable<PowerSupplyComponent[]> {
+  public getPowerSupplyComponents(ids?: string[]): Observable<PowerSupplyComponentDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
     const url = ids ? `/power-supplies?ids=${ids.join(",")}` : "/power-supplies";
-    return this.http.get<PowerSupplyComponentList>(url)
-      .pipe(map((powerSupplyList: PowerSupplyComponentList) => powerSupplyList?.powerSupplyComponents ?? []));
+    return this.http.get<PowerSupplyComponentListDto>(url)
+      .pipe(map((powerSupplyList: PowerSupplyComponentListDto) => powerSupplyList?.powerSupplyComponents ?? []));
   }
 
-  public createComputerBuild(draft: ComputerBuildDraft): Observable<ComputerBuild> {
-    return this.http.put<ComputerBuild>("/builds", draft);
+  public createComputerBuild(draft: ComputerBuildDraftDto): Observable<ComputerBuildDto> {
+    return this.http.put<ComputerBuildDto>("/builds", draft);
   }
 
-  public getComputerBuilds(ids?: string[], username?: string): Observable<ComputerBuild[]> {
+  public getComputerBuilds(ids?: string[], username?: string): Observable<ComputerBuildDto[]> {
     if (ids?.length === 0) {
       return of([]);
     }
@@ -137,7 +137,7 @@ export class PcBuilderService {
       params.push(`user=${username}`);
     }
     const url = params.length > 0 ? `/builds?` + params.join("&") : "/builds";
-    return this.http.get<ComputerBuildList>(url)
-      .pipe(map((buildList: ComputerBuildList) => buildList.computerBuilds ?? []));
+    return this.http.get<ComputerBuildListDto>(url)
+      .pipe(map((buildList: ComputerBuildListDto) => buildList.computerBuilds ?? []));
   }
 }

@@ -8,6 +8,10 @@ public class TableColumnNames {
     static final String CORE_CLOCK = "core_clock";
     static final String BOOST_CLOCK = "boost_clock";
     static final String PRICE = "price";
+    static final String USERNAME = "username";
+
+    // User profile
+    static final String EMAIL = "email";
 
     // CPU
     static final String CORE_COUNT = "core_count";
@@ -46,30 +50,32 @@ public class TableColumnNames {
 
     // Computer build
     static final String DESCRIPTION = "description";
-    static final String USERNAME = "username";
     static final String CREATION_DATE = "creation_date";
     static final String LAST_UPDATED_DATE = "last_updated_date";
 
     // Column arrays
+    static final String[] USER_PROFILE_COLUMNS = {
+        USERNAME, DISPLAY_NAME, EMAIL
+    };
     static final String[] CPU_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, CORE_COUNT, CORE_CLOCK, BOOST_CLOCK, TDP, INTEGRATED_GRAPHICS, HAS_SMT
+        ID, DISPLAY_NAME, PRICE, CORE_COUNT, CORE_CLOCK, BOOST_CLOCK, TDP, INTEGRATED_GRAPHICS, HAS_SMT
     };
     static final String[] MOTHERBOARD_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, CPU_SOCKET, FORM_FACTOR, MAX_MEMORY, NUM_MEMORY_SLOTS, COLOUR
+        ID, DISPLAY_NAME, PRICE, CPU_SOCKET, FORM_FACTOR, MAX_MEMORY, NUM_MEMORY_SLOTS, COLOUR
     };
     static final String[] MEMORY_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, DDR_VERSION, DDR_CLOCK, NUM_MODULES, MODULE_SIZE, COLOUR, FIRST_WORD_LATENCY, CAS_LATENCY
+        ID, DISPLAY_NAME, PRICE, DDR_VERSION, DDR_CLOCK, NUM_MODULES, MODULE_SIZE, COLOUR, FIRST_WORD_LATENCY, CAS_LATENCY
     };
     static final String[] STORAGE_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, CAPACITY, TYPE, CACHE_SIZE, FORM_FACTOR, INTERFACE
+        ID, DISPLAY_NAME, PRICE, CAPACITY, TYPE, CACHE_SIZE, FORM_FACTOR, INTERFACE
     };
     static final String[] VIDEO_CARD_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, CHIPSET, MEMORY, CORE_CLOCK, BOOST_CLOCK, COLOUR, CARD_LENGTH
+        ID, DISPLAY_NAME, PRICE, CHIPSET, MEMORY, CORE_CLOCK, BOOST_CLOCK, COLOUR, CARD_LENGTH
     };
     static final String[] POWER_SUPPLY_COLUMNS = {
-            ID, DISPLAY_NAME, PRICE, TYPE, EFFICIENCY, WATTAGE, MODULAR, COLOUR
+        ID, DISPLAY_NAME, PRICE, TYPE, EFFICIENCY, WATTAGE, MODULAR, COLOUR
     };
     static final String[] COMPUTER_BUILD_COLUMNS = {
-            ID, DISPLAY_NAME, DESCRIPTION, USERNAME, CREATION_DATE, LAST_UPDATED_DATE
+        ID, DISPLAY_NAME, DESCRIPTION, USERNAME, CREATION_DATE, LAST_UPDATED_DATE
     };
 }

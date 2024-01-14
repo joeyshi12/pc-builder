@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserProfile } from './models/pc-builder';
+import { UserProfileDto } from './models/pc-builder';
 import { PcBuilderService } from './services/pc-builder/pc-builder.service';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public userProfile$: BehaviorSubject<UserProfile | null>;
+  public userProfile$: BehaviorSubject<UserProfileDto | null>;
   public isLoginFormOpen: boolean = false;
   public errorMessage?: string;
 
@@ -35,7 +35,7 @@ export class AppComponent {
 
     this._pcBuilderService.authenticateUser({ email, password })
       .subscribe({
-        next: (userProfile: UserProfile) => {
+        next: (userProfile: UserProfileDto) => {
           this._pcBuilderService.setCurrentUser(userProfile);
           this.isLoginFormOpen = false;
         },

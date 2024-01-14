@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PcBuilderService } from '../../services/pc-builder/pc-builder.service';
-import { ComputerBuild, UserProfile } from '../../models/pc-builder';
+import { ComputerBuildDto, UserProfileDto } from '../../models/pc-builder';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -10,9 +10,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  public userProfile$: BehaviorSubject<UserProfile | null>;
+  public userProfile$: BehaviorSubject<UserProfileDto | null>;
   public isEditProfileFormOpen: boolean = false;
-  public buildList$: Observable<ComputerBuild[]>;
+  public buildList$: Observable<ComputerBuildDto[]>;
 
   constructor(private _pcBuilderService: PcBuilderService,
               router: Router) {
@@ -26,7 +26,7 @@ export class UserProfileComponent {
 
   updateUserProfile(displayName: string, email: string): void {
     this._pcBuilderService.updateUserProfile(displayName, email)
-      .subscribe((_: UserProfile | null) => {
+      .subscribe((_: UserProfileDto | null) => {
         this.isEditProfileFormOpen = false;
       })
   }
