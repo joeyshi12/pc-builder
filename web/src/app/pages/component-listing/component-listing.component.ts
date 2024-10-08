@@ -1,9 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+<<<<<<< HEAD
+=======
+import { PcBuilderService } from "../../services/pc-builder/pc-builder.service";
+>>>>>>> origin/main
 import { Observable } from "rxjs";
 import { AgGridEvent, ColDef, GridOptions } from "ag-grid-community";
 import { AgGridAngular } from 'ag-grid-angular';
 import { Store } from '@ngrx/store';
-import { updateDraftComponentIds } from './build-list.reducer';
+import { updateDraftComponentIds } from '../../reducers/computer-build-draft.reducer';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PcBuilderService } from 'src/app/services/pc-builder.service';
 

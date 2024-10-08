@@ -10,8 +10,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { BuilderComponent } from './pages/builder/builder.component';
 import {AgGridModule} from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
-import { buildListReducer } from './pages/component-listing/build-list.reducer';
-import { PcBuilderService } from './services/pc-builder.service';
+import * as ComputerBuildDraftReducer from './reducers/computer-build-draft.reducer';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,9 @@ import { PcBuilderService } from './services/pc-builder.service';
     HttpClientModule,
     AppRoutingModule,
     AgGridModule,
-    StoreModule.forRoot({ buildList: buildListReducer })
+    StoreModule.forRoot({
+      [ComputerBuildDraftReducer.stateName]: ComputerBuildDraftReducer.reducer
+    })
   ],
   providers: [
     PcBuilderService
