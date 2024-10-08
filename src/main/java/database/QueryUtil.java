@@ -1,21 +1,19 @@
 package database;
 
-import java.util.*;
-
 final class QueryUtil {
     public static String formQueryWithIdsFilter(String tableName, String[] columns, String[] ids) {
-        String columnString = String.join(", ", columns);
-        if (ids == null || ids.length == 0) {
-            String query = String.format("SELECT %s FROM %s", columnString, tableName);
-            return query;
+        StringBuilder builder = new StringBuilder("SELECT");
+        for (String column : columns) {
+            builder.append(" ");
+            builder.append(column);
         }
-        List<String> delimitedIds = new ArrayList<>();
-        for (int i = 0; i < ids.length; i++) {
-            String delimitedId = String.format("'%s'", ids[i]);
-            delimitedIds.add(delimitedId);
+        builder.append(" FROM ");
+        builder.append(tableName);
+        if (ids != null && ids.length > 0) {
+            builder.append(" WHERE id IN (");
+            builder.append(String.join(",", ids));
+            builder.append(")");
         }
-        String idSetString = String.join(",", delimitedIds);
-        String query = String.format("SELECT %s FROM %s WHERE id IN (%s)", columnString, tableName, idSetString);
-        return query;
+        return builder.toString();
     }
 }

@@ -30,7 +30,7 @@ public class Application {
 
         Javalin app = Javalin.create(config -> {
             config.requestLogger.http((ctx, millis) -> {
-                logger.info("\"%s %s\" %s", ctx.method(), ctx.url(), ctx.status());
+                logger.info(String.format("\"%s %s\" %s", ctx.method(), ctx.url(), ctx.status()));
             });
             config.staticFiles.add(staticFiles -> {
                 staticFiles.hostedPath = "/";

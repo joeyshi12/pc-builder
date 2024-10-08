@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { Observable, combineLatest, map, switchMap } from 'rxjs';
 import * as ComputerBuildDraftReducer from '../../reducers/computer-build-draft.reducer';
 import { Router } from '@angular/router';
 import { PcBuilderService } from 'src/app/services/pc-builder.service';
@@ -12,7 +12,7 @@ interface ComponentItem {
 }
 
 interface ComponentListDefinition {
-  items$: Observable<ComponentItem[]>;
+  items: ComponentItem[];
   componentType: string;
   displayName: string;
 }
@@ -25,105 +25,89 @@ interface ComponentListDefinition {
 export class BuilderComponent {
   public draft$: Observable<PcBuildDraft>;
   public isEditDraftOpen: boolean = false;
-  public componentListDefs: ComponentListDefinition[];
+  public componentListDefs$: Observable<ComponentListDefinition[]>;
 
   constructor(private _pcBuilderService: PcBuilderService,
               private _store: Store<any>,
               private _router: Router) {
     this.draft$ = _store.select(ComputerBuildDraftReducer.stateName);
-    const cpuItems$: Observable<ComponentItem[]> = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getCpuComponents(draft.cpuIds)),
-      map((components) => components.map(component => {
-        const clockString = component.coreClock ? ` ${component.coreClock} GHz` : "";
-        const coreCountString = component.coreCount ? ` ${component.coreCount}-Core` : "";
-        const displayName = component.displayName + clockString + coreCountString + " Processor";
-        const price = component.price ?? -1;
-        return { displayName, price }
-      })),
-      catchError(() => of([]))
+    this.componentListDefs$ = this.draft$.pipe(
+      switchMap((draft: PcBuildDraft) => {
+        return combineLatest([
+          _pcBuilderService.getCpuComponents(draft.cpuIds),
+          _pcBuilderService.getMotherboardComponents(draft.motherboardIds),
+          _pcBuilderService.getMemoryComponents(draft.memoryIds),
+          _pcBuilderService.getStorageComponents(draft.storageIds),
+          _pcBuilderService.getVideoCardComponents(draft.videoCardIds),
+          _pcBuilderService.getPowerSupplyComponents(draft.powerSupplyIds)
+        ]);
+      }),
+      map(([cpuList, motherboardList, memoryList, storageList, videoCardList, powerSupplyList]) => {
+        return [
+          {
+            items: cpuList.map(component => {
+              const clockString = component.coreClock ? ` ${component.coreClock} GHz` : "";
+              const coreCountString = component.coreCount ? ` ${component.coreCount}-Core` : "";
+              const displayName = component.displayName + clockString + coreCountString + " Processor";
+              const price = component.price ?? -1;
+              return {displayName, price}
+            }),
+            componentType: "cpu",
+            displayName: "CPU"
+          },
+          {
+            items: motherboardList.map(component => {
+              return {
+                displayName: component.displayName ?? "",
+                price: component.price ?? -1
+              };
+            }),
+            componentType: "motherboard",
+            displayName: "Motherboard"
+          },
+          {
+            items: memoryList.map(component => {
+              return {
+                displayName: component.displayName ?? "",
+                price: component.price ?? -1
+              };
+            }),
+            componentType: "memory",
+            displayName: "Memory"
+          },
+          {
+            items: storageList.map(component => {
+              return {
+                displayName: component.displayName ?? "",
+                price: component.price ?? -1
+              };
+            }),
+            componentType: "storage",
+            displayName: "Storage"
+          },
+          {
+            items: videoCardList.map(component => {
+              return {
+                displayName: component.displayName ?? "",
+                price: component.price ?? -1
+              };
+            }),
+            componentType: "videoCard",
+            displayName: "Video card"
+          },
+          {
+            items: powerSupplyList.map(component => {
+              return {
+                displayName: component.displayName ?? "",
+                price: component.price ?? -1
+              };
+            }),
+            componentType: "powerSupply",
+            displayName: "Power supply"
+          },
+        ]
+      })
     );
-    const motherboardItems$ = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getMotherboardComponents(draft.motherboardIds)),
-      map((components) => components.map(component => {
-        return {
-          displayName: component.displayName ?? "",
-          price: component.price ?? -1
-        };
-      })),
-      catchError(() => of([]))
-    );
-    const memoryItems$ = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getMemoryComponents(draft.memoryIds)),
-      map((components) => components.map(component => {
-        return {
-          displayName: component.displayName ?? "",
-          price: component.price ?? -1
-        };
-      })),
-      catchError(() => of([]))
-    );
-    const storageItems$ = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getStorageComponents(draft.storageIds)),
-      map((components) => components.map(component => {
-        return {
-          displayName: component.displayName ?? "",
-          price: component.price ?? -1
-        };
-      })),
-      catchError(() => of([]))
-    );
-    const videoCardItems$ = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getVideoCardComponents(draft.videoCardIds)),
-      map((components) => components.map(component => {
-        return {
-          displayName: component.displayName ?? "",
-          price: component.price ?? -1
-        };
-      })),
-      catchError(() => of([]))
-    );
-    const powerSupplyItems$ = this.draft$.pipe(
-      switchMap((draft: PcBuildDraft) => _pcBuilderService.getPowerSupplyComponents(draft.powerSupplyIds)),
-      map((components) => components.map(component => {
-        return {
-          displayName: component.displayName ?? "",
-          price: component.price ?? -1
-        };
-      })),
-      catchError(() => of([]))
-    );
-    this.componentListDefs = [
-      {
-        items$: cpuItems$,
-        componentType: "cpu",
-        displayName: "CPU"
-      },
-      {
-        items$: motherboardItems$,
-        componentType: "motherboard",
-        displayName: "Motherboard"
-      },
-      {
-        items$: memoryItems$,
-        componentType: "memory",
-        displayName: "Memory"
-      },
-      {
-        items$: storageItems$,
-        componentType: "storage",
-        displayName: "Storage"
-      },
-      {
-        items$: videoCardItems$,
-        componentType: "videoCard",
-        displayName: "Video card"
-      },
-      {
-        items$: powerSupplyItems$,
-        componentType: "powerSupply",
-        displayName: "Power supply"
-      },
-    ]
   }
 
   public saveDraft(buildList: PcBuildDraft) {

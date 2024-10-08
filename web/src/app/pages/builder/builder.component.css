@@ -1,4 +1,10 @@
-ul {
-  margin: 0.5rem 0;
-  font-size: 14px;
+:host {
+  table tr td button {
+    width: 100%;
+  }
+  ul {
+    margin: 0.5rem 0;
+    font-size: 14px;
+  }
 }
+

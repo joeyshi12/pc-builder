@@ -1,7 +1,6 @@
 package controllers;
 
 import com.google.protobuf.util.JsonFormat;
-import com.google.protobuf.ProtocolStringList;
 
 import database.PcBuildDatabase;
 import database.PcComponentDatabase;
@@ -30,12 +29,7 @@ public class PcBuildController {
                 idList =  idsValue.split(",");
             }
             String username = ctx.queryParam("username");
-            List<String> buildStrings = new ArrayList<>();
-            for (PcBuild build : pcBuildDatabase.getAllPcBuilds(idList, username)) {
-                buildStrings.add(JsonFormat.printer().print(build));
-            }
-            ctx.json(buildStrings);
-            ctx.status(200);
+            ctx.json(ProtoUtil.protoListToJsonString(pcBuildDatabase.getAllPcBuilds(idList, username)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);
@@ -58,17 +52,15 @@ public class PcBuildController {
                 .setCreationDate(currentDate.getTime())
                 .setLastUpdateDate(currentDate.getTime());
 
-            buildBuilder.addAllCpuList(pcComponentDatabase.getCpuComponents(protocolStringListToArray(draft.getCpuIdsList())));
-            buildBuilder.addAllMotherboardList(pcComponentDatabase.getMotherboardComponents(protocolStringListToArray(draft.getMotherboardIdsList())));
-            buildBuilder.addAllMemoryList(pcComponentDatabase.getMemoryComponents(protocolStringListToArray(draft.getMemoryIdsList())));
-            buildBuilder.addAllStorageList(pcComponentDatabase.getStorageComponents(protocolStringListToArray(draft.getStorageIdsList())));
-            buildBuilder.addAllVideoCardList(pcComponentDatabase.getVideoCardComponents(protocolStringListToArray(draft.getVideoCardIdsList())));
-            buildBuilder.addAllPowerSupplyList(pcComponentDatabase.getPowerSupplyComponents(protocolStringListToArray(draft.getPowerSupplyIdsList())));
+            buildBuilder.addAllCpuList(pcComponentDatabase.getCpuComponents(ProtoUtil.protocolStringListToArray(draft.getCpuIdsList())));
+            buildBuilder.addAllMotherboardList(pcComponentDatabase.getMotherboardComponents(ProtoUtil.protocolStringListToArray(draft.getMotherboardIdsList())));
+            buildBuilder.addAllMemoryList(pcComponentDatabase.getMemoryComponents(ProtoUtil.protocolStringListToArray(draft.getMemoryIdsList())));
+            buildBuilder.addAllStorageList(pcComponentDatabase.getStorageComponents(ProtoUtil.protocolStringListToArray(draft.getStorageIdsList())));
+            buildBuilder.addAllVideoCardList(pcComponentDatabase.getVideoCardComponents(ProtoUtil.protocolStringListToArray(draft.getVideoCardIdsList())));
+            buildBuilder.addAllPowerSupplyList(pcComponentDatabase.getPowerSupplyComponents(ProtoUtil.protocolStringListToArray(draft.getPowerSupplyIdsList())));
 
             PcBuild build = buildBuilder.build();
-            pcBuildDatabase.insertPcBuild(build);
-            ctx.json(JsonFormat.printer().print(build));
-            ctx.status(200);
+            ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(build)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);
             ctx.status(500);
@@ -86,7 +78,6 @@ public class PcBuildController {
                     .build();
             pcBuildDatabase.updatePcBuild(build);
             ctx.json(build);
-            ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to update computer build", e);
             ctx.status(500);
@@ -102,14 +93,5 @@ public class PcBuildController {
             logger.error("Failed to delete computer build", e);
             ctx.status(500);
         }
-    }
-
-    private String[] protocolStringListToArray(ProtocolStringList strList) {
-        String[] strArr = new String[strList.size()];
-        Iterator<String> it = strList.listIterator();
-        for (int i = 0; it.hasNext(); i++) {
-            strArr[i] = it.next();
-        }
-        return strArr;
     }
 }
