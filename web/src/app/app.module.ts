@@ -11,6 +11,7 @@ import { BuilderComponent } from './pages/builder/builder.component';
 import {AgGridModule} from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
 import * as ComputerBuildDraftReducer from './reducers/computer-build-draft.reducer';
+import { PcBuilderService } from './services/pc-builder.service';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-<<<<<<< HEAD
-=======
-import { PcBuilderService } from "../../services/pc-builder/pc-builder.service";
->>>>>>> origin/main
 import { Observable } from "rxjs";
 import { AgGridEvent, ColDef, GridOptions } from "ag-grid-community";
 import { AgGridAngular } from 'ag-grid-angular';

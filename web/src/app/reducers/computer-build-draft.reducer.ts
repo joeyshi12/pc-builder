@@ -1,22 +1,12 @@
+import { produce } from 'immer';
 import { createAction, createReducer, on, props } from '@ngrx/store';
-<<<<<<< HEAD:web/src/app/pages/component-listing/build-list.reducer.ts
 import { PcBuildDraft } from 'src/app/transfers/pc_build';
 
-
+export const stateName = "computerBuildDraft";
 export const updateDraftInfo = createAction("updatePcBuildDraftInfo", props<{ displayName: string, description: string }>());
 export const updateDraftComponentIds = createAction("updatePcBuildDraftComponentIds", props<{ componentType: string, ids: string[] }>());
 
 const emptyState: PcBuildDraft = {
-=======
-import { produce } from 'immer';
-import { ComputerBuildDraftDto } from 'src/app/models/pc-builder';
-
-export const stateName = "computerBuildDraft";
-export const updateDraftInfo = createAction("updateComputerBuildDraftInfo", props<{ displayName: string, description: string }>());
-export const updateDraftComponentIds = createAction("updateComputerBuildDraftComponentIds", props<{ componentType: string, ids: string[] }>());
-
-const emptyState: ComputerBuildDraftDto = {
->>>>>>> origin/main:web/src/app/reducers/computer-build-draft.reducer.ts
   displayName: "Example name",
   description: "Example description",
   cpuIds: [],
@@ -27,11 +17,7 @@ const emptyState: ComputerBuildDraftDto = {
   powerSupplyIds: []
 };
 
-<<<<<<< HEAD:web/src/app/pages/component-listing/build-list.reducer.ts
 function getInitialState(): PcBuildDraft {
-=======
-function getInitialState(): ComputerBuildDraftDto {
->>>>>>> origin/main:web/src/app/reducers/computer-build-draft.reducer.ts
   const storedValue = localStorage.getItem("draft");
   if (!storedValue) {
     return emptyState;
@@ -45,7 +31,6 @@ function getInitialState(): ComputerBuildDraftDto {
 
 export const reducer = createReducer(
   getInitialState(),
-<<<<<<< HEAD:web/src/app/pages/component-listing/build-list.reducer.ts
   on(updateDraftInfo, (state: PcBuildDraft, { displayName, description }) => {
     const newState = {
       ...state,
@@ -96,24 +81,12 @@ export const reducer = createReducer(
       default:
         throw Error(`Invalid componentType ${componentType}`)
     }
-=======
-  on(updateDraftInfo, (state: ComputerBuildDraftDto, { displayName, description }) => {
-    const newState = produce(state, (draft) => {
-      draft.displayName = displayName;
-      draft.description = description;
-    });
-    localStorage.setItem("draft", JSON.stringify(newState));
-    return newState;
-  }),
-  on(updateDraftComponentIds, (state: ComputerBuildDraftDto, { componentType, ids }) => {
-    const newState = updateComponentIds(state, componentType, ids);
->>>>>>> origin/main:web/src/app/reducers/computer-build-draft.reducer.ts
     localStorage.setItem("draft", JSON.stringify(newState));
     return newState;
   })
 )
 
-function updateComponentIds(state: ComputerBuildDraftDto, componentType: string, ids: string[]) {
+function updateComponentIds(state: PcBuildDraft, componentType: string, ids: string[]) {
   return produce(state, (draft) => {
     switch (componentType) {
       case "cpu":
