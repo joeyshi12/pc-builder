@@ -1,0 +1,72 @@
+syntax = "proto3";
+package transfers;
+
+message CpuComponent {
+  string uuid = 1;
+  string displayName = 2;
+  int32 coreCount = 3;
+  int32 coreClock = 4;
+  int32 boostClock = 5;
+  int32 tdp = 6;
+  string integratedGraphics = 7;
+  bool hasSmt = 8;
+  int32 price = 9;
+}
+
+message MotherboardComponent {
+  string uuid = 1;
+  string displayName = 2;
+  string cpuSocket = 3;
+  string formFactor = 4;
+  int32 maxMemoryGigabytes = 5;
+  int32 numMemorySlots = 6;
+  string colour = 7;
+  int32 price = 8;
+}
+
+message MemoryComponent {
+  string uuid = 1;
+  string displayName = 2;
+  int32 ddrVersion = 3;
+  int32 ddrClock = 4;
+  int32 numModules = 5;
+  int32 moduleSizeGigabytes = 6;
+  string colour = 7;
+  int32 firstWordLatency = 8;
+  int32 casLatency = 9;
+  int32 price = 10;
+}
+
+message StorageComponent {
+  string uuid = 1;
+  string displayName = 2;
+  int32 capacityGigabytes = 3;
+  string type = 4;
+  int32 cacheSizeMegabytes = 5;
+  string formFactor = 6;
+  string interface = 7;
+  int32 price = 8;
+}
+
+message VideoCardComponent {
+  string uuid = 1;
+  string displayName = 2;
+  string chipset = 3;
+  int32 memoryGigabytes = 4;
+  int32 coreClock = 5;
+  int32 boostClock = 6;
+  string colour = 7;
+  int32 lengthMillimeters = 8;
+  int32 price = 9;
+}
+
+message PowerSupplyComponent {
+  string uuid = 1;
+  string displayName = 2;
+  string type = 3;
+  string efficiency = 4;
+  int32 wattage = 5;
+  string modular = 6;
+  string colour = 7;
+  int32 price = 8;
+}

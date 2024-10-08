@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, catchError, of, switchMap } from 'rxjs';
-import { ComputerBuildDraft, CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from 'src/app/models/pc-builder';
-import { PcBuilderService } from 'src/app/services/pc-builder/pc-builder.service';
+import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from 'src/app/transfers/pc_component';
 import { updateDraftInfo } from '../component-listing/build-list.reducer';
 import { Router } from '@angular/router';
+import { PcBuilderService } from 'src/app/services/pc-builder.service';
+import { PcBuildDraft } from 'src/app/transfers/pc_build';
 
 @Component({
   selector: 'app-builder',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./builder.component.css']
 })
 export class BuilderComponent {
-  public draft$: Observable<ComputerBuildDraft>;
+  public draft$: Observable<PcBuildDraft>;
   public cpuList$: Observable<CpuComponent[]>;
   public motherboardList$: Observable<MotherboardComponent[]>;
   public memoryList$: Observable<MemoryComponent[]>;
@@ -26,32 +27,32 @@ export class BuilderComponent {
               private _router: Router) {
     this.draft$ = _store.select("buildList");
     this.cpuList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getCpuComponents(buildList.cpuIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getCpuComponents(buildList.cpuIds)),
       catchError(() => of([]))
     );
     this.motherboardList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getMotherboardComponents(buildList.motherboardIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getMotherboardComponents(buildList.motherboardIds)),
       catchError(() => of([]))
     );
     this.memoryList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getMemoryComponents(buildList.memoryIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getMemoryComponents(buildList.memoryIds)),
       catchError(() => of([]))
     );
     this.storageList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getStorageComponents(buildList.storageIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getStorageComponents(buildList.storageIds)),
       catchError(() => of([]))
     );
     this.videoCardList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getVideoCardComponents(buildList.videoCardIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getVideoCardComponents(buildList.videoCardIds)),
       catchError(() => of([]))
     );
     this.powerSupplyList$ = this.draft$.pipe(
-      switchMap((buildList: ComputerBuildDraft) => _pcBuilderService.getPowerSupplyComponents(buildList.powerSupplyIds)),
+      switchMap((buildList: PcBuildDraft) => _pcBuilderService.getPowerSupplyComponents(buildList.powerSupplyIds)),
       catchError(() => of([]))
     );
   }
 
-  public saveDraft(buildList: ComputerBuildDraft) {
+  public saveDraft(buildList: PcBuildDraft) {
     const currentUser = this._pcBuilderService.currentUser$.getValue()
     if (!currentUser) {
       alert("Must be logged in first");

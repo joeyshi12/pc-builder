@@ -25,10 +25,14 @@ run_dev() {
 }
 
 generate_protobuf() {
-  local proto_file="models/pc-builder.proto"
-  protoc --java_out="src/main/java" $proto_file || exit 1
+  proto_files=$(find transfers -iname "*.proto")
+  protoc --java_out="src/main/java" $proto_files || exit 1
   echo "Finished generating java models"
-  protoc --plugin="web/node_modules/.bin/protoc-gen-ts_proto" --ts_proto_opt=esModuleInterop=true --ts_proto_opt=useOptionals=all --ts_proto_out="web/src/app" $proto_file || exit 1
+  protoc --plugin="web/node_modules/.bin/protoc-gen-ts_proto" \
+      --ts_proto_opt=esModuleInterop=true \
+      --ts_proto_opt=useOptionals=all \
+      --ts_proto_out="web/src/app" \
+      $proto_files || exit 1
   echo "Finished generating typescript models"
 }
 

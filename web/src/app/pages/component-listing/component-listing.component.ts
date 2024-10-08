@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {PcBuilderService} from "../../services/pc-builder/pc-builder.service";
 import { Observable } from "rxjs";
 import { AgGridEvent, ColDef, GridOptions } from "ag-grid-community";
 import { AgGridAngular } from 'ag-grid-angular';
 import { Store } from '@ngrx/store';
 import { updateDraftComponentIds } from './build-list.reducer';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { PcBuilderService } from 'src/app/services/pc-builder.service';
 
 @Component({
   selector: 'app-component-listing',

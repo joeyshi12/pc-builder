@@ -1,6 +1,6 @@
 package database;
 
-public class TableColumnNames {
+final class TableColumnNames {
     static final String ID = "id";
     static final String DISPLAY_NAME = "display_name";
     static final String COLOUR = "colour";

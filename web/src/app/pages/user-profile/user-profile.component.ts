@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { PcBuilderService } from '../../services/pc-builder/pc-builder.service';
-import { ComputerBuild, UserProfile } from '../../models/pc-builder';
+import { UserProfile } from '../../transfers/user';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { PcBuilderService } from 'src/app/services/pc-builder.service';
+import { PcBuild } from 'src/app/transfers/pc_build';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +13,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class UserProfileComponent {
   public userProfile$: BehaviorSubject<UserProfile | null>;
   public isEditProfileFormOpen: boolean = false;
-  public buildList$: Observable<ComputerBuild[]>;
+  public buildList$: Observable<PcBuild[]>;
 
   constructor(private _pcBuilderService: PcBuilderService,
               router: Router) {
@@ -21,7 +22,7 @@ export class UserProfileComponent {
     if (!currentUser) {
       router.navigate(["/"]);
     }
-    this.buildList$ = _pcBuilderService.getComputerBuilds(undefined, currentUser?.username);
+    this.buildList$ = _pcBuilderService.getPcBuilds(undefined, currentUser?.username);
   }
 
   updateUserProfile(displayName: string, email: string): void {

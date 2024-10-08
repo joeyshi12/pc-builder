@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { UserProfile } from './models/pc-builder';
-import { PcBuilderService } from './services/pc-builder/pc-builder.service';
 import { BehaviorSubject } from 'rxjs';
+import { UserProfile } from './transfers/user';
+import { PcBuilderService } from './services/pc-builder.service';
 
 @Component({
   selector: 'app-root',

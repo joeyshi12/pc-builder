@@ -1,16 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { PcBuild, PcBuildDraft } from "../transfers/pc_build";
 import {
-    ComputerBuild,
-  ComputerBuildDraft,
-  ComputerBuildList,
   CpuComponent,
-  CpuComponentList, MemoryComponent, MemoryComponentList,
+  MemoryComponent,
   MotherboardComponent,
-  MotherboardComponentList, PowerSupplyComponent, PowerSupplyComponentList,
-  StorageComponent, StorageComponentList, UserProfile, VideoCardComponent, VideoCardComponentList
-} from "../../models/pc-builder";
+  PowerSupplyComponent,
+  StorageComponent, VideoCardComponent
+} from "../transfers/pc_component";
+import { UserProfile } from '../transfers/user';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +35,7 @@ export class PcBuilderService {
   }
 
   public authenticateUser(userProfile: UserProfile): Observable<UserProfile> {
-    return this.http.post<UserProfile>('/session/authenticate', userProfile);
+    return this.http.post<UserProfile>('/users/authenticate', userProfile);
   }
 
   public setCurrentUser(userProfile: UserProfile): void {
@@ -48,13 +47,13 @@ export class PcBuilderService {
 
   public getSessionUser(): Observable<UserProfile> {
     const headers = new HttpHeaders().set("credentials", "include");
-    return this.http.get<UserProfile>('/session/user', { headers: headers });
+    return this.http.get<UserProfile>('/users/session-user', { headers: headers });
   }
 
   public clearSessionUser(): Observable<void> {
     localStorage.removeItem(PcBuilderService.USERNAME_KEY);
     const headers = new HttpHeaders().set("credentials", "include");
-    return this.http.delete<void>('/session/user', { headers: headers });
+    return this.http.delete<void>('/users/session-user', { headers: headers });
   }
 
   public updateUserProfile(displayName: string, email: string): Observable<UserProfile | null> {
@@ -71,61 +70,55 @@ export class PcBuilderService {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/cpu?ids=${ids.join(",")}` : "/cpu";
-    return this.http.get<CpuComponentList>(url)
-      .pipe(map((cpuList: CpuComponentList) => cpuList?.cpuComponents ?? []));
+    const url = ids ? `/components/cpu?ids=${ids.join(",")}` : "/components/cpu";
+    return this.http.get<CpuComponent[]>(url);
   }
 
   public getMotherboardComponents(ids?: string[]): Observable<MotherboardComponent[]> {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/motherboards?ids=${ids.join(",")}` : "/motherboards";
-    return this.http.get<MotherboardComponentList>(url)
-      .pipe(map((motherboardList: MotherboardComponentList) => motherboardList?.motherboardComponents ?? []));
+    const url = ids ? `/components/motherboards?ids=${ids.join(",")}` : "/components/motherboards";
+    return this.http.get<MotherboardComponent[]>(url);
   }
 
   public getMemoryComponents(ids?: string[]): Observable<MemoryComponent[]> {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/memory?ids=${ids.join(",")}` : "/memory";
-    return this.http.get<MemoryComponentList>(url)
-      .pipe(map((memoryList: MemoryComponentList) => memoryList?.memoryComponents ?? []));
+    const url = ids ? `/components/memory?ids=${ids.join(",")}` : "/components/memory";
+    return this.http.get<MemoryComponent[]>(url);
   }
 
   public getStorageComponents(ids?: string[]): Observable<StorageComponent[]> {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/storage?ids=${ids.join(",")}` : "/storage";
-    return this.http.get<StorageComponentList>(url)
-      .pipe(map((storageList: StorageComponentList) => storageList?.storageComponents ?? []));
+    const url = ids ? `/components/storage?ids=${ids.join(",")}` : "/components/storage";
+    return this.http.get<StorageComponent[]>(url);
   }
 
   public getVideoCardComponents(ids?: string[]): Observable<VideoCardComponent[]> {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/video-cards?ids=${ids.join(",")}` : "/video-cards";
-    return this.http.get<VideoCardComponentList>(url)
-      .pipe(map((videoCardList: VideoCardComponentList) => videoCardList?.videoCardComponents ?? []));
+    const url = ids ? `/components/video-cards?ids=${ids.join(",")}` : "/components/video-cards";
+    return this.http.get<VideoCardComponent[]>(url);
   }
 
   public getPowerSupplyComponents(ids?: string[]): Observable<PowerSupplyComponent[]> {
     if (ids?.length === 0) {
       return of([]);
     }
-    const url = ids ? `/power-supplies?ids=${ids.join(",")}` : "/power-supplies";
-    return this.http.get<PowerSupplyComponentList>(url)
-      .pipe(map((powerSupplyList: PowerSupplyComponentList) => powerSupplyList?.powerSupplyComponents ?? []));
+    const url = ids ? `/components/power-supplies?ids=${ids.join(",")}` : "/components/power-supplies";
+    return this.http.get<PowerSupplyComponent[]>(url);
   }
 
-  public createComputerBuild(draft: ComputerBuildDraft): Observable<ComputerBuild> {
-    return this.http.put<ComputerBuild>("/builds", draft);
+  public createComputerBuild(draft: PcBuildDraft): Observable<PcBuild> {
+    return this.http.put<PcBuild>("/builds", draft);
   }
 
-  public getComputerBuilds(ids?: string[], username?: string): Observable<ComputerBuild[]> {
+  public getPcBuilds(ids?: string[], username?: string): Observable<PcBuild[]> {
     if (ids?.length === 0) {
       return of([]);
     }
@@ -137,7 +130,6 @@ export class PcBuilderService {
       params.push(`user=${username}`);
     }
     const url = params.length > 0 ? `/builds?` + params.join("&") : "/builds";
-    return this.http.get<ComputerBuildList>(url)
-      .pipe(map((buildList: ComputerBuildList) => buildList.computerBuilds ?? []));
+    return this.http.get<PcBuild[]>(url);
   }
 }

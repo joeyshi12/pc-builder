@@ -1,11 +1,11 @@
 import { createAction, createReducer, on, props } from '@ngrx/store';
-import { ComputerBuildDraft } from 'src/app/models/pc-builder';
+import { PcBuildDraft } from 'src/app/transfers/pc_build';
 
 
-export const updateDraftInfo = createAction("updateComputerBuildDraftInfo", props<{ displayName: string, description: string }>());
-export const updateDraftComponentIds = createAction("updateComputerBuildDraftComponentIds", props<{ componentType: string, ids: string[] }>());
+export const updateDraftInfo = createAction("updatePcBuildDraftInfo", props<{ displayName: string, description: string }>());
+export const updateDraftComponentIds = createAction("updatePcBuildDraftComponentIds", props<{ componentType: string, ids: string[] }>());
 
-const emptyState: ComputerBuildDraft = {
+const emptyState: PcBuildDraft = {
   displayName: "Example name",
   description: "Example description",
   cpuIds: [],
@@ -16,7 +16,7 @@ const emptyState: ComputerBuildDraft = {
   powerSupplyIds: []
 };
 
-function getInitialState(): ComputerBuildDraft {
+function getInitialState(): PcBuildDraft {
   const storedValue = localStorage.getItem("draft");
   if (!storedValue) {
     return emptyState;
@@ -30,7 +30,7 @@ function getInitialState(): ComputerBuildDraft {
 
 export const buildListReducer = createReducer(
   getInitialState(),
-  on(updateDraftInfo, (state: ComputerBuildDraft, { displayName, description }) => {
+  on(updateDraftInfo, (state: PcBuildDraft, { displayName, description }) => {
     const newState = {
       ...state,
       displayName, description
@@ -38,8 +38,8 @@ export const buildListReducer = createReducer(
     localStorage.setItem("draft", JSON.stringify(newState));
     return newState;
   }),
-  on(updateDraftComponentIds, (state: ComputerBuildDraft, { componentType, ids }) => {
-    let newState: ComputerBuildDraft;
+  on(updateDraftComponentIds, (state: PcBuildDraft, { componentType, ids }) => {
+    let newState: PcBuildDraft;
     switch (componentType) {
       case "cpu":
         newState = {
