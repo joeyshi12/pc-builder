@@ -17,7 +17,7 @@
       <th>Price</th>
     </tr>
     </thead>
-    <tbody *ngIf="componentListDefs$ | async as componentListDefs">
+    <tbody *ngIf="componentListModels$ | async as componentListDefs">
       <ng-container *ngFor="let listDef of componentListDefs">
         <ng-container *ngIf="listDef.items.length > 0; else componentSelect">
           <tr>

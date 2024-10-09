@@ -12,14 +12,14 @@ public class PcComponentDatabase {
         this.connectionHandler = connectionHandler;
     }
 
-    public List<CpuComponent> getCpuComponents(String[] componentIds) throws SQLException {
+    public List<CpuComponent> getCpuComponents(String[] componentIds) throws Exception {
         List<CpuComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("cpu", TableColumnNames.CPU_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            CpuComponent component = CpuComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                CpuComponent component = CpuComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setCoreCount(rs.getInt(TableColumnNames.CORE_COUNT))
@@ -30,20 +30,20 @@ public class PcComponentDatabase {
                     .setHasSmt(rs.getBoolean(TableColumnNames.HAS_SMT))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 
-    public List<MotherboardComponent> getMotherboardComponents(String[] componentIds) throws SQLException {
+    public List<MotherboardComponent> getMotherboardComponents(String[] componentIds) throws Exception {
         List<MotherboardComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            MotherboardComponent component = MotherboardComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                MotherboardComponent component = MotherboardComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setCpuSocket(rs.getString(TableColumnNames.CPU_SOCKET))
@@ -53,20 +53,20 @@ public class PcComponentDatabase {
                     .setColour(rs.getString(TableColumnNames.COLOUR))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 
-    public List<MemoryComponent> getMemoryComponents(String[] componentIds) throws SQLException {
+    public List<MemoryComponent> getMemoryComponents(String[] componentIds) throws Exception {
         List<MemoryComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("memory", TableColumnNames.MEMORY_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            MemoryComponent component = MemoryComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                MemoryComponent component = MemoryComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setDdrVersion(rs.getInt(TableColumnNames.DDR_VERSION))
@@ -78,20 +78,20 @@ public class PcComponentDatabase {
                     .setCasLatency(rs.getInt(TableColumnNames.CAS_LATENCY))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 
-    public List<StorageComponent> getStorageComponents(String[] componentIds) throws SQLException {
+    public List<StorageComponent> getStorageComponents(String[] componentIds) throws Exception {
         List<StorageComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("storage", TableColumnNames.STORAGE_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            StorageComponent component = StorageComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                StorageComponent component = StorageComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setCapacityGigabytes(rs.getInt(TableColumnNames.CAPACITY))
@@ -101,20 +101,20 @@ public class PcComponentDatabase {
                     .setInterface(rs.getString(TableColumnNames.INTERFACE))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 
-    public List<VideoCardComponent> getVideoCardComponents(String[] componentIds) throws SQLException {
+    public List<VideoCardComponent> getVideoCardComponents(String[] componentIds) throws Exception {
         List<VideoCardComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            VideoCardComponent component = VideoCardComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                VideoCardComponent component = VideoCardComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setChipset(rs.getString(TableColumnNames.CHIPSET))
@@ -125,20 +125,20 @@ public class PcComponentDatabase {
                     .setLengthMillimeters(rs.getInt(TableColumnNames.CARD_LENGTH))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 
-    public List<PowerSupplyComponent> getPowerSupplyComponents(String[] componentIds) throws SQLException {
+    public List<PowerSupplyComponent> getPowerSupplyComponents(String[] componentIds) throws Exception {
         List<PowerSupplyComponent> components = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIds);
-        PreparedStatement ps = connection.prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            PowerSupplyComponent component = PowerSupplyComponent.newBuilder()
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                PowerSupplyComponent component = PowerSupplyComponent.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setType(rs.getString(TableColumnNames.TYPE))
@@ -148,9 +148,9 @@ public class PcComponentDatabase {
                     .setColour(rs.getString(TableColumnNames.COLOUR))
                     .setPrice(rs.getInt(TableColumnNames.PRICE))
                     .build();
-            components.add(component);
+                components.add(component);
+            }
         }
-        connection.close();
         return components;
     }
 }

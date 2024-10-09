@@ -54,24 +54,12 @@ public final class User {
         getDisplayNameBytes();
 
     /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
-
-    /**
-     * <code>string password = 4;</code>
+     * <code>string password = 3;</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
-     * <code>string password = 4;</code>
+     * <code>string password = 3;</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
@@ -101,7 +89,6 @@ public final class User {
     private UserProfile() {
       username_ = "";
       displayName_ = "";
-      email_ = "";
       password_ = "";
     }
 
@@ -196,50 +183,11 @@ public final class User {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object email_ = "";
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 4;
+    public static final int PASSWORD_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
     /**
-     * <code>string password = 4;</code>
+     * <code>string password = 3;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -256,7 +204,7 @@ public final class User {
       }
     }
     /**
-     * <code>string password = 4;</code>
+     * <code>string password = 3;</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -294,11 +242,8 @@ public final class User {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, email_);
-      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, password_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, password_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -315,11 +260,8 @@ public final class User {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, email_);
-      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, password_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, password_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -340,8 +282,6 @@ public final class User {
           .equals(other.getUsername())) return false;
       if (!getDisplayName()
           .equals(other.getDisplayName())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -359,8 +299,6 @@ public final class User {
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + DISPLAYNAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -496,7 +434,6 @@ public final class User {
         bitField0_ = 0;
         username_ = "";
         displayName_ = "";
-        email_ = "";
         password_ = "";
         return this;
       }
@@ -538,9 +475,6 @@ public final class User {
           result.displayName_ = displayName_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.email_ = email_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.password_ = password_;
         }
       }
@@ -567,14 +501,9 @@ public final class User {
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -614,15 +543,10 @@ public final class User {
                 break;
               } // case 18
               case 26: {
-                email_ = input.readStringRequireUtf8();
+                password_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 34: {
-                password_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -784,81 +708,9 @@ public final class User {
         return this;
       }
 
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 3;</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        email_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        email_ = getDefaultInstance().getEmail();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        email_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object password_ = "";
       /**
-       * <code>string password = 4;</code>
+       * <code>string password = 3;</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -874,7 +726,7 @@ public final class User {
         }
       }
       /**
-       * <code>string password = 4;</code>
+       * <code>string password = 3;</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -891,7 +743,7 @@ public final class User {
         }
       }
       /**
-       * <code>string password = 4;</code>
+       * <code>string password = 3;</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -899,22 +751,22 @@ public final class User {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         password_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string password = 4;</code>
+       * <code>string password = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
         password_ = getDefaultInstance().getPassword();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string password = 4;</code>
+       * <code>string password = 3;</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -923,7 +775,7 @@ public final class User {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         password_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1804,12 +1656,11 @@ public final class User {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024transfers/user.proto\022\ttransfers\"U\n\013Use" +
+      "\n\024transfers/user.proto\022\ttransfers\"F\n\013Use" +
       "rProfile\022\020\n\010username\030\001 \001(\t\022\023\n\013displayNam" +
-      "e\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(\t" +
-      "\"G\n\007Comment\022\022\n\nauthorName\030\001 \001(\t\022\017\n\007conte" +
-      "nt\030\002 \001(\t\022\027\n\017lastUpdatedDate\030\004 \001(\tb\006proto" +
-      "3"
+      "e\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\"G\n\007Comment\022\022\n\n" +
+      "authorName\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\027\n\017las" +
+      "tUpdatedDate\030\004 \001(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1820,7 +1671,7 @@ public final class User {
     internal_static_transfers_UserProfile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_transfers_UserProfile_descriptor,
-        new java.lang.String[] { "Username", "DisplayName", "Email", "Password", });
+        new java.lang.String[] { "Username", "DisplayName", "Password", });
     internal_static_transfers_Comment_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_transfers_Comment_fieldAccessorTable = new

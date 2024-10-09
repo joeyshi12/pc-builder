@@ -3,7 +3,6 @@ package controllers;
 import com.google.protobuf.util.JsonFormat;
 
 import database.PcBuildDatabase;
-import database.PcComponentDatabase;
 import io.javalin.http.Context;
 import transfers.PcBuildOuterClass.*;
 import org.slf4j.Logger;
@@ -14,11 +13,9 @@ import java.util.*;
 public class PcBuildController {
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private final PcBuildDatabase pcBuildDatabase;
-    private final PcComponentDatabase pcComponentDatabase;
 
-    public PcBuildController(PcBuildDatabase pcBuildDatabase, PcComponentDatabase pcComponentDatabase) {
+    public PcBuildController(PcBuildDatabase pcBuildDatabase) {
         this.pcBuildDatabase = pcBuildDatabase;
-        this.pcComponentDatabase = pcComponentDatabase;
     }
 
     public void getAll(Context ctx) {
@@ -39,28 +36,10 @@ public class PcBuildController {
     public void create(Context ctx) {
         try {
             String username = ctx.sessionAttribute("username");
-            PcBuildDraft.Builder draftBuilder = PcBuildDraft.newBuilder();
-            JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), draftBuilder);
-            PcBuildDraft draft = draftBuilder.build();
-
-            java.util.Date currentDate = new java.util.Date();
-            PcBuild.Builder buildBuilder = PcBuild.newBuilder()
-                .setUuid(UUID.randomUUID().toString())
-                .setDisplayName(draft.getDisplayName())
-                .setDescription(draft.getDescription())
-                .setUsername(username)
-                .setCreationDate(currentDate.getTime())
-                .setLastUpdateDate(currentDate.getTime());
-
-            buildBuilder.addAllCpuList(pcComponentDatabase.getCpuComponents(ProtoUtil.protocolStringListToArray(draft.getCpuIdsList())));
-            buildBuilder.addAllMotherboardList(pcComponentDatabase.getMotherboardComponents(ProtoUtil.protocolStringListToArray(draft.getMotherboardIdsList())));
-            buildBuilder.addAllMemoryList(pcComponentDatabase.getMemoryComponents(ProtoUtil.protocolStringListToArray(draft.getMemoryIdsList())));
-            buildBuilder.addAllStorageList(pcComponentDatabase.getStorageComponents(ProtoUtil.protocolStringListToArray(draft.getStorageIdsList())));
-            buildBuilder.addAllVideoCardList(pcComponentDatabase.getVideoCardComponents(ProtoUtil.protocolStringListToArray(draft.getVideoCardIdsList())));
-            buildBuilder.addAllPowerSupplyList(pcComponentDatabase.getPowerSupplyComponents(ProtoUtil.protocolStringListToArray(draft.getPowerSupplyIdsList())));
-
-            PcBuild build = buildBuilder.build();
-            ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(build)));
+            PcBuild.Builder builder = PcBuild.newBuilder();
+            JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
+            builder.setUsername(username);
+            ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(builder.build())));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);
             ctx.status(500);
@@ -74,7 +53,7 @@ public class PcBuildController {
             PcBuild build = builder.build();
             Date lastUpdatedDate = new Date();
             build = build.toBuilder()
-                    .setLastUpdateDate(lastUpdatedDate.getTime())
+                .setLastUpdateDate(lastUpdatedDate.getTime())
                     .build();
             pcBuildDatabase.updatePcBuild(build);
             ctx.json(build);

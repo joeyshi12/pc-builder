@@ -1,7 +1,10 @@
 import controllers.*;
 import database.*;
 import io.javalin.Javalin;
+import io.javalin.config.JavalinConfig;
+import io.javalin.http.Context;
 import io.javalin.http.staticfiles.Location;
+import io.javalin.http.staticfiles.StaticFileConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,43 +29,44 @@ public class Application {
 
         UserController userController = new UserController(userDatabase);
         PcComponentController pcComponentController = new PcComponentController(pcComponentDatabase);
-        PcBuildController pcBuildController = new PcBuildController(pcBuildDatabase, pcComponentDatabase);
+        PcBuildController pcBuildController = new PcBuildController(pcBuildDatabase);
 
-        Javalin app = Javalin.create(config -> {
-            config.requestLogger.http((ctx, millis) -> {
-                logger.info(String.format("\"%s %s\" %s", ctx.method(), ctx.url(), ctx.status()));
-            });
-            config.staticFiles.add(staticFiles -> {
+        try (Javalin app = createApplication(connectionHandler)) {
+            app.before((Context ctx) -> ctx.header("Access-Control-Allow-Credentials", "true"));
+
+            app.put("/users", userController::update);
+            app.post("/users/authenticate", userController::authenticateUser);
+            app.get("/users/session-user", userController::getSessionUser);
+            app.delete("/users/session-user", userController::clearSessionUser);
+
+            app.put("/builds", pcBuildController::create);
+            app.get("/builds", pcBuildController::getAll);
+            app.post("/builds", pcBuildController::update);
+            app.delete("/builds/{id}", pcBuildController::delete);
+
+            app.get("/components/cpu", pcComponentController::getAllCpuComponents);
+            app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);
+            app.get("/components/memory", pcComponentController::getAllMemoryComponents);
+            app.get("/components/storage", pcComponentController::getAllStorageComponents);
+            app.get("/components/video-cards", pcComponentController::getAllVideoCardComponents);
+            app.get("/components/power-supplies", pcComponentController::getAllPowerSupplyComponents);
+
+            app.start("0.0.0.0", 8080);
+        }
+    }
+
+    private static Javalin createApplication(ConnectionHandler connectionHandler) {
+        return Javalin.create((JavalinConfig config) -> {
+            config.requestLogger.http((Context ctx, Float millis) ->
+                logger.info(String.format("\"%s %s\" %s", ctx.method(), ctx.url(), ctx.status())));
+            config.staticFiles.add((StaticFileConfig staticFiles) -> {
                 staticFiles.hostedPath = "/";
                 staticFiles.directory = "public";
                 staticFiles.location = Location.CLASSPATH;
                 staticFiles.precompress = false;
             });
-            config.jetty.sessionHandler(() -> connectionHandler.sqlSessionHandler());
+            config.jetty.sessionHandler(connectionHandler::sqlSessionHandler);
         });
-
-        app.before((ctx) -> {
-            ctx.header("Access-Control-Allow-Credentials", "true");
-        });
-
-        app.put("/users", userController::update);
-        app.post("/users/authenticate", userController::authenticateUser);
-        app.get("/users/session-user", userController::getSessionUser);
-        app.delete("/users/session-user", userController::clearSessionUser);
-
-        app.put("/builds", pcBuildController::create);
-        app.get("/builds", pcBuildController::getAll);
-        app.post("/builds/{id}", pcBuildController::update);
-        app.delete("/builds/{id}", pcBuildController::delete);
-
-        app.get("/components/cpu", pcComponentController::getAllCpuComponents);
-        app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);
-        app.get("/components/memory", pcComponentController::getAllMemoryComponents);
-        app.get("/components/storage", pcComponentController::getAllStorageComponents);
-        app.get("/components/video-cards", pcComponentController::getAllVideoCardComponents);
-        app.get("/components/power-supplies", pcComponentController::getAllPowerSupplyComponents);
-
-        app.start("0.0.0.0", 8080);
     }
 
     private static ConnectionHandler createConnectionHandler() throws Exception {

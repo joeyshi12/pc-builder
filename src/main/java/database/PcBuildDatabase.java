@@ -19,48 +19,47 @@ public class PcBuildDatabase {
 
     public PcBuild insertPcBuild(PcBuild build) throws SQLException {
         String query = "INSERT INTO computer_build (id, display_name, creation_date, last_updated_date) VALUES (?, ?, ?, ?)";
-        Connection connection = connectionHandler.getConnection();
-        PreparedStatement ps = connection.prepareStatement(query);
-        ps.setString(1, build.getUuid());
-        ps.setString(2, build.getDisplayName());
-        ps.setDate(3, new java.sql.Date(build.getCreationDate()));
-        ps.setDate(4, new java.sql.Date(build.getLastUpdateDate()));
-        ps.executeQuery();
-        connection.commit();
-        logger.info(String.format("Created computer build %s", build.getUuid()));
-        ps.close();
-        connection.close();
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, build.getUuid());
+            ps.setString(2, build.getDisplayName());
+            ps.setDate(3, new java.sql.Date(build.getCreationDate()));
+            ps.setDate(4, new java.sql.Date(build.getLastUpdateDate()));
+            ps.executeQuery();
+            connection.commit();
+            logger.info(String.format("Created computer build %s", build.getUuid()));
+        }
         return build;
     }
 
-    public List<PcBuild> getAllPcBuilds(String[] buildIds, String username) throws SQLException {
+    public List<PcBuild> getAllPcBuilds(String[] buildIds, String username) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
-        Connection connection = connectionHandler.getConnection();
         String query = QueryUtil.formQueryWithIdsFilter("computer_build", TableColumnNames.COMPUTER_BUILD_COLUMNS, buildIds);
-        PreparedStatement ps;
-        if (StringUtil.isNotBlank(username)) {
-            if (buildIds == null || buildIds.length == 0) {
-                query = query + " WHERE username = ?";
+        try (Connection connection = connectionHandler.getConnection()) {
+            PreparedStatement ps;
+            if (StringUtil.isBlank(username)) {
+                if (buildIds == null || buildIds.length == 0) {
+                    query = query + " WHERE username = ?";
+                } else {
+                    query = query + " AND username = ?";
+                }
+                ps = connection.prepareStatement(query);
+                ps.setString(1, username);
             } else {
-                query = query + " AND username = ?";
+                ps = connection.prepareStatement(query);
             }
-            ps = connection.prepareStatement(query);
-            ps.setString(1, username);
-        } else {
-            ps = connection.prepareStatement(query);
-        }
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            PcBuild build = PcBuild.newBuilder()
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                PcBuild build = PcBuild.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setUsername(rs.getString(TableColumnNames.USERNAME))
                     .setCreationDate(rs.getDate(TableColumnNames.CREATION_DATE).getTime())
                     .setLastUpdateDate(rs.getDate(TableColumnNames.LAST_UPDATED_DATE).getTime())
                     .build();
-            builds.add(build);
+                builds.add(build);
+            }
         }
-        connection.close();
         return builds;
     }
 

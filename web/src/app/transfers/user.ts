@@ -6,7 +6,6 @@ export const protobufPackage = "transfers";
 export interface UserProfile {
   username?: string | undefined;
   displayName?: string | undefined;
-  email?: string | undefined;
   password?: string | undefined;
 }
 
@@ -17,7 +16,7 @@ export interface Comment {
 }
 
 function createBaseUserProfile(): UserProfile {
-  return { username: "", displayName: "", email: "", password: "" };
+  return { username: "", displayName: "", password: "" };
 }
 
 export const UserProfile = {
@@ -28,11 +27,8 @@ export const UserProfile = {
     if (message.displayName !== undefined && message.displayName !== "") {
       writer.uint32(18).string(message.displayName);
     }
-    if (message.email !== undefined && message.email !== "") {
-      writer.uint32(26).string(message.email);
-    }
     if (message.password !== undefined && message.password !== "") {
-      writer.uint32(34).string(message.password);
+      writer.uint32(26).string(message.password);
     }
     return writer;
   },
@@ -63,13 +59,6 @@ export const UserProfile = {
             break;
           }
 
-          message.email = reader.string();
-          continue;
-        case 4:
-          if (tag !== 34) {
-            break;
-          }
-
           message.password = reader.string();
           continue;
       }
@@ -85,7 +74,6 @@ export const UserProfile = {
     return {
       username: isSet(object.username) ? globalThis.String(object.username) : "",
       displayName: isSet(object.displayName) ? globalThis.String(object.displayName) : "",
-      email: isSet(object.email) ? globalThis.String(object.email) : "",
       password: isSet(object.password) ? globalThis.String(object.password) : "",
     };
   },
@@ -97,9 +85,6 @@ export const UserProfile = {
     }
     if (message.displayName !== undefined && message.displayName !== "") {
       obj.displayName = message.displayName;
-    }
-    if (message.email !== undefined && message.email !== "") {
-      obj.email = message.email;
     }
     if (message.password !== undefined && message.password !== "") {
       obj.password = message.password;
@@ -114,7 +99,6 @@ export const UserProfile = {
     const message = createBaseUserProfile();
     message.username = object.username ?? "";
     message.displayName = object.displayName ?? "";
-    message.email = object.email ?? "";
     message.password = object.password ?? "";
     return message;
   },

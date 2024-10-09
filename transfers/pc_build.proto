@@ -1,29 +1,17 @@
 syntax = "proto3";
 package transfers;
-import "transfers/pc_component.proto";
 
 message PcBuild {
   string uuid = 1;
   string displayName = 2;
   string description = 3;
   string username = 4;
-  repeated CpuComponent cpuList = 5;
-  repeated MotherboardComponent motherboardList = 6;
-  repeated StorageComponent storageList = 7;
-  repeated MemoryComponent memoryList = 8;
-  repeated VideoCardComponent videoCardList = 9;
-  repeated PowerSupplyComponent powerSupplyList = 10;
+  repeated string cpuIds = 5;
+  repeated string motherboardIds = 6;
+  repeated string storageIds = 7;
+  repeated string memoryIds = 8;
+  repeated string videoCardIds = 9;
+  repeated string powerSupplyIds = 10;
   int64 creationDate = 11;
   int64 lastUpdateDate = 12;
-}
-
-message PcBuildDraft {
-  string displayName = 1;
-  string description = 2;
-  repeated string cpuIds = 3;
-  repeated string motherboardIds = 4;
-  repeated string storageIds = 5;
-  repeated string memoryIds = 6;
-  repeated string videoCardIds = 7;
-  repeated string powerSupplyIds = 8;
 }
