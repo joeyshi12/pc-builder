@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,27 +15,21 @@ import { PcBuildService } from './pc-build/pc-build.service';
 import { PcComponentService } from './pc-component/pc-component.service';
 import { UserService } from './user/user.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ComponentListingComponent,
-    BuildListingComponent,
-    UserProfileComponent,
-    BuilderComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    AgGridModule,
-    StoreModule.forRoot({}),
-    StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer)
-  ],
-  providers: [
-    PcBuildService,
-    PcComponentService,
-    UserService
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ComponentListingComponent,
+        BuildListingComponent,
+        UserProfileComponent,
+        BuilderComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        AgGridModule,
+        StoreModule.forRoot({}),
+        StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer)], providers: [
+        PcBuildService,
+        PcComponentService,
+        UserService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
