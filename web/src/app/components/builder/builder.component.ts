@@ -8,7 +8,7 @@ import { PcBuild } from 'src/app/transfers/pc_build';
 import { PcBuildService } from 'src/app/pc-build/pc-build.service';
 import { PcComponentService } from 'src/app/pc-component/pc-component.service';
 import { UserService } from 'src/app/user/user.service';
-import { PcComponents } from 'src/app/pc-component/pc-component';
+import { PcComponents, PcComponentType } from 'src/app/pc-component/pc-component';
 
 type ComponentItem = {
   displayName: string;
@@ -17,7 +17,7 @@ type ComponentItem = {
 
 type ComponentListModel = {
   displayName: string;
-  componentType: string;
+  componentType: PcComponentType;
   items: ComponentItem[];
 };
 
@@ -56,6 +56,7 @@ export class BuilderComponent {
 
   public updateDraftInfo(displayName: string, description: string) {
     this._store.dispatch(PcBuildActions.updateBasicInfo({displayName, description}))
+    this.isEditDraftOpen = false;
   }
 
   private _toComponentListModels(pcComponents: PcComponents): ComponentListModel[] {
@@ -103,7 +104,7 @@ export class BuilderComponent {
       },
       {
         displayName: "Video card",
-        componentType: "videoCard",
+        componentType: "video-card",
         items: pcComponents.videoCardList.map(component => {
           return {
             displayName: component.displayName ?? "",
@@ -113,7 +114,7 @@ export class BuilderComponent {
       },
       {
         displayName: "Power supply",
-        componentType: "powerSupply",
+        componentType: "power-supply",
         items: pcComponents.powerSupplyList.map(component => {
           return {
             displayName: component.displayName ?? "",

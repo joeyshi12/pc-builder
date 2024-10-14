@@ -1,16 +1,18 @@
-<ng-container *ngIf="userProfile$ | async as user">
-  <div class="profile-header">
-    <h1>{{user.displayName}}</h1>
-    <h3>&#64;{{user.username}}</h3>
-    <div>
-      <button (click)="isEditProfileFormOpen = true">Edit profile</button>
-    </div>
+<header *ngIf="userProfile$ | async as userProfile">
+  <div>
+    <h1>{{userProfile.displayName}}</h1>
+    <h3>{{userProfile.username}}</h3>
   </div>
-  <ng-container *ngIf="buildList$ | async as buildList">
-    <ul *ngFor="let build of buildList">
-      <li>{{build.displayName}}</li>
-    </ul>
-  </ng-container>
+  <div>
+    <button (click)="isEditProfileFormOpen = true">Edit profile</button>
+    <button (click)="isEditProfileFormOpen = true">Sign out</button>
+  </div>
+</header>
+<h2>Builds</h2>
+<ng-container *ngIf="buildList$ | async as buildList">
+  <ul *ngFor="let build of buildList">
+    <li>{{build.displayName}}</li>
+  </ul>
 </ng-container>
 
 <dialog [open]="isEditProfileFormOpen">

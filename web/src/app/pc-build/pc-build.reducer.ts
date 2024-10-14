@@ -29,42 +29,47 @@ function getInitialState(): PcBuild {
   }
 }
 
+function saveDraft(draft: PcBuild): PcBuild {
+  localStorage.setItem(localStorageBuildKey, JSON.stringify(draft));
+  return draft;
+}
+
 export const reducer: ActionReducer<PcBuild> = createReducer(
   getInitialState(),
   on(updateBasicInfo, (state: PcBuild, payload: PcBuildBasicInfo) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.displayName = payload.displayName;
       draft.description = payload.description;
-    });
+    }));
   }),
   on(updateCpuIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.cpuIds = payload.ids;
-    })
+    }));
   }),
   on(updateMotherboardIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.motherboardIds = payload.ids;
-    })
+    }));
   }),
   on(updateMemoryIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.memoryIds = payload.ids;
-    })
+    }));
   }),
   on(updateStorageIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.storageIds = payload.ids;
-    })
+    }));
   }),
   on(updateVideoCardIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.videoCardIds = payload.ids;
-    })
+    }));
   }),
   on(updatePowerSupplyIds, (state: PcBuild, payload: ComponentIds) => {
-    return produce(state, (draft) => {
+    return saveDraft(produce(state, (draft) => {
       draft.powerSupplyIds = payload.ids;
-    })
+    }));
   }),
 );

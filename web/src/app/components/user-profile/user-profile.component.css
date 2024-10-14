@@ -1,21 +1,9 @@
 :host {
   padding: 1rem 0;
-}
 
-.profile-header {
-  border: 2px solid;
-  border-radius: 30px;
-  padding: 1rem 3rem;
-  width: 25rem;
-  & h1 {
-    margin: 0;
-    padding: 0;
-  }
-  & h3 {
-    margin: 0;
-    padding: 0;
-  }
-  & button {
-    padding: 0.2rem 0.4rem;
+  header {
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    background: #ccc;
   }
 }

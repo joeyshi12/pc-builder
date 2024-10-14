@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UserProfile } from '../../transfers/user';
-import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { PcBuild } from 'src/app/transfers/pc_build';
 import { PcBuildService } from 'src/app/pc-build/pc-build.service';
 import { UserService } from 'src/app/user/user.service';
@@ -17,14 +16,11 @@ export class UserProfileComponent {
   public buildList$: Observable<PcBuild[]>;
 
   constructor(private _userService: UserService,
-              pcBuildService: PcBuildService,
-              router: Router) {
+              pcBuildService: PcBuildService) {
     this.userProfile$ = _userService.currentUser$;
-    const currentUser = this.userProfile$.getValue();
-    if (!currentUser) {
-      router.navigate(["/"]);
-    }
-    this.buildList$ = pcBuildService.getPcBuilds(undefined, currentUser?.username);
+    this.buildList$ = this.userProfile$.pipe(
+      switchMap(userProfile => pcBuildService.getPcBuilds(undefined, userProfile?.username))
+    );
   }
 
   updateUserProfile(displayName: string, email: string): void {

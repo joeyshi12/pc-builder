@@ -14,24 +14,30 @@ import * as PcBuildReducer from './pc-build/pc-build.reducer';
 import { PcBuildService } from './pc-build/pc-build.service';
 import { PcComponentService } from './pc-component/pc-component.service';
 import { UserService } from './user/user.service';
-import { EffectsModule } from '@ngrx/effects';
 
-@NgModule({ declarations: [
-        AppComponent,
-        ComponentListingComponent,
-        BuildListingComponent,
-        UserProfileComponent,
-        BuilderComponent,
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        AgGridModule,
-        StoreModule.forRoot({}),
-        StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer),
-        EffectsModule.forRoot([])], providers: [
-        PcBuildService,
-        PcComponentService,
-        UserService,
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    ComponentListingComponent,
+    BuildListingComponent,
+    UserProfileComponent,
+    BuilderComponent,
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AgGridModule,
+    StoreModule.forRoot({}),
+    StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer)
+  ],
+  providers: [
+    PcBuildService,
+    PcComponentService,
+    UserService,
+    provideHttpClient(withInterceptorsFromDi())
+  ]
+})
 export class AppModule { }

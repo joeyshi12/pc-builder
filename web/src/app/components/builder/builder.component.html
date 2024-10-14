@@ -26,7 +26,7 @@
             <tr>
               <td>
                 <a routerLink="/component-listing"
-                  [queryParams]="{component: '{{componentType}}'}">
+                  [queryParams]="{component: listDef.componentType}">
                   {{listDef.displayName}}
                 </a>
               </td>
@@ -63,26 +63,26 @@
       </tbody>
     </table>
   </div>
-</div>
 
-<dialog [open]="isEditDraftOpen">
-  <div>
-    <div class="form-header">
-      <h1>Edit Profile</h1>
+  <dialog [open]="isEditDraftOpen">
+    <div>
+      <div class="form-header">
+        <h1>Edit Profile</h1>
+      </div>
+      <div class="form-body">
+        <div class="form-field">
+          <label>Display name</label>
+          <input #displayName type="text" [value]="draft.displayName" />
+        </div>
+        <div class="form-field">
+          <label>Description</label>
+          <input #description type="text" [value]="draft.description" />
+        </div>
+        <div class="form-buttons-container">
+          <button (click)="isEditDraftOpen = false">Close</button>
+          <button (click)="updateDraftInfo(displayName.value, description.value)">Submit</button>
+        </div>
+      </div>
     </div>
-    <div class="form-body">
-      <div class="form-field">
-        <label>Display name</label>
-        <input #displayName type="text" />
-      </div>
-      <div class="form-field">
-        <label>Description</label>
-        <input #description type="text" />
-      </div>
-      <div class="form-buttons-container">
-        <button (click)="isEditDraftOpen = false">Close</button>
-        <button (click)="updateDraftInfo(displayName.value, description.value)">Submit</button>
-      </div>
-    </div>
-  </div>
-</dialog>
+  </dialog>
+</div>
