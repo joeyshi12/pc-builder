@@ -25,8 +25,8 @@ public class PcBuildController {
             if (idsValue != null) {
                 idList =  idsValue.split(",");
             }
-            String username = ctx.queryParam("username");
-            ctx.json(ProtoUtil.protoListToJsonString(pcBuildDatabase.getAllPcBuilds(idList, username)));
+            ctx.json(ProtoUtil.protoListToJsonString(
+                pcBuildDatabase.getAllPcBuilds(idList, ctx.queryParam(SessionAttributes.USER))));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);
@@ -35,10 +35,9 @@ public class PcBuildController {
 
     public void create(Context ctx) {
         try {
-            String username = ctx.sessionAttribute("username");
             PcBuild.Builder builder = PcBuild.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            builder.setUsername(username);
+            builder.setUsername(ctx.sessionAttribute(SessionAttributes.USER));
             ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(builder.build())));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);

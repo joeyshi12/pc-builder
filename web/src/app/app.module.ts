@@ -28,6 +28,7 @@ import { UserService } from './user/user.service';
     HttpClientModule,
     AppRoutingModule,
     AgGridModule,
+    StoreModule.forRoot({}),
     StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer)
   ],
   providers: [

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from "rxjs";
-import { AgGridEvent, ColDef, GridOptions } from "ag-grid-community";
-import { AgGridAngular } from 'ag-grid-angular';
+import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
 import { Store } from '@ngrx/store';
-import { updateDraftComponentIds } from '../../reducers/computer-build-draft.reducer';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { PcBuilderService } from 'src/app/services/pc-builder.service';
+import { PcComponent, PcComponentType } from 'src/app/pc-component/pc-component';
+import { PcComponentService } from 'src/app/pc-component/pc-component.service';
+import { updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from 'src/app/pc-build/pc-build.actions';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-component-listing',
@@ -14,8 +14,7 @@ import { PcBuilderService } from 'src/app/services/pc-builder.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentListingComponent {
-  public components$!: Observable<any[]>;
-  public gridOptions: GridOptions = {
+  public readonly gridOptions: GridOptions = {
     defaultColDef: {
       sortable: true,
       filter: true,
@@ -26,37 +25,64 @@ export class ComponentListingComponent {
     rowMultiSelectWithClick: true,
     suppressRowDeselection: true
   }
+  public components$: BehaviorSubject<PcComponent[]> = new BehaviorSubject<PcComponent[]>([]);
   public columnDefs!: ColDef[];
   public searchText: string = "";
-  public selectedComponentType: string = "cpu";
+  public selectedComponentType: PcComponentType = "cpu";
+  private _selectedComponents: PcComponent[] = [];
 
   constructor(private _store: Store<any>,
               private _router: Router,
-              private _pcBuilderService: PcBuilderService,
+              private _pcComponentService: PcComponentService,
               route: ActivatedRoute) {
     route.queryParamMap.subscribe(((paramMap: ParamMap) => {
       const componentType = paramMap.get("component");
       this.updateComponentType(componentType ?? "cpu");
-    }).bind(this));
+    }));
   }
 
-  public resizeGrid(params: AgGridEvent) {
-    params.api.sizeColumnsToFit();
+  public resizeGrid(event: AgGridEvent) {
+    event.api.sizeColumnsToFit();
   }
 
-  public onUpdateSearchText(searchText: string) {
-    this.searchText = searchText;
-  }
+  public addComponentsToBuild() {
+    const ids: string[] = this._selectedComponents
+      .map(component => component.uuid)
+      .filter((id: string | undefined): id is string => Boolean(id));
 
-  public updateBuildList(componentType: string, grid: AgGridAngular) {
-    const ids: string[] = grid.api.getSelectedRows().map(component => component.uuid);
-    this._store.dispatch(updateDraftComponentIds({ componentType, ids }));
+    switch (this.selectedComponentType) {
+      case "cpu":
+        this._store.dispatch(updateCpuIds({ ids }));
+        break;
+      case "motherboard":
+        this._store.dispatch(updateMotherboardIds({ ids }));
+        break;
+      case "memory":
+        this._store.dispatch(updateMemoryIds({ ids }));
+        break;
+      case "storage":
+        this._store.dispatch(updateStorageIds({ ids }));
+        break;
+      case "video-card":
+        this._store.dispatch(updateVideoCardIds({ ids }));
+        break;
+      case "power-supply":
+        this._store.dispatch(updatePowerSupplyIds({ ids }));
+        break;
+      default:
+        throw Error(`Selected invalid componentType ${this.selectedComponentType}`);
+    }
+
     this._router.navigate(["builder"]);
   }
 
+  public updateSelection(event: SelectionChangedEvent) {
+    this._selectedComponents = event.api.getSelectedRows();
+  }
+
   public updateComponentType(componentType: string) {
-    this.selectedComponentType = componentType;
-    switch (componentType) {
+    this.selectedComponentType = componentType as PcComponentType;
+    switch (this.selectedComponentType) {
       case "cpu":
         this._updateCpuGrid();
         break
@@ -69,14 +95,14 @@ export class ComponentListingComponent {
       case "storage":
         this._updateStorageGrid();
         break;
-      case "videoCard":
+      case "video-card":
         this._updateVideoCardGrid();
         break;
-      case "powerSupply":
+      case "power-supply":
         this._updatePowerSupplyGrid();
         break;
       default:
-        throw Error(`Selected invalid componentType ${componentType}`)
+        throw Error(`Selected invalid componentType ${this.selectedComponentType}`)
     }
   }
 
@@ -89,7 +115,8 @@ export class ComponentListingComponent {
       { field: 'hasSmt' },
       { field: 'price' }
     ];
-    this.components$ = this._pcBuilderService.getCpuComponents();
+    this._pcComponentService.getCpuComponents()
+      .subscribe(components => this.components$.next(components));
   }
 
   private _updateMotherboardGrid() {
@@ -100,7 +127,8 @@ export class ComponentListingComponent {
       { field: 'numMemorySlots' },
       { field: 'price' }
     ];
-    this.components$ = this._pcBuilderService.getMotherboardComponents();
+    this._pcComponentService.getMotherboardComponents()
+      .subscribe(components => this.components$.next(components));
   }
 
   private _updateMemoryGrid() {
@@ -112,7 +140,8 @@ export class ComponentListingComponent {
       { field: 'moduleSizeGigabytes' },
       { field: 'price' }
     ]
-    this.components$ = this._pcBuilderService.getMemoryComponents();
+    this._pcComponentService.getMemoryComponents()
+      .subscribe(components => this.components$.next(components));
   }
 
   private _updateStorageGrid() {
@@ -125,7 +154,8 @@ export class ComponentListingComponent {
       { field: 'interface' },
       { field: 'price' }
     ]
-    this.components$ = this._pcBuilderService.getStorageComponents();
+    this._pcComponentService.getStorageComponents()
+      .subscribe(components => this.components$.next(components));
   }
 
   private _updateVideoCardGrid() {
@@ -138,7 +168,8 @@ export class ComponentListingComponent {
       { field: 'lengthMillimeters' },
       { field: 'price' }
     ]
-    this.components$ = this._pcBuilderService.getVideoCardComponents();
+    this._pcComponentService.getVideoCardComponents()
+      .subscribe(components => this.components$.next(components));
   }
 
   private _updatePowerSupplyGrid() {
@@ -151,6 +182,7 @@ export class ComponentListingComponent {
       { field: 'colour' },
       { field: 'price' }
     ]
-    this.components$ = this._pcBuilderService.getPowerSupplyComponents();
+    this._pcComponentService.getPowerSupplyComponents()
+      .subscribe(components => this.components$.next(components));
   }
 }

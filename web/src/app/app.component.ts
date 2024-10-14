@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserProfile } from './transfers/user';
-import { PcBuilderService } from './services/pc-builder.service';
+import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,12 @@ import { PcBuilderService } from './services/pc-builder.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public userProfile$: BehaviorSubject<UserProfile | null>;
+  public userProfile$: BehaviorSubject<UserProfile | undefined>;
   public isLoginFormOpen: boolean = false;
   public errorMessage?: string;
 
-  constructor(private _pcBuilderService: PcBuilderService) {
-    this.userProfile$ = this._pcBuilderService.currentUser$;
+  constructor(private _userService: UserService) {
+    this.userProfile$ = this._userService.currentUser$;
   }
 
   public openFormDialog() {
@@ -22,8 +22,8 @@ export class AppComponent {
     this.isLoginFormOpen = true;
   }
 
-  public authenticateUser(email: string, password: string) {
-    if (email.length === 0) {
+  public authenticateUser(username: string, password: string) {
+    if (username.length === 0) {
       this.errorMessage = "Missing email";
       return;
     }
@@ -33,10 +33,10 @@ export class AppComponent {
       return;
     }
 
-    this._pcBuilderService.authenticateUser({ email, password })
+    this._userService.authenticateUser({ username, password })
       .subscribe({
         next: (userProfile: UserProfile) => {
-          this._pcBuilderService.setCurrentUser(userProfile);
+          this._userService.setCurrentUser(userProfile);
           this.isLoginFormOpen = false;
         },
         error: () => {
@@ -46,6 +46,6 @@ export class AppComponent {
   }
 
   public signOutUser() {
-    this._pcBuilderService.clearSessionUser();
+    this._userService.clearSessionUser();
   }
 }

@@ -23,6 +23,12 @@ public class UserController {
             UserProfile.Builder builder = UserProfile.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
             UserProfile userProfile = builder.build();
+            String sessionUsername = ctx.sessionAttribute(SessionAttributes.USER);
+            if (!userProfile.getUsername().equals(sessionUsername)) {
+                logger.error(String.format("User %s cannot update user %s", sessionUsername, userProfile.getUsername()));
+                ctx.status(400);
+                return;
+            }
             userDatabase.updateUserProfile(userProfile);
             ctx.status(200);
         } catch (Throwable e) {
@@ -36,20 +42,24 @@ public class UserController {
             UserProfile.Builder builder = UserProfile.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
             UserProfile userProfile = builder.build();
-            if (userProfile.getEmail() == null) {
-                throw new Exception("Missing email");
+            if (userProfile.getUsername().isEmpty()) {
+                logger.error("Missing username");
+                ctx.status(400);
+                return;
             }
-            if (userProfile.getPassword() == null) {
-                throw new Exception("Missing password");
+            if (userProfile.getPassword().isEmpty()) {
+                logger.error("Missing password");
+                ctx.status(400);
+                return;
             }
             userProfile = userDatabase.getUserProfile(
-                userProfile.getEmail(),
+                userProfile.getUsername(),
                 userProfile.getPassword()
             );
             if (StringUtil.isBlank(userProfile.getUsername())) {
                 throw new Exception("Failed to retrieve user from database");
             }
-            ctx.sessionAttribute("session", userProfile.getUsername());
+            ctx.sessionAttribute("user", userProfile.getUsername());
             ctx.json(JsonFormat.printer().print(userProfile));
             ctx.status(200);
         } catch (Throwable e) {
@@ -60,8 +70,7 @@ public class UserController {
 
     public void getSessionUser(Context ctx) {
         try {
-            String username = ctx.sessionAttribute("session");
-            UserProfile user = userDatabase.getUserProfile(username);
+            UserProfile user = userDatabase.getUserProfile(ctx.sessionAttribute(SessionAttributes.USER));
             ctx.json(JsonFormat.printer().print(user));
             ctx.status(200);
         } catch (Throwable e) {
@@ -72,7 +81,7 @@ public class UserController {
 
     public void clearSessionUser(Context ctx) {
         try {
-            ctx.sessionAttribute("session", null);
+            ctx.sessionAttribute(SessionAttributes.USER, null);
             ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to fetch session user", e);

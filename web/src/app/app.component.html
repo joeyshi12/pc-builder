@@ -1,33 +1,30 @@
 <nav>
   <div class="logo-container">
-    <a href="/"><img src="/assets/logo.png" width="225em" alt="logo"></a>
+    <a href="/"><img src="/assets/logo.png" width="220em" alt="logo"></a>
   </div>
-  <ul>
-    <li routerLink="/">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </li>
-    <li routerLink="/component-listing">
-      <i class="fa-solid fa-microchip"></i>
+  <div>
+    <a routerLink="/build-listing">
+      <span>Builds</span>
+    </a>
+    <a routerLink="/component-listing">
       <span>Components</span>
-    </li>
-    <li routerLink="/builder">
-      <i class="fa-solid fa-wrench"></i>
-      <span>Build</span>
-    </li>
+    </a>
+    <a routerLink="/builder">
+      <span>Build PC</span>
+    </a>
+  </div>
+  <div>
     <ng-container *ngIf="userProfile$.getValue()?.username">
-      <li routerLink="/user-profile">
-        <i class="fa-solid fa-user"></i>
+      <a routerLink="/user-profile">
         <span>Profile</span>
-      </li>
+      </a>
     </ng-container>
     <ng-container *ngIf="!userProfile$.getValue()?.username">
-      <li (click)="openFormDialog()">
-        <i class="fa-solid fa-right-to-bracket"></i>
+      <button (click)="openFormDialog()">
         <span>Log In</span>
-      </li>
+      </button>
     </ng-container>
-  </ul>
+  </div>
 </nav>
 <main>
   <router-outlet></router-outlet>
@@ -47,8 +44,8 @@
     </div>
     <div class="form-body">
       <div class="form-field">
-        <label>Email</label>
-        <input #email type="text" />
+        <label>Username</label>
+        <input #username type="text" />
       </div>
       <div class="form-field">
         <label>Password</label>
@@ -56,7 +53,7 @@
       </div>
       <div class="form-buttons-container">
         <button (click)="isLoginFormOpen = false">Close</button>
-        <button (click)="authenticateUser(email.value, password.value)">Log In</button>
+        <button (click)="authenticateUser(username.value, password.value)">Log In</button>
       </div>
     </div>
   </div>

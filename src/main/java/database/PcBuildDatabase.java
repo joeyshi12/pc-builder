@@ -18,7 +18,7 @@ public class PcBuildDatabase {
     }
 
     public PcBuild insertPcBuild(PcBuild build) throws SQLException {
-        String query = "INSERT INTO computer_build (id, display_name, creation_date, last_updated_date) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO pc_build (id, display_name, creation_date, last_updated_date) VALUES (?, ?, ?, ?)";
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setString(1, build.getUuid());
@@ -34,10 +34,12 @@ public class PcBuildDatabase {
 
     public List<PcBuild> getAllPcBuilds(String[] buildIds, String username) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("computer_build", TableColumnNames.COMPUTER_BUILD_COLUMNS, buildIds);
+        String query = QueryUtil.formQueryWithIdsFilter("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS, buildIds);
         try (Connection connection = connectionHandler.getConnection()) {
             PreparedStatement ps;
             if (StringUtil.isBlank(username)) {
+                ps = connection.prepareStatement(query);
+            } else {
                 if (buildIds == null || buildIds.length == 0) {
                     query = query + " WHERE username = ?";
                 } else {
@@ -45,8 +47,6 @@ public class PcBuildDatabase {
                 }
                 ps = connection.prepareStatement(query);
                 ps.setString(1, username);
-            } else {
-                ps = connection.prepareStatement(query);
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -63,11 +63,11 @@ public class PcBuildDatabase {
         return builds;
     }
 
-    public void updatePcBuild(PcBuild build) throws SQLException {
+    public void updatePcBuild(PcBuild build) {
         logger.info(String.format("Updated computer build %s", build.getUuid()));
     }
 
-    public void deletePcBuild(String buildId) throws SQLException {
+    public void deletePcBuild(String buildId) {
         logger.info(String.format("Deleted computer build %s", buildId));
     }
 }

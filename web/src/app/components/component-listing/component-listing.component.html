@@ -1,31 +1,33 @@
 <h1>Components</h1>
 <p>Browse available components</p>
 <div>
-  <select #componentSelect class="component-selector" [value]="selectedComponentType" (change)="updateComponentType(componentSelect.value)">
+  <select #componentSelect
+          class="component-selector"
+          [value]="selectedComponentType"
+          (change)="updateComponentType(componentSelect.value)">
     <option value="cpu">CPU</option>
     <option value="motherboard">Motherboard</option>
     <option value="memory">Memory</option>
     <option value="storage">Storage</option>
-    <option value="videoCard">Video Card</option>
-    <option value="powerSupply">Power Supply</option>
+    <option value="video-card">Video Card</option>
+    <option value="power-supply">Power Supply</option>
   </select>
   <input #componentSearch
          style="margin-right: 1rem;"
          type="text"
          placeholder="Search"
-         (keydown)="onUpdateSearchText(componentSearch.value)"
-  />
-  <button (click)="updateBuildList(componentSelect.value, componentGrid)">Set selected to build list</button>
+         (keydown)="searchText = componentSearch.value"/>
+  <button (click)="addComponentsToBuild()">Add selected to build list</button>
 </div>
 <div class="component-grid">
-  <ag-grid-angular
-          #componentGrid
-          class="ag-theme-alpine"
-          [gridOptions]="gridOptions"
-          [columnDefs]="columnDefs"
-          [rowData]="components$ | async"
-          [quickFilterText]="searchText"
-          (gridColumnsChanged)="resizeGrid($event)"
-          (gridSizeChanged)="resizeGrid($event)"
-  ></ag-grid-angular>
+    <ag-grid-angular #componentGrid
+                     class="ag-theme-alpine"
+                     [gridOptions]="gridOptions"
+                     [columnDefs]="columnDefs"
+                     [rowData]="components$ | async"
+                     [quickFilterText]="searchText"
+                     (gridColumnsChanged)="resizeGrid($event)"
+                     (gridSizeChanged)="resizeGrid($event)"
+                     (selectionChanged)="updateSelection($event)">
+    </ag-grid-angular>
 </div>

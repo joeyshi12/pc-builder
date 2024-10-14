@@ -31,28 +31,27 @@ public class Application {
         PcComponentController pcComponentController = new PcComponentController(pcComponentDatabase);
         PcBuildController pcBuildController = new PcBuildController(pcBuildDatabase);
 
-        try (Javalin app = createApplication(connectionHandler)) {
-            app.before((Context ctx) -> ctx.header("Access-Control-Allow-Credentials", "true"));
+        Javalin app = createApplication(connectionHandler);
+        app.before((Context ctx) -> ctx.header("Access-Control-Allow-Credentials", "true"));
 
-            app.put("/users", userController::update);
-            app.post("/users/authenticate", userController::authenticateUser);
-            app.get("/users/session-user", userController::getSessionUser);
-            app.delete("/users/session-user", userController::clearSessionUser);
+        app.put("/users", userController::update);
+        app.post("/users/authenticate", userController::authenticateUser);
+        app.get("/users/session-user", userController::getSessionUser);
+        app.delete("/users/session-user", userController::clearSessionUser);
 
-            app.put("/builds", pcBuildController::create);
-            app.get("/builds", pcBuildController::getAll);
-            app.post("/builds", pcBuildController::update);
-            app.delete("/builds/{id}", pcBuildController::delete);
+        app.put("/builds", pcBuildController::create);
+        app.get("/builds", pcBuildController::getAll);
+        app.post("/builds", pcBuildController::update);
+        app.delete("/builds/{id}", pcBuildController::delete);
 
-            app.get("/components/cpu", pcComponentController::getAllCpuComponents);
-            app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);
-            app.get("/components/memory", pcComponentController::getAllMemoryComponents);
-            app.get("/components/storage", pcComponentController::getAllStorageComponents);
-            app.get("/components/video-cards", pcComponentController::getAllVideoCardComponents);
-            app.get("/components/power-supplies", pcComponentController::getAllPowerSupplyComponents);
+        app.get("/components/cpu", pcComponentController::getAllCpuComponents);
+        app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);
+        app.get("/components/memory", pcComponentController::getAllMemoryComponents);
+        app.get("/components/storage", pcComponentController::getAllStorageComponents);
+        app.get("/components/video-cards", pcComponentController::getAllVideoCardComponents);
+        app.get("/components/power-supplies", pcComponentController::getAllPowerSupplyComponents);
 
-            app.start("0.0.0.0", 8080);
-        }
+        app.start("0.0.0.0", 8080);
     }
 
     private static Javalin createApplication(ConnectionHandler connectionHandler) {

@@ -1,10 +1,10 @@
 import { produce } from 'immer';
 import { PcBuild } from 'src/app/transfers/pc_build';
 import { updateBasicInfo, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
-import { createReducer, on } from '@ngrx/store';
-import { ComponentIds, PcBuildBasicInfo } from './pc-build';
+import { ActionReducer, createReducer, on } from '@ngrx/store';
+import { ComponentIds, PcBuildBasicInfo, localStorageBuildKey } from './pc-build';
 
-export const stateName = "computerBuildDraft";
+export const stateName = "pcBuildDraft";
 
 const initialState: PcBuild = {
   displayName: "Example name",
@@ -18,7 +18,7 @@ const initialState: PcBuild = {
 };
 
 function getInitialState(): PcBuild {
-  const storedValue = localStorage.getItem("draft");
+  const storedValue = localStorage.getItem(localStorageBuildKey);
   if (!storedValue) {
     return initialState;
   }
@@ -29,7 +29,7 @@ function getInitialState(): PcBuild {
   }
 }
 
-export const reducer = createReducer(
+export const reducer: ActionReducer<PcBuild> = createReducer(
   getInitialState(),
   on(updateBasicInfo, (state: PcBuild, payload: PcBuildBasicInfo) => {
     return produce(state, (draft) => {

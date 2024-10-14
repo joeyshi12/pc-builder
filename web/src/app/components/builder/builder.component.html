@@ -1,64 +1,68 @@
 <h1>PC Parts List</h1>
 <p>Pick out your PC parts.</p>
 <div *ngIf="draft$ | async as draft">
-  <div>
-    <h2>{{draft.displayName}}</h2>
-    <p>{{draft.description}}</p>
-  </div>
-  <div>
-    <button (click)="isEditDraftOpen = true">Edit list</button>
-    <button (click)="saveDraft(draft)">Save list</button>
-  </div>
-  <table>
-    <thead>
-    <tr>
-      <th>Component</th>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-    </thead>
-    <tbody *ngIf="componentListModels$ | async as componentListDefs">
-      <ng-container *ngFor="let listDef of componentListDefs">
-        <ng-container *ngIf="listDef.items.length > 0; else componentSelect">
-          <tr>
-            <td>
-              <a routerLink="/component-listing"
-                [queryParams]="{component: '{{componentType}}'}">
-                {{listDef.displayName}}
-              </a>
-            </td>
-            <td>
-              <ul>
-                <li *ngFor="let item of listDef.items">
-                  {{item.displayName}}
-                </li>
-              </ul>
-            </td>
-            <td>
-              <ul>
-                <li *ngFor="let item of listDef.items">
-                  {{formPriceString(item.price)}}
-                </li>
-              </ul>
-            </td>
-          </tr>
+  <div class="build-table">
+    <header>
+      <div>
+        <label>{{draft.displayName}}</label>
+        <span>{{draft.description}}</span>
+      </div>
+      <div>
+        <button (click)="isEditDraftOpen = true">Edit list</button>
+        <button (click)="saveDraft(draft)">Save list</button>
+      </div>
+    </header>
+    <table>
+      <thead>
+      <tr>
+        <th>Component</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="componentListModels$ | async as componentListDefs">
+        <ng-container *ngFor="let listDef of componentListDefs">
+          <ng-container *ngIf="listDef.items.length > 0; else componentSelect">
+            <tr>
+              <td>
+                <a routerLink="/component-listing"
+                  [queryParams]="{component: '{{componentType}}'}">
+                  {{listDef.displayName}}
+                </a>
+              </td>
+              <td>
+                <ul>
+                  <li *ngFor="let item of listDef.items">
+                    {{item.displayName}}
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li *ngFor="let item of listDef.items">
+                    {{item.price}}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </ng-container>
+          <ng-template #componentSelect>
+            <tr>
+              <td>
+                <a routerLink="/component-listing" [queryParams]="{component: listDef.componentType}">{{listDef.displayName}}</a>
+              </td>
+              <td>
+                <button
+                  routerLink="/component-listing"
+                  [queryParams]="{component: listDef.componentType}">Choose a {{listDef.displayName}} component</button>
+              </td>
+              <td></td>
+            </tr>
+          </ng-template>
         </ng-container>
-        <ng-template #componentSelect>
-          <tr>
-            <td>
-              <a routerLink="/component-listing" [queryParams]="{component: listDef.componentType}">{{listDef.displayName}}</a>
-            </td>
-            <td>
-              <button
-                routerLink="/component-listing"
-                [queryParams]="{component: listDef.componentType}">Choose a {{listDef.displayName}} component</button>
-            </td>
-            <td></td>
-          </tr>
-        </ng-template>
-      </ng-container>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <dialog [open]="isEditDraftOpen">

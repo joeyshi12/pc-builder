@@ -10,16 +10,16 @@ import { PcComponentService } from 'src/app/pc-component/pc-component.service';
 import { UserService } from 'src/app/user/user.service';
 import { PcComponents } from 'src/app/pc-component/pc-component';
 
-interface ComponentItem {
+type ComponentItem = {
   displayName: string;
-  price: number;
-}
+  price: string;
+};
 
-interface ComponentListModel {
+type ComponentListModel = {
   displayName: string;
   componentType: string;
   items: ComponentItem[];
-}
+};
 
 @Component({
   selector: 'app-builder',
@@ -54,10 +54,6 @@ export class BuilderComponent {
     });
   }
 
-  public formPriceString(price: number): string {
-    return price >= 0 ? `$${price}` : "";
-  }
-
   public updateDraftInfo(displayName: string, description: string) {
     this._store.dispatch(PcBuildActions.updateBasicInfo({displayName, description}))
   }
@@ -71,7 +67,7 @@ export class BuilderComponent {
           const clockString = component.coreClock ? ` ${component.coreClock} GHz` : "";
           const coreCountString = component.coreCount ? ` ${component.coreCount}-Core` : "";
           const displayName = component.displayName + clockString + coreCountString + " Processor";
-          const price = component.price ?? -1;
+          const price = this._formPriceString(component.price);
           return {displayName, price}
         }),
       },
@@ -81,7 +77,7 @@ export class BuilderComponent {
         items: pcComponents.motherboardList.map(component => {
           return {
             displayName: component.displayName ?? "",
-            price: component.price ?? -1
+            price: this._formPriceString(component.price)
           };
         }),
       },
@@ -91,7 +87,7 @@ export class BuilderComponent {
         items: pcComponents.memoryList.map(component => {
           return {
             displayName: component.displayName ?? "",
-            price: component.price ?? -1
+            price: this._formPriceString(component.price)
           };
         }),
       },
@@ -101,7 +97,7 @@ export class BuilderComponent {
         items: pcComponents.storageList.map(component => {
           return {
             displayName: component.displayName ?? "",
-            price: component.price ?? -1
+            price: this._formPriceString(component.price)
           };
         }),
       },
@@ -111,7 +107,7 @@ export class BuilderComponent {
         items: pcComponents.videoCardList.map(component => {
           return {
             displayName: component.displayName ?? "",
-            price: component.price ?? -1
+            price: this._formPriceString(component.price)
           };
         }),
       },
@@ -121,10 +117,14 @@ export class BuilderComponent {
         items: pcComponents.powerSupplyList.map(component => {
           return {
             displayName: component.displayName ?? "",
-            price: component.price ?? -1
+            price: this._formPriceString(component.price)
           };
         }),
       },
     ];
+  }
+
+  private _formPriceString(price: number | undefined): string {
+    return price ? `$${price}` : "N/A";
   }
 }

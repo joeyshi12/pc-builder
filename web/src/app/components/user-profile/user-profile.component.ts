@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { UserProfile } from '../../transfers/user';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { PcBuilderService } from 'src/app/services/pc-builder.service';
 import { PcBuild } from 'src/app/transfers/pc_build';
+import { PcBuildService } from 'src/app/pc-build/pc-build.service';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,23 +12,24 @@ import { PcBuild } from 'src/app/transfers/pc_build';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  public userProfile$: BehaviorSubject<UserProfile | null>;
+  public userProfile$: BehaviorSubject<UserProfile | undefined>;
   public isEditProfileFormOpen: boolean = false;
   public buildList$: Observable<PcBuild[]>;
 
-  constructor(private _pcBuilderService: PcBuilderService,
+  constructor(private _userService: UserService,
+              pcBuildService: PcBuildService,
               router: Router) {
-    this.userProfile$ = _pcBuilderService.currentUser$;
+    this.userProfile$ = _userService.currentUser$;
     const currentUser = this.userProfile$.getValue();
     if (!currentUser) {
       router.navigate(["/"]);
     }
-    this.buildList$ = _pcBuilderService.getPcBuilds(undefined, currentUser?.username);
+    this.buildList$ = pcBuildService.getPcBuilds(undefined, currentUser?.username);
   }
 
   updateUserProfile(displayName: string, email: string): void {
-    this._pcBuilderService.updateUserProfile(displayName, email)
-      .subscribe((_: UserProfile | null) => {
+    this._userService.updateUserProfile(displayName, email)
+      .subscribe((_: UserProfile | undefined) => {
         this.isEditProfileFormOpen = false;
       })
   }

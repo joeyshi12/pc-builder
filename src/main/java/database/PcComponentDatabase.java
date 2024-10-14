@@ -1,11 +1,14 @@
 package database;
 
 import transfers.PcComponent.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.*;
 
 public class PcComponentDatabase {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final ConnectionHandler connectionHandler;
 
     public PcComponentDatabase(ConnectionHandler connectionHandler) {

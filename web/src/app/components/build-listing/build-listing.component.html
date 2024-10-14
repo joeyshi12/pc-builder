@@ -1,13 +1,9 @@
-<h1>Computer Builds</h1>
+<h1>PC Builds</h1>
 <p>Browse computer builds.</p>
-<div>
+<div *ngIf="builds$ | async as builds">
   <ul>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
-    <li>List builds order by date</li>
+    <li *ngFor="let build of builds">
+      {{build.displayName}} by {{build.username}}
+    </li>
   </ul>
 </div>

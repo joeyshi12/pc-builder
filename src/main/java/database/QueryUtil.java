@@ -12,9 +12,11 @@ final class QueryUtil {
         }
         builder.append(" FROM ").append(tableName);
         if (ids != null && ids.length > 0) {
-            builder.append(" WHERE id IN (")
-                .append(String.join(",", ids))
-                .append(")");
+            builder.append(" WHERE id IN ('").append(ids[0]).append("'");
+            for (int i = 1; i < ids.length; i++) {
+                builder.append(",'").append(ids[i]).append("'");
+            }
+            builder.append(")");
         }
         return builder.toString();
     }

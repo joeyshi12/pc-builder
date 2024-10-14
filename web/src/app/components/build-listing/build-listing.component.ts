@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PcBuildService } from 'src/app/pc-build/pc-build.service';
+import { PcBuild } from 'src/app/transfers/pc_build';
 
 @Component({
   selector: 'app-build-listing',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./build-listing.component.css']
 })
 export class BuildListingComponent {
+  public readonly builds$: Observable<PcBuild[]>;
 
+  constructor(pcBuildService: PcBuildService) {
+    this.builds$ = pcBuildService.getPcBuilds();
+  }
 }

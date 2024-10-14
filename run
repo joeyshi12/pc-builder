@@ -18,7 +18,7 @@ run_dev() {
   # This is a script to run the application for testing purposes.
   # Replace the values below with your own database information.
   export DB_URL=jdbc:mariadb://localhost:3306/pcbuilder
-  export DB_USERNAME=my_user
+  export DB_USERNAME=root
   export DB_PASSWORD=password
   mvn compile
   mvn exec:java -Dexec.mainClass="Application"
