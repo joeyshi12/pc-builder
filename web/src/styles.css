@@ -16,12 +16,12 @@ button {
   border-radius: 8px;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
-  cursor: pointer;
   font-weight: bold;
 }
 
-button:hover {
+button:hover:not([disabled]) {
   background: #ddd;
+  cursor: pointer;
 }
 
 a {

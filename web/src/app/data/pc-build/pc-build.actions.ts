@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { ComponentIds, PcBuildBasicInfo } from './pc-build';
+import { PcBuild } from 'src/app/transfers/pc_build';
 
 export const updateBasicInfo = createAction(
   "UpdatePcBuildInfo",
@@ -7,6 +8,11 @@ export const updateBasicInfo = createAction(
 );
 
 export const clearBuild = createAction("ClearPcBuild");
+
+export const updateBuild = createAction(
+  "UpdatePcBuild",
+  props<PcBuild>()
+);
 
 export const updateCpuIds = createAction(
   "UpdatePcBuildCpuIds",

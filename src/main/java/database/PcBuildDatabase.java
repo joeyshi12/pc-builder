@@ -62,8 +62,8 @@ public class PcBuildDatabase {
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setDescription(rs.getString(TableColumnNames.DESCRIPTION))
                     .setUsername(rs.getString(TableColumnNames.USERNAME))
-                    .setCreationDate(rs.getDate(TableColumnNames.CREATION_DATE).getTime())
-                    .setLastUpdateDate(rs.getDate(TableColumnNames.LAST_UPDATED_DATE).getTime())
+                    .setCreationDate(rs.getTimestamp(TableColumnNames.CREATION_DATE).getTime())
+                    .setLastUpdateDate(rs.getTimestamp(TableColumnNames.LAST_UPDATED_DATE).getTime())
                     .build();
                 builds.add(build);
             }

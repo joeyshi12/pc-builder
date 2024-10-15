@@ -24,7 +24,7 @@ export class ComponentListingComponent {
     rowSelection: "multiple",
     rowMultiSelectWithClick: true,
     suppressRowDeselection: true
-  }
+  };
   public components$: BehaviorSubject<PcComponent[]> = new BehaviorSubject<PcComponent[]>([]);
   public columnDefs!: ColDef[];
   public searchText: string = "";

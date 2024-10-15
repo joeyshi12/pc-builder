@@ -1,9 +1,10 @@
 <h1>PC Builds</h1>
 <p>Browse computer builds.</p>
-<div *ngIf="builds$ | async as builds">
-  <ul>
-    <li *ngFor="let build of builds">
-      {{build.displayName}} by {{build.username}}
-    </li>
-  </ul>
-</div>
+<ag-grid-angular class="ag-theme-alpine"
+                 [gridOptions]="gridOptions"
+                 [columnDefs]="columnDefs"
+                 [rowData]="builds$ | async"
+                 [quickFilterText]="searchText"
+                 (gridColumnsChanged)="resizeGrid($event)"
+                 (gridSizeChanged)="resizeGrid($event)">
+</ag-grid-angular>

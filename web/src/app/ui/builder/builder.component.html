@@ -78,7 +78,7 @@
       </ag-grid-angular>
       <div class="form-buttons-container">
         <button (click)="isBuildListOpen = false">Close</button>
-        <button>Switch</button>
+        <button [disabled]="!hasSelectedBuild" (click)="switchBuild()">Switch</button>
       </div>
     </div>
   </app-dialog>

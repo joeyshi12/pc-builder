@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, combineLatest, map } from "rxjs";
+import { Observable, combineLatest, map, of } from "rxjs";
 import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../../transfers/pc_component";
 import { PcBuild } from "../../transfers/pc_build";
 import { PcComponents } from "./pc-component";
@@ -13,13 +13,31 @@ export class PcComponentService {
   }
 
   public getPcComponents(build: PcBuild): Observable<PcComponents> {
+    const cpuComponents$ = build.cpuIds && build.cpuIds.length > 0
+      ? this.getCpuComponents(build.cpuIds)
+      : of<CpuComponent[]>([]);
+    const motherboardComponents$ = build.motherboardIds && build.motherboardIds.length > 0
+      ? this.getCpuComponents(build.motherboardIds)
+      : of<MotherboardComponent[]>([]);
+    const memoryComponents$ = build.memoryIds && build.memoryIds.length > 0
+      ? this.getCpuComponents(build.memoryIds)
+      : of<MemoryComponent[]>([]);
+    const storageComponents$ = build.storageIds && build.storageIds.length > 0
+      ? this.getCpuComponents(build.storageIds)
+      : of<StorageComponent[]>([]);
+    const videoCardComponents$ = build.videoCardIds && build.videoCardIds.length > 0
+      ? this.getCpuComponents(build.videoCardIds)
+      : of<VideoCardComponent[]>([]);
+    const powerSupplyComponents$ = build.powerSupplyIds && build.powerSupplyIds.length > 0
+      ? this.getCpuComponents(build.powerSupplyIds)
+      : of<PowerSupplyComponent[]>([]);
     return combineLatest([
-      this.getCpuComponents(build.cpuIds),
-      this.getMotherboardComponents(build.motherboardIds),
-      this.getMemoryComponents(build.memoryIds),
-      this.getStorageComponents(build.storageIds),
-      this.getVideoCardComponents(build.videoCardIds),
-      this.getPowerSupplyComponents(build.powerSupplyIds)
+      cpuComponents$,
+      motherboardComponents$,
+      memoryComponents$,
+      storageComponents$,
+      videoCardComponents$,
+      powerSupplyComponents$
     ]).pipe(
       map(([cpuList, motherboardList, memoryList, storageList, videoCardList, powerSupplyList]) => {
         return {cpuList, motherboardList, memoryList, storageList, videoCardList, powerSupplyList};

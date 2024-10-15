@@ -4,4 +4,10 @@
   min-width: 30rem;
   max-width: 120rem;
   margin: auto;
+  height: 100%;
+
+  ag-grid-angular {
+    flex: 1;
+    padding-bottom: 2rem;
+  }
 }

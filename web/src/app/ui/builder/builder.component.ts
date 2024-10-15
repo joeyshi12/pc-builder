@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
+import { AgGridEvent, ColDef, GetRowIdParams, GridOptions, SelectionChangedEvent } from "ag-grid-community";
 import { Observable, map, switchMap } from 'rxjs';
 import * as PcBuildReducer from '../../data/pc-build/pc-build.reducer';
 import * as PcBuildActions from '../../data/pc-build/pc-build.actions';
@@ -44,6 +44,7 @@ export class BuilderComponent {
       sortable: true
     }
   };
+  private _selectedBuild?: PcBuild;
 
   @HostListener("document:keydown.escape", ["$event"])
   public onEscapeDown(event: KeyboardEvent): void {
@@ -71,11 +72,28 @@ export class BuilderComponent {
     });
   }
 
+  public get hasSelectedBuild(): boolean {
+    return Boolean(this._selectedBuild);
+  }
+
   public resizeGrid(event: AgGridEvent) {
     event.api.sizeColumnsToFit();
   }
 
-  public updateBuildSelection(event: SelectionChangedEvent) {
+  public openBuildList(): void {
+    this._selectedBuild = undefined;
+    this.isBuildListOpen = true;
+  }
+
+  public updateBuildSelection(event: SelectionChangedEvent<PcBuild>) {
+    this._selectedBuild = event.api.getSelectedRows()[0];
+  }
+
+  public switchBuild(): void {
+    if (this._selectedBuild) {
+      this._store.dispatch(PcBuildActions.updateBuild(this._selectedBuild));
+      this.isBuildListOpen = false;
+    }
   }
 
   public saveDraft(build: PcBuild) {

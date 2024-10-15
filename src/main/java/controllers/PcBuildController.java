@@ -1,5 +1,6 @@
 package controllers;
 
+import com.google.common.net.HttpHeaders;
 import com.google.protobuf.util.JsonFormat;
 
 import database.PcBuildDatabase;
@@ -11,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 public class PcBuildController {
+    private final static String BUILD_AGE = "max-age=86400"; // 1 day
+
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private final PcBuildDatabase pcBuildDatabase;
 
@@ -24,6 +27,8 @@ public class PcBuildController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, BUILD_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(
                 pcBuildDatabase.getAllPcBuilds(idList, ctx.queryParam(SessionAttributes.USER))));
