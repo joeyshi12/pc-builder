@@ -37,7 +37,11 @@ public class PcBuildController {
         try {
             PcBuild.Builder builder = PcBuild.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            builder.setUsername(ctx.sessionAttribute(SessionAttributes.USER));
+            Date creationDate = new Date();
+            builder.setUuid(UUID.randomUUID().toString())
+                .setUsername(ctx.sessionAttribute(SessionAttributes.USER))
+                .setCreationDate(creationDate.getTime())
+                .setLastUpdateDate(creationDate.getTime());
             ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(builder.build())));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);
@@ -49,11 +53,7 @@ public class PcBuildController {
         try {
             PcBuild.Builder builder = PcBuild.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
-            PcBuild build = builder.build();
-            Date lastUpdatedDate = new Date();
-            build = build.toBuilder()
-                .setLastUpdateDate(lastUpdatedDate.getTime())
-                    .build();
+            PcBuild build = builder.setLastUpdateDate(new Date().getTime()).build();
             pcBuildDatabase.updatePcBuild(build);
             ctx.json(build);
         } catch (Throwable e) {

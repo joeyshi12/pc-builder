@@ -26,6 +26,7 @@ run_dev() {
 
 generate_protobuf() {
   proto_files=$(find transfers -iname "*.proto")
+  echo "Generating source files for $(ls transfers | tr "\n" " ")"
   protoc --java_out="src/main/java" $proto_files || exit 1
   echo "Finished generating java models"
   protoc --plugin="web/node_modules/.bin/protoc-gen-ts_proto" \

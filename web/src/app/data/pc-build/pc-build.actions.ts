@@ -6,6 +6,8 @@ export const updateBasicInfo = createAction(
   props<PcBuildBasicInfo>()
 );
 
+export const clearBuild = createAction("ClearPcBuild");
+
 export const updateCpuIds = createAction(
   "UpdatePcBuildCpuIds",
   props<ComponentIds>()

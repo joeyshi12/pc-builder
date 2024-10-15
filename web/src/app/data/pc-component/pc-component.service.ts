@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, combineLatest, map } from "rxjs";
-import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../transfers/pc_component";
-import { PcBuild } from "../transfers/pc_build";
+import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../../transfers/pc_component";
+import { PcBuild } from "../../transfers/pc_build";
 import { PcComponents } from "./pc-component";
 
 @Injectable({

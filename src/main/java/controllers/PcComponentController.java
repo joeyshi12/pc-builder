@@ -6,7 +6,11 @@ import io.javalin.http.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.net.HttpHeaders;
+
 public class PcComponentController {
+    private final static String COMPONENT_AGE = "max-age=86400"; // 1 day
+
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private final PcComponentDatabase pcComponentDatabase;
 
@@ -20,6 +24,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getCpuComponents(idList)));
         } catch (Throwable e) {
@@ -34,6 +40,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMotherboardComponents(idList)));
         } catch (Throwable e) {
@@ -48,6 +56,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMemoryComponents(idList)));
         } catch (Throwable e) {
@@ -62,6 +72,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getStorageComponents(idList)));
         } catch (Throwable e) {
@@ -76,6 +88,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getVideoCardComponents(idList)));
         } catch (Throwable e) {
@@ -90,6 +104,8 @@ public class PcComponentController {
             String[] idList = null;
             if (idsValue != null) {
                 idList =  idsValue.split(",");
+            } else {
+                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getPowerSupplyComponents(idList)));
         } catch (Throwable e) {

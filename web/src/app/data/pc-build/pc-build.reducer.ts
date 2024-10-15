@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 import { PcBuild } from 'src/app/transfers/pc_build';
-import { updateBasicInfo, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
+import { clearBuild, updateBasicInfo, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
 import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { ComponentIds, PcBuildBasicInfo, localStorageBuildKey } from './pc-build';
 
@@ -41,6 +41,9 @@ export const reducer: ActionReducer<PcBuild> = createReducer(
       draft.displayName = payload.displayName;
       draft.description = payload.description;
     }));
+  }),
+  on(clearBuild, () => {
+    return saveDraft(initialState);
   }),
   on(updateCpuIds, (state: PcBuild, payload: ComponentIds) => {
     return saveDraft(produce(state, (draft) => {

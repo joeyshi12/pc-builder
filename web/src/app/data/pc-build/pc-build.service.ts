@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { PcBuild } from "../transfers/pc_build";
+import { PcBuild } from "../../transfers/pc_build";
 import { Observable, of } from "rxjs";
 
 @Injectable({
@@ -12,6 +12,10 @@ export class PcBuildService {
 
   public createPcBuild(build: PcBuild): Observable<PcBuild> {
     return this.http.put<PcBuild>("/builds", build);
+  }
+
+  public updatePcBuild(build: PcBuild): Observable<PcBuild> {
+    return this.http.post<PcBuild>(`/builds/${build.uuid}`, build);
   }
 
   public getPcBuilds(ids?: string[], username?: string): Observable<PcBuild[]> {

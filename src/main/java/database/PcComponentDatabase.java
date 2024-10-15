@@ -1,14 +1,11 @@
 package database;
 
 import transfers.PcComponent.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.*;
 
 public class PcComponentDatabase {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final ConnectionHandler connectionHandler;
 
     public PcComponentDatabase(ConnectionHandler connectionHandler) {
@@ -17,7 +14,7 @@ public class PcComponentDatabase {
 
     public List<CpuComponent> getCpuComponents(String[] componentIds) throws Exception {
         List<CpuComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("cpu", TableColumnNames.CPU_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("cpu", TableColumnNames.CPU_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -41,7 +38,7 @@ public class PcComponentDatabase {
 
     public List<MotherboardComponent> getMotherboardComponents(String[] componentIds) throws Exception {
         List<MotherboardComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -64,7 +61,7 @@ public class PcComponentDatabase {
 
     public List<MemoryComponent> getMemoryComponents(String[] componentIds) throws Exception {
         List<MemoryComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("memory", TableColumnNames.MEMORY_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("memory", TableColumnNames.MEMORY_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -89,7 +86,7 @@ public class PcComponentDatabase {
 
     public List<StorageComponent> getStorageComponents(String[] componentIds) throws Exception {
         List<StorageComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("storage", TableColumnNames.STORAGE_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("storage", TableColumnNames.STORAGE_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -112,7 +109,7 @@ public class PcComponentDatabase {
 
     public List<VideoCardComponent> getVideoCardComponents(String[] componentIds) throws Exception {
         List<VideoCardComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -136,7 +133,7 @@ public class PcComponentDatabase {
 
     public List<PowerSupplyComponent> getPowerSupplyComponents(String[] componentIds) throws Exception {
         List<PowerSupplyComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIds);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {

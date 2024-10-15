@@ -1,6 +1,9 @@
 :host {
   display: flex;
   flex-direction: column;
+  min-width: 30rem;
+  max-width: 120rem;
+  margin: auto;
   height: 100%;
 
   .component-selector {

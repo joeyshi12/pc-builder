@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { UserProfile } from "../transfers/user";
+import { UserProfile } from "../../transfers/user";
 
 @Injectable({
   providedIn: 'root'
@@ -33,14 +33,13 @@ export class UserService {
   }
 
   public getSessionUser(): Observable<UserProfile> {
-    const headers = new HttpHeaders().set("credentials", "include");
-    return this.http.get<UserProfile>("/users/session-user", { headers: headers });
+    return this.http.get<UserProfile>("/users/session-user");
   }
 
   public clearSessionUser(): Observable<void> {
     localStorage.removeItem("username");
-    const headers = new HttpHeaders().set("credentials", "include");
-    return this.http.delete<void>("/users/session-user", { headers: headers });
+    this.currentUser$.next(undefined);
+    return this.http.delete<void>("/users/session-user");
   }
 
   public updateUserProfile(displayName: string, username: string): Observable<UserProfile | undefined> {

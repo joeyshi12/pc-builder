@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserProfile } from './transfers/user';
-import { UserService } from './user/user.service';
+import { UserService } from './data/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,11 @@ export class AppComponent {
   public userProfile$: BehaviorSubject<UserProfile | undefined>;
   public isLoginFormOpen: boolean = false;
   public errorMessage?: string;
+
+  @HostListener("document:keydown.escape", ["$event"])
+  public onEscapeDown(event: KeyboardEvent): void {
+    this.isLoginFormOpen = false;
+  }
 
   constructor(private _userService: UserService) {
     this.userProfile$ = this._userService.currentUser$;

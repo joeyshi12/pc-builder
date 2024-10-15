@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes}  from '@angular/router';
-import { BuildListingComponent } from "./components/build-listing/build-listing.component";
-import { ComponentListingComponent } from "./components/component-listing/component-listing.component";
-import { UserProfileComponent } from "./components/user-profile/user-profile.component";
-import { BuilderComponent } from "./components/builder/builder.component";
+import { BuildListingComponent } from "./ui/build-listing/build-listing.component";
+import { ComponentListingComponent } from "./ui/component-listing/component-listing.component";
+import { UserProfileComponent } from "./ui/user-profile/user-profile.component";
+import { BuilderComponent } from "./ui/builder/builder.component";
 
 const routes: Routes = [
   {

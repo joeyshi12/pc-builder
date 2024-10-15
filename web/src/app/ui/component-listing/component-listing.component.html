@@ -20,8 +20,7 @@
   <button (click)="addComponentsToBuild()">Add selected to build list</button>
 </div>
 <div class="component-grid">
-    <ag-grid-angular #componentGrid
-                     class="ag-theme-alpine"
+    <ag-grid-angular class="ag-theme-alpine"
                      [gridOptions]="gridOptions"
                      [columnDefs]="columnDefs"
                      [rowData]="components$ | async"

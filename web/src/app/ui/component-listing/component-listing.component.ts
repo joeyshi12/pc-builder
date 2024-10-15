@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { PcComponent, PcComponentType } from 'src/app/pc-component/pc-component';
-import { PcComponentService } from 'src/app/pc-component/pc-component.service';
-import { updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from 'src/app/pc-build/pc-build.actions';
+import { PcComponent, PcComponentType } from 'src/app/data/pc-component/pc-component';
+import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
+import { updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from 'src/app/data/pc-build/pc-build.actions';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({

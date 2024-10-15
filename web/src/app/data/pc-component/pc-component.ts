@@ -1,4 +1,4 @@
-import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../transfers/pc_component";
+import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../../transfers/pc_component";
 
 export type PcComponents = {
   cpuList: CpuComponent[];

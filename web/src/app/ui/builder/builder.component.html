@@ -1,14 +1,15 @@
 <h1>PC Parts List</h1>
 <p>Pick out your PC parts.</p>
-<div *ngIf="draft$ | async as draft">
+<ng-container *ngIf="draft$ | async as draft">
   <div class="build-table">
     <header>
-      <div>
+      <div class="basic-info">
         <label>{{draft.displayName}}</label>
-        <span>{{draft.description}}</span>
+        <span [title]="draft.description">{{draft.description}}</span>
       </div>
-      <div>
-        <button (click)="isEditDraftOpen = true">Edit list</button>
+      <div class="action-buttons">
+        <button *ngIf="isLoggedIn" (click)="isBuildListOpen = true">Switch list</button>
+        <button (click)="isEditDraftOpen = true">Edit info</button>
         <button (click)="saveDraft(draft)">Save list</button>
       </div>
     </header>
@@ -31,18 +32,18 @@
                 </a>
               </td>
               <td>
-                <ul>
+                <ol>
                   <li *ngFor="let item of listDef.items">
                     {{item.displayName}}
                   </li>
-                </ul>
+                </ol>
               </td>
               <td>
-                <ul>
+                <ol>
                   <li *ngFor="let item of listDef.items">
                     {{item.price}}
                   </li>
-                </ul>
+                </ol>
               </td>
             </tr>
           </ng-container>
@@ -64,25 +65,39 @@
     </table>
   </div>
 
-  <dialog [open]="isEditDraftOpen">
-    <div>
-      <div class="form-header">
-        <h1>Edit Profile</h1>
-      </div>
-      <div class="form-body">
-        <div class="form-field">
-          <label>Display name</label>
-          <input #displayName type="text" [value]="draft.displayName" />
-        </div>
-        <div class="form-field">
-          <label>Description</label>
-          <input #description type="text" [value]="draft.description" />
-        </div>
-        <div class="form-buttons-container">
-          <button (click)="isEditDraftOpen = false">Close</button>
-          <button (click)="updateDraftInfo(displayName.value, description.value)">Submit</button>
-        </div>
+  <app-dialog [isOpen]="isBuildListOpen"
+              title="PC Builds">
+    <div class="form-body">
+      <ag-grid-angular class="ag-theme-alpine"
+                       [gridOptions]="gridOptions"
+                       [columnDefs]="columnDefs"
+                       [rowData]="buildList"
+                       (gridColumnsChanged)="resizeGrid($event)"
+                       (gridSizeChanged)="resizeGrid($event)"
+                       (selectionChanged)="updateBuildSelection($event)">
+      </ag-grid-angular>
+      <div class="form-buttons-container">
+        <button (click)="isBuildListOpen = false">Close</button>
+        <button>Switch</button>
       </div>
     </div>
-  </dialog>
-</div>
+  </app-dialog>
+
+  <app-dialog [isOpen]="isEditDraftOpen"
+              title="Edit Profile">
+    <div class="form-body">
+      <div class="form-field">
+        <label>Display name</label>
+        <input #displayName type="text" [value]="draft.displayName" />
+      </div>
+      <div class="form-field">
+        <label>Description</label>
+        <input #description type="text" [value]="draft.description" />
+      </div>
+      <div class="form-buttons-container">
+        <button (click)="isEditDraftOpen = false">Close</button>
+        <button (click)="updateDraftInfo(displayName.value, description.value)">Submit</button>
+      </div>
+    </div>
+  </app-dialog>
+</ng-container>

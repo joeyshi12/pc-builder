@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 35rem;
+  max-width: 80rem;
+  margin: auto;
+  padding: 1rem 0;
+
+  & > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    background: #ccc;
+    border-radius: 8px;
+    & h1 {
+      margin: 0.5rem 0;
+    }
+    & h3 {
+      margin: 0.5rem 0;
+      &::before {
+        content: "@";
+      }
+    }
+  }
+}

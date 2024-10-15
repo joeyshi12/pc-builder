@@ -18,13 +18,15 @@ public class PcBuildDatabase {
     }
 
     public PcBuild insertPcBuild(PcBuild build) throws SQLException {
-        String query = "INSERT INTO pc_build (id, display_name, creation_date, last_updated_date) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO pc_build (id, display_name, description, username, creation_date, last_updated_date) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setString(1, build.getUuid());
             ps.setString(2, build.getDisplayName());
-            ps.setDate(3, new java.sql.Date(build.getCreationDate()));
-            ps.setDate(4, new java.sql.Date(build.getLastUpdateDate()));
+            ps.setString(3, build.getDescription());
+            ps.setString(4, build.getUsername());
+            ps.setTimestamp(5, new Timestamp(build.getCreationDate()));
+            ps.setTimestamp(6, new Timestamp(build.getLastUpdateDate()));
             ps.executeQuery();
             connection.commit();
             logger.info(String.format("Created computer build %s", build.getUuid()));
@@ -34,18 +36,23 @@ public class PcBuildDatabase {
 
     public List<PcBuild> getAllPcBuilds(String[] buildIds, String username) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdsFilter("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS, buildIds);
+        StringBuilder queryBuilder = new StringBuilder(
+            QueryUtil.formTableSelectQuery("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS));
         try (Connection connection = connectionHandler.getConnection()) {
-            PreparedStatement ps;
-            if (StringUtil.isBlank(username)) {
-                ps = connection.prepareStatement(query);
-            } else {
-                if (buildIds == null || buildIds.length == 0) {
-                    query = query + " WHERE username = ?";
-                } else {
-                    query = query + " AND username = ?";
-                }
-                ps = connection.prepareStatement(query);
+            List<String> conditions = new ArrayList<String>();
+            if (buildIds != null && buildIds.length > 0) {
+                conditions.add(QueryUtil.formIdCondition(buildIds));
+            }
+            if (!StringUtil.isBlank(username)) {
+                conditions.add("username = ?");
+            }
+            if (conditions.size() > 0) {
+                queryBuilder
+                    .append(" WHERE ")
+                    .append(String.join(" AND ", conditions));
+            }
+            PreparedStatement ps = connection.prepareStatement(queryBuilder.append(" ORDER BY last_updated_date DESC").toString());
+            if (!StringUtil.isBlank(username)) {
                 ps.setString(1, username);
             }
             ResultSet rs = ps.executeQuery();
@@ -53,6 +60,7 @@ public class PcBuildDatabase {
                 PcBuild build = PcBuild.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
+                    .setDescription(rs.getString(TableColumnNames.DESCRIPTION))
                     .setUsername(rs.getString(TableColumnNames.USERNAME))
                     .setCreationDate(rs.getDate(TableColumnNames.CREATION_DATE).getTime())
                     .setLastUpdateDate(rs.getDate(TableColumnNames.LAST_UPDATED_DATE).getTime())
@@ -63,11 +71,33 @@ public class PcBuildDatabase {
         return builds;
     }
 
-    public void updatePcBuild(PcBuild build) {
-        logger.info(String.format("Updated computer build %s", build.getUuid()));
+    public void updatePcBuild(PcBuild build) throws Exception {
+        try (Connection connection = connectionHandler.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement("UPDATE pc_build SET display_name = ?, description = ?, last_updated_date = ?")) {
+                ps.setString(1, build.getDisplayName());
+                ps.setString(2, build.getDescription());
+                ps.setTimestamp(3, new Timestamp(build.getLastUpdateDate()));
+                ps.executeQuery();
+            }
+            try (PreparedStatement ps = connection.prepareStatement("DELETE FROM is_part_of WHERE build_id = ?")) {
+                ps.setString(1, build.getUuid());
+                ps.executeQuery();
+            }
+            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO is_part_of VALUES " + QueryUtil.formComponentIdValues(build))) {
+                ps.executeQuery();
+            }
+            connection.commit();
+            logger.info(String.format("Updated computer build %s", build.getUuid()));
+        }
     }
 
-    public void deletePcBuild(String buildId) {
-        logger.info(String.format("Deleted computer build %s", buildId));
+    public void deletePcBuild(String buildId) throws Exception {
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement("DELETE FROM pc_build WHERE id = ?")) {
+            ps.setString(1, buildId);
+            ps.executeQuery();
+            connection.commit();
+            logger.info(String.format("Deleted computer build %s", buildId));
+        }
     }
 }
