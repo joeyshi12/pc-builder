@@ -4,11 +4,11 @@ import { Component, Input } from '@angular/core';
   selector: 'app-dialog',
   template: `
     <dialog [open]="isOpen">
-      <div>
+      <div [style.max-width.rem]="widthRem">
         <header>
           <h1>{{title}}</h1>
         </header>
-        <div class="dialog-body">
+        <div>
           <ng-content />
         </div>
       </div>
@@ -19,4 +19,5 @@ import { Component, Input } from '@angular/core';
 export class DialogComponent {
   @Input() public isOpen: boolean = false;
   @Input({required: true}) public title!: string;
+  @Input() public widthRem: number = 30;
 }

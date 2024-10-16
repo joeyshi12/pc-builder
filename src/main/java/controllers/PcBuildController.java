@@ -24,14 +24,15 @@ public class PcBuildController {
     public void getAll(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, BUILD_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(
-                pcBuildDatabase.getAllPcBuilds(idList, ctx.queryParam(SessionAttributes.USER))));
+                pcBuildDatabase.getAllPcBuilds(idsOpt, ctx.queryParam(SessionAttributes.USER))));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);

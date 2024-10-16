@@ -12,9 +12,9 @@ public class PcComponentDatabase {
         this.connectionHandler = connectionHandler;
     }
 
-    public List<CpuComponent> getCpuComponents(String[] componentIds) throws Exception {
+    public List<CpuComponent> getCpuComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<CpuComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("cpu", TableColumnNames.CPU_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("cpu", TableColumnNames.CPU_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -36,9 +36,9 @@ public class PcComponentDatabase {
         return components;
     }
 
-    public List<MotherboardComponent> getMotherboardComponents(String[] componentIds) throws Exception {
+    public List<MotherboardComponent> getMotherboardComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<MotherboardComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("motherboard", TableColumnNames.MOTHERBOARD_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -59,9 +59,9 @@ public class PcComponentDatabase {
         return components;
     }
 
-    public List<MemoryComponent> getMemoryComponents(String[] componentIds) throws Exception {
+    public List<MemoryComponent> getMemoryComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<MemoryComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("memory", TableColumnNames.MEMORY_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("memory", TableColumnNames.MEMORY_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -84,9 +84,9 @@ public class PcComponentDatabase {
         return components;
     }
 
-    public List<StorageComponent> getStorageComponents(String[] componentIds) throws Exception {
+    public List<StorageComponent> getStorageComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<StorageComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("storage", TableColumnNames.STORAGE_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("storage", TableColumnNames.STORAGE_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -107,9 +107,9 @@ public class PcComponentDatabase {
         return components;
     }
 
-    public List<VideoCardComponent> getVideoCardComponents(String[] componentIds) throws Exception {
+    public List<VideoCardComponent> getVideoCardComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<VideoCardComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("video_card", TableColumnNames.VIDEO_CARD_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {
@@ -131,9 +131,9 @@ public class PcComponentDatabase {
         return components;
     }
 
-    public List<PowerSupplyComponent> getPowerSupplyComponents(String[] componentIds) throws Exception {
+    public List<PowerSupplyComponent> getPowerSupplyComponents(Optional<String[]> componentIdsOpt) throws Exception {
         List<PowerSupplyComponent> components = new ArrayList<>();
-        String query = QueryUtil.formQueryWithIdCondition("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIds);
+        String query = QueryUtil.formQueryWithIdCondition("power_supply", TableColumnNames.POWER_SUPPLY_COLUMNS, componentIdsOpt);
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {

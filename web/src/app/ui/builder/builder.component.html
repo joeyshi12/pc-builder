@@ -66,9 +66,10 @@
   </div>
 
   <app-dialog [isOpen]="isBuildListOpen"
+              [widthRem]="40"
               title="PC Builds">
     <div class="form-body">
-      <ag-grid-angular class="ag-theme-alpine"
+      <ag-grid-angular class="ag-theme-alpine build-list"
                        [gridOptions]="gridOptions"
                        [columnDefs]="columnDefs"
                        [rowData]="buildList"

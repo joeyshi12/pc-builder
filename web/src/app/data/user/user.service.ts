@@ -42,13 +42,13 @@ export class UserService {
     return this.http.delete<void>("/users/session-user");
   }
 
-  public updateUserProfile(displayName: string, username: string): Observable<UserProfile | undefined> {
+  public updateUserProfile(displayName: string): Observable<UserProfile | undefined> {
     const userProfile = this.currentUser$.getValue();
     if (!userProfile) {
       return this.currentUser$;
     }
     userProfile.displayName = displayName;
-    userProfile.username = username;
+    userProfile.username = this.currentUser$.getValue()?.username;
     return this.http.put<UserProfile>("/users", userProfile);
   }
 }

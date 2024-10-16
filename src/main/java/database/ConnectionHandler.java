@@ -43,9 +43,7 @@ public class ConnectionHandler {
         SessionHandler sessionHandler = new SessionHandler();
         SessionCache sessionCache = new DefaultSessionCache(sessionHandler);
         String url = String.format("%s?user=%s&password=%s", databaseUrl, username, password);
-        sessionCache.setSessionDataStore(
-            jdbcDataStoreFactory("org.mariadb.jdbc.Driver", url).getSessionDataStore(sessionHandler)
-        );
+        sessionCache.setSessionDataStore(jdbcDataStoreFactory("org.mariadb.jdbc.Driver", url).getSessionDataStore(sessionHandler));
         sessionHandler.setSessionCache(sessionCache);
         sessionHandler.setHttpOnly(true);
         return sessionHandler;

@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentListingComponent } from './ui/component-listing/component-listing.component';
 import { BuildListingComponent } from './ui/build-listing/build-listing.component';
-import { UserProfileComponent } from './ui/user-profile/user-profile.component';
 import { BuilderComponent } from './ui/builder/builder.component';
 import { AgGridModule } from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
@@ -21,7 +20,6 @@ import { DialogComponent } from './ui/dialog/dialog.component';
     AppComponent,
     ComponentListingComponent,
     BuildListingComponent,
-    UserProfileComponent,
     BuilderComponent,
     DialogComponent
   ],

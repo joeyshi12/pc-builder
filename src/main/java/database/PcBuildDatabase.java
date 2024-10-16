@@ -34,14 +34,14 @@ public class PcBuildDatabase {
         return build;
     }
 
-    public List<PcBuild> getAllPcBuilds(String[] buildIds, String username) throws Exception {
+    public List<PcBuild> getAllPcBuilds(Optional<String[]> buildIdsOpt, String username) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
         StringBuilder queryBuilder = new StringBuilder(
             QueryUtil.formTableSelectQuery("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS));
         try (Connection connection = connectionHandler.getConnection()) {
             List<String> conditions = new ArrayList<String>();
-            if (buildIds != null && buildIds.length > 0) {
-                conditions.add(QueryUtil.formIdCondition(buildIds));
+            if (buildIdsOpt.isPresent() && buildIdsOpt.get().length > 0) {
+                conditions.add(QueryUtil.formIdCondition(buildIdsOpt.get()));
             }
             if (!StringUtil.isBlank(username)) {
                 conditions.add("username = ?");

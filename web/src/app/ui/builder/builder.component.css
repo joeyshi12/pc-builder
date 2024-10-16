@@ -6,8 +6,8 @@
   margin: auto;
   width: 100%;
 
-  ag-grid-angular {
-    height: 20rem;
+  ag-grid-angular.build-list {
+    height: 30rem;
   }
 
   .build-table {

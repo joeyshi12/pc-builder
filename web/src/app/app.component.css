@@ -31,6 +31,41 @@
       color: #555;
       &:hover {
         color: #222;
+        background: none;
+      }
+      &.user-profile-btn::after {
+        content: "▼";
+        vertical-align: 0.1rem;
+      }
+    }
+
+    & ul.user-profile-menu {
+      position: absolute;
+      list-style: none;
+      background: #fff;
+      border: 1px solid #5555;
+      border-radius: 8px;
+      right: 2rem;
+      margin: 0;
+      padding: 0.5rem;
+      width: 14rem;
+      & > li {
+        padding: 0.5rem 1rem;
+        color: #222;
+        &:hover:not(.user-handle) {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        &.user-handle {
+          color: #555;
+          &::before {
+            content: "@";
+          }
+        }
+        &:nth-child(2) {
+          border-bottom: 1px solid #5555;
+          margin-bottom: 0.5rem;
+        }
       }
     }
 

@@ -4,10 +4,10 @@ import transfers.PcBuildOuterClass.PcBuild;
 import java.util.*;
 
 final class QueryUtil {
-    public static String formQueryWithIdCondition(String tableName, String[] columns, String[] ids) throws Exception {
+    public static String formQueryWithIdCondition(String tableName, String[] columns, Optional<String[]> idsOpt) throws Exception {
         StringBuilder builder = new StringBuilder(formTableSelectQuery(tableName, columns));
-        if (ids != null && ids.length > 0) {
-            builder.append(" WHERE ").append(formIdCondition(ids));
+        if (idsOpt.isPresent() && idsOpt.get().length > 0) {
+            builder.append(" WHERE ").append(formIdCondition(idsOpt.get()));
         }
         return builder.toString();
     }
@@ -28,7 +28,7 @@ final class QueryUtil {
     }
 
     public static String formIdCondition(String[] ids) throws Exception {
-        if (ids == null || ids.length == 0) {
+        if (ids.length == 0) {
             throw new Exception("No IDs in ID condition");
         }
         StringBuilder builder = new StringBuilder("id IN ('")

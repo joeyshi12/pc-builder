@@ -44,7 +44,7 @@ public class UserDatabase {
 
     public UserProfile updateUserProfile(UserProfile userProfile) throws SQLException {
         try (Connection connection = connectionHandler.getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE user_profile SET display_name = ?, email = ? WHERE username = ?")) {
+             PreparedStatement ps = connection.prepareStatement("UPDATE user_profile SET display_name = ? WHERE username = ?")) {
             ps.setString(1, userProfile.getDisplayName());
             ps.setString(2, userProfile.getUsername());
             ps.executeQuery();

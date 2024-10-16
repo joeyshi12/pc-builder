@@ -3,6 +3,8 @@ package controllers;
 import database.PcComponentDatabase;
 import io.javalin.http.Context;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,13 +23,14 @@ public class PcComponentController {
     public void getAllCpuComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getCpuComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getCpuComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all cpu components", e);
             ctx.status(500);
@@ -37,13 +40,14 @@ public class PcComponentController {
     public void getAllMotherboardComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMotherboardComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMotherboardComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all motherboard components", e);
             ctx.status(500);
@@ -53,13 +57,14 @@ public class PcComponentController {
     public void getAllMemoryComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMemoryComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMemoryComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all memory components", e);
             ctx.status(500);
@@ -69,13 +74,14 @@ public class PcComponentController {
     public void getAllStorageComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getStorageComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getStorageComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all storage components", e);
             ctx.status(500);
@@ -85,13 +91,14 @@ public class PcComponentController {
     public void getAllVideoCardComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getVideoCardComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getVideoCardComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all videoCard components", e);
             ctx.status(500);
@@ -101,13 +108,14 @@ public class PcComponentController {
     public void getAllPowerSupplyComponents(Context ctx) {
         try {
             String idsValue = ctx.queryParam("ids");
-            String[] idList = null;
+            Optional<String[]> idsOpt;
             if (idsValue != null) {
-                idList =  idsValue.split(",");
+                idsOpt =  Optional.of(idsValue.split(","));
             } else {
+                idsOpt = Optional.empty();
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
-            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getPowerSupplyComponents(idList)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getPowerSupplyComponents(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all powerSupply components", e);
             ctx.status(500);

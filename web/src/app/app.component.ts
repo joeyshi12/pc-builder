@@ -11,11 +11,13 @@ import { UserService } from './data/user/user.service';
 export class AppComponent {
   public userProfile$: BehaviorSubject<UserProfile | undefined>;
   public isLoginFormOpen: boolean = false;
+  public isUserProfileMenuOpen: boolean = false;
+  public isEditProfileFormOpen: boolean = false;
   public errorMessage?: string;
 
   @HostListener("document:keydown.escape", ["$event"])
   public onEscapeDown(event: KeyboardEvent): void {
-    this.isLoginFormOpen = false;
+    this._closeDialogs();
   }
 
   constructor(private _userService: UserService) {
@@ -42,7 +44,7 @@ export class AppComponent {
       .subscribe({
         next: (userProfile: UserProfile) => {
           this._userService.setCurrentUser(userProfile);
-          this.isLoginFormOpen = false;
+          this._closeDialogs();
         },
         error: () => {
           this.errorMessage = "Failed to authenticate user";
@@ -50,7 +52,23 @@ export class AppComponent {
       });
   }
 
-  public signOutUser() {
+  public updateUserProfile(displayName: string): void {
+    if (displayName.length === 0) {
+      alert("Display name cannot be empty");
+      return;
+    }
+    this._userService.updateUserProfile(displayName)
+      .subscribe((_: UserProfile | undefined) => {
+        this.isEditProfileFormOpen = false;
+      })
+  }
+
+  public logOutUser() {
     this._userService.clearSessionUser();
+  }
+
+  private _closeDialogs(): void {
+      this.isLoginFormOpen = false;
+      this.isUserProfileMenuOpen = false;
   }
 }
