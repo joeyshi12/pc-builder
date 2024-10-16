@@ -1,6 +1,5 @@
 package controllers;
 
-import com.google.common.net.HttpHeaders;
 import com.google.protobuf.util.JsonFormat;
 
 import database.PcBuildDatabase;
@@ -12,8 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 public class PcBuildController {
-    private final static String BUILD_AGE = "max-age=86400"; // 1 day
-
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private final PcBuildDatabase pcBuildDatabase;
 
@@ -23,16 +20,11 @@ public class PcBuildController {
 
     public void getAll(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
-                ctx.header(HttpHeaders.CACHE_CONTROL, BUILD_AGE);
-            }
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            Optional<String> sessionUserOpt = Optional.ofNullable(ctx.queryParam(SessionAttributes.USER));
             ctx.json(ProtoUtil.protoListToJsonString(
-                pcBuildDatabase.getAllPcBuilds(idsOpt, ctx.queryParam(SessionAttributes.USER))));
+                pcBuildDatabase.getAllPcBuilds(idsOpt, sessionUserOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);

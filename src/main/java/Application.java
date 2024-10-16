@@ -57,7 +57,7 @@ public class Application {
     private static Javalin createApplication(ConnectionHandler connectionHandler) {
         return Javalin.create((JavalinConfig config) -> {
             config.requestLogger.http((Context ctx, Float millis) ->
-                logger.info(String.format("\"%s %s\" %s", ctx.method(), ctx.url(), ctx.status())));
+                logger.info(String.format("\"%s %s\" %s", ctx.method(), ctx.fullUrl(), ctx.status())));
             config.staticFiles.add((StaticFileConfig staticFiles) -> {
                 staticFiles.hostedPath = "/";
                 staticFiles.directory = "public";

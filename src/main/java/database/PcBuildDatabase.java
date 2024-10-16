@@ -1,6 +1,5 @@
 package database;
 
-import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +33,7 @@ public class PcBuildDatabase {
         return build;
     }
 
-    public List<PcBuild> getAllPcBuilds(Optional<String[]> buildIdsOpt, String username) throws Exception {
+    public List<PcBuild> getAllPcBuilds(Optional<String[]> buildIdsOpt, Optional<String> usernameOpt) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
         StringBuilder queryBuilder = new StringBuilder(
             QueryUtil.formTableSelectQuery("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS));
@@ -43,7 +42,7 @@ public class PcBuildDatabase {
             if (buildIdsOpt.isPresent() && buildIdsOpt.get().length > 0) {
                 conditions.add(QueryUtil.formIdCondition(buildIdsOpt.get()));
             }
-            if (!StringUtil.isBlank(username)) {
+            if (usernameOpt.isPresent()) {
                 conditions.add("username = ?");
             }
             if (conditions.size() > 0) {
@@ -52,8 +51,8 @@ public class PcBuildDatabase {
                     .append(String.join(" AND ", conditions));
             }
             PreparedStatement ps = connection.prepareStatement(queryBuilder.append(" ORDER BY last_updated_date DESC").toString());
-            if (!StringUtil.isBlank(username)) {
-                ps.setString(1, username);
+            if (usernameOpt.isPresent()) {
+                ps.setString(1, usernameOpt.get());
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

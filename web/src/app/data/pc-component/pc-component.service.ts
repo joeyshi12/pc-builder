@@ -17,19 +17,19 @@ export class PcComponentService {
       ? this.getCpuComponents(build.cpuIds)
       : of<CpuComponent[]>([]);
     const motherboardComponents$ = build.motherboardIds && build.motherboardIds.length > 0
-      ? this.getCpuComponents(build.motherboardIds)
+      ? this.getMotherboardComponents(build.motherboardIds)
       : of<MotherboardComponent[]>([]);
     const memoryComponents$ = build.memoryIds && build.memoryIds.length > 0
-      ? this.getCpuComponents(build.memoryIds)
+      ? this.getMemoryComponents(build.memoryIds)
       : of<MemoryComponent[]>([]);
     const storageComponents$ = build.storageIds && build.storageIds.length > 0
-      ? this.getCpuComponents(build.storageIds)
+      ? this.getStorageComponents(build.storageIds)
       : of<StorageComponent[]>([]);
     const videoCardComponents$ = build.videoCardIds && build.videoCardIds.length > 0
-      ? this.getCpuComponents(build.videoCardIds)
+      ? this.getVideoCardComponents(build.videoCardIds)
       : of<VideoCardComponent[]>([]);
     const powerSupplyComponents$ = build.powerSupplyIds && build.powerSupplyIds.length > 0
-      ? this.getCpuComponents(build.powerSupplyIds)
+      ? this.getPowerSupplyComponents(build.powerSupplyIds)
       : of<PowerSupplyComponent[]>([]);
     return combineLatest([
       cpuComponents$,

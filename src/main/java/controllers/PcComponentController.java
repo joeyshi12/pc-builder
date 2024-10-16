@@ -22,12 +22,9 @@ public class PcComponentController {
 
     public void getAllCpuComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getCpuComponents(idsOpt)));
@@ -39,12 +36,9 @@ public class PcComponentController {
 
     public void getAllMotherboardComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMotherboardComponents(idsOpt)));
@@ -56,12 +50,9 @@ public class PcComponentController {
 
     public void getAllMemoryComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMemoryComponents(idsOpt)));
@@ -73,12 +64,9 @@ public class PcComponentController {
 
     public void getAllStorageComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getStorageComponents(idsOpt)));
@@ -90,12 +78,9 @@ public class PcComponentController {
 
     public void getAllVideoCardComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getVideoCardComponents(idsOpt)));
@@ -107,12 +92,9 @@ public class PcComponentController {
 
     public void getAllPowerSupplyComponents(Context ctx) {
         try {
-            String idsValue = ctx.queryParam("ids");
-            Optional<String[]> idsOpt;
-            if (idsValue != null) {
-                idsOpt =  Optional.of(idsValue.split(","));
-            } else {
-                idsOpt = Optional.empty();
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            if (idsOpt.isEmpty()) {
                 ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getPowerSupplyComponents(idsOpt)));
