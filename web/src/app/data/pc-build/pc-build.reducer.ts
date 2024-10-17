@@ -46,7 +46,19 @@ export const reducer: ActionReducer<PcBuild> = createReducer(
     return saveDraft(initialState);
   }),
   on(updateBuild, (state: PcBuild, payload: PcBuild) => {
-    return saveDraft(payload);
+    return saveDraft({
+      uuid: payload.uuid,
+      displayName: payload.displayName,
+      description: payload.description,
+      creationDate: payload.creationDate,
+      lastUpdateDate: payload.lastUpdateDate,
+      cpuIds: payload.cpuIds,
+      motherboardIds: payload.motherboardIds,
+      memoryIds: payload.memoryIds,
+      storageIds: payload.storageIds,
+      videoCardIds: payload.videoCardIds,
+      powerSupplyIds: payload.powerSupplyIds
+    });
   }),
   on(updateCpuIds, (state: PcBuild, payload: ComponentIds) => {
     return saveDraft(produce(state, (draft) => {

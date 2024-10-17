@@ -17,17 +17,17 @@
   </div>
   <div>
     <ng-container *ngIf="userProfile$ | async as userProfile; else loginButton">
-      <button class="user-profile-btn" (click)="isUserProfileMenuOpen = !isUserProfileMenuOpen">
+      <button #userProfileButton class="user-profile-btn" (click)="isUserProfileMenuOpen = !isUserProfileMenuOpen">
         <span>{{userProfile.displayName}}</span>
       </button>
-      <ul class="user-profile-menu" *ngIf="isUserProfileMenuOpen">
+      <ul #userProfileMenu class="user-profile-menu" *ngIf="isUserProfileMenuOpen">
         <li class="user-handle" [title]="userProfile.username">{{userProfile.username}}</li>
-        <li (click)="isEditProfileFormOpen = true">Edit profile information</li>
+        <li (click)="openEditProfileFormDialog()">Edit profile information</li>
         <li (click)="logOutUser()">Log out</li>
       </ul>
     </ng-container>
     <ng-template #loginButton>
-      <button (click)="openFormDialog()">
+      <button (click)="openLoginFormDialog()">
         <span>Log In</span>
       </button>
     </ng-template>
@@ -37,8 +37,9 @@
   <router-outlet></router-outlet>
 </main>
 
-<app-dialog [isOpen]="isLoginFormOpen"
-            [title]="'Log in'">
+<app-dialog title="Log in"
+            [isOpen]="isLoginFormOpen"
+            (close)="isLoginFormOpen = false">
   <div class="alert-error" [hidden]="!errorMessage">
     <div class="close-button" (click)="errorMessage = undefined">
       <span>&#215;</span>
@@ -61,8 +62,9 @@
   </div>
 </app-dialog>
 
-<app-dialog [isOpen]="isEditProfileFormOpen"
-            title="Edit Profile">
+<app-dialog title="Edit Profile"
+            [isOpen]="isEditProfileFormOpen"
+            (close)="isEditProfileFormOpen = false">
   <div class="form-body">
     <div class="form-field">
       <label>Display name</label>

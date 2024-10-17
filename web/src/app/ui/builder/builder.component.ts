@@ -1,10 +1,9 @@
 import { Component, HostListener } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AgGridEvent, ColDef, GetRowIdParams, GridOptions, SelectionChangedEvent } from "ag-grid-community";
+import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
 import { Observable, map, switchMap } from 'rxjs';
 import * as PcBuildReducer from '../../data/pc-build/pc-build.reducer';
 import * as PcBuildActions from '../../data/pc-build/pc-build.actions';
-import { Router } from '@angular/router';
 import { PcBuild } from 'src/app/transfers/pc_build';
 import { PcBuildService } from 'src/app/data/pc-build/pc-build.service';
 import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
@@ -46,8 +45,8 @@ export class BuilderComponent {
   };
   private _selectedBuild?: PcBuild;
 
-  @HostListener("document:keydown.escape", ["$event"])
-  public onEscapeDown(event: KeyboardEvent): void {
+  @HostListener("document:keydown.escape")
+  public onEscapeDown(): void {
     this.isBuildListOpen = false;
     this.isEditDraftOpen = false;
   }
@@ -55,8 +54,7 @@ export class BuilderComponent {
   constructor(private _pcBuildService: PcBuildService,
               pcComponentService: PcComponentService,
               private _userService: UserService,
-              private _store: Store<any>,
-              private _router: Router) {
+              private _store: Store<any>) {
     this.draft$ = _store.select(PcBuildReducer.stateName);
     this.componentListModels$ = this.draft$.pipe(
       switchMap((draft: PcBuild) => pcComponentService.getPcComponents(draft)),
@@ -104,14 +102,13 @@ export class BuilderComponent {
     }
     if (build.uuid) {
       this._pcBuildService.updatePcBuild(build).subscribe(() => {
-        this._router.navigate(["user-profile"]);
+        window.location.reload();
       });
     } else {
       this._pcBuildService.createPcBuild(build).subscribe(() => {
-        this._router.navigate(["user-profile"]);
+        window.location.reload();
       });
     }
-    this._store.dispatch(PcBuildActions.clearBuild());
   }
 
   public updateDraftInfo(displayName: string, description: string) {

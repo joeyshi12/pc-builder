@@ -65,9 +65,10 @@
     </table>
   </div>
 
-  <app-dialog [isOpen]="isBuildListOpen"
+  <app-dialog title="PC Builds"
+              [isOpen]="isBuildListOpen"
               [widthRem]="40"
-              title="PC Builds">
+              (close)="isBuildListOpen = false">
     <div class="form-body">
       <ag-grid-angular class="ag-theme-alpine build-list"
                        [gridOptions]="gridOptions"
@@ -84,8 +85,9 @@
     </div>
   </app-dialog>
 
-  <app-dialog [isOpen]="isEditDraftOpen"
-              title="Edit Profile">
+  <app-dialog title="Edit Profile"
+              [isOpen]="isEditDraftOpen"
+              (close)="isEditDraftOpen = false">
     <div class="form-body">
       <div class="form-field">
         <label>Display name</label>

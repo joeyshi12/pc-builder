@@ -18,15 +18,17 @@ public class PcBuildDatabase {
 
     public PcBuild insertPcBuild(PcBuild build) throws SQLException {
         String query = "INSERT INTO pc_build (id, display_name, description, username, creation_date, last_updated_date) VALUES (?, ?, ?, ?, ?, ?)";
-        try (Connection connection = connectionHandler.getConnection();
-             PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, build.getUuid());
-            ps.setString(2, build.getDisplayName());
-            ps.setString(3, build.getDescription());
-            ps.setString(4, build.getUsername());
-            ps.setTimestamp(5, new Timestamp(build.getCreationDate()));
-            ps.setTimestamp(6, new Timestamp(build.getLastUpdateDate()));
-            ps.executeQuery();
+        try (Connection connection = connectionHandler.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setString(1, build.getUuid());
+                ps.setString(2, build.getDisplayName());
+                ps.setString(3, build.getDescription());
+                ps.setString(4, build.getUsername());
+                ps.setTimestamp(5, new Timestamp(build.getCreationDate()));
+                ps.setTimestamp(6, new Timestamp(build.getLastUpdateDate()));
+                ps.executeQuery();
+            }
+            updateIsPartOf(connection, build);
             connection.commit();
             logger.info(String.format("Created computer build %s", build.getUuid()));
         }
@@ -38,7 +40,7 @@ public class PcBuildDatabase {
         StringBuilder queryBuilder = new StringBuilder(
             QueryUtil.formTableSelectQuery("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS));
         try (Connection connection = connectionHandler.getConnection()) {
-            List<String> conditions = new ArrayList<String>();
+            List<String> conditions = new ArrayList<>();
             if (buildIdsOpt.isPresent() && buildIdsOpt.get().length > 0) {
                 conditions.add(QueryUtil.formIdCondition(buildIdsOpt.get()));
             }
@@ -56,15 +58,23 @@ public class PcBuildDatabase {
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                PcBuild build = PcBuild.newBuilder()
+                PcBuild.Builder builder = PcBuild.newBuilder()
                     .setUuid(rs.getString(TableColumnNames.ID))
                     .setDisplayName(rs.getString(TableColumnNames.DISPLAY_NAME))
                     .setDescription(rs.getString(TableColumnNames.DESCRIPTION))
                     .setUsername(rs.getString(TableColumnNames.USERNAME))
                     .setCreationDate(rs.getTimestamp(TableColumnNames.CREATION_DATE).getTime())
-                    .setLastUpdateDate(rs.getTimestamp(TableColumnNames.LAST_UPDATED_DATE).getTime())
-                    .build();
-                builds.add(build);
+                    .setLastUpdateDate(rs.getTimestamp(TableColumnNames.LAST_UPDATED_DATE).getTime());
+
+                String buildId = builder.getUuid();
+                builder.addAllCpuIds(getComponentIds(connection, buildId, "cpu"))
+                    .addAllMotherboardIds(getComponentIds(connection, buildId, "motherboard"))
+                    .addAllMemoryIds(getComponentIds(connection, buildId, "memory"))
+                    .addAllStorageIds(getComponentIds(connection, buildId, "storage"))
+                    .addAllVideoCardIds(getComponentIds(connection, buildId, "video_card"))
+                    .addAllPowerSupplyIds(getComponentIds(connection, buildId, "power_supply"));
+
+                builds.add(builder.build());
             }
         }
         return builds;
@@ -72,19 +82,14 @@ public class PcBuildDatabase {
 
     public void updatePcBuild(PcBuild build) throws Exception {
         try (Connection connection = connectionHandler.getConnection()) {
-            try (PreparedStatement ps = connection.prepareStatement("UPDATE pc_build SET display_name = ?, description = ?, last_updated_date = ?")) {
+            try (PreparedStatement ps = connection.prepareStatement("UPDATE pc_build SET display_name = ?, description = ?, last_updated_date = ? WHERE id = ?")) {
                 ps.setString(1, build.getDisplayName());
                 ps.setString(2, build.getDescription());
                 ps.setTimestamp(3, new Timestamp(build.getLastUpdateDate()));
+                ps.setString(4, build.getUuid());
                 ps.executeQuery();
             }
-            try (PreparedStatement ps = connection.prepareStatement("DELETE FROM is_part_of WHERE build_id = ?")) {
-                ps.setString(1, build.getUuid());
-                ps.executeQuery();
-            }
-            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO is_part_of VALUES " + QueryUtil.formComponentIdValues(build))) {
-                ps.executeQuery();
-            }
+            updateIsPartOf(connection, build);
             connection.commit();
             logger.info(String.format("Updated computer build %s", build.getUuid()));
         }
@@ -97,6 +102,32 @@ public class PcBuildDatabase {
             ps.executeQuery();
             connection.commit();
             logger.info(String.format("Deleted computer build %s", buildId));
+        }
+    }
+
+    private List<String> getComponentIds(Connection connection, String buildId, String component_table) throws SQLException {
+        List<String> componentIds = new ArrayList<>();
+        String query = "SELECT component_id FROM is_part_of WHERE build_id = ? AND component_id IN (SELECT id FROM " + component_table + ")";
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, buildId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                componentIds.add(rs.getString("component_id"));
+            }
+        }
+        return componentIds;
+    }
+
+    private void updateIsPartOf(Connection connection, PcBuild build) throws SQLException {
+        try (PreparedStatement ps = connection.prepareStatement("DELETE FROM is_part_of WHERE build_id = ?")) {
+            ps.setString(1, build.getUuid());
+            ps.executeQuery();
+        }
+        String componentIdValues = QueryUtil.formComponentIdValues(build);
+        if (!componentIdValues.isEmpty()) {
+            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO is_part_of VALUES " + componentIdValues)) {
+                ps.executeQuery();
+            }
         }
     }
 }

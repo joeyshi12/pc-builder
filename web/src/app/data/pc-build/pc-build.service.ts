@@ -15,7 +15,7 @@ export class PcBuildService {
   }
 
   public updatePcBuild(build: PcBuild): Observable<PcBuild> {
-    return this.http.post<PcBuild>(`/builds/${build.uuid}`, build);
+    return this.http.post<PcBuild>("/builds", build);
   }
 
   public getPcBuilds(ids?: string[], username?: string): Observable<PcBuild[]> {

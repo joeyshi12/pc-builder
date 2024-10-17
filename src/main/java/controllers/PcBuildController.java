@@ -53,7 +53,7 @@ public class PcBuildController {
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
             PcBuild build = builder.setLastUpdateDate(new Date().getTime()).build();
             pcBuildDatabase.updatePcBuild(build);
-            ctx.json(build);
+            ctx.json(JsonFormat.printer().print(build));
         } catch (Throwable e) {
             logger.error("Failed to update computer build", e);
             ctx.status(500);
