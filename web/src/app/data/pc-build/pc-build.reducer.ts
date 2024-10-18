@@ -1,14 +1,12 @@
 import { produce } from 'immer';
 import { PcBuild } from 'src/app/transfers/pc_build';
-import { clearBuild, updateBasicInfo, updateBuild, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
+import { setNewPcBuild as setNewPcBuild, updateBasicInfo, updateBuild, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePcBuilds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
 import { ActionReducer, createReducer, on } from '@ngrx/store';
-import { ComponentIds, PcBuildBasicInfo, localStorageBuildKey } from './pc-build';
+import { PcBuildState, localStoragePcDraftKey } from './pc-build.state';
 
-export const stateName = "pcBuildDraft";
-
-const initialState: PcBuild = {
-  displayName: "Example name",
-  description: "Example description",
+const newBuild: PcBuild = {
+  displayName: "PC Build",
+  description: "New build",
   cpuIds: [],
   motherboardIds: [],
   memoryIds: [],
@@ -17,77 +15,114 @@ const initialState: PcBuild = {
   powerSupplyIds: []
 };
 
-function getInitialState(): PcBuild {
-  const storedValue = localStorage.getItem(localStorageBuildKey);
+function getInitialState(): PcBuildState {
+  return {
+    builds: [],
+    currentBuild: getInitialBuild()
+  };
+}
+
+function getInitialBuild(): PcBuild {
+  const storedValue = localStorage.getItem(localStoragePcDraftKey);
   if (!storedValue) {
-    return initialState;
+    return newBuild;
   }
   try {
     return JSON.parse(storedValue);
   } catch {
-    return initialState;
+    return newBuild;
   }
 }
 
-function saveDraft(draft: PcBuild): PcBuild {
-  localStorage.setItem(localStorageBuildKey, JSON.stringify(draft));
-  return draft;
+function saveDraft(draft: PcBuild): void {
+  localStorage.setItem(localStoragePcDraftKey, JSON.stringify(draft));
 }
 
-export const reducer: ActionReducer<PcBuild> = createReducer(
+export const pcBuildStateReducer: ActionReducer<PcBuildState> = createReducer(
   getInitialState(),
-  on(updateBasicInfo, (state: PcBuild, payload: PcBuildBasicInfo) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.displayName = payload.displayName;
-      draft.description = payload.description;
-    }));
+  on(updateBasicInfo, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.displayName = payload.displayName;
+      draft.currentBuild.description = payload.description;
+    });
+    saveDraft(updatedState.currentBuild);
+    return updatedState;
   }),
-  on(clearBuild, () => {
-    return saveDraft(initialState);
+  on(setNewPcBuild, (state: PcBuildState) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild = newBuild;
+    });
+    saveDraft(updatedState.currentBuild);
+    return updatedState;
   }),
-  on(updateBuild, (state: PcBuild, payload: PcBuild) => {
-    return saveDraft({
-      uuid: payload.uuid,
-      displayName: payload.displayName,
-      description: payload.description,
-      creationDate: payload.creationDate,
-      lastUpdateDate: payload.lastUpdateDate,
-      cpuIds: payload.cpuIds,
-      motherboardIds: payload.motherboardIds,
-      memoryIds: payload.memoryIds,
-      storageIds: payload.storageIds,
-      videoCardIds: payload.videoCardIds,
-      powerSupplyIds: payload.powerSupplyIds
+  on(updatePcBuilds, (state: PcBuildState, payload) => {
+    return produce(state, (draft) => {
+      draft.builds = payload.builds;
+      const updatedBuild = draft.builds.find((build) => build.uuid === draft.currentBuild.uuid);
+      if (updatedBuild) {
+        draft.currentBuild = updatedBuild;
+      }
     });
   }),
-  on(updateCpuIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.cpuIds = payload.ids;
-    }));
+  on(updateBuild, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild = {
+        uuid: payload.uuid,
+        displayName: payload.displayName,
+        description: payload.description,
+        creationDate: payload.creationDate,
+        lastUpdateDate: payload.lastUpdateDate,
+        cpuIds: payload.cpuIds,
+        motherboardIds: payload.motherboardIds,
+        memoryIds: payload.memoryIds,
+        storageIds: payload.storageIds,
+        videoCardIds: payload.videoCardIds,
+        powerSupplyIds: payload.powerSupplyIds
+      };
+    });
+    saveDraft(updatedState.currentBuild);
+    return updatedState;
   }),
-  on(updateMotherboardIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.motherboardIds = payload.ids;
-    }));
+  on(updateCpuIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.cpuIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
   }),
-  on(updateMemoryIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.memoryIds = payload.ids;
-    }));
+  on(updateMotherboardIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.motherboardIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
   }),
-  on(updateStorageIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.storageIds = payload.ids;
-    }));
+  on(updateMemoryIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.memoryIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
   }),
-  on(updateVideoCardIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.videoCardIds = payload.ids;
-    }));
+  on(updateStorageIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.storageIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
   }),
-  on(updatePowerSupplyIds, (state: PcBuild, payload: ComponentIds) => {
-    return saveDraft(produce(state, (draft) => {
-      draft.powerSupplyIds = payload.ids;
-    }));
+  on(updateVideoCardIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.videoCardIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
   }),
+  on(updatePowerSupplyIds, (state: PcBuildState, payload) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.currentBuild.powerSupplyIds = payload.ids;
+    });
+    saveDraft(state.currentBuild);
+    return updatedState;
+  })
 );

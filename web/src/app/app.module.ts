@@ -10,6 +10,7 @@ import { BuilderComponent } from './ui/builder/builder.component';
 import { AgGridModule } from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
 import * as PcBuildReducer from './data/pc-build/pc-build.reducer';
+import * as UserReducer from './data/user/user.reducer';
 import { PcBuildService } from './data/pc-build/pc-build.service';
 import { PcComponentService } from './data/pc-component/pc-component.service';
 import { UserService } from './data/user/user.service';
@@ -31,7 +32,8 @@ import { DialogComponent } from './ui/dialog/dialog.component';
     AppRoutingModule,
     AgGridModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.reducer)
+    StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.pcBuildStateReducer),
+    StoreModule.forFeature(UserReducer.stateName, UserReducer.reducer)
   ],
   providers: [
     PcBuildService,

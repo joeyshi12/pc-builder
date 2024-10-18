@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ComponentIds, PcBuildBasicInfo } from './pc-build';
+import { ComponentIdList, PcBuildBasicInfo, PcBuildList } from './pc-build';
 import { PcBuild } from 'src/app/transfers/pc_build';
 
 export const updateBasicInfo = createAction(
@@ -7,7 +7,12 @@ export const updateBasicInfo = createAction(
   props<PcBuildBasicInfo>()
 );
 
-export const clearBuild = createAction("ClearPcBuild");
+export const setNewPcBuild = createAction("ClearPcBuild");
+
+export const updatePcBuilds = createAction(
+  "UpdatePcBuilds",
+  props<PcBuildList>()
+);
 
 export const updateBuild = createAction(
   "UpdatePcBuild",
@@ -16,30 +21,30 @@ export const updateBuild = createAction(
 
 export const updateCpuIds = createAction(
   "UpdatePcBuildCpuIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
 
 export const updateMotherboardIds = createAction(
   "UpdatePcBuildMotherboardIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
 
 export const updateMemoryIds = createAction(
   "UpdatePcBuildMemoryIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
 
 export const updateStorageIds = createAction(
   "UpdatePcBuildStorageIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
 
 export const updateVideoCardIds = createAction(
   "UpdatePcBuildVideoCardIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
 
 export const updatePowerSupplyIds = createAction(
   "UpdatePcBuildPowerSupplyIds",
-  props<ComponentIds>()
+  props<ComponentIdList>()
 );
