@@ -30,9 +30,10 @@ export class PcBuildStateEffects {
     }))
   ));
 
-  public deletePcBuild$ = createEffect(() => this._actions$.pipe(
-    ofType(deleteBuild)
-  ));
+  // TODO
+  //public deletePcBuild$ = createEffect(() => this._actions$.pipe(
+  //  ofType(deleteBuild)
+  //));
 
   public loadPcBuilds$ = createEffect(() => this._actions$.pipe(
     ofType(loadPcBuilds),
