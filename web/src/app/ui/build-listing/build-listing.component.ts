@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { AgGridEvent, ColDef, GridOptions, ValueGetterParams } from 'ag-grid-community';
-import { Observable } from 'rxjs';
-import { PcBuildService } from 'src/app/data/pc-build/pc-build.service';
+import { map, Observable } from 'rxjs';
+import { AppState, pcBuildStateKey } from 'src/app/data/app.state';
 import { PcBuild } from 'src/app/transfers/pc_build';
 
 @Component({
@@ -28,7 +29,7 @@ export class BuildListingComponent {
     second: "numeric"
   });
 
-  constructor(pcBuildService: PcBuildService) {
+  constructor(store: Store<AppState>) {
     this.columnDefs = [
       {field: "displayName"},
       {field: "description"},
@@ -48,7 +49,7 @@ export class BuildListingComponent {
         }
       }
     ];
-    this.builds$ = pcBuildService.getPcBuilds();
+    this.builds$ = store.select(pcBuildStateKey).pipe(map(state => state.builds));
   }
 
   public resizeGrid(event: AgGridEvent) {

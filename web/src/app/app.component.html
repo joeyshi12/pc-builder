@@ -16,12 +16,12 @@
     </a>
   </div>
   <div>
-    <ng-container *ngIf="userProfile$ | async as userProfile; else loginButton">
+    <ng-container *ngIf="user; else loginButton">
       <button #userProfileButton class="user-profile-btn" (click)="isUserProfileMenuOpen = !isUserProfileMenuOpen">
-        <span>{{userProfile.displayName}}</span>
+        <span>{{user.displayName}}</span>
       </button>
       <ul #userProfileMenu class="user-profile-menu" *ngIf="isUserProfileMenuOpen">
-        <li class="user-handle" [title]="userProfile.username">{{userProfile.username}}</li>
+        <li class="user-handle" [title]="user.username">{{user.username}}</li>
         <li (click)="openEditProfileFormDialog()">Edit profile information</li>
         <li (click)="logOutUser()">Log out</li>
       </ul>

@@ -29,7 +29,7 @@ public class UserController {
                 ctx.status(400);
                 return;
             }
-            userDatabase.updateUserProfile(userProfile);
+            ctx.json(JsonFormat.printer().print(userDatabase.updateUserProfile(userProfile)));
             ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to fetch session user", e);

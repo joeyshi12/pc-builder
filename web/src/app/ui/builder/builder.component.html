@@ -1,16 +1,18 @@
 <h1>PC Parts List</h1>
 <p>Pick out your PC parts.</p>
-<ng-container *ngIf="draft$ | async as draft">
+<ng-container *ngIf="draftBuild">
   <div class="build-table">
     <header>
       <div class="basic-info">
-        <label>{{draft.displayName}}</label>
-        <span [title]="draft.description">{{draft.description}}</span>
+        <label>{{draftBuild.displayName}}</label>
+        <span [title]="draftBuild.description">{{draftBuild.description}}</span>
       </div>
       <div class="action-buttons">
-        <button *ngIf="isLoggedIn" (click)="isBuildListOpen = true">Switch list</button>
+        <ng-container *ngIf="isLoggedIn">
+          <button (click)="createNewDraft()">New build</button>
+          <button (click)="isBuildListOpen = true">Switch list</button>
+        </ng-container>
         <button (click)="isEditDraftOpen = true">Edit info</button>
-        <button (click)="saveDraft(draft)">Save list</button>
       </div>
     </header>
     <table>
@@ -21,8 +23,8 @@
         <th>Price</th>
       </tr>
       </thead>
-      <tbody *ngIf="componentListModels$ | async as componentListDefs">
-        <ng-container *ngFor="let listDef of componentListDefs">
+      <tbody>
+        <ng-container *ngFor="let listDef of componentListModels">
           <ng-container *ngIf="listDef.items.length > 0; else componentSelect">
             <tr>
               <td>
@@ -73,7 +75,7 @@
       <ag-grid-angular class="ag-theme-alpine build-list"
                        [gridOptions]="gridOptions"
                        [columnDefs]="columnDefs"
-                       [rowData]="buildList"
+                       [rowData]="userBuilds"
                        (gridColumnsChanged)="resizeGrid($event)"
                        (gridSizeChanged)="resizeGrid($event)"
                        (selectionChanged)="updateBuildSelection($event)">
@@ -91,11 +93,11 @@
     <div class="form-body">
       <div class="form-field">
         <label>Display name</label>
-        <input #displayName type="text" [value]="draft.displayName" />
+        <input #displayName type="text" [value]="draftBuild.displayName" />
       </div>
       <div class="form-field">
         <label>Description</label>
-        <input #description type="text" [value]="draft.description" />
+        <input #description type="text" [value]="draftBuild.description" />
       </div>
       <div class="form-buttons-container">
         <button (click)="isEditDraftOpen = false">Close</button>

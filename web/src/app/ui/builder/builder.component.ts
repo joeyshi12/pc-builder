@@ -1,15 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
-import { Observable, map, switchMap } from 'rxjs';
-import * as PcBuildReducer from '../../data/pc-build/pc-build.reducer';
+import { combineLatest, map, Subscription } from 'rxjs';
 import * as PcBuildActions from '../../data/pc-build/pc-build.actions';
 import { PcBuild } from 'src/app/transfers/pc_build';
-import { PcBuildService } from 'src/app/data/pc-build/pc-build.service';
 import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
-import { UserService } from 'src/app/data/user/user.service';
 import { PcComponents, PcComponentType } from 'src/app/data/pc-component/pc-component';
-import { UserProfile } from 'src/app/transfers/user';
+import { AppState, pcBuildStateKey, userStateKey } from 'src/app/data/app.state';
 
 type ComponentItem = {
   displayName: string;
@@ -27,12 +24,10 @@ type ComponentListModel = {
   templateUrl: './builder.component.html',
   styleUrls: ['./builder.component.css']
 })
-export class BuilderComponent {
-  public draft$: Observable<PcBuild>;
-  public isBuildListOpen: boolean = false;
-  public isEditDraftOpen: boolean = false;
-  public componentListModels$: Observable<ComponentListModel[]>;
-  public buildList: PcBuild[] = [];
+export class BuilderComponent implements OnDestroy {
+  public draftBuild?: PcBuild = undefined;
+  public userBuilds: PcBuild[] = [];
+  public componentListModels: ComponentListModel[] = [];
   public isLoggedIn: boolean = false;
   public readonly columnDefs: ColDef[] = [
     { field: "displayName", checkboxSelection: true },
@@ -43,6 +38,9 @@ export class BuilderComponent {
       sortable: true
     }
   };
+  public isBuildListOpen: boolean = false;
+  public isEditDraftOpen: boolean = false;
+  private readonly _subscription: Subscription;
   private _selectedBuild?: PcBuild;
 
   @HostListener("document:keydown.escape")
@@ -51,23 +49,26 @@ export class BuilderComponent {
     this.isEditDraftOpen = false;
   }
 
-  constructor(private _pcBuildService: PcBuildService,
-              pcComponentService: PcComponentService,
-              private _userService: UserService,
-              private _store: Store<any>) {
-    this.draft$ = _store.select(PcBuildReducer.stateName);
-    this.componentListModels$ = this.draft$.pipe(
-      switchMap((draft: PcBuild) => pcComponentService.getPcComponents(draft)),
-      map((pcComponents) => this._toComponentListModels(pcComponents))
-    );
-    _userService.currentUser$.subscribe((currentUser: UserProfile | undefined) => {
-      if (currentUser?.username) {
-        this.isLoggedIn = true;
-        _pcBuildService.getPcBuilds(undefined, currentUser.username).subscribe((builds: PcBuild[]) => {
-          this.buildList = builds;
+  constructor(private _store: Store<AppState>, pcComponentService: PcComponentService) {
+    this._subscription = combineLatest([
+      this._store.select(pcBuildStateKey),
+      this._store.select(userStateKey).pipe(map(state => state.currentUser))
+    ]).subscribe(([buildState, user]) => {
+      this.isLoggedIn = Boolean(user?.username);
+      if (this.isLoggedIn) {
+        this.userBuilds = buildState.builds.filter(build => build.username === user?.username);
+      }
+      if (!this.draftBuild || this.draftBuild.uuid !== buildState.draftBuild.uuid) {
+        pcComponentService.getPcComponents(buildState.draftBuild).subscribe(pcComponents => {
+          this.componentListModels = this._toComponentListModels(pcComponents);
         });
       }
+      this.draftBuild = buildState.draftBuild;
     });
+  }
+
+  public ngOnDestroy(): void {
+      this._subscription.unsubscribe();
   }
 
   public get hasSelectedBuild(): boolean {
@@ -76,6 +77,10 @@ export class BuilderComponent {
 
   public resizeGrid(event: AgGridEvent) {
     event.api.sizeColumnsToFit();
+  }
+
+  public createNewDraft(): void {
+    this._store.dispatch(PcBuildActions.setNewPcBuild());
   }
 
   public openBuildList(): void {
@@ -89,25 +94,9 @@ export class BuilderComponent {
 
   public switchBuild(): void {
     if (this._selectedBuild) {
-      this._store.dispatch(PcBuildActions.updateBuild(this._selectedBuild));
+      this._store.dispatch(PcBuildActions.updateBuild({ build: this._selectedBuild }));
       this.isBuildListOpen = false;
-    }
-  }
-
-  public saveDraft(build: PcBuild) {
-    const currentUser = this._userService.currentUser$.getValue()
-    if (!currentUser) {
-      alert("Must be logged in first");
-      return;
-    }
-    if (build.uuid) {
-      this._pcBuildService.updatePcBuild(build).subscribe(() => {
-        window.location.reload();
-      });
-    } else {
-      this._pcBuildService.createPcBuild(build).subscribe(() => {
-        window.location.reload();
-      });
+      this._selectedBuild = undefined;
     }
   }
 

@@ -9,12 +9,16 @@ import { BuildListingComponent } from './ui/build-listing/build-listing.componen
 import { BuilderComponent } from './ui/builder/builder.component';
 import { AgGridModule } from "ag-grid-angular";
 import { StoreModule } from '@ngrx/store';
-import * as PcBuildReducer from './data/pc-build/pc-build.reducer';
-import * as UserReducer from './data/user/user.reducer';
 import { PcBuildService } from './data/pc-build/pc-build.service';
 import { PcComponentService } from './data/pc-component/pc-component.service';
 import { UserService } from './data/user/user.service';
 import { DialogComponent } from './ui/dialog/dialog.component';
+import { pcBuildStateReducer } from './data/pc-build/pc-build.reducer';
+import { userStateReducer } from './data/user/user.reducer';
+import { pcBuildStateKey, userStateKey } from './data/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { PcBuildStateEffects } from './data/pc-build/pc-build.effects';
+import { UserStateEffects } from './data/user/user.effects';
 
 @NgModule({
   declarations: [
@@ -32,8 +36,11 @@ import { DialogComponent } from './ui/dialog/dialog.component';
     AppRoutingModule,
     AgGridModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature(PcBuildReducer.stateName, PcBuildReducer.pcBuildStateReducer),
-    StoreModule.forFeature(UserReducer.stateName, UserReducer.reducer)
+    StoreModule.forFeature(pcBuildStateKey, pcBuildStateReducer),
+    StoreModule.forFeature(userStateKey, userStateReducer),
+    EffectsModule.forRoot({}),
+    EffectsModule.forFeature(PcBuildStateEffects),
+    EffectsModule.forFeature(UserStateEffects)
   ],
   providers: [
     PcBuildService,

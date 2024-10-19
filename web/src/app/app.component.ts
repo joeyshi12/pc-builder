@@ -1,7 +1,12 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { UserProfile } from './transfers/user';
 import { UserService } from './data/user/user.service';
+import { Store } from '@ngrx/store';
+import { AppState, userStateKey } from './data/app.state';
+import { clearSessionUser, loadSessionUser, updateSessionUser } from './data/user/user.actions';
+import { UserState } from './data/user/user.state';
+import { produce } from 'immer';
+import { loadPcBuilds } from './data/pc-build/pc-build.actions';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +14,7 @@ import { UserService } from './data/user/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public userProfile$: BehaviorSubject<UserProfile | undefined>;
+  public user: UserProfile | undefined = undefined;
   public isLoginFormOpen: boolean = false;
   public isUserProfileMenuOpen: boolean = false;
   public isEditProfileFormOpen: boolean = false;
@@ -35,8 +40,13 @@ export class AppComponent {
     }
   }
 
-  constructor(private _userService: UserService) {
-    this.userProfile$ = this._userService.currentUser$;
+  constructor(private _store: Store<AppState>,
+              private _userService: UserService) {
+    this._store.dispatch(loadSessionUser());
+    this._store.dispatch(loadPcBuilds())
+    this._store.select(userStateKey).subscribe((state: UserState) => {
+      this.user = state.currentUser;
+    });
   }
 
   public openLoginFormDialog(): void {
@@ -53,16 +63,14 @@ export class AppComponent {
       this.errorMessage = "Missing email";
       return;
     }
-
     if (password.length === 0) {
       this.errorMessage = "Missing password";
       return;
     }
-
     this._userService.authenticateUser({ username, password })
       .subscribe({
-        next: (userProfile: UserProfile) => {
-          this._userService.setCurrentUser(userProfile);
+        next: (user: UserProfile) => {
+          this._store.dispatch(updateSessionUser({ user }));
           this.isLoginFormOpen = false;
           this.isEditProfileFormOpen = false;
         },
@@ -77,13 +85,26 @@ export class AppComponent {
       alert("Display name cannot be empty");
       return;
     }
-    this._userService.updateUserProfile(displayName)
-      .subscribe((_: UserProfile | undefined) => {
+    if (!this.user?.username) {
+      alert("Not logged in");
+      return;
+    }
+    const updatedUser: UserProfile = produce(this.user, (draft) => {
+      draft.displayName = displayName;
+    });
+    this._userService.updateUserProfile(updatedUser)
+      .subscribe((user: UserProfile | undefined) => {
+        if (user) {
+          this._store.dispatch(updateSessionUser({ user }));
+        }
         this.isEditProfileFormOpen = false;
-      })
+      });
   }
 
   public logOutUser() {
-    this._userService.clearSessionUser();
+    this._userService.clearSessionUser()
+      .subscribe(() => {
+        this._store.dispatch(clearSessionUser());
+      });
   }
 }
