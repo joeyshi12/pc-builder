@@ -3,9 +3,10 @@ import { UserProfile } from './transfers/user';
 import { UserService } from './data/user/user.service';
 import { Store } from '@ngrx/store';
 import { AppState } from './data/app.state';
-import { clearSessionUser, loadSessionUser, updateSessionUser } from './data/user/user.actions';
+import { clearSessionUser, loadSessionUser, setSessionUser, updateSessionUser } from './data/user/user.actions';
 import { produce } from 'immer';
 import { userSelector } from './data/user/user.selectors';
+import { setNewPcBuild } from './data/pc-build/pc-build.actions';
 
 @Component({
   selector: 'app-root',
@@ -68,7 +69,7 @@ export class AppComponent {
     this._userService.authenticateUser({ username, password })
       .subscribe({
         next: (user: UserProfile) => {
-          this._store.dispatch(updateSessionUser({ user }));
+          this._store.dispatch(setSessionUser({ user }));
           this.isLoginFormOpen = false;
           this.isEditProfileFormOpen = false;
         },
@@ -96,5 +97,6 @@ export class AppComponent {
 
   public logOutUser() {
     this._store.dispatch(clearSessionUser());
+    this._store.dispatch(setNewPcBuild());
   }
 }

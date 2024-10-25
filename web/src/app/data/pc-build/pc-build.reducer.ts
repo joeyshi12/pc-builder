@@ -3,6 +3,7 @@ import { PcBuild } from 'src/app/transfers/pc_build';
 import { setNewPcBuild, updateBasicInfo, updateDraftSuccess, updateCpuIds, updateMemoryIds, updateMotherboardIds, setPcBuilds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds, clearDraftBuild, loadDraftComponentsSuccess } from './pc-build.actions';
 import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { PcBuildState } from './pc-build.state';
+import { PcComponents } from '../pc-component/pc-component';
 
 const localStorageDraftKey = "draftBuild";
 
@@ -10,20 +11,9 @@ function getInitialState(): PcBuildState {
   return {
     builds: [],
     draftBuild: getInitialBuild(),
-    draftBuildComponents: {
-      cpuList: [],
-      motherboardList: [],
-      memoryList: [],
-      storageList: [],
-      videoCardList: [],
-      powerSupplyList: [],
-    },
+    draftBuildComponents: getInitialBuildComponents(),
     isDraftLoading: false,
   };
-}
-
-function saveDraft(draft: PcBuild): void {
-  localStorage.setItem(localStorageDraftKey, JSON.stringify(draft));
 }
 
 function getInitialBuild(): PcBuild {
@@ -36,6 +26,21 @@ function getInitialBuild(): PcBuild {
   } catch {
     return createNewBuild();
   }
+}
+
+function getInitialBuildComponents(): PcComponents {
+  return {
+    cpuList: [],
+    motherboardList: [],
+    memoryList: [],
+    storageList: [],
+    videoCardList: [],
+    powerSupplyList: [],
+  };
+}
+
+function saveDraft(draft: PcBuild): void {
+  localStorage.setItem(localStorageDraftKey, JSON.stringify(draft));
 }
 
 function createNewBuild(): PcBuild {
@@ -65,6 +70,7 @@ export const pcBuildStateReducer: ActionReducer<PcBuildState> = createReducer(
   on(setNewPcBuild, (state: PcBuildState) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
       draft.draftBuild = createNewBuild();
+      draft.draftBuildComponents = getInitialBuildComponents();
     });
     saveDraft(updatedState.draftBuild);
     return updatedState;

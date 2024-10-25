@@ -1,4 +1,40 @@
-<ng-container *ngIf="build$ | async as build">
-<h1>PC Builds / {{build.displayName}}</h1>
-<p>{{build.description}}</p>
+<ng-container *ngIf="state$ | async as state">
+  <h1><a routerLink="/builds">PC Builds</a> / {{state.build.displayName}}</h1>
+  <b>Created by {{state.build.username}}</b>
+  <p>{{state.build.description}}</p>
+  <table class="components-table">
+    <thead>
+    <tr>
+      <th>Component</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let listDef of state.listModels">
+          <tr>
+            <td>
+              <a routerLink="/components"
+                [queryParams]="{component: listDef.componentType}">
+                {{listDef.displayName}}
+              </a>
+            </td>
+            <td>
+              <ol>
+                <li *ngFor="let item of listDef.items">
+                  {{item.displayName}}
+                </li>
+              </ol>
+            </td>
+            <td>
+              <ol>
+                <li *ngFor="let item of listDef.items">
+                  {{item.price}}
+                </li>
+              </ol>
+            </td>
+          </tr>
+      </ng-container>
+    </tbody>
+  </table>
 </ng-container>

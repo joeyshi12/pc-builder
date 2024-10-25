@@ -19,8 +19,9 @@ export class UserStateEffects {
   public updateSessionUser$: Observable<Action> = createEffect(() => this._actions$.pipe(
     ofType(updateSessionUser),
     switchMap(() => this._store.select(userSelector).pipe(take(1))),
-    filter((user: UserProfile | undefined) => Boolean(user)),
-    map((user: UserProfile | undefined) => setSessionUser({ user: user! }))
+    filter((user: UserProfile | undefined) => Boolean(user?.username)),
+    switchMap((user: UserProfile | undefined) => this._userService.updateUserProfile(user!)),
+    map((user: UserProfile | undefined) => setSessionUser({ user }))
   ));
 
   public clearSessionUser$: Observable<Action> = createEffect(() => this._actions$.pipe(

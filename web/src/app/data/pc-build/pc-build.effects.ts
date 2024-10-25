@@ -43,9 +43,7 @@ export class PcBuildStateEffects {
 
   public loadDraftComponents$ = createEffect(() => this._actions$.pipe(
     ofType(
-      PcBuildActions.loadPcBuilds,
       PcBuildActions.clearDraftBuild,
-      PcBuildActions.setNewPcBuild,
       PcBuildActions.setPcBuilds,
       PcBuildActions.updateDraftSuccess
     ),

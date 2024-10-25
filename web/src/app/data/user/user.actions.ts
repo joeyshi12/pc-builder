@@ -10,7 +10,7 @@ export const updateSessionUser = createAction(
 
 export const setSessionUser = createAction(
   "SetSessionUser",
-  props<{ user: UserProfile }>()
+  props<{ user: UserProfile | undefined }>()
 );
 
 export const clearSessionUser = createAction("ClearSessionUser");

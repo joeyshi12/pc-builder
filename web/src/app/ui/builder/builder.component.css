@@ -62,37 +62,6 @@
         }
       }
     }
-
-    table {
-      width: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      & td, & th {
-        border-bottom: 1px solid #5555;
-        padding: 8px;
-        min-width: 12rem;
-      }
-      & tr td button {
-        width: 20rem;
-      }
-      & th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-      }
-      & ol {
-        padding-left: 1rem;
-        margin: 0.5rem 0;
-        font-size: 14px;
-
-        & li {
-          line-height: 1.4rem;
-          &::marker {
-            font-weight: bold;
-          }
-        }
-      }
-    }
   }
 
   .icon-button {
