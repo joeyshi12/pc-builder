@@ -3,14 +3,19 @@ import { RouterModule, Routes}  from '@angular/router';
 import { BuildListingComponent } from "./ui/build-listing/build-listing.component";
 import { ComponentListingComponent } from "./ui/component-listing/component-listing.component";
 import { BuilderComponent } from "./ui/builder/builder.component";
+import { PcBuildComponent } from './ui/pc-build/pc-build.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'builds',
     component: BuildListingComponent
   },
   {
-    path: 'component-listing',
+    path: 'builds/:id',
+    component: PcBuildComponent
+  },
+  {
+    path: 'components',
     component: ComponentListingComponent
   },
   {

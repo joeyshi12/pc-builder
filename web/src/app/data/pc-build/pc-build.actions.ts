@@ -1,8 +1,14 @@
 import { createAction, props } from '@ngrx/store';
 import { PcBuildBasicInfo } from './pc-build.state';
 import { PcBuild } from 'src/app/transfers/pc_build';
+import { PcComponents } from '../pc-component/pc-component';
 
 export const loadPcBuilds = createAction("LoadPcBuilds")
+
+export const setPcBuilds = createAction(
+  "SetPcBuilds",
+  props<{ builds: PcBuild[] }>()
+);
 
 export const updateBasicInfo = createAction(
   "UpdatePcBuildInfo",
@@ -11,15 +17,19 @@ export const updateBasicInfo = createAction(
 
 export const setNewPcBuild = createAction("SetNewPcBuild");
 
-export const updatePcBuilds = createAction(
-  "UpdatePcBuilds",
-  props<{ builds: PcBuild[] }>()
+export const updateDraftSuccess = createAction(
+  "UpdateDraftSuccess",
+  props<{ draftBuild: PcBuild }>()
 );
 
-export const updateBuild = createAction(
-  "UpdatePcBuild",
-  props<{ build: PcBuild }>()
+export const loadDraftComponentsSuccess = createAction(
+  "LoadDraftPcBuildComponentsSuccess",
+  props<{ components: PcComponents }>()
 );
+
+export const deleteDraftBuild = createAction("DeleteDraftPcBuild");
+
+export const clearDraftBuild = createAction("ClearDraftPcBuild");
 
 export const updateCpuIds = createAction(
   "UpdatePcBuildCpuIds",

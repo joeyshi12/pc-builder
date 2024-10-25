@@ -5,6 +5,7 @@
                  [columnDefs]="columnDefs"
                  [rowData]="builds$ | async"
                  [quickFilterText]="searchText"
+                 (rowClicked)="onRowClicked($event)"
                  (gridColumnsChanged)="resizeGrid($event)"
                  (gridSizeChanged)="resizeGrid($event)">
 </ag-grid-angular>

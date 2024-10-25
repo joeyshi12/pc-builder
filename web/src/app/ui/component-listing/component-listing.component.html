@@ -17,7 +17,7 @@
          type="text"
          placeholder="Search"
          (keydown)="searchText = componentSearch.value"/>
-  <button (click)="addComponentsToBuild()">Add selected to build list</button>
+  <button [disabled]="isDraftLoading$ | async" (click)="addComponentsToBuild()">Add selected to build list</button>
 </div>
 <div class="component-grid">
     <ag-grid-angular class="ag-theme-alpine"

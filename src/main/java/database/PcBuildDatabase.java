@@ -35,27 +35,16 @@ public class PcBuildDatabase {
         return build;
     }
 
-    public List<PcBuild> getAllPcBuilds(Optional<String[]> buildIdsOpt, Optional<String> usernameOpt) throws Exception {
+    public List<PcBuild> getAllPcBuilds(Optional<String[]> buildIdsOpt) throws Exception {
         List<PcBuild> builds = new ArrayList<>();
         StringBuilder queryBuilder = new StringBuilder(
             QueryUtil.formTableSelectQuery("pc_build", TableColumnNames.COMPUTER_BUILD_COLUMNS));
         try (Connection connection = connectionHandler.getConnection()) {
-            List<String> conditions = new ArrayList<>();
             if (buildIdsOpt.isPresent() && buildIdsOpt.get().length > 0) {
-                conditions.add(QueryUtil.formIdCondition(buildIdsOpt.get()));
-            }
-            if (usernameOpt.isPresent()) {
-                conditions.add("username = ?");
-            }
-            if (conditions.size() > 0) {
-                queryBuilder
-                    .append(" WHERE ")
-                    .append(String.join(" AND ", conditions));
+                queryBuilder.append(" WHERE ")
+                    .append(QueryUtil.formIdCondition(buildIdsOpt.get()));
             }
             PreparedStatement ps = connection.prepareStatement(queryBuilder.append(" ORDER BY last_updated_date DESC").toString());
-            if (usernameOpt.isPresent()) {
-                ps.setString(1, usernameOpt.get());
-            }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 PcBuild.Builder builder = PcBuild.newBuilder()
@@ -95,12 +84,21 @@ public class PcBuildDatabase {
         }
     }
 
-    public void deletePcBuild(String buildId) throws Exception {
-        try (Connection connection = connectionHandler.getConnection();
-             PreparedStatement ps = connection.prepareStatement("DELETE FROM pc_build WHERE id = ?")) {
-            ps.setString(1, buildId);
-            ps.executeQuery();
-            connection.commit();
+    public void deletePcBuild(String buildId, String username) throws Exception {
+        try (Connection connection = connectionHandler.getConnection()) {
+            try (PreparedStatement ps = connection.prepareStatement("SELECT * FROM pc_build WHERE id = ? AND username = ?")) {
+                ps.setString(1, buildId);
+                ps.setString(2, username);
+                ResultSet rs = ps.executeQuery();
+                if (!rs.next()) {
+                    throw new Exception(String.format("Delete failed - user %s is not the author of build %s", username, buildId));
+                }
+            }
+            try (PreparedStatement ps = connection.prepareStatement("DELETE FROM pc_build WHERE id = ?")) {
+                ps.setString(1, buildId);
+                ps.executeQuery();
+                connection.commit();
+            }
             logger.info(String.format("Deleted computer build %s", buildId));
         }
     }

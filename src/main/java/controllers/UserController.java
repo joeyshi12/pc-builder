@@ -6,6 +6,8 @@ import database.UserDatabase;
 import io.javalin.http.Context;
 import transfers.User.UserProfile;
 
+import java.util.Optional;
+
 import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,8 +71,14 @@ public class UserController {
     }
 
     public void getSessionUser(Context ctx) {
+        Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
+        if (usernameOpt.isEmpty()) {
+            ctx.json("Not logged in");
+            ctx.status(400);
+            return;
+        }
         try {
-            UserProfile user = userDatabase.getUserProfile(ctx.sessionAttribute(SessionAttributes.USER));
+            UserProfile user = userDatabase.getUserProfile(usernameOpt.get());
             ctx.json(JsonFormat.printer().print(user));
             ctx.status(200);
         } catch (Throwable e) {

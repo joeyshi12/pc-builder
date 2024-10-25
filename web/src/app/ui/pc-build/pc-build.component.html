@@ -1,0 +1,4 @@
+<ng-container *ngIf="build$ | async as build">
+<h1>PC Builds / {{build.displayName}}</h1>
+<p>{{build.description}}</p>
+</ng-container>

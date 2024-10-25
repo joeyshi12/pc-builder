@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AgGridEvent, ColDef, GridOptions, ValueGetterParams } from 'ag-grid-community';
+import { AgGridEvent, ColDef, GridOptions, RowClickedEvent, ValueGetterParams } from 'ag-grid-community';
 import { map, Observable } from 'rxjs';
 import { AppState, pcBuildStateKey } from 'src/app/data/app.state';
+import { loadPcBuilds } from 'src/app/data/pc-build/pc-build.actions';
 import { PcBuild } from 'src/app/transfers/pc_build';
 
 @Component({
@@ -29,7 +31,9 @@ export class BuildListingComponent {
     second: "numeric"
   });
 
-  constructor(store: Store<AppState>) {
+  constructor(store: Store<AppState>,
+              private readonly _router: Router) {
+    store.dispatch(loadPcBuilds());
     this.columnDefs = [
       {field: "displayName"},
       {field: "description"},
@@ -52,7 +56,13 @@ export class BuildListingComponent {
     this.builds$ = store.select(pcBuildStateKey).pipe(map(state => state.builds));
   }
 
-  public resizeGrid(event: AgGridEvent) {
+  public onRowClicked(event: RowClickedEvent<PcBuild>): void {
+    if (event.data?.uuid) {
+      this._router.navigate(["builds", event.data.uuid]);
+    }
+  }
+
+  public resizeGrid(event: AgGridEvent): void {
     event.api.sizeColumnsToFit();
   }
 

@@ -1,6 +1,6 @@
 <h1>PC Parts List</h1>
 <p>Pick out your PC parts.</p>
-<ng-container *ngIf="draftBuild">
+<ng-container *ngIf="draftBuild$ | async as draftBuild">
   <div class="build-table">
     <header>
       <div class="basic-info">
@@ -8,11 +8,20 @@
         <span [title]="draftBuild.description">{{draftBuild.description}}</span>
       </div>
       <div class="action-buttons">
-        <ng-container *ngIf="isLoggedIn">
-          <button (click)="createNewDraft()">New build</button>
-          <button (click)="isBuildListOpen = true">Switch list</button>
+        <ng-container *ngIf="isLoggedIn$ | async;else editButton">
+          <svg #menuButton (click)="toggleOverflowMenu()" class="icon-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+          </svg>
+          <ul class="overflow-menu" #overflowMenu *ngIf="isOverflowMenuOpen">
+            <li (click)="isEditDraftOpen = true">Edit basic information</li>
+            <li (click)="openBuildList()">Switch list</li>
+            <li (click)="createNewDraft()">Start new build</li>
+            <li *ngIf="draftBuild.uuid !== undefined" (click)="deleteDraft()">Delete build</li>
+          </ul>
         </ng-container>
-        <button (click)="isEditDraftOpen = true">Edit info</button>
+        <ng-template #editButton>
+          <button>Edit info</button>
+        </ng-template>
       </div>
     </header>
     <table>
@@ -24,11 +33,11 @@
       </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let listDef of componentListModels">
+        <ng-container *ngFor="let listDef of componentListModels$ | async">
           <ng-container *ngIf="listDef.items.length > 0; else componentSelect">
             <tr>
               <td>
-                <a routerLink="/component-listing"
+                <a routerLink="/components"
                   [queryParams]="{component: listDef.componentType}">
                   {{listDef.displayName}}
                 </a>
@@ -52,11 +61,11 @@
           <ng-template #componentSelect>
             <tr>
               <td>
-                <a routerLink="/component-listing" [queryParams]="{component: listDef.componentType}">{{listDef.displayName}}</a>
+                <a routerLink="/components" [queryParams]="{component: listDef.componentType}">{{listDef.displayName}}</a>
               </td>
               <td>
                 <button
-                  routerLink="/component-listing"
+                  routerLink="/components"
                   [queryParams]="{component: listDef.componentType}">Choose a {{listDef.displayName}} component</button>
               </td>
               <td></td>
@@ -75,7 +84,7 @@
       <ag-grid-angular class="ag-theme-alpine build-list"
                        [gridOptions]="gridOptions"
                        [columnDefs]="columnDefs"
-                       [rowData]="userBuilds"
+                       [rowData]="userBuilds$ | async"
                        (gridColumnsChanged)="resizeGrid($event)"
                        (gridSizeChanged)="resizeGrid($event)"
                        (selectionChanged)="updateBuildSelection($event)">

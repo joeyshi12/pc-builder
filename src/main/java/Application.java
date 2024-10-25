@@ -19,7 +19,7 @@ public class Application {
         try {
             connectionHandler = createConnectionHandler();
         } catch (Exception e) {
-            Application.logger.error(e.getMessage(), e);
+            logger.error(e.getMessage(), e);
             return;
         }
 

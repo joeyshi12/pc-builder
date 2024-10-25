@@ -12,12 +12,14 @@
 
   .build-table {
     margin-top: 1rem;
+    min-width: 752px;
+    padding-bottom: 4rem;
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 1rem;
+      padding: 0.4rem 0.8rem;
       margin-bottom: 1rem;
       border-radius: 6px;
       background: #ccc;
@@ -34,11 +36,29 @@
       }
 
       & .action-buttons {
-        display: inherit;
-        margin-left: 0.5rem;
+        display: flex;
 
-        & button {
-          white-space: nowrap;
+        & ul.overflow-menu {
+          position: absolute;
+          list-style: none;
+          width: 12rem;
+          background: red;
+          padding: 0.8rem;
+          border-radius: 8px;
+          border: 1px solid #cccc;
+          margin-top: 2rem;
+          background: #fff;
+          transform: translateX(calc(-100% + 28px));
+
+          & li {
+            color: #222;
+            padding: 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+              background: #eee;
+            }
+          }
         }
       }
     }
@@ -73,6 +93,14 @@
         }
       }
     }
+  }
+
+  .icon-button {
+    width: 16px;
+    padding: 4px 5px;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
   }
 }
 

@@ -7,18 +7,18 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class PcBuildService {
-  constructor(private http: HttpClient) {
+  constructor(private _http: HttpClient) {
   }
 
   public createPcBuild(build: PcBuild): Observable<PcBuild> {
-    return this.http.put<PcBuild>("/builds", build);
+    return this._http.put<PcBuild>("/builds", build);
   }
 
   public updatePcBuild(build: PcBuild): Observable<PcBuild> {
-    return this.http.post<PcBuild>("/builds", build);
+    return this._http.post<PcBuild>("/builds", build);
   }
 
-  public getPcBuilds(ids?: string[], username?: string): Observable<PcBuild[]> {
+  public getPcBuilds(ids?: string[]): Observable<PcBuild[]> {
     if (ids?.length === 0) {
       return of([]);
     }
@@ -26,10 +26,11 @@ export class PcBuildService {
     if (ids && ids.length > 0) {
       params.push(`ids=${ids.join(",")}`);
     }
-    if (username) {
-      params.push(`user=${username}`);
-    }
     const url = params.length > 0 ? `/builds?` + params.join("&") : "/builds";
-    return this.http.get<PcBuild[]>(url);
+    return this._http.get<PcBuild[]>(url);
+  }
+
+  public deletePcBuild(id: string): Observable<void> {
+    return this._http.delete<void>(`/builds/${id}`);
   }
 }

@@ -4,8 +4,10 @@ import { Store } from '@ngrx/store';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PcComponent, PcComponentType } from 'src/app/data/pc-component/pc-component';
 import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
-import { updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from 'src/app/data/pc-build/pc-build.actions';
-import { BehaviorSubject } from 'rxjs';
+import * as PcBuildActions from 'src/app/data/pc-build/pc-build.actions';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { isDraftLoadingSelector } from 'src/app/data/pc-build/pc-build.selectors';
+import { AppState } from 'src/app/data/app.state';
 
 @Component({
   selector: 'app-component-listing',
@@ -14,6 +16,7 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentListingComponent {
+  public readonly isDraftLoading$: Observable<boolean>;
   public readonly gridOptions: GridOptions = {
     defaultColDef: {
       sortable: true,
@@ -31,10 +34,11 @@ export class ComponentListingComponent {
   public selectedComponentType: PcComponentType = "cpu";
   private _selectedComponents: PcComponent[] = [];
 
-  constructor(private _store: Store<any>,
-              private _router: Router,
-              private _pcComponentService: PcComponentService,
-              route: ActivatedRoute) {
+  constructor(route: ActivatedRoute,
+              private readonly _store: Store<AppState>,
+              private readonly _router: Router,
+              private readonly _pcComponentService: PcComponentService) {
+    this.isDraftLoading$ = _store.select(isDraftLoadingSelector);
     route.queryParamMap.subscribe(((paramMap: ParamMap) => {
       const componentType = paramMap.get("component");
       this.updateComponentType(componentType ?? "cpu");
@@ -52,22 +56,22 @@ export class ComponentListingComponent {
 
     switch (this.selectedComponentType) {
       case "cpu":
-        this._store.dispatch(updateCpuIds({ ids }));
+        this._store.dispatch(PcBuildActions.updateCpuIds({ ids }));
         break;
       case "motherboard":
-        this._store.dispatch(updateMotherboardIds({ ids }));
+        this._store.dispatch(PcBuildActions.updateMotherboardIds({ ids }));
         break;
       case "memory":
-        this._store.dispatch(updateMemoryIds({ ids }));
+        this._store.dispatch(PcBuildActions.updateMemoryIds({ ids }));
         break;
       case "storage":
-        this._store.dispatch(updateStorageIds({ ids }));
+        this._store.dispatch(PcBuildActions.updateStorageIds({ ids }));
         break;
       case "video-card":
-        this._store.dispatch(updateVideoCardIds({ ids }));
+        this._store.dispatch(PcBuildActions.updateVideoCardIds({ ids }));
         break;
       case "power-supply":
-        this._store.dispatch(updatePowerSupplyIds({ ids }));
+        this._store.dispatch(PcBuildActions.updatePowerSupplyIds({ ids }));
         break;
       default:
         throw Error(`Selected invalid componentType ${this.selectedComponentType}`);

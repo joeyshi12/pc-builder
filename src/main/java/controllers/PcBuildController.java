@@ -22,9 +22,7 @@ public class PcBuildController {
         try {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
-            Optional<String> sessionUserOpt = Optional.ofNullable(ctx.queryParam(SessionAttributes.USER));
-            ctx.json(ProtoUtil.protoListToJsonString(
-                pcBuildDatabase.getAllPcBuilds(idsOpt, sessionUserOpt)));
+            ctx.json(ProtoUtil.protoListToJsonString(pcBuildDatabase.getAllPcBuilds(idsOpt)));
         } catch (Throwable e) {
             logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);
@@ -32,22 +30,34 @@ public class PcBuildController {
     }
 
     public void create(Context ctx) {
+        Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
+        if (usernameOpt.isEmpty()) {
+            ctx.json("Not logged in");
+            ctx.status(400);
+            return;
+        }
         try {
             PcBuild.Builder builder = PcBuild.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
             Date creationDate = new Date();
             builder.setUuid(UUID.randomUUID().toString())
-                .setUsername(ctx.sessionAttribute(SessionAttributes.USER))
+                .setUsername(usernameOpt.get())
                 .setCreationDate(creationDate.getTime())
                 .setLastUpdateDate(creationDate.getTime());
             ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(builder.build())));
         } catch (Throwable e) {
-            logger.error("Failed to retrieve all videoCard components", e);
+            logger.error("Failed to create new build", e);
             ctx.status(500);
         }
     }
 
     public void update(Context ctx) {
+        Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
+        if (usernameOpt.isEmpty()) {
+            ctx.json("Not logged in");
+            ctx.status(400);
+            return;
+        }
         try {
             PcBuild.Builder builder = PcBuild.newBuilder();
             JsonFormat.parser().ignoringUnknownFields().merge(ctx.body(), builder);
@@ -55,15 +65,21 @@ public class PcBuildController {
             pcBuildDatabase.updatePcBuild(build);
             ctx.json(JsonFormat.printer().print(build));
         } catch (Throwable e) {
-            logger.error("Failed to update computer build", e);
+            logger.error("Failed to update build", e);
             ctx.status(500);
         }
     }
 
     public void delete(Context ctx) {
+        Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
+        if (usernameOpt.isEmpty()) {
+            ctx.json("Not logged in");
+            ctx.status(400);
+            return;
+        }
         try {
             String buildId = ctx.pathParam("id");
-            pcBuildDatabase.deletePcBuild(buildId);
+            pcBuildDatabase.deletePcBuild(buildId, usernameOpt.get());
             ctx.status(200);
         } catch (Throwable e) {
             logger.error("Failed to delete computer build", e);

@@ -5,10 +5,10 @@
     </a>
   </div>
   <div>
-    <a routerLink="/build-listing">
+    <a routerLink="/builds">
       <span>Builds</span>
     </a>
-    <a routerLink="/component-listing">
+    <a routerLink="/components">
       <span>Components</span>
     </a>
     <a routerLink="/builder">
@@ -20,7 +20,7 @@
       <button #userProfileButton class="user-profile-btn" (click)="isUserProfileMenuOpen = !isUserProfileMenuOpen">
         <span>{{user.displayName}}</span>
       </button>
-      <ul #userProfileMenu class="user-profile-menu" *ngIf="isUserProfileMenuOpen">
+      <ul #userProfileMenu *ngIf="isUserProfileMenuOpen" class="user-profile-menu">
         <li class="user-handle" [title]="user.username">{{user.username}}</li>
         <li (click)="openEditProfileFormDialog()">Edit profile information</li>
         <li (click)="logOutUser()">Log out</li>

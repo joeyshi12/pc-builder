@@ -8,4 +8,11 @@ export const updateSessionUser = createAction(
   props<{ user: UserProfile }>()
 );
 
+export const setSessionUser = createAction(
+  "SetSessionUser",
+  props<{ user: UserProfile }>()
+);
+
 export const clearSessionUser = createAction("ClearSessionUser");
+
+export const clearSessionUserSuccess = createAction("ClearSessionUserSuccess");

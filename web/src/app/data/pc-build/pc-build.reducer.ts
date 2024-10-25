@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 import { PcBuild } from 'src/app/transfers/pc_build';
-import { setNewPcBuild, updateBasicInfo, updateBuild, updateCpuIds, updateMemoryIds, updateMotherboardIds, updatePcBuilds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds } from './pc-build.actions';
+import { setNewPcBuild, updateBasicInfo, updateDraftSuccess, updateCpuIds, updateMemoryIds, updateMotherboardIds, setPcBuilds, updatePowerSupplyIds, updateStorageIds, updateVideoCardIds, clearDraftBuild, loadDraftComponentsSuccess } from './pc-build.actions';
 import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { PcBuildState } from './pc-build.state';
 
@@ -9,7 +9,16 @@ const localStorageDraftKey = "draftBuild";
 function getInitialState(): PcBuildState {
   return {
     builds: [],
-    draftBuild: getInitialBuild()
+    draftBuild: getInitialBuild(),
+    draftBuildComponents: {
+      cpuList: [],
+      motherboardList: [],
+      memoryList: [],
+      storageList: [],
+      videoCardList: [],
+      powerSupplyList: [],
+    },
+    isDraftLoading: false,
   };
 }
 
@@ -44,10 +53,11 @@ function createNewBuild(): PcBuild {
 
 export const pcBuildStateReducer: ActionReducer<PcBuildState> = createReducer(
   getInitialState(),
-  on(updateBasicInfo, (state: PcBuildState, payload) => {
+  on(updateBasicInfo, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.displayName = payload.displayName;
-      draft.draftBuild.description = payload.description;
+      draft.draftBuild.displayName = action.displayName;
+      draft.draftBuild.description = action.description;
+      draft.isDraftLoading = true;
     });
     saveDraft(updatedState.draftBuild);
     return updatedState;
@@ -59,61 +69,88 @@ export const pcBuildStateReducer: ActionReducer<PcBuildState> = createReducer(
     saveDraft(updatedState.draftBuild);
     return updatedState;
   }),
-  on(updatePcBuilds, (state: PcBuildState, payload) => {
-    return produce(state, (draft) => {
-      draft.builds = payload.builds;
-      const updatedBuild = draft.builds.find((build) => build.uuid === draft.draftBuild.uuid);
-      if (updatedBuild) {
-        saveDraft(updatedBuild);
-        draft.draftBuild = updatedBuild;
-      }
-    });
-  }),
-  on(updateBuild, (state: PcBuildState, payload) => {
+  on(setPcBuilds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild = payload.build;
+      draft.builds = action.builds;
+      const updatedDraftBuild = action.builds.find(build => build.uuid === state.draftBuild.uuid);
+      if (updatedDraftBuild) {
+        draft.draftBuild = updatedDraftBuild;
+      }
     });
     saveDraft(updatedState.draftBuild);
     return updatedState;
   }),
-  on(updateCpuIds, (state: PcBuildState, payload) => {
+  on(updateDraftSuccess, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.cpuIds = payload.ids;
+      draft.draftBuild = action.draftBuild;
+      draft.isDraftLoading = false;
+    });
+    saveDraft(updatedState.draftBuild);
+    return updatedState;
+  }),
+  on(loadDraftComponentsSuccess, (state: PcBuildState, action) => {
+    return produce(state, (draft) => {
+      draft.draftBuildComponents = action.components;
+    });
+  }),
+  on(clearDraftBuild, (state: PcBuildState) => {
+    const updatedState: PcBuildState = produce(state, ((draft: any) => {
+      if (state.draftBuild.uuid) {
+        draft.builds = state.builds.filter(build => build.uuid !== state.draftBuild.uuid);
+      }
+      if (draft.builds.length > 0) {
+        draft.draftBuild = draft.builds[0];
+      } else {
+        draft.draftBuild = createNewBuild();
+      }
+    }).bind(this));
+    saveDraft(updatedState.draftBuild);
+    return updatedState;
+  }),
+  on(updateCpuIds, (state: PcBuildState, action) => {
+    const updatedState: PcBuildState = produce(state, (draft) => {
+      draft.draftBuild.cpuIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;
   }),
-  on(updateMotherboardIds, (state: PcBuildState, payload) => {
+  on(updateMotherboardIds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.motherboardIds = payload.ids;
+      draft.draftBuild.motherboardIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;
   }),
-  on(updateMemoryIds, (state: PcBuildState, payload) => {
+  on(updateMemoryIds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.memoryIds = payload.ids;
+      draft.draftBuild.memoryIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;
   }),
-  on(updateStorageIds, (state: PcBuildState, payload) => {
+  on(updateStorageIds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.storageIds = payload.ids;
+      draft.draftBuild.storageIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;
   }),
-  on(updateVideoCardIds, (state: PcBuildState, payload) => {
+  on(updateVideoCardIds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.videoCardIds = payload.ids;
+      draft.draftBuild.videoCardIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;
   }),
-  on(updatePowerSupplyIds, (state: PcBuildState, payload) => {
+  on(updatePowerSupplyIds, (state: PcBuildState, action) => {
     const updatedState: PcBuildState = produce(state, (draft) => {
-      draft.draftBuild.powerSupplyIds = payload.ids;
+      draft.draftBuild.powerSupplyIds = action.ids;
+      draft.isDraftLoading = true;
     });
     saveDraft(state.draftBuild);
     return updatedState;

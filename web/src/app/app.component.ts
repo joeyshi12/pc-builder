@@ -2,11 +2,10 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { UserProfile } from './transfers/user';
 import { UserService } from './data/user/user.service';
 import { Store } from '@ngrx/store';
-import { AppState, userStateKey } from './data/app.state';
+import { AppState } from './data/app.state';
 import { clearSessionUser, loadSessionUser, updateSessionUser } from './data/user/user.actions';
-import { UserState } from './data/user/user.state';
 import { produce } from 'immer';
-import { loadPcBuilds } from './data/pc-build/pc-build.actions';
+import { userSelector } from './data/user/user.selectors';
 
 @Component({
   selector: 'app-root',
@@ -43,9 +42,8 @@ export class AppComponent {
   constructor(private _store: Store<AppState>,
               private _userService: UserService) {
     this._store.dispatch(loadSessionUser());
-    this._store.dispatch(loadPcBuilds())
-    this._store.select(userStateKey).subscribe((state: UserState) => {
-      this.user = state.currentUser;
+    this._store.select(userSelector).subscribe((user: UserProfile | undefined) => {
+      this.user = user;
     });
   }
 
@@ -89,22 +87,14 @@ export class AppComponent {
       alert("Not logged in");
       return;
     }
-    const updatedUser: UserProfile = produce(this.user, (draft) => {
+    const user: UserProfile = produce(this.user, (draft) => {
       draft.displayName = displayName;
     });
-    this._userService.updateUserProfile(updatedUser)
-      .subscribe((user: UserProfile | undefined) => {
-        if (user) {
-          this._store.dispatch(updateSessionUser({ user }));
-        }
-        this.isEditProfileFormOpen = false;
-      });
+    this._store.dispatch(updateSessionUser({ user }));
+    this.isEditProfileFormOpen = false;
   }
 
   public logOutUser() {
-    this._userService.clearSessionUser()
-      .subscribe(() => {
-        this._store.dispatch(clearSessionUser());
-      });
+    this._store.dispatch(clearSessionUser());
   }
 }

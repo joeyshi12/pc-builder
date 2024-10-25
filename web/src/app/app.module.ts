@@ -19,14 +19,16 @@ import { pcBuildStateKey, userStateKey } from './data/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { PcBuildStateEffects } from './data/pc-build/pc-build.effects';
 import { UserStateEffects } from './data/user/user.effects';
+import { PcBuildComponent } from './ui/pc-build/pc-build.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentListingComponent,
     BuildListingComponent,
+    PcBuildComponent,
     BuilderComponent,
-    DialogComponent
+    DialogComponent,
   ],
   bootstrap: [
     AppComponent
