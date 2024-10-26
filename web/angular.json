@@ -24,7 +24,9 @@
               "src/images"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/libs/ag-grid-community/32.2.2/ag-grid.css",
+              "src/libs/ag-grid-community/32.2.2/ag-theme-alpine.css"
             ],
             "scripts": []
           },
