@@ -4,7 +4,7 @@ package transfers;
 message UserProfile {
   string username = 1;
   string displayName = 2;
-  string password = 3;
+  string password = 3; // Set only for authentication requests
 }
 
 message Comment {
