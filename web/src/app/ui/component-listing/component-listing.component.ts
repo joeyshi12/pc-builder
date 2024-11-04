@@ -5,8 +5,8 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PcComponent, PcComponentType } from 'src/app/data/pc-component/pc-component';
 import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
 import * as PcBuildActions from 'src/app/data/pc-build/pc-build.actions';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { isDraftLoadingSelector } from 'src/app/data/pc-build/pc-build.selectors';
+import { BehaviorSubject, combineLatest, Observable, take } from 'rxjs';
+import { draftSelector, isDraftLoadingSelector } from 'src/app/data/pc-build/pc-build.selectors';
 import { AppState } from 'src/app/data/app.state';
 
 @Component({
@@ -24,9 +24,10 @@ export class ComponentListingComponent {
     },
     pagination: true,
     suppressCellFocus: true,
-    rowSelection: "multiple",
-    rowMultiSelectWithClick: true,
-    suppressRowDeselection: true
+    rowSelection: {
+      mode: "multiRow",
+      headerCheckbox: false,
+    },
   };
   public components$: BehaviorSubject<PcComponent[]> = new BehaviorSubject<PcComponent[]>([]);
   public columnDefs!: ColDef[];
@@ -47,6 +48,51 @@ export class ComponentListingComponent {
 
   public resizeGrid(event: AgGridEvent) {
     event.api.sizeColumnsToFit();
+  }
+
+  public onModelUpdate(event: AgGridEvent<PcComponent>) {
+    this._store.select(draftSelector).pipe(take(1)).subscribe(draft => {
+      switch (this.selectedComponentType) {
+        case "cpu":
+          event.api.forEachNode(node => {
+            const isSelected = draft.cpuIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        case "motherboard":
+          event.api.forEachNode(node => {
+            const isSelected = draft.motherboardIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        case "memory":
+          event.api.forEachNode(node => {
+            const isSelected = draft.memoryIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        case "storage":
+          event.api.forEachNode(node => {
+            const isSelected = draft.storageIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        case "video-card":
+          event.api.forEachNode(node => {
+            const isSelected = draft.videoCardIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        case "power-supply":
+          event.api.forEachNode(node => {
+            const isSelected = draft.powerSupplyIds?.includes(node.data?.uuid ?? "") ?? false;
+            node.setSelected(isSelected);
+          });
+          break;
+        default:
+          throw Error(`Selected invalid componentType ${this.selectedComponentType}`);
+      }
+    });
   }
 
   public addComponentsToBuild() {
@@ -112,81 +158,135 @@ export class ComponentListingComponent {
 
   private _updateCpuGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'coreCount' },
       { field: 'coreClock' },
       { field: 'integratedGraphics' },
       { field: 'hasSmt' },
       { field: 'price' }
     ];
-    this._pcComponentService.getCpuComponents()
-      .subscribe(components => this.components$.next(components));
+    combineLatest([
+      this._pcComponentService.getCpuComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.cpuIds || !component.uuid) {
+          return 1;
+        }
+        return draft.cpuIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 
   private _updateMotherboardGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'cpuSocket' },
       { field: 'formFactor' },
       { field: 'numMemorySlots' },
       { field: 'price' }
     ];
-    this._pcComponentService.getMotherboardComponents()
-      .subscribe(components => this.components$.next(components));
+    combineLatest([
+      this._pcComponentService.getMotherboardComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.motherboardIds || !component.uuid) {
+          return 1;
+        }
+        return draft.motherboardIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 
   private _updateMemoryGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'ddrVersion' },
       { field: 'ddrClock' },
       { field: 'numModules' },
       { field: 'moduleSizeGigabytes' },
       { field: 'price' }
-    ]
-    this._pcComponentService.getMemoryComponents()
-      .subscribe(components => this.components$.next(components));
+    ];
+    combineLatest([
+      this._pcComponentService.getMemoryComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.memoryIds || !component.uuid) {
+          return 1;
+        }
+        return draft.memoryIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 
   private _updateStorageGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'capacityGigabytes' },
       { field: 'type' },
       { field: 'cacheSizeMegabtyes' },
       { field: 'formFactor' },
       { field: 'interface' },
       { field: 'price' }
-    ]
-    this._pcComponentService.getStorageComponents()
-      .subscribe(components => this.components$.next(components));
+    ];
+    combineLatest([
+      this._pcComponentService.getStorageComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.storageIds || !component.uuid) {
+          return 1;
+        }
+        return draft.storageIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 
   private _updateVideoCardGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'chipset' },
       { field: 'memoryGigabytes' },
       { field: 'coreClock' },
       { field: 'boostClock' },
       { field: 'lengthMillimeters' },
       { field: 'price' }
-    ]
-    this._pcComponentService.getVideoCardComponents()
-      .subscribe(components => this.components$.next(components));
+    ];
+    combineLatest([
+      this._pcComponentService.getVideoCardComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.videoCardIds || !component.uuid) {
+          return 1;
+        }
+        return draft.videoCardIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 
   private _updatePowerSupplyGrid() {
     this.columnDefs = [
-      { field: 'displayName', checkboxSelection: true },
+      { field: 'displayName' },
       { field: 'type' },
       { field: 'efficiency' },
       { field: 'wattage' },
       { field: 'modular' },
       { field: 'colour' },
       { field: 'price' }
-    ]
-    this._pcComponentService.getPowerSupplyComponents()
-      .subscribe(components => this.components$.next(components));
+    ];
+    combineLatest([
+      this._pcComponentService.getPowerSupplyComponents(),
+      this._store.select(draftSelector).pipe(take(1))
+    ]).subscribe(([components, draft]) => {
+      this.components$.next(components.sort(component => {
+        if (!draft.powerSupplyIds || !component.uuid) {
+          return 1;
+        }
+        return draft.powerSupplyIds.includes(component.uuid) ? -1 : 1;
+      }));
+    });
   }
 }

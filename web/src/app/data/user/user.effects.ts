@@ -4,30 +4,30 @@ import { filter, map, Observable, switchMap, take } from "rxjs";
 import { UserService } from "./user.service";
 import { UserProfile } from "src/app/transfers/user";
 import { Action, Store } from "@ngrx/store";
-import { clearSessionUser, clearSessionUserSuccess, loadSessionUser, setSessionUser, updateSessionUser } from "./user.actions";
+import * as UserActions from "./user.actions";
 import { AppState } from "../app.state";
 import { userSelector } from "./user.selectors";
 
 @Injectable()
 export class UserStateEffects {
   public loadSessionUser$: Observable<Action> = createEffect(() => this._actions$.pipe(
-    ofType(loadSessionUser),
+    ofType(UserActions.loadSessionUser),
     switchMap(() => this._userService.getSessionUser()),
-    map((user: UserProfile) => setSessionUser({ user }))
+    map((user: UserProfile) => UserActions.setSessionUser({ user }))
   ));
 
   public updateSessionUser$: Observable<Action> = createEffect(() => this._actions$.pipe(
-    ofType(updateSessionUser),
+    ofType(UserActions.updateSessionUser),
     switchMap(() => this._store.select(userSelector).pipe(take(1))),
     filter((user: UserProfile | undefined) => Boolean(user?.username)),
     switchMap((user: UserProfile | undefined) => this._userService.updateUserProfile(user!)),
-    map((user: UserProfile | undefined) => setSessionUser({ user }))
+    map((user: UserProfile | undefined) => UserActions.setSessionUser({ user }))
   ));
 
   public clearSessionUser$: Observable<Action> = createEffect(() => this._actions$.pipe(
-    ofType(clearSessionUser),
+    ofType(UserActions.clearSessionUser),
     switchMap(() => this._userService.clearSessionUser()),
-    map(() => clearSessionUserSuccess())
+    map(() => UserActions.clearSessionUserSuccess())
   ));
 
   constructor(private _actions$: Actions,

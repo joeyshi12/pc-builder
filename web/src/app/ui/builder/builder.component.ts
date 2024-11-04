@@ -23,13 +23,17 @@ export class BuilderComponent {
 
   public isOverflowMenuOpen: boolean = false;
   public readonly columnDefs: ColDef[] = [
-    { field: "displayName", checkboxSelection: true },
+    { field: "displayName" },
     { field: "description" }
   ];
   public readonly gridOptions: GridOptions = {
     defaultColDef: {
       sortable: true
-    }
+    },
+    suppressCellFocus: true,
+    rowSelection: {
+      mode: "singleRow"
+    },
   };
   public isBuildListOpen: boolean = false;
   public isEditDraftOpen: boolean = false;
@@ -68,6 +72,10 @@ export class BuilderComponent {
 
   public get hasSelectedBuild(): boolean {
     return Boolean(this._selectedBuild);
+  }
+
+  public openEditDraftForm(): void {
+    this.isEditDraftOpen = true;
   }
 
   public toggleOverflowMenu(): void {

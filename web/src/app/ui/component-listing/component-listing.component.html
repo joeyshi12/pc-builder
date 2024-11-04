@@ -25,6 +25,7 @@
                      [columnDefs]="columnDefs"
                      [rowData]="components$ | async"
                      [quickFilterText]="searchText"
+                     (modelUpdated)="onModelUpdate($event)"
                      (gridColumnsChanged)="resizeGrid($event)"
                      (gridSizeChanged)="resizeGrid($event)"
                      (selectionChanged)="updateSelection($event)">

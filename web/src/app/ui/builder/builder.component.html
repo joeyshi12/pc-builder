@@ -13,14 +13,14 @@
             <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
           </svg>
           <ul class="overflow-menu" #overflowMenu *ngIf="isOverflowMenuOpen">
-            <li (click)="isEditDraftOpen = true">Edit basic information</li>
+            <li (click)="openEditDraftForm()">Edit basic information</li>
             <li (click)="openBuildList()">Switch list</li>
             <li (click)="createNewDraft()">Start new build</li>
             <li *ngIf="draftBuild.uuid !== undefined" (click)="deleteDraft()">Delete build</li>
           </ul>
         </ng-container>
         <ng-template #editButton>
-          <button>Edit info</button>
+          <button (click)="openEditDraftForm()">Edit info</button>
         </ng-template>
       </div>
     </header>
@@ -76,7 +76,7 @@
     </table>
   </div>
 
-  <app-dialog title="PC Builds"
+  <app-dialog [title]="'PC Builds'"
               [isOpen]="isBuildListOpen"
               [widthRem]="40"
               (close)="isBuildListOpen = false">
@@ -96,7 +96,7 @@
     </div>
   </app-dialog>
 
-  <app-dialog title="Edit Profile"
+  <app-dialog [title]="'Edit Profile'"
               [isOpen]="isEditDraftOpen"
               (close)="isEditDraftOpen = false">
     <div class="form-body">
