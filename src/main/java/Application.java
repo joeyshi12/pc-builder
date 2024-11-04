@@ -24,10 +24,12 @@ public class Application {
         }
 
         UserDatabase userDatabase = new UserDatabase(connectionHandler);
+        CommentDatabase commentDatabase = new CommentDatabase(connectionHandler);
         PcComponentDatabase pcComponentDatabase = new PcComponentDatabase(connectionHandler);
         PcBuildDatabase pcBuildDatabase = new PcBuildDatabase(connectionHandler);
 
         UserController userController = new UserController(userDatabase);
+        CommentController commentController = new CommentController(commentDatabase);
         PcComponentController pcComponentController = new PcComponentController(pcComponentDatabase);
         PcBuildController pcBuildController = new PcBuildController(pcBuildDatabase);
 
@@ -38,6 +40,11 @@ public class Application {
         app.post("/users/authenticate", userController::authenticateUser);
         app.get("/users/session-user", userController::getSessionUser);
         app.delete("/users/session-user", userController::clearSessionUser);
+
+        app.put("/comments", commentController::create);
+        app.get("/comments", commentController::getAll);
+        app.post("/comments", commentController::update);
+        app.delete("/comments/{id}", commentController::delete);
 
         app.put("/builds", pcBuildController::create);
         app.get("/builds", pcBuildController::getAll);

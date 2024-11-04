@@ -12,4 +12,34 @@
       text-decoration: underline;
     }
   }
+
+  section.comments {
+    margin: 1rem 0 10rem 0;
+    max-width: 60rem;
+    .comment-input {
+      display: flex;
+      flex-direction: column;
+      & textarea {
+        resize: vertical;
+      }
+      & .button-list {
+        display: flex;
+        justify-content: end;
+        & button {
+          width: 5rem;
+          height: 2rem;
+          margin: 0.4rem 0;
+        }
+      }
+    }
+    .comment {
+      margin: 1rem 0;
+      & h4 {
+        margin: 0.5rem 0;
+        &::before {
+          content: "@";
+        }
+      }
+    }
+  }
 }
