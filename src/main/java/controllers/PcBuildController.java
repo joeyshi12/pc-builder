@@ -18,17 +18,6 @@ public class PcBuildController {
         this.pcBuildDatabase = pcBuildDatabase;
     }
 
-    public void getAll(Context ctx) {
-        try {
-            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
-                .map((String idsString) -> idsString.split(","));
-            ctx.json(ProtoUtil.protoListToJsonString(pcBuildDatabase.getAllPcBuilds(idsOpt)));
-        } catch (Throwable e) {
-            logger.error("Failed to retrieve all computer builds", e);
-            ctx.status(500);
-        }
-    }
-
     public void create(Context ctx) {
         Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
         if (usernameOpt.isEmpty()) {
@@ -47,6 +36,17 @@ public class PcBuildController {
             ctx.json(JsonFormat.printer().print(pcBuildDatabase.insertPcBuild(builder.build())));
         } catch (Throwable e) {
             logger.error("Failed to create new build", e);
+            ctx.status(500);
+        }
+    }
+
+    public void getAll(Context ctx) {
+        try {
+            Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
+                .map((String idsString) -> idsString.split(","));
+            ctx.json(ProtoUtil.protoListToJsonString(pcBuildDatabase.getAllPcBuilds(idsOpt)));
+        } catch (Throwable e) {
+            logger.error("Failed to retrieve all computer builds", e);
             ctx.status(500);
         }
     }

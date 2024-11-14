@@ -85,20 +85,12 @@ public class PcBuildDatabase {
     }
 
     public void deletePcBuild(String buildId, String username) throws Exception {
-        try (Connection connection = connectionHandler.getConnection()) {
-            try (PreparedStatement ps = connection.prepareStatement("SELECT * FROM pc_build WHERE id = ? AND username = ?")) {
-                ps.setString(1, buildId);
-                ps.setString(2, username);
-                ResultSet rs = ps.executeQuery();
-                if (!rs.next()) {
-                    throw new Exception(String.format("Delete failed - user %s is not the author of build %s", username, buildId));
-                }
-            }
-            try (PreparedStatement ps = connection.prepareStatement("DELETE FROM pc_build WHERE id = ?")) {
-                ps.setString(1, buildId);
-                ps.executeQuery();
-                connection.commit();
-            }
+        try (Connection connection = connectionHandler.getConnection();
+             PreparedStatement ps = connection.prepareStatement("DELETE FROM pc_build WHERE id = ? AND username = ?")) {
+            ps.setString(1, buildId);
+            ps.setString(2, username);
+            ps.executeQuery();
+            connection.commit();
             logger.info(String.format("Deleted computer build %s", buildId));
         }
     }

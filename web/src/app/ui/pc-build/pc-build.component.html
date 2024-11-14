@@ -17,7 +17,7 @@
           <tr>
             <td>
               <a routerLink="/components"
-                [queryParams]="{component: listDef.componentType}">
+                 [queryParams]="{component: listDef.componentType}">
                 {{listDef.displayName}}
               </a>
             </td>
@@ -44,15 +44,15 @@
   </ng-template>
   <section class="comments">
     <h3>Comments</h3>
-    <div class="comment-input">
-      <textarea></textarea>
+    <div *ngIf="isLoggedIn$ | async" class="comment-input">
+      <textarea #commentInput></textarea>
       <div class="button-list">
-        <button>Submit</button>
+        <button (click)="submitComment(commentInput.value, state.build.uuid!); commentInput.value = ''">Submit</button>
       </div>
     </div>
-    <div class="comment">
-      <h4>TODO</h4>
-      <p>Add a proper comments section here</p>
+    <div *ngFor="let comment of state.comments" class="comment">
+      <h4>{{comment.username}}</h4>
+      <p>{{comment.content}}</p>
     </div>
   </section>
 </ng-container>

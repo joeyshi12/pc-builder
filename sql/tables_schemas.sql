@@ -16,8 +16,9 @@ CREATE TABLE IF NOT EXISTS pc_build
     FOREIGN KEY (username) REFERENCES user_profile (username) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS user_comment
+CREATE TABLE IF NOT EXISTS build_comment
 (
+    id                UUID PRIMARY KEY,
     username          VARCHAR(50),
     build_id          UUID,
     content           VARCHAR(2048),

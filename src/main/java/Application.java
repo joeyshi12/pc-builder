@@ -41,15 +41,14 @@ public class Application {
         app.get("/users/session-user", userController::getSessionUser);
         app.delete("/users/session-user", userController::clearSessionUser);
 
-        app.put("/comments", commentController::create);
-        app.get("/comments", commentController::getAll);
-        app.post("/comments", commentController::update);
-        app.delete("/comments/{id}", commentController::delete);
-
         app.put("/builds", pcBuildController::create);
         app.get("/builds", pcBuildController::getAll);
         app.post("/builds", pcBuildController::update);
         app.delete("/builds/{id}", pcBuildController::delete);
+        app.put("/builds/{buildId}/comments", commentController::create);
+        app.get("/builds/{buildId}/comments", commentController::getAll);
+        app.post("/builds/{buildId}/comments", commentController::update);
+        app.delete("/builds/{buildId}/comments/{id}", commentController::delete);
 
         app.get("/components/cpu", pcComponentController::getAllCpuComponents);
         app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);
