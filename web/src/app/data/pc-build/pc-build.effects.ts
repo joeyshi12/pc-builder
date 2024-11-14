@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { PcBuildService } from "./pc-build.service";
-import { filter, map, switchMap, take } from "rxjs";
+import { combineLatest, filter, map, of, switchMap, take } from "rxjs";
 import { PcBuild } from "src/app/transfers/pc_build";
 import * as PcBuildActions from "./pc-build.actions";
 import { Store } from "@ngrx/store";
@@ -24,15 +24,24 @@ export class PcBuildStateEffects {
       PcBuildActions.updateVideoCardIds,
       PcBuildActions.updatePowerSupplyIds
     ),
-    switchMap(() => this._store.select(isLoggedInSelector).pipe(take(1))),
-    filter((isLoggedIn) => isLoggedIn),
-    switchMap(() => this._store.select(draftSelector).pipe(take(1))),
-    switchMap((draftBuild: PcBuild) =>
-      draftBuild.uuid
-        ? this._pcBuildService.updatePcBuild(draftBuild)
-        : this._pcBuildService.createPcBuild(draftBuild)
-    ),
-    map((build: PcBuild) => PcBuildActions.updateDraftSuccess({ draftBuild: build }))
+    switchMap(() => {
+      return combineLatest([
+        this._store.select(isLoggedInSelector).pipe(take(1)),
+        this._store.select(draftSelector).pipe(take(1))
+      ]).pipe(
+        switchMap(([isLoggedIn, draftBuild]) => {
+          if (!isLoggedIn) {
+            return of(PcBuildActions.updateDraftSuccess({ draftBuild }));
+          }
+          const updatedBuild = draftBuild.uuid
+            ? this._pcBuildService.updatePcBuild(draftBuild)
+            : this._pcBuildService.createPcBuild(draftBuild)
+          return updatedBuild.pipe(
+            map(build => PcBuildActions.updateDraftSuccess({ draftBuild: build }))
+          )
+        })
+      )
+    }),
   ));
 
   public loadPcBuilds$ = createEffect(() => this._actions$.pipe(
