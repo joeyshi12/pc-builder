@@ -1,6 +1,6 @@
 # pc-builder
 
-A platform for browsing and designing PC builds.
+A website for browsing and designing PC builds.
 
 ## How to deploy
 
