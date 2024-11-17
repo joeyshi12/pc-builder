@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AgGridEvent, ColDef, GridOptions, SelectionChangedEvent } from "ag-grid-community";
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { AgGridEvent, ColDef, GridOptions, RowClickedEvent } from "ag-grid-community";
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PcComponent, PcComponentType } from 'src/app/data/pc-component/pc-component';
@@ -8,6 +8,7 @@ import * as PcBuildActions from 'src/app/data/pc-build/pc-build.actions';
 import { BehaviorSubject, combineLatest, Observable, take } from 'rxjs';
 import { draftSelector, isDraftLoadingSelector } from 'src/app/data/pc-build/pc-build.selectors';
 import { AppState } from 'src/app/data/app.state';
+import { AgGridAngular } from 'ag-grid-angular';
 
 @Component({
   selector: 'app-component-listing',
@@ -16,6 +17,8 @@ import { AppState } from 'src/app/data/app.state';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentListingComponent {
+  @ViewChild("componentGrid") private _componentGrid?: AgGridAngular;
+
   public readonly isDraftLoading$: Observable<boolean>;
   public readonly gridOptions: GridOptions = {
     defaultColDef: {
@@ -33,7 +36,6 @@ export class ComponentListingComponent {
   public columnDefs!: ColDef[];
   public searchText: string = "";
   public selectedComponentType: PcComponentType = "cpu";
-  private _selectedComponents: PcComponent[] = [];
 
   constructor(route: ActivatedRoute,
               private readonly _store: Store<AppState>,
@@ -95,11 +97,20 @@ export class ComponentListingComponent {
     });
   }
 
-  public addComponentsToBuild() {
-    const ids: string[] = this._selectedComponents
-      .map(component => component.uuid)
-      .filter((id: string | undefined): id is string => Boolean(id));
+  public onRowClicked(event: RowClickedEvent): void {
+    event.node.setSelected(!event.node.isSelected());
+  }
 
+  public addComponentsToBuild() {
+    if (!this._componentGrid) {
+      return;
+    }
+    const ids: string[] = [];
+    this._componentGrid.api.getSelectedNodes().forEach(node => {
+      if (node.isSelected()) {
+        ids.push(node.data.uuid);
+      }
+    });
     switch (this.selectedComponentType) {
       case "cpu":
         this._store.dispatch(PcBuildActions.updateCpuIds({ ids }));
@@ -122,12 +133,7 @@ export class ComponentListingComponent {
       default:
         throw Error(`Selected invalid componentType ${this.selectedComponentType}`);
     }
-
     this._router.navigate(["builder"]);
-  }
-
-  public updateSelection(event: SelectionChangedEvent) {
-    this._selectedComponents = event.api.getSelectedRows();
   }
 
   public updateComponentType(componentType: string) {

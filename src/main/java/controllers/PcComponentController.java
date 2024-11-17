@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.net.HttpHeaders;
 
 public class PcComponentController {
-    private final static String COMPONENT_AGE = "max-age=86400"; // 1 day
+    private final static String CACHE_CONTROL = "public, max-age=86400"; // 1 day
 
     private final Logger logger = LoggerFactory.getLogger(getClass().getName());
     private final PcComponentDatabase pcComponentDatabase;
@@ -25,7 +25,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getCpuComponents(idsOpt)));
         } catch (Throwable e) {
@@ -39,7 +39,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMotherboardComponents(idsOpt)));
         } catch (Throwable e) {
@@ -53,7 +53,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getMemoryComponents(idsOpt)));
         } catch (Throwable e) {
@@ -67,7 +67,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getStorageComponents(idsOpt)));
         } catch (Throwable e) {
@@ -81,7 +81,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getVideoCardComponents(idsOpt)));
         } catch (Throwable e) {
@@ -95,7 +95,7 @@ public class PcComponentController {
             Optional<String[]> idsOpt = Optional.ofNullable(ctx.queryParam("ids"))
                 .map((String idsString) -> idsString.split(","));
             if (idsOpt.isEmpty()) {
-                ctx.header(HttpHeaders.CACHE_CONTROL, COMPONENT_AGE);
+                ctx.header(HttpHeaders.CACHE_CONTROL, CACHE_CONTROL);
             }
             ctx.json(ProtoUtil.protoListToJsonString(pcComponentDatabase.getPowerSupplyComponents(idsOpt)));
         } catch (Throwable e) {
