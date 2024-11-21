@@ -22,6 +22,7 @@
 <div class="component-grid">
   <ag-grid-angular #componentGrid
                    class="ag-theme-alpine"
+                   [loading]="components$.value === undefined"
                    [gridOptions]="gridOptions"
                    [columnDefs]="columnDefs"
                    [rowData]="components$ | async"

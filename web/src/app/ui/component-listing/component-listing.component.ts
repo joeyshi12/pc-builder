@@ -32,7 +32,7 @@ export class ComponentListingComponent {
       headerCheckbox: false,
     },
   };
-  public components$: BehaviorSubject<PcComponent[]> = new BehaviorSubject<PcComponent[]>([]);
+  public components$: BehaviorSubject<PcComponent[] | undefined> = new BehaviorSubject<PcComponent[] | undefined>(undefined);
   public columnDefs!: ColDef[];
   public searchText: string = "";
   public selectedComponentType: PcComponentType = "cpu";
@@ -170,6 +170,7 @@ export class ComponentListingComponent {
       { field: 'integratedGraphics' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getCpuComponents(),
       this._store.select(draftSelector).pipe(take(1))
@@ -191,6 +192,7 @@ export class ComponentListingComponent {
       { field: 'numMemorySlots' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getMotherboardComponents(),
       this._store.select(draftSelector).pipe(take(1))
@@ -213,6 +215,7 @@ export class ComponentListingComponent {
       { field: 'moduleSizeGigabytes' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getMemoryComponents(),
       this._store.select(draftSelector).pipe(take(1))
@@ -236,6 +239,7 @@ export class ComponentListingComponent {
       { field: 'interface' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getStorageComponents(),
       this._store.select(draftSelector).pipe(take(1))
@@ -259,6 +263,7 @@ export class ComponentListingComponent {
       { field: 'lengthMillimeters' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getVideoCardComponents(),
       this._store.select(draftSelector).pipe(take(1))
@@ -282,6 +287,7 @@ export class ComponentListingComponent {
       { field: 'colour' },
       { field: 'price' }
     ];
+    this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getPowerSupplyComponents(),
       this._store.select(draftSelector).pipe(take(1))
