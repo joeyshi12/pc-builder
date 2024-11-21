@@ -168,7 +168,6 @@ export class ComponentListingComponent {
       { field: 'coreCount' },
       { field: 'coreClock' },
       { field: 'integratedGraphics' },
-      { field: 'hasSmt' },
       { field: 'price' }
     ];
     combineLatest([

@@ -42,7 +42,9 @@ export class AppComponent {
 
   constructor(private _store: Store<AppState>,
               private _userService: UserService) {
-    this._store.dispatch(loadSessionUser());
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      this._store.dispatch(loadSessionUser());
+    }
     this._store.select(userSelector).subscribe((user: UserProfile | undefined) => {
       this.user = user;
     });
