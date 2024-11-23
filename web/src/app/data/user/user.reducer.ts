@@ -8,24 +8,20 @@ export const userStateReducer: ActionReducer<UserState> = createReducer(
   on(UserActions.updateSessionUser, (state: UserState, payload) => {
     return produce(state, (draft) => {
       draft.currentUser = payload.user;
-      localStorage.setItem("isLoggedIn", "true");
     });
   }),
   on(UserActions.setSessionUser, (state: UserState, payload) => {
     return produce(state, (draft) => {
       if (payload.user?.username) {
         draft.currentUser = payload.user;
-        localStorage.setItem("isLoggedIn", "true");
       } else {
         draft.currentUser = undefined;
-        localStorage.setItem("isLoggedIn", "false");
       }
     });
   }),
   on(UserActions.clearSessionUserSuccess, (state: UserState) => {
     return produce(state, (draft) => {
       draft.currentUser = undefined;
-      localStorage.setItem("isLoggedIn", "false");
     });
   }),
 );

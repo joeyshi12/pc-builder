@@ -4,6 +4,7 @@ import { PcBuildService } from "./pc-build.service";
 import { combineLatest, filter, map, of, switchMap, take } from "rxjs";
 import { PcBuild } from "src/app/transfers/pc_build";
 import * as PcBuildActions from "./pc-build.actions";
+import * as UserActions from "../user/user.actions";
 import { Store } from "@ngrx/store";
 import { AppState, pcBuildStateKey } from "../app.state";
 import { PcBuildState } from "./pc-build.state";
@@ -22,7 +23,8 @@ export class PcBuildStateEffects {
       PcBuildActions.updateMemoryIds,
       PcBuildActions.updateStorageIds,
       PcBuildActions.updateVideoCardIds,
-      PcBuildActions.updatePowerSupplyIds
+      PcBuildActions.updatePowerSupplyIds,
+      UserActions.setSessionUser
     ),
     switchMap(() => {
       return combineLatest([

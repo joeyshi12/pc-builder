@@ -73,8 +73,7 @@ public class UserController {
     public void getSessionUser(Context ctx) {
         Optional<String> usernameOpt = SessionAttributes.getUserAttribute(ctx);
         if (usernameOpt.isEmpty()) {
-            ctx.json("Not logged in");
-            ctx.status(400);
+            ctx.status(200);
             return;
         }
         try {
