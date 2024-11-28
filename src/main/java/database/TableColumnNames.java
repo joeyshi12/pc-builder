@@ -13,6 +13,10 @@ final class TableColumnNames {
     // User profile
     static final String EMAIL = "email";
 
+    // User comment
+    static final String BUILD_ID = "build_id" ;
+    static final String CONTENT = "content" ;
+
     // CPU
     static final String CORE_COUNT = "core_count";
     static final String TDP = "tdp";
@@ -56,6 +60,9 @@ final class TableColumnNames {
     // Column arrays
     static final String[] USER_PROFILE_COLUMNS = {
         USERNAME, DISPLAY_NAME, EMAIL
+    };
+    static final String[] COMMENT_COLUMNS = {
+        ID, USERNAME, BUILD_ID, CONTENT, CREATION_DATE, LAST_UPDATED_DATE
     };
     static final String[] CPU_COLUMNS = {
         ID, DISPLAY_NAME, PRICE, CORE_COUNT, CORE_CLOCK, BOOST_CLOCK, TDP, INTEGRATED_GRAPHICS, HAS_SMT

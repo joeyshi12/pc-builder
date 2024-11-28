@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, combineLatest, map, of } from "rxjs";
+import { Observable, catchError, combineLatest, map, of } from "rxjs";
 import { CpuComponent, MemoryComponent, MotherboardComponent, PowerSupplyComponent, StorageComponent, VideoCardComponent } from "../../transfers/pc_component";
 import { PcBuild } from "../../transfers/pc_build";
 import { PcComponents } from "./pc-component";
@@ -14,23 +14,17 @@ export class PcComponentService {
 
   public getPcComponents(build: PcBuild): Observable<PcComponents> {
     const cpuComponents$ = build.cpuIds && build.cpuIds.length > 0
-      ? this.getCpuComponents(build.cpuIds)
-      : of<CpuComponent[]>([]);
+      ? this.getCpuComponents(build.cpuIds).pipe(catchError(() => [])) : of([]);
     const motherboardComponents$ = build.motherboardIds && build.motherboardIds.length > 0
-      ? this.getMotherboardComponents(build.motherboardIds)
-      : of<MotherboardComponent[]>([]);
+      ? this.getMotherboardComponents(build.motherboardIds).pipe(catchError(() => [])) : of([]);
     const memoryComponents$ = build.memoryIds && build.memoryIds.length > 0
-      ? this.getMemoryComponents(build.memoryIds)
-      : of<MemoryComponent[]>([]);
+      ? this.getMemoryComponents(build.memoryIds).pipe(catchError(() => [])) : of([]);
     const storageComponents$ = build.storageIds && build.storageIds.length > 0
-      ? this.getStorageComponents(build.storageIds)
-      : of<StorageComponent[]>([]);
+      ? this.getStorageComponents(build.storageIds).pipe(catchError(() => [])) : of([]);
     const videoCardComponents$ = build.videoCardIds && build.videoCardIds.length > 0
-      ? this.getVideoCardComponents(build.videoCardIds)
-      : of<VideoCardComponent[]>([]);
+      ? this.getVideoCardComponents(build.videoCardIds).pipe(catchError(() => [])) : of([]);
     const powerSupplyComponents$ = build.powerSupplyIds && build.powerSupplyIds.length > 0
-      ? this.getPowerSupplyComponents(build.powerSupplyIds)
-      : of<PowerSupplyComponent[]>([]);
+      ? this.getPowerSupplyComponents(build.powerSupplyIds).pipe(catchError(() => [])) : of([]);
     return combineLatest([
       cpuComponents$,
       motherboardComponents$,

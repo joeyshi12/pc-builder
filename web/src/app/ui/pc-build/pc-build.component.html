@@ -17,7 +17,7 @@
           <tr>
             <td>
               <a routerLink="/components"
-                [queryParams]="{component: listDef.componentType}">
+                 [queryParams]="{component: listDef.componentType}">
                 {{listDef.displayName}}
               </a>
             </td>
@@ -42,4 +42,17 @@
   <ng-template #emptyListMessage>
     <h3>No components in build</h3>
   </ng-template>
+  <section class="comments">
+    <h3>Comments</h3>
+    <div *ngIf="isLoggedIn$ | async" class="comment-input">
+      <textarea #commentInput></textarea>
+      <div class="button-list">
+        <button (click)="submitComment(commentInput.value, state.build.uuid!); commentInput.value = ''">Submit</button>
+      </div>
+    </div>
+    <div *ngFor="let comment of state.comments" class="comment">
+      <h4>{{comment.username}}</h4>
+      <p>{{comment.content}}</p>
+    </div>
+  </section>
 </ng-container>

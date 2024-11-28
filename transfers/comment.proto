@@ -1,0 +1,11 @@
+syntax = "proto3";
+package transfers;
+
+message Comment {
+  string uuid = 1;
+  string username = 2;
+  string buildId = 3;
+  string content = 4;
+  int64 creationDate = 5;
+  int64 lastUpdateDate = 6;
+}
