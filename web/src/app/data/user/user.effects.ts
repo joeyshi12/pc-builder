@@ -30,8 +30,8 @@ export class UserStateEffects {
     map(() => UserActions.clearSessionUserSuccess())
   ));
 
-  constructor(private _actions$: Actions,
-              private _store: Store<AppState>,
-              private _userService: UserService) {
+  constructor(private readonly _actions$: Actions,
+              private readonly _store: Store<AppState>,
+              private readonly _userService: UserService) {
   }
 }

@@ -1,14 +1,16 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, ViewChild } from '@angular/core';
 import { AgGridEvent, ColDef, GridOptions, RowClickedEvent } from "ag-grid-community";
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PcComponent, PcComponentType } from 'src/app/data/pc-component/pc-component';
 import { PcComponentService } from 'src/app/data/pc-component/pc-component.service';
 import * as PcBuildActions from 'src/app/data/pc-build/pc-build.actions';
-import { BehaviorSubject, combineLatest, Observable, take } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subscription, take } from 'rxjs';
 import { draftSelector, isDraftLoadingSelector } from 'src/app/data/pc-build/pc-build.selectors';
 import { AppState } from 'src/app/data/app.state';
 import { AgGridAngular } from 'ag-grid-angular';
+import { PcBuild } from 'src/app/transfers/pc_build';
+import { Actions, ofType } from '@ngrx/effects';
 
 @Component({
   selector: 'app-component-listing',
@@ -16,7 +18,7 @@ import { AgGridAngular } from 'ag-grid-angular';
   styleUrls: ['./component-listing.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ComponentListingComponent {
+export class ComponentListingComponent implements OnDestroy {
   @ViewChild("componentGrid") private _componentGrid?: AgGridAngular;
 
   public readonly isDraftLoading$: Observable<boolean>;
@@ -37,7 +39,10 @@ export class ComponentListingComponent {
   public searchText: string = "";
   public selectedComponentType: PcComponentType = "cpu";
 
+  private readonly _actionSubscription: Subscription;
+
   constructor(route: ActivatedRoute,
+              actions$: Actions,
               private readonly _store: Store<AppState>,
               private readonly _router: Router,
               private readonly _pcComponentService: PcComponentService) {
@@ -46,6 +51,15 @@ export class ComponentListingComponent {
       const componentType = paramMap.get("component");
       this.updateComponentType(componentType ?? "cpu");
     }));
+    this._actionSubscription = actions$.pipe(ofType(
+      PcBuildActions.updateDraftSuccess,
+    )).subscribe(() => {
+      this._router.navigate(["builder"]);
+    })
+  }
+
+  public ngOnDestroy(): void {
+      this._actionSubscription.unsubscribe();
   }
 
   public resizeGrid(event: AgGridEvent) {
@@ -53,7 +67,7 @@ export class ComponentListingComponent {
   }
 
   public onModelUpdate(event: AgGridEvent<PcComponent>) {
-    this._store.select(draftSelector).pipe(take(1)).subscribe(draft => {
+    this._draftBuild$.subscribe(draft => {
       switch (this.selectedComponentType) {
         case "cpu":
           event.api.forEachNode(node => {
@@ -141,10 +155,10 @@ export class ComponentListingComponent {
     switch (this.selectedComponentType) {
       case "cpu":
         this._updateCpuGrid();
-        break
+        break;
       case "motherboard":
         this._updateMotherboardGrid();
-        break
+        break;
       case "memory":
         this._updateMemoryGrid();
         break;
@@ -162,6 +176,10 @@ export class ComponentListingComponent {
     }
   }
 
+  private get _draftBuild$(): Observable<PcBuild> {
+    return this._store.select(draftSelector).pipe(take(1));
+  }
+
   private _updateCpuGrid() {
     this.columnDefs = [
       { field: 'displayName' },
@@ -173,7 +191,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getCpuComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.cpuIds || !component.uuid) {
@@ -195,7 +213,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getMotherboardComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.motherboardIds || !component.uuid) {
@@ -218,7 +236,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getMemoryComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.memoryIds || !component.uuid) {
@@ -242,7 +260,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getStorageComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.storageIds || !component.uuid) {
@@ -266,7 +284,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getVideoCardComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.videoCardIds || !component.uuid) {
@@ -290,7 +308,7 @@ export class ComponentListingComponent {
     this.components$.next(undefined);
     combineLatest([
       this._pcComponentService.getPowerSupplyComponents(),
-      this._store.select(draftSelector).pipe(take(1))
+      this._draftBuild$
     ]).subscribe(([components, draft]) => {
       this.components$.next(components.sort(component => {
         if (!draft.powerSupplyIds || !component.uuid) {

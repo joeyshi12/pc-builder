@@ -71,9 +71,9 @@ export class PcBuildStateEffects {
     map(() => PcBuildActions.clearDraftBuild())
   ));
 
-  constructor(private _actions$: Actions,
-              private _store: Store<AppState>,
-              private _pcBuildService: PcBuildService,
-              private _pcComponentsService: PcComponentService) {
+  constructor(private readonly _actions$: Actions,
+              private readonly _store: Store<AppState>,
+              private readonly _pcBuildService: PcBuildService,
+              private readonly _pcComponentsService: PcComponentService) {
   }
 }
