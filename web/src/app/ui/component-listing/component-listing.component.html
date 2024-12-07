@@ -20,14 +20,16 @@
   <button [disabled]="isDraftLoading$ | async" (click)="addComponentsToBuild()">Add selected to build list</button>
 </div>
 <div class="component-grid">
-    <ag-grid-angular class="ag-theme-alpine"
-                     [gridOptions]="gridOptions"
-                     [columnDefs]="columnDefs"
-                     [rowData]="components$ | async"
-                     [quickFilterText]="searchText"
-                     (modelUpdated)="onModelUpdate($event)"
-                     (gridColumnsChanged)="resizeGrid($event)"
-                     (gridSizeChanged)="resizeGrid($event)"
-                     (selectionChanged)="updateSelection($event)">
-    </ag-grid-angular>
+  <ag-grid-angular #componentGrid
+                   class="ag-theme-alpine"
+                   [loading]="components$.value === undefined"
+                   [gridOptions]="gridOptions"
+                   [columnDefs]="columnDefs"
+                   [rowData]="components$ | async"
+                   [quickFilterText]="searchText"
+                   (modelUpdated)="onModelUpdate($event)"
+                   (gridColumnsChanged)="resizeGrid($event)"
+                   (gridSizeChanged)="resizeGrid($event)"
+                   (rowClicked)="onRowClicked($event)">
+  </ag-grid-angular>
 </div>

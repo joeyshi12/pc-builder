@@ -41,9 +41,9 @@ public class Application {
         app.get("/users/session-user", userController::getSessionUser);
         app.delete("/users/session-user", userController::clearSessionUser);
 
-        app.put("/builds", pcBuildController::create);
+        app.post("/builds", pcBuildController::create);
         app.get("/builds", pcBuildController::getAll);
-        app.post("/builds", pcBuildController::update);
+        app.put("/builds", pcBuildController::update);
         app.delete("/builds/{id}", pcBuildController::delete);
         app.put("/builds/{buildId}/comments", commentController::create);
         app.get("/builds/{buildId}/comments", commentController::getAll);

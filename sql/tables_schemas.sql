@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS user_profile
 
 CREATE TABLE IF NOT EXISTS pc_build
 (
-    id                UUID PRIMARY KEY,
+    id                CHAR(36) PRIMARY KEY,
     display_name      VARCHAR(50) NOT NULL,
     description       VARCHAR(255),
     username          VARCHAR(50),
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS build_comment
 (
     id                UUID PRIMARY KEY,
     username          VARCHAR(50),
-    build_id          UUID,
+    build_id          CHAR(36),
     content           VARCHAR(2048),
     creation_date     DATETIME,
     last_updated_date DATETIME,
@@ -30,30 +30,30 @@ CREATE TABLE IF NOT EXISTS build_comment
 
 CREATE TABLE IF NOT EXISTS component
 (
-    id UUID PRIMARY KEY
+    id CHAR(36) PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS is_part_of
 (
-    component_id UUID,
-    build_id     UUID,
+    component_id CHAR(36),
+    build_id     CHAR(36),
     PRIMARY KEY (component_id, build_id),
     FOREIGN KEY (component_id) REFERENCES component (id) ON DELETE CASCADE,
     FOREIGN KEY (build_id) REFERENCES pc_build (id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS sold_by
-(
-    component_id    UUID,
-    retailer_name   VARCHAR(50),
-    price           INT,
-    href            VARCHAR(2000),
-    FOREIGN KEY (component_id) REFERENCES component (id) ON DELETE CASCADE
-);
+--CREATE TABLE IF NOT EXISTS sold_by
+--(
+--    component_id    CHAR(36),
+--    retailer_name   VARCHAR(50),
+--    price           INT,
+--    href            VARCHAR(2000),
+--    FOREIGN KEY (component_id) REFERENCES component (id) ON DELETE CASCADE
+--);
 
 CREATE TABLE IF NOT EXISTS cpu
 (
-    id                  UUID PRIMARY KEY,
+    id                  CHAR(36) PRIMARY KEY,
     display_name        VARCHAR(255),
     price               INT,
     core_count          INT,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS cpu
 
 CREATE TABLE IF NOT EXISTS motherboard
 (
-    id               UUID PRIMARY KEY,
+    id               CHAR(36) PRIMARY KEY,
     display_name     VARCHAR(255),
     price            INT,
     cpu_socket       VARCHAR(50),
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS motherboard
 
 CREATE TABLE IF NOT EXISTS memory
 (
-    id                 UUID PRIMARY KEY,
+    id                 CHAR(36) PRIMARY KEY,
     display_name       VARCHAR(255),
     price              INT,
     ddr_version        INT,
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS memory
 
 CREATE TABLE IF NOT EXISTS storage
 (
-    id           UUID PRIMARY KEY,
+    id           CHAR(36) PRIMARY KEY,
     display_name VARCHAR(255),
     price        INT,
     capacity     INT,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS storage
 
 CREATE TABLE IF NOT EXISTS video_card
 (
-    id           UUID PRIMARY KEY,
+    id           CHAR(36) PRIMARY KEY,
     display_name VARCHAR(255),
     price        INT,
     chipset      VARCHAR(50),
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS video_card
 
 CREATE TABLE IF NOT EXISTS power_supply
 (
-    id           UUID PRIMARY KEY,
+    id           CHAR(36) PRIMARY KEY,
     display_name VARCHAR(255),
     price        INT,
     type         VARCHAR(50),

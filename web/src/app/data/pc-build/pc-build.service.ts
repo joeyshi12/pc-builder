@@ -12,11 +12,11 @@ export class PcBuildService {
   }
 
   public createPcBuild(build: PcBuild): Observable<PcBuild> {
-    return this._http.put<PcBuild>("/builds", build);
+    return this._http.post<PcBuild>("/builds", build);
   }
 
   public updatePcBuild(build: PcBuild): Observable<PcBuild> {
-    return this._http.post<PcBuild>("/builds", build);
+    return this._http.put<PcBuild>("/builds", build);
   }
 
   public getPcBuilds(ids?: string[]): Observable<PcBuild[]> {

@@ -61,7 +61,6 @@ export class BuilderComponent {
   }
 
   constructor(private readonly _store: Store<AppState>) {
-    this._store.dispatch(PcBuildActions.loadPcBuilds());
     this.userBuilds$ = _store.select(userBuildsSelector);
     this.draftBuild$ = _store.select(draftSelector);
     this.isLoggedIn$ = _store.select(isLoggedInSelector);
@@ -97,6 +96,7 @@ export class BuilderComponent {
   }
 
   public openBuildList(): void {
+    this._store.dispatch(PcBuildActions.loadPcBuilds());
     this._selectedBuild = undefined;
     this.isBuildListOpen = true;
   }
