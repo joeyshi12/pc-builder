@@ -44,15 +44,25 @@
   </ng-template>
   <section class="comments">
     <h3>Comments</h3>
-    <div *ngIf="isLoggedIn$ | async" class="comment-input">
+    <div *ngIf="isLoggedIn" class="comment-input">
       <textarea #commentInput></textarea>
       <div class="button-list">
         <button (click)="submitComment(commentInput.value, state.build.uuid!); commentInput.value = ''">Submit</button>
       </div>
     </div>
-    <div *ngFor="let comment of state.comments" class="comment">
-      <h4>{{comment.username}}</h4>
-      <p>{{comment.content}}</p>
-    </div>
+    <ng-container *ngIf="state.comments.length > 0; else noComments">
+      <div *ngFor="let comment of state.comments" class="comment">
+        <div class="comment-header">
+          <label>
+            <h4>{{comment.username}}</h4>
+            <span *ngIf="formatLastUpdated(comment) as lastUpdated">{{lastUpdated}}</span>
+          </label>
+        </div>
+        <p>{{comment.content}}</p>
+      </div>
+    </ng-container>
+    <ng-template #noComments>
+      <p>There are no comments.</p>
+    </ng-template>
   </section>
 </ng-container>

@@ -113,11 +113,39 @@ public class PcBuildDatabase {
             ps.setString(1, build.getUuid());
             ps.executeQuery();
         }
-        String componentIdValues = QueryUtil.formComponentIdValues(build);
-        if (!componentIdValues.isEmpty()) {
-            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO is_part_of VALUES " + componentIdValues)) {
-                ps.executeQuery();
+        List<String> componentIds = getComponentIds(build);
+        if (!componentIds.isEmpty()) {
+            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO is_part_of(build_id, component_id) VALUES (?, ?)")) {
+                for (String id : componentIds) {
+                    ps.setString(1, build.getUuid());
+                    ps.setString(2, id);
+                    ps.addBatch();
+                }
+                ps.executeBatch();
             }
         }
+    }
+
+    private List<String> getComponentIds(PcBuild build) {
+        List<String> componentIds = new ArrayList<>();
+        for (String cpuId : build.getCpuIdsList()) {
+            componentIds.add(cpuId);
+        }
+        for (String motherboardId : build.getMotherboardIdsList()) {
+            componentIds.add(motherboardId);
+        }
+        for (String memoryId : build.getMemoryIdsList()) {
+            componentIds.add(memoryId);
+        }
+        for (String storageId : build.getStorageIdsList()) {
+            componentIds.add(storageId);
+        }
+        for (String videoCardId : build.getVideoCardIdsList()) {
+            componentIds.add(videoCardId);
+        }
+        for (String powerSupplyId : build.getPowerSupplyIdsList()) {
+            componentIds.add(powerSupplyId);
+        }
+        return componentIds;
     }
 }

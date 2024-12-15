@@ -41,6 +41,7 @@ public class CommentDatabase {
         List<Comment> comments = new ArrayList<Comment>();
         String query = new StringBuilder(QueryUtil.formTableSelectQuery("build_comment", TableColumnNames.COMMENT_COLUMNS))
             .append(" WHERE build_id = ?")
+            .append(" ORDER BY last_updated_date DESC")
             .toString();
         try (Connection connection = connectionHandler.getConnection();
              PreparedStatement ps = connection.prepareStatement(query)) {

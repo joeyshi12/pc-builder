@@ -1,6 +1,5 @@
 package database;
 
-import transfers.PcBuildOuterClass.PcBuild;
 import java.util.*;
 
 final class QueryUtil {
@@ -20,10 +19,7 @@ final class QueryUtil {
         for (int i = 1; i < columns.length; i++) {
             builder.append(",").append(columns[i]);
         }
-        return builder
-            .append(" FROM ")
-            .append(tableName)
-            .toString();
+        return builder.append(" FROM ").append(tableName).toString();
     }
 
     public static String formIdCondition(String[] ids) throws Exception {
@@ -34,34 +30,6 @@ final class QueryUtil {
         for (int i = 1; i < ids.length; i++) {
             builder.append(",'").append(ids[i]).append("'");
         }
-        return builder
-            .append(")")
-            .toString();
-    }
-
-    public static String formComponentIdValues(PcBuild build) {
-        List<String> componentIds = new ArrayList<>();
-        for (String cpuId : build.getCpuIdsList()) {
-            componentIds.add(cpuId);
-        }
-        for (String motherboardId : build.getMotherboardIdsList()) {
-            componentIds.add(motherboardId);
-        }
-        for (String memoryId : build.getMemoryIdsList()) {
-            componentIds.add(memoryId);
-        }
-        for (String storageId : build.getStorageIdsList()) {
-            componentIds.add(storageId);
-        }
-        for (String videoCardId : build.getVideoCardIdsList()) {
-            componentIds.add(videoCardId);
-        }
-        for (String powerSupplyId : build.getPowerSupplyIdsList()) {
-            componentIds.add(powerSupplyId);
-        }
-        List<String> isPartOfValues = componentIds.stream()
-            .map((String id) -> String.format("('%s','%s')", id, build.getUuid()))
-            .toList();
-        return String.join(",", isPartOfValues);
+        return builder.append(")").toString();
     }
 }

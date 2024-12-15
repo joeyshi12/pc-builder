@@ -45,9 +45,9 @@ public class Application {
         app.get("/builds", pcBuildController::getAll);
         app.put("/builds", pcBuildController::update);
         app.delete("/builds/{id}", pcBuildController::delete);
-        app.put("/builds/{buildId}/comments", commentController::create);
+        app.post("/builds/{buildId}/comments", commentController::create);
         app.get("/builds/{buildId}/comments", commentController::getAll);
-        app.post("/builds/{buildId}/comments", commentController::update);
+        app.put("/builds/{buildId}/comments", commentController::update);
         app.delete("/builds/{buildId}/comments/{id}", commentController::delete);
 
         app.get("/components/cpu", pcComponentController::getAllCpuComponents);

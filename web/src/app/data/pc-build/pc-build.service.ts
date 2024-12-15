@@ -36,7 +36,7 @@ export class PcBuildService {
   }
 
   public createBuildComment(comment: Comment): Observable<Comment> {
-    return this._http.put<Comment>(`/builds/${comment.buildId}/comments`, comment);
+    return this._http.post<Comment>(`/builds/${comment.buildId}/comments`, comment);
   }
 
   public getBuildComments(buildId: string): Observable<Comment[]> {
@@ -44,7 +44,7 @@ export class PcBuildService {
   }
 
   public updateBuildComment(comment: Comment): Observable<Comment> {
-    return this._http.post<Comment>(`/builds/${comment.buildId}/comments`, comment);
+    return this._http.put<Comment>(`/builds/${comment.buildId}/comments`, comment);
   }
 
   public deleteBuildComment(commentId: string, buildId: string): Observable<void> {
