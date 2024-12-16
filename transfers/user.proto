@@ -6,9 +6,3 @@ message UserProfile {
   string displayName = 2;
   string password = 3; // Set only for authentication requests
 }
-
-message Comment {
-  string authorName = 1;
-  string content = 2;
-  string lastUpdatedDate = 4;
-}

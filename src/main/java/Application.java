@@ -24,10 +24,12 @@ public class Application {
         }
 
         UserDatabase userDatabase = new UserDatabase(connectionHandler);
+        CommentDatabase commentDatabase = new CommentDatabase(connectionHandler);
         PcComponentDatabase pcComponentDatabase = new PcComponentDatabase(connectionHandler);
         PcBuildDatabase pcBuildDatabase = new PcBuildDatabase(connectionHandler);
 
         UserController userController = new UserController(userDatabase);
+        CommentController commentController = new CommentController(commentDatabase);
         PcComponentController pcComponentController = new PcComponentController(pcComponentDatabase);
         PcBuildController pcBuildController = new PcBuildController(pcBuildDatabase);
 
@@ -43,6 +45,10 @@ public class Application {
         app.get("/builds", pcBuildController::getAll);
         app.put("/builds", pcBuildController::update);
         app.delete("/builds/{id}", pcBuildController::delete);
+        app.post("/builds/{buildId}/comments", commentController::create);
+        app.get("/builds/{buildId}/comments", commentController::getAll);
+        app.put("/builds/{buildId}/comments", commentController::update);
+        app.delete("/builds/{buildId}/comments/{id}", commentController::delete);
 
         app.get("/components/cpu", pcComponentController::getAllCpuComponents);
         app.get("/components/motherboards", pcComponentController::getAllMotherboardComponents);

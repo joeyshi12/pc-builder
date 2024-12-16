@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { PcBuild } from "../../transfers/pc_build";
 import { Observable, of } from "rxjs";
+import { Comment } from "src/app/transfers/comment";
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,21 @@ export class PcBuildService {
 
   public deletePcBuild(id: string): Observable<void> {
     return this._http.delete<void>(`/builds/${id}`);
+  }
+
+  public createBuildComment(comment: Comment): Observable<Comment> {
+    return this._http.post<Comment>(`/builds/${comment.buildId}/comments`, comment);
+  }
+
+  public getBuildComments(buildId: string): Observable<Comment[]> {
+    return this._http.get<Comment[]>(`/builds/${buildId}/comments`);
+  }
+
+  public updateBuildComment(comment: Comment): Observable<Comment> {
+    return this._http.put<Comment>(`/builds/${comment.buildId}/comments`, comment);
+  }
+
+  public deleteBuildComment(commentId: string, buildId: string): Observable<void> {
+    return this._http.delete<void>(`/builds/${buildId}/comments/${commentId}`);
   }
 }
