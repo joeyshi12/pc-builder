@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS pc_build
 
 CREATE TABLE IF NOT EXISTS build_comment
 (
-    id                UUID PRIMARY KEY,
+    id                CHAR(36) PRIMARY KEY,
     username          VARCHAR(50),
     build_id          CHAR(36),
     content           VARCHAR(2048),
