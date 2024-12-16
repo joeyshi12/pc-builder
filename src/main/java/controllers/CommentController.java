@@ -40,6 +40,11 @@ public class CommentController {
                 .setCreationDate(creationTime)
                 .setLastUpdateDate(creationTime)
                 .build();
+            if (comment.getContent().isBlank()) {
+                ctx.json("Comment cannot be blank.");
+                ctx.status(400);
+                return;
+            }
             ctx.json(JsonFormat.printer().print(commentDatabase.insertComment(comment)));
         } catch (Throwable e) {
             logger.error("Failed to create comment", e);
@@ -70,6 +75,11 @@ public class CommentController {
             assert builder.getUsername().equals(usernameOpt.get());
             assert builder.getBuildId().equals(getBuildIdPathParam(ctx).toString());
             Comment comment = builder.setLastUpdateDate(new Date().getTime()).build();
+            if (comment.getContent().isBlank()) {
+                ctx.json("Comment cannot be blank.");
+                ctx.status(400);
+                return;
+            }
             commentDatabase.updateComment(comment);
             ctx.json(JsonFormat.printer().print(comment));
         } catch (Throwable e) {

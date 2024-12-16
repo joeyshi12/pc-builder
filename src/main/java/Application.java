@@ -17,7 +17,11 @@ public class Application {
     public static void main(String[] args) {
         ConnectionHandler connectionHandler;
         try {
-            connectionHandler = createConnectionHandler();
+            connectionHandler = new ConnectionHandler(
+                getEnvironmentVariable("DB_URL"),
+                getEnvironmentVariable("DB_USERNAME"),
+                getEnvironmentVariable("DB_PASSWORD")
+            );
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
             return;
@@ -74,19 +78,11 @@ public class Application {
         });
     }
 
-    private static ConnectionHandler createConnectionHandler() throws Exception {
-        String url = System.getenv("DB_URL");
-        if (url == null) {
-            throw new Exception("Missing DB_URL environment variable");
+    private static String getEnvironmentVariable(String key) throws Exception {
+        String value = System.getenv(key);
+        if (value == null) {
+            throw new Exception(String.format("Missing %s environment variable", key));
         }
-        String username = System.getenv("DB_USERNAME");
-        if (username == null) {
-            throw new Exception("Missing DB_USERNAME environment variable");
-        }
-        String password = System.getenv("DB_PASSWORD");
-        if (password == null) {
-            throw new Exception("Missing DB_PASSWORD environment variable");
-        }
-        return new ConnectionHandler(url, username, password);
+        return value;
     }
 }

@@ -76,6 +76,10 @@ export class PcBuildComponent implements OnDestroy {
   }
 
   public submitComment(commentContent: string, buildId: string): void {
+    if (commentContent.length === 0) {
+      alert("Comment must be nonempty");
+      return;
+    }
     const comment: Comment = {
       content: commentContent,
       buildId: buildId
