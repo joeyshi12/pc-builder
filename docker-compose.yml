@@ -1,13 +1,19 @@
 version: '3.3'
+
 services:
   computer-mag:
-    image: arm32v7/maven:3.9.0
+    image: openjdk:11
     command: sh -c "java -jar app.jar"
     working_dir: /app
     volumes:
       - ./:/app
     environment:
-      - DB_URL=jdbc:mariadb://localhost:3306/pcbuilders
-      - DB_USERNAME=pcb_user
+      - DB_URL=jdbc:mariadb://mariadb:3306/pcbuilders
+      - DB_USERNAME=pcbuilders
       - DB_PASSWORD=pcb1234
-    network_mode: host
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    external: true
