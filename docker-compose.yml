@@ -8,8 +8,8 @@ services:
     volumes:
       - ./:/app
     environment:
-      - DB_URL=jdbc:mariadb://mariadb:3306/pcbuilders
-      - DB_USERNAME=pcbuilders
+      - DB_URL=jdbc:mariadb://mariadb:3306/pcbuilder
+      - DB_USERNAME=pcbuilder
       - DB_PASSWORD=pcb1234
     networks:
       - shared-network
