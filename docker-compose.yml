@@ -9,6 +9,6 @@ services:
     volumes:
       - ./:/app
     environment:
-      - DB_URL=jdbc:mariadb://mariadb:3306/pcbuilder
-      - DB_USERNAME=...
-      - DB_PASSWORD=...
+      - DB_URL=jdbc:mariadb://examplehost:3306/pcbuilder
+      - DB_USERNAME=exampleuser
+      - DB_PASSWORD=examplepass
