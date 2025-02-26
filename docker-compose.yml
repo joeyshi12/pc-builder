@@ -10,11 +10,5 @@ services:
       - ./:/app
     environment:
       - DB_URL=jdbc:mariadb://mariadb:3306/pcbuilder
-      - DB_USERNAME=pcbuilder
-      - DB_PASSWORD=pcb1234
-    networks:
-      - shared-network
-
-networks:
-  shared-network:
-    external: true
+      - DB_USERNAME=...
+      - DB_PASSWORD=...
