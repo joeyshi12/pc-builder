@@ -2,8 +2,6 @@
 <configuration>
     <import class="ch.qos.logback.core.ConsoleAppender"/>
     <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
-    <import class="ch.qos.logback.core.rolling.RollingFileAppender"/>
-    <import class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"/>
 
     <appender name="Console" class="ConsoleAppender">
         <encoder class="PatternLayoutEncoder">
@@ -11,20 +9,7 @@
         </encoder>
     </appender>
 
-    <appender name="File" class="RollingFileAppender">
-        <rollingPolicy class="SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logs/%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <maxHistory>30</maxHistory>
-            <maxFileSize>1MB</maxFileSize>
-            <totalSizeCap>1GB</totalSizeCap>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{ISO8601} %-5level [%t] %C{20}: %msg%n%throwable</pattern>
-        </encoder>
-    </appender>
-
     <root level="info">
         <appender-ref ref="Console"/>
-        <appender-ref ref="File"/>
     </root>
 </configuration>
