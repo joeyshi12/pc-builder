@@ -1,5 +1,7 @@
 # pc-builder
 
+![deploy.yml](https://git.joeyshi.xyz/joey/devtools/actions/workflows/deploy.yml/badge.svg)
+
 Website for browsing and picking PC parts for a build.
 
 ## How to deploy
