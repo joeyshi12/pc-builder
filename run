@@ -9,6 +9,7 @@ print_help() {
 
 create_build() {
   pushd web || exit
+  npm install || exit
   npm run build || exit
   popd || exit
   mvn install
