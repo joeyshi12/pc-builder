@@ -1,6 +1,6 @@
 # pc-builder
 
-![deploy.yml](https://git.joeyshi.xyz/joey/devtools/actions/workflows/deploy.yml/badge.svg)
+![deploy.yml](https://git.joeyshi.xyz/joey/pc-builder/actions/workflows/deploy.yml/badge.svg)
 
 Website for browsing and picking PC parts for a build.
 
