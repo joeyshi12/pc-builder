@@ -40,6 +40,7 @@ jobs:
           docker run -d \
             --name ${APP_NAME} \
             --network stack_default \
+            --restart unless-stopped \
             -p "8102:8080" \
             -e DB_URL=${{ secrets.DB_URL }} \
             -e DB_USERNAME=${{ secrets.DB_USERNAME }} \
