@@ -1,14 +1,6 @@
 # pc-builder
 
-![deploy.yml](https://git.joeyshi.xyz/joey/pc-builder/actions/workflows/deploy.yml/badge.svg)
-
 Website for browsing and picking PC parts for a build.
-
-> 💡 **Heads up:**  
->
-> If you’re viewing this on GitHub, note that this is just a mirror. The primary repository lives here:
->
-> [git.joeyshi.xyz/joey/pc-builder](https://git.joeyshi.xyz/joey/pc-builder)
 
 ## How to deploy
 
