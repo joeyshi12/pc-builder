@@ -2,10 +2,27 @@
 
 Website for browsing and picking PC parts for a build.
 
-## How to deploy
+## Deployment steps
 
-1. Generate a new web build with `./run build`
-2. Copy the `app.jar` and `docker-compose.yml` to a folder on your server host
-3. Connect to the pcb database from DBeaver or similar DB client
-4. Generate tables with `table_schemas.sql` and populate data from csv files in the `data` folder
-5. Run `docker-compose up` from the server host
+### Database setup
+
+1. Run an SQL database server (e.g., mariadb):
+    ```sh
+    docker run --name db -e MARIADB_ROOT_PASSWORD=good_password -d mariadb:latest
+    ```
+2. Generate tables by running `sql/table_schemas.sql` against your database and
+populate the tables with CSV files in the `data` folder.
+
+### Application deployment
+
+1. Generate a new build with `./run build`
+2. Install Maven on your system. Then, build the application from the project root:
+    ```sh
+    ./run build
+    ```
+3. Build and run the Docker image:
+    ```sh
+    docker build -t pcbuilder .
+    docker run -p 8080:8080 -e DB_URL=jdbc:mariadb://db:3306/pcbuilder -e DB_USERNAME=root -e DB_PASSWORD=good_password -d pcbuilder
+    ```
+4. Wait for the application to initialize. Then, visit `http://localhost:8080`

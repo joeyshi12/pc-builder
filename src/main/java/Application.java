@@ -74,7 +74,9 @@ public class Application {
                 staticFiles.location = Location.CLASSPATH;
                 staticFiles.precompress = false;
             });
-            config.jetty.sessionHandler(connectionHandler::sqlSessionHandler);
+            config.jetty.modifyServer(server -> {
+                server.setHandler(connectionHandler.sqlSessionHandler());
+            });
         });
     }
 
