@@ -17,14 +17,8 @@ populate the tables with CSV files in the `data` folder.
 
 ### Application deployment
 
-1. Generate a new build with `./run build`
-2. Install Maven on your system. Then, build the application from the project root:
+1. Pull and run the pc-builder Docker image:
     ```sh
-    ./run build
+    docker run -p 8080:8080 -e DB_URL=jdbc:mariadb://db:3306/pcbuilder -e DB_USERNAME=root -e DB_PASSWORD=good_password -d ghcr.io/joeyshi12/pc-builder:main
     ```
-3. Build and run the Docker image:
-    ```sh
-    docker build -t pcbuilder .
-    docker run -p 8080:8080 -e DB_URL=jdbc:mariadb://db:3306/pcbuilder -e DB_USERNAME=root -e DB_PASSWORD=good_password -d pcbuilder
-    ```
-4. Wait for the application to initialize. Then, visit `http://localhost:8080`
+2. Wait for the application to initialize. Then, visit `http://localhost:8080`
