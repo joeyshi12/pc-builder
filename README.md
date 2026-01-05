@@ -1,5 +1,7 @@
 # pc-builder
 
+![docker-image.yml](https://github.com/joeyshi12/pc-builder/actions/workflows/docker-image.yml/badge.svg)
+
 Website for browsing and picking PC parts for a build.
 
 ## Deployment steps
